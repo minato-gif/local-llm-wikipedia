@@ -42,6 +42,7 @@ function home(){
     <div class="grid">
       <div class="card"><h3><a href="#/guide/basics">ローカルLLM入門</a></h3><p>LLM、モデル、推論ランタイム、量子化、VRAMなどをやさしく解説。</p></div>
       <div class="card"><h3><a href="#/guide/models">主要モデル一覧</a></h3><p>Gemma 4、Qwen、gpt-oss、Llama、DeepSeekなど現在の主要モデルを紹介。</p></div>
+      <div class="card"><h3><a href="#/guide/hardware">自分のPCでどのモデルが動く？</a></h3><p>VRAM 8GB / 12GB / 16GB / 24GB / 32GB以上を目安に、現実的なモデルサイズを紹介。</p></div>
       <div class="card"><h3><a href="#/about">このサイトについて</a></h3><p>自動更新の仕組み、編集方針、AI要約について。</p></div>
     </div>
 
