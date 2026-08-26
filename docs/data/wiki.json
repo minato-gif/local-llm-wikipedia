@@ -37,9 +37,37 @@
     "https://huggingface.co/oracomputing/Qwen3.8-27B-OQ3-GGUF",
     "https://huggingface.co/puwaer/DeepSeek-V4-Flash-0731-ream-150b-gguf",
     "https://huggingface.co/Princecode/naabiga-ia-gguf",
-    "https://huggingface.co/mradermacher/Qwen3.8-27B-Fimi-2-i1-GGUF"
+    "https://huggingface.co/mradermacher/Qwen3.8-27B-Fimi-2-i1-GGUF",
+    "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "https://huggingface.co/mradermacher/Huihui-Ministral-3-8B-Reasoning-2512-abliterated-i1-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-08-26-251bc4f2dee9",
+      "date": "2026-08-26",
+      "title": "NVIDIA Nemotron 3.5 Lightning 30B A3BのGGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "NVIDIAの主要モデル「Nemotron-3.5-Lightning-30B-A3B」に対応するGGUF量子化モデルがggml-orgより公開されました。ローカル環境での効率的な推論と実行が可能になります。",
+      "impact": "ローカルLLMユーザーがNVIDIAの高性能な30B規模モデルをコンシューマー向けGPU等で手軽に利用できるようになり、実用的な推論環境の選択肢が広がります。",
+      "details": "Hugging Face上のggml-orgリポジトリにおいて、NVIDIA-Nemotron-3.5-Lightning-30B-A3BのGGUFフォーマット版が更新・公開されました。公開直後から高いダウンロード数を記録しており、ローカル環境での実行性能や互換性の高さが注目されています。llama.cppなどのGGUF対応ランタイムでそのまま利用可能です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "quantized",
+        "text-generation",
+        "license:other",
+        "endpoints_compatible",
+        "region:us",
+        "conversational"
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-26-8f5ba8e1101c",
       "date": "2026-08-25",
