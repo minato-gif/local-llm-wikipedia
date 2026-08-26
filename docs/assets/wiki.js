@@ -2,7 +2,8 @@ let DB={site:{},entries:[]};
 const STATIC=window.STATIC_PAGES||[];
 
 const $=s=>document.querySelector(s);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const brand=s=>String(s??'').replaceAll('Local LLM Wikipedia','Local LLM Wiki');
+const esc=s=>brand(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const articleUrl=id=>`#/article/${encodeURIComponent(id)}`;
 
 async function load(){
@@ -49,7 +50,7 @@ function contentIndex(){
 
   return `<div class="article">
     <h1>記事一覧</h1>
-    <p class="lead">Local LLM Wikipedia に現在掲載されているコンテンツをまとめて確認できます。常設の解説記事と、毎日自動更新されるニュース記事を分けて表示します。</p>
+    <p class="lead">Local LLM Wiki に現在掲載されているコンテンツをまとめて確認できます。常設の解説記事と、毎日自動更新されるニュース記事を分けて表示します。</p>
 
     <div class="notice">
       <b>現在の掲載数</b><br>
@@ -130,7 +131,7 @@ function article(e){
 
 function staticPage(route){
   const p=STATIC.find(x=>x.route===route);
-  return p?p.html:null;
+  return p?brand(p.html):null;
 }
 
 function render(){

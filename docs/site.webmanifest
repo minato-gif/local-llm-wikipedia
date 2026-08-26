@@ -1,5 +1,5 @@
 {
-  "name": "Local LLM Wikipedia",
+  "name": "Local LLM Wiki",
   "short_name": "Local LLM Wiki",
   "start_url": "./",
   "display": "standalone",
