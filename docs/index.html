@@ -3,13 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071427">
 <title>Local LLM Wikipedia</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/site-icon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="assets/wiki.css">
 </head>
 <body>
 <header class="top">
   <button id="menuBtn">☰</button>
-  <a class="brand" href="#/">◉ <span>Local LLM Wikipedia</span></a>
+  <a class="brand" href="#/">
+    <img class="site-logo" src="assets/site-icon-64.png" alt="">
+    <span>Local LLM Wikipedia</span>
+  </a>
   <div class="search">
     <input id="search" placeholder="Local LLM Wikipedia 内を検索">
     <div id="results"></div>
@@ -26,9 +34,17 @@
     <a href="#/guide/hardware">自分のPCでどのモデルが動く？</a>
     <a href="#/guide/glossary">ローカルLLM用語集</a>
     <a href="#/guide/compare">モデル比較</a>
+
+    <h4>実践ガイド</h4>
+    <a href="#/guide/start">ローカルLLMの始め方</a>
+    <a href="#/guide/download">モデルをダウンロードするとき何を選べばいい？</a>
+    <a href="#/guide/troubleshoot">トラブルシューティング</a>
+
+    <h4>サイト</h4>
     <a href="#/about">このサイトについて</a>
     <a href="#/recent">最近の更新</a>
     <a href="#/priority/high">重要度: 高</a>
+
     <h4>カテゴリ</h4>
     <div id="cats"></div>
   </nav>
@@ -48,6 +64,7 @@ Local LLM Wikipedia — <a href="#/articles">記事一覧</a> · <a href="#/abou
 <script src="data/static-pages.js"></script>
 <script src="data/hardware-guide.js"></script>
 <script src="data/glossary-comparison.js"></script>
+<script src="data/practical-guides.js"></script>
 <script src="assets/wiki.js"></script>
 </body>
 </html>

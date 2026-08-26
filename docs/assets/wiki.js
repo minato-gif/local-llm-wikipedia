@@ -30,6 +30,9 @@ function list(entries){
 
 function staticKind(route){
   if(route==='#/about') return 'サイト情報';
+  if(route.includes('troubleshoot')) return 'トラブル解決';
+  if(route.includes('download')) return 'モデル選び';
+  if(route.includes('/start')) return '始め方';
   if(route.includes('glossary')) return '用語集';
   if(route.includes('compare')) return '比較';
   if(route.includes('models')) return 'モデル解説';
@@ -91,6 +94,13 @@ function home(){
       <div class="card"><h3><a href="#/guide/glossary">ローカルLLM用語集</a></h3><p>GGUF、MoE、KVキャッシュ、GPUオフロードなどを初心者向けに辞書形式で解説。</p></div>
       <div class="card"><h3><a href="#/guide/compare">モデル比較</a></h3><p>主要モデルを規模、用途、マルチモーダル、ローカル向きなどで横比較。</p></div>
       <div class="card"><h3><a href="#/articles">記事一覧</a></h3><p>このWikiに追加済みの解説記事と自動収集ニュースをまとめて確認。</p></div>
+    </div>
+
+    <h2>実践ガイド</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="#/guide/start">ローカルLLMの始め方</a></h3><p>LM Studioを例に、インストールから最初のチャットまで順番に解説。</p></div>
+      <div class="card"><h3><a href="#/guide/download">モデルをダウンロードするとき何を選べばいい？</a></h3><p>Instruct、GGUF、Q4_K_Mなど、モデル選択画面の見方を解説。</p></div>
+      <div class="card"><h3><a href="#/guide/troubleshoot">トラブルシューティング</a></h3><p>ロード失敗、VRAM不足、遅い、GPUを使わない、API接続などを症状別に確認。</p></div>
       <div class="card"><h3><a href="#/about">このサイトについて</a></h3><p>自動更新の仕組み、編集方針、AI要約について。</p></div>
     </div>
 
@@ -160,7 +170,7 @@ $('#search').addEventListener('input',ev=>{
 
  const pageHits=STATIC
    .filter(p=>`${p.title} ${p.summary} ${(p.keywords||[]).join(' ')}`.toLowerCase().includes(q))
-   .slice(0,7)
+   .slice(0,10)
    .map(p=>`<a class="hit" href="${p.route}"><b>${esc(p.title)}</b><small>${esc(p.summary)}</small></a>`);
 
  r.innerHTML=[...pageHits,...newsHits].join('')||'<div class="hit">該当なし</div>';
