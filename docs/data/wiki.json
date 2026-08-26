@@ -4,8 +4,435 @@
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
     "last_updated": "2026-08-26"
   },
-  "seen_urls": [],
+  "seen_urls": [
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10630",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10629",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10628",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10625",
+    "https://lmstudio.ai/changelog/lmstudio",
+    "https://lmstudio.ai/changelog/bionic-v1.0.9",
+    "https://lmstudio.ai/changelog/bionic-v1.0.8",
+    "https://lmstudio.ai/changelog/bionic-v1.0.7",
+    "https://lmstudio.ai/changelog/bionic-v1.0.6",
+    "https://lmstudio.ai/changelog/bionic-v1.0.5",
+    "https://lmstudio.ai/changelog/bionic-v1.0.4",
+    "https://lmstudio.ai/changelog/bionic-v1.0.3",
+    "https://lmstudio.ai/changelog/bionic-v1.0.2",
+    "https://lmstudio.ai/changelog/bionic-v1.0.1",
+    "https://lmstudio.ai/changelog/bionic-v1.0.0",
+    "https://huggingface.co/blog/LiquidAI/qad",
+    "https://huggingface.co/blog/Michael-E/bedrock-rl",
+    "https://huggingface.co/blog/tngtech/sleeper-agents-and-how-to-tame-them",
+    "https://huggingface.co/mradermacher/NeuronAI-2B-i1-GGUF",
+    "https://huggingface.co/chenhaodev/stcc-checker-0.6b-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.3.0",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10622",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10621"
+  ],
   "entries": [
+    {
+      "id": "2026-08-26-05444deb5f23",
+      "date": "2026-08-26",
+      "title": "llama.cpp: b10631",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "ggml-meta: propagate buffer usage and call init on the new tensors (#27586) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ma…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "ggml-meta: propagate buffer usage and call init on the new tensors (#27586) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10631/llama-b10631-bin-ubuntu-rocm-7.14-x64.tar.gz) - [Ubuntu x64…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "ROCm",
+        "Vulkan"
+      ]
+    },
+    {
+      "id": "2026-08-26-228433a9b003",
+      "date": "2026-08-26",
+      "title": "llama.cpp: b10630",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10630",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "kleidiai: Rework KleidiAI Build System/Integration (#26077) * Rework KleidiAI Build System/Integration Signed-off-by: Jonathan Clohessy * Add fp16 guard, and fix cmake caching issue Signed-off-by: Jonathan Clohessy * Fix formatting, and reb…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "kleidiai: Rework KleidiAI Build System/Integration (#26077) * Rework KleidiAI Build System/Integration Signed-off-by: Jonathan Clohessy * Add fp16 guard, and fix cmake caching issue Signed-off-by: Jonathan Clohessy * Fix formatting, and rebase issue Signed-off-by: Jonathan Clohessy --------- Signed-off-by: Jonathan Clohessy **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10630/llama-b10630-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Vulkan"
+      ]
+    },
+    {
+      "id": "2026-08-26-282c015cd951",
+      "date": "2026-08-26",
+      "title": "llama.cpp: b10629",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10629",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "ci : update OS used for ROCM to Ubuntu 24.04 (#27681) This matches what other build targets use and also what AMD advertises wheels as supporting.",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "ci : update OS used for ROCM to Ubuntu 24.04 (#27681) This matches what other build targets use and also what AMD advertises wheels as supporting. **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10629/llama-b10629-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "ROCm",
+        "Vulkan"
+      ]
+    },
+    {
+      "id": "2026-08-26-ea87b4c33fc3",
+      "date": "2026-08-26",
+      "title": "llama.cpp: b10628",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10628",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "rpc: support apple RDMA as an RPC transport (#26421) * rpc: support apple RDMA as an RPC transport * remove set_tensor micro optimization, rpc socket pinning per CR * remove transparent reconnect * trigger apple builds on RPC changes ------…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "rpc: support apple RDMA as an RPC transport (#26421) * rpc: support apple RDMA as an RPC transport * remove set_tensor micro optimization, rpc socket pinning per CR * remove transparent reconnect * trigger apple builds on RPC changes --------- Co-authored-by: Ryan Churaman **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10628/llama-b10628-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Vulkan"
+      ]
+    },
+    {
+      "id": "2026-08-26-bfc6158cb059",
+      "date": "2026-08-26",
+      "title": "llama.cpp: b10625",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10625",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "chat : scope qwen3-coder workarounds (#27679) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-macos-arm64.tar.gz) - macOS Appl…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "chat : scope qwen3-coder workarounds (#27679) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm 7.14)](https://github.com/ggml-org/llama.cpp/releases/download/b10625/llama-b10625-bin-ubuntu-rocm-7.14-x64.tar.gz) - [Ubuntu x64…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "ROCm",
+        "Vulkan"
+      ]
+    },
+    {
+      "id": "2026-08-26-fe0fdd049b3f",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: LM Studio",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/lmstudio",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "LM Studio",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-2baabae66428",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.9",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.9",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.9",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-931d3574342e",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.8",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.8",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.8",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-438f13ea3173",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.7",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.7",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.7",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-48f1880174dd",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.6",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.6",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.6",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-8444cdcdfa8a",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.5",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.5",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.5",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-96c63a429dbe",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.4",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.4",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.4",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-5b0f00a006a9",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.3",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.3",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.3",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-895c40510b58",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.2",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.2",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.2",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-0e2f0fdec9e6",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.1",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.1",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.1",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-ba3fab6e1146",
+      "date": "2026-08-26",
+      "title": "LM Studio Changelog: Bionic 1.0.0",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.0.0",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "Bionic 1.0.0",
+      "impact": "LM Studio Changelog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ]
+    },
+    {
+      "id": "2026-08-26-7ae6de1d6984",
+      "date": "2026-08-26",
+      "title": "Hugging Face Blog: LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation LiquidAI • 7 days ago • 34",
+      "source": "Hugging Face Blog",
+      "source_url": "https://huggingface.co/blog/LiquidAI/qad",
+      "category": "モデル・技術",
+      "priority": "高",
+      "summary": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation LiquidAI • 7 days ago • 34",
+      "impact": "GGUFまたは量子化モデルの互換性・品質に関係する可能性があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "Hugging Face Blog",
+        "量子化"
+      ]
+    },
+    {
+      "id": "2026-08-26-a4ffba387d2c",
+      "date": "2026-08-26",
+      "title": "Hugging Face Blog: Bedrock-RL: a deterministic Minecraft framework for training and benchmarking VLM agents Michael-E • 7 days ago • 14",
+      "source": "Hugging Face Blog",
+      "source_url": "https://huggingface.co/blog/Michael-E/bedrock-rl",
+      "category": "モデル・技術",
+      "priority": "中",
+      "summary": "Bedrock-RL: a deterministic Minecraft framework for training and benchmarking VLM agents Michael-E • 7 days ago • 14",
+      "impact": "Hugging Face Blog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "Hugging Face Blog"
+      ]
+    },
+    {
+      "id": "2026-08-26-69ccb61d1312",
+      "date": "2026-08-26",
+      "title": "Hugging Face Blog: Sleeper Agents and How to Tame Them tngtech • 13 days ago • 26",
+      "source": "Hugging Face Blog",
+      "source_url": "https://huggingface.co/blog/tngtech/sleeper-agents-and-how-to-tame-them",
+      "category": "モデル・技術",
+      "priority": "中",
+      "summary": "Sleeper Agents and How to Tame Them tngtech • 13 days ago • 26",
+      "impact": "Hugging Face Blog をローカル利用している場合、更新内容を確認する価値があります。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "Hugging Face Blog"
+      ]
+    },
+    {
+      "id": "2026-08-26-cfa4fe56f3cb",
+      "date": "2026-08-26",
+      "title": "Hugging Face: mradermacher/NeuronAI-2B-i1-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/mradermacher/NeuronAI-2B-i1-GGUF",
+      "category": "モデル",
+      "priority": "低",
+      "summary": "GGUF関連モデル「mradermacher/NeuronAI-2B-i1-GGUF」が更新。Hugging Face上の直近指標は downloads=491, likes=0。",
+      "impact": "ローカル実行候補の更新です。量子化方式、元モデル、ライセンス、対応ランタイムをモデルカードで確認してください。",
+      "details": "lastModified=2026-08-26T07:39:55.000Z / downloads=491 / likes=0",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "qwen3.5",
+        "uzbek",
+        "conversational",
+        "translation",
+        "text-generation-inference",
+        "uz"
+      ]
+    },
+    {
+      "id": "2026-08-26-942912ecd3a7",
+      "date": "2026-08-26",
+      "title": "Hugging Face: chenhaodev/stcc-checker-0.6b-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/chenhaodev/stcc-checker-0.6b-GGUF",
+      "category": "モデル",
+      "priority": "低",
+      "summary": "GGUF関連モデル「chenhaodev/stcc-checker-0.6b-GGUF」が更新。Hugging Face上の直近指標は downloads=133, likes=0。",
+      "impact": "ローカル実行候補の更新です。量子化方式、元モデル、ライセンス、対応ランタイムをモデルカードで確認してください。",
+      "details": "lastModified=2026-08-26T07:33:49.000Z / downloads=133 / likes=0",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "safetensors",
+        "medical",
+        "triage",
+        "classification",
+        "ollama",
+        "rule-engine",
+        "mcp"
+      ]
+    },
+    {
+      "id": "2026-08-26-8f5ba8e1101c",
+      "date": "2026-08-25",
+      "title": "llama.cpp: v0.3.0",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.3.0",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "## Overview llama.cpp 0.3.0 introduces the dots3-note multimodal model (with a new DSA-ISWA KV cache), MTP support for GLM-4.5-Air, and tensor-split (`-sm tensor`) plus multi-sequence rollback fixes for DeepSeek 4.",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。 コンテキスト長やメモリ使用量に影響する可能性があります。",
+      "details": "## Overview llama.cpp 0.3.0 introduces the dots3-note multimodal model (with a new DSA-ISWA KV cache), MTP support for GLM-4.5-Air, and tensor-split (`-sm tensor`) plus multi-sequence rollback fixes for DeepSeek 4. ggml is bumped to v0.22.0 (meta-backend tensor split, per-op Metal kernels with parallel compilation, non-in-place `ggml_clamp`), while mtmd gains dots3-note vision/audio, WebP decoding and a Pillow-accurate resize. The server adds a `LLAMA_SERVER_SLOTS_N_DIFF` debug knob, and the web UI gets tabbed chat navigation. ### New models - Add dots3-note model with a new DSA-ISWA KV cache type ([#27060](https://github.com/ggml-org/llama.cpp/pull/27060)) ### Core changes - DeepSeek 4: add tensor-split mode via `-sm tensor` ([#26490](https://github.com/ggml-org/llama.cpp/pull/26490)) - DeepSeek 4: fix rollback with multiple sequences ([#26756](https://github.com/ggml-org/llama.cpp/pull/26756)) - Fix meta tensor split state propagation for tensor parallel ([#27574](https://github.com/ggml-org/llama.cpp/pull/27574)) - GLM-4.5-Air: add MTP (multi-token prediction) support ([#26534](https://github.com/ggml-org/llama.cpp/pull/26534)) - bailingmoe3: support DSpark ([#27508](https://github.com/ggml-org/llama.cpp/pull/27508)) - mamba2: flatten in/out projections to dispatch GEMM instead of GEMV ([#27513](https://github.com/ggml-org/llama.cpp/pull/27513)) - Models: use…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Metal",
+        "マルチモーダル",
+        "Vision"
+      ]
+    },
+    {
+      "id": "2026-08-26-e2f6cd0a810a",
+      "date": "2026-08-25",
+      "title": "llama.cpp: b10622",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10622",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "metal : null-check buffer alloc to fix OOM crash (#25371) * metal : null-check ggml_metal_buffer_init result to avoid OOM crash ggml_backend_metal_buffer_type_alloc_buffer used the result of ggml_metal_buffer_init without checking for NULL.…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。 コンテキスト長やメモリ使用量に影響する可能性があります。",
+      "details": "metal : null-check buffer alloc to fix OOM crash (#25371) * metal : null-check ggml_metal_buffer_init result to avoid OOM crash ggml_backend_metal_buffer_type_alloc_buffer used the result of ggml_metal_buffer_init without checking for NULL. ggml_metal_buffer_init returns NULL when the underlying Metal allocation fails (e.g. an out-of-memory condition), and the following ggml_metal_buffer_is_shared(res) call dereferences it, turning a recoverable allocation failure into a hard crash (EXC_BAD_ACCESS). This is easy to hit on memory-constrained devices such as iOS when a model/context exceeds the available Metal budget. Log the failure using the existing GGML_LOG_ERROR convention and return NULL so the allocator surfaces a diagnosable error up the stack instead of crashing. * cont : fix log --------- Co-authored-by: Georgi Gerganov **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10622/llama-b10622-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10622/llama-b10622-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10622/llama-b10622-xcframework.zip) **Linux:** - [Ubuntu x64…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Metal",
+        "Context"
+      ]
+    },
+    {
+      "id": "2026-08-26-7c5366b9f597",
+      "date": "2026-08-25",
+      "title": "llama.cpp: b10621",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10621",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cpp : bump version to 0.3.0 (#27696) * llama.cpp : bump version to 0.3.0 * ci : update release default desc * scripts : add prompt for generating release summary **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon…",
+      "impact": "GPUバックエンドや推論速度に関係する更新を含む可能性があります。",
+      "details": "llama.cpp : bump version to 0.3.0 (#27696) * llama.cpp : bump version to 0.3.0 * ci : update release default desc * scripts : add prompt for generating release summary **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10621/llama-b10621-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "ROCm",
+        "Vulkan"
+      ]
+    },
     {
       "id": "welcome-2026-08-26",
       "date": "2026-08-26",
