@@ -34,6 +34,12 @@ jobs:
       - name: Research and update wiki
         run: python scripts/research.py
 
+      - name: Curate important news and summarize in Japanese
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python scripts/curate.py
+
       - name: Validate wiki data
         run: python scripts/healthcheck.py
 
