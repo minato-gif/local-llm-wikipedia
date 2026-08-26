@@ -1,5 +1,5 @@
-
 let DB={site:{},entries:[]};
+const STATIC=window.STATIC_PAGES||[];
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -34,8 +34,17 @@ function home(){
   return `<div class="article">
     <h1>${esc(DB.site.title)}</h1>
     <p class="lead">${esc(DB.site.description)}</p>
+
     <div class="notice"><b>最終自動更新:</b> ${esc(DB.site.last_updated)}<br>
-    GitHub Actions が毎日公式ソースを巡回し、新着だけを追加します。</div>
+    GitHub Actions が毎日公式ソースを巡回し、重要な新着だけを追加します。</div>
+
+    <h2>はじめての方へ</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="#/guide/basics">ローカルLLM入門</a></h3><p>LLM、モデル、推論ランタイム、量子化、VRAMなどをやさしく解説。</p></div>
+      <div class="card"><h3><a href="#/guide/models">主要モデル一覧</a></h3><p>Gemma 4、Qwen、gpt-oss、Llama、DeepSeekなど現在の主要モデルを紹介。</p></div>
+      <div class="card"><h3><a href="#/about">このサイトについて</a></h3><p>自動更新の仕組み、編集方針、AI要約について。</p></div>
+    </div>
+
     <h2>注目記事</h2>
     <div class="grid">${high.map(e=>`<div class="card"><h3><a href="${articleUrl(e.id)}">${esc(e.title)}</a></h3><p>${esc(e.summary)}</p></div>`).join('') || '<p>現在ありません。</p>'}</div>
     <h2>最近の更新</h2>${list(latest)}
@@ -60,10 +69,17 @@ function article(e){
  </article>`;
 }
 
+function staticPage(route){
+  const p=STATIC.find(x=>x.route===route);
+  return p?p.html:null;
+}
+
 function render(){
  const h=location.hash||'#/';
  let html='';
- if(h==='#/'||h==='#') html=home();
+ const staticHtml=staticPage(h);
+ if(staticHtml) html=staticHtml;
+ else if(h==='#/'||h==='#') html=home();
  else if(h==='#/recent')html=`<div class="article"><h1>最近の更新</h1>${list([...DB.entries].sort((a,b)=>b.date.localeCompare(a.date)))}</div>`;
  else if(h==='#/priority/high')html=`<div class="article"><h1>重要度: 高</h1>${list(DB.entries.filter(x=>x.priority==='高').sort((a,b)=>b.date.localeCompare(a.date)))}</div>`;
  else if(h.startsWith('#/category/')){
@@ -86,9 +102,20 @@ $('#search').addEventListener('input',ev=>{
  const q=ev.target.value.trim().toLowerCase();
  const r=$('#results');
  if(!q){r.style.display='none';return}
- const hits=DB.entries.filter(e=>JSON.stringify(e).toLowerCase().includes(q)).slice(0,12);
- r.innerHTML=hits.map(e=>`<a class="hit" href="${articleUrl(e.id)}"><b>${esc(e.title)}</b><small>${esc(e.summary)}</small></a>`).join('')||'<div class="hit">該当なし</div>';
+
+ const newsHits=DB.entries
+   .filter(e=>JSON.stringify(e).toLowerCase().includes(q))
+   .slice(0,8)
+   .map(e=>`<a class="hit" href="${articleUrl(e.id)}"><b>${esc(e.title)}</b><small>${esc(e.summary)}</small></a>`);
+
+ const pageHits=STATIC
+   .filter(p=>`${p.title} ${p.summary} ${(p.keywords||[]).join(' ')}`.toLowerCase().includes(q))
+   .slice(0,5)
+   .map(p=>`<a class="hit" href="${p.route}"><b>${esc(p.title)}</b><small>${esc(p.summary)}</small></a>`);
+
+ r.innerHTML=[...pageHits,...newsHits].join('')||'<div class="hit">該当なし</div>';
  r.style.display='block';
 });
+
 document.addEventListener('click',ev=>{if(!ev.target.closest('.search'))$('#results').style.display='none'});
 load();
