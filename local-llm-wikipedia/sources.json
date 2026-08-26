@@ -1,0 +1,62 @@
+{
+  "github_releases": [
+    {
+      "name": "llama.cpp",
+      "repo": "ggml-org/llama.cpp",
+      "category": "推論ランタイム",
+      "priority": "高"
+    },
+    {
+      "name": "Ollama",
+      "repo": "ollama/ollama",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高"
+    },
+    {
+      "name": "llama-cpp-python",
+      "repo": "abetlen/llama-cpp-python",
+      "category": "Python",
+      "priority": "中"
+    },
+    {
+      "name": "KoboldCpp",
+      "repo": "LostRuins/koboldcpp",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中"
+    },
+    {
+      "name": "ExLlamaV2",
+      "repo": "turboderp/exllamav2",
+      "category": "推論ランタイム",
+      "priority": "中"
+    },
+    {
+      "name": "MLX-LM",
+      "repo": "ml-explore/mlx-lm",
+      "category": "Apple Silicon",
+      "priority": "中"
+    }
+  ],
+  "web_pages": [
+    {
+      "name": "LM Studio Changelog",
+      "url": "https://lmstudio.ai/changelog",
+      "category": "フロントエンド",
+      "priority": "高"
+    },
+    {
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog",
+      "category": "モデル・技術",
+      "priority": "中"
+    }
+  ],
+  "huggingface_queries": [
+    {
+      "query": "GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "limit": 20
+    }
+  ]
+}
