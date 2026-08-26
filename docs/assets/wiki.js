@@ -28,6 +28,51 @@ function list(entries){
   </article>`).join('');
 }
 
+function staticKind(route){
+  if(route==='#/about') return 'サイト情報';
+  if(route.includes('glossary')) return '用語集';
+  if(route.includes('compare')) return '比較';
+  if(route.includes('models')) return 'モデル解説';
+  if(route.includes('hardware')) return 'ハードウェア';
+  if(route.includes('basics')) return '入門';
+  return '解説';
+}
+
+function contentIndex(){
+  const permanent=STATIC.filter(p=>p.route && p.title);
+  const news=[...DB.entries]
+    .filter(e=>e.id!=='welcome-2026-08-26')
+    .sort((a,b)=>b.date.localeCompare(a.date));
+
+  return `<div class="article">
+    <h1>記事一覧</h1>
+    <p class="lead">Local LLM Wikipedia に現在掲載されているコンテンツをまとめて確認できます。常設の解説記事と、毎日自動更新されるニュース記事を分けて表示します。</p>
+
+    <div class="notice">
+      <b>現在の掲載数</b><br>
+      常設解説ページ: ${permanent.length}件<br>
+      自動収集ニュース: ${news.length}件
+    </div>
+
+    <h2>常設解説記事</h2>
+    <p>初心者向けガイド、モデル解説、比較記事などです。新しい解説ページを追加すると、この一覧にも自動で表示されます。</p>
+    <div class="content-list">
+      ${permanent.map((p,i)=>`<article class="content-row">
+        <div class="content-no">${i+1}</div>
+        <div>
+          <div class="meta"><span class="badge">${esc(staticKind(p.route))}</span></div>
+          <h3><a href="${esc(p.route)}">${esc(p.title)}</a></h3>
+          <p>${esc(p.summary||'')}</p>
+        </div>
+      </article>`).join('')}
+    </div>
+
+    <h2>自動収集ニュース</h2>
+    <p>GitHub Actionsが公式情報を巡回し、重要と判断したニュースを日本語で整理した記事です。</p>
+    ${news.length?list(news):'<p>現在、ニュース記事はありません。</p>'}
+  </div>`;
+}
+
 function home(){
   const latest=[...DB.entries].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,12);
   const high=latest.filter(x=>x.priority==='高').slice(0,5);
@@ -45,6 +90,7 @@ function home(){
       <div class="card"><h3><a href="#/guide/hardware">自分のPCでどのモデルが動く？</a></h3><p>VRAM容量から、現実的に使いやすいモデルサイズと量子化を判断。</p></div>
       <div class="card"><h3><a href="#/guide/glossary">ローカルLLM用語集</a></h3><p>GGUF、MoE、KVキャッシュ、GPUオフロードなどを初心者向けに辞書形式で解説。</p></div>
       <div class="card"><h3><a href="#/guide/compare">モデル比較</a></h3><p>主要モデルを規模、用途、マルチモーダル、ローカル向きなどで横比較。</p></div>
+      <div class="card"><h3><a href="#/articles">記事一覧</a></h3><p>このWikiに追加済みの解説記事と自動収集ニュースをまとめて確認。</p></div>
       <div class="card"><h3><a href="#/about">このサイトについて</a></h3><p>自動更新の仕組み、編集方針、AI要約について。</p></div>
     </div>
 
@@ -83,6 +129,7 @@ function render(){
  const staticHtml=staticPage(h);
  if(staticHtml) html=staticHtml;
  else if(h==='#/'||h==='#') html=home();
+ else if(h==='#/articles') html=contentIndex();
  else if(h==='#/recent')html=`<div class="article"><h1>最近の更新</h1>${list([...DB.entries].sort((a,b)=>b.date.localeCompare(a.date)))}</div>`;
  else if(h==='#/priority/high')html=`<div class="article"><h1>重要度: 高</h1>${list(DB.entries.filter(x=>x.priority==='高').sort((a,b)=>b.date.localeCompare(a.date)))}</div>`;
  else if(h.startsWith('#/category/')){

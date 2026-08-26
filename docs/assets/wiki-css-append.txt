@@ -1,0 +1,6 @@
+/* 記事一覧 */
+.content-list{border-top:1px solid #c8ccd1;margin-top:14px}
+.content-row{display:grid;grid-template-columns:42px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--soft)}
+.content-row h3{margin:3px 0 6px}
+.content-row p{margin:0;line-height:1.65}
+.content-no{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--muted);padding-top:7px;text-align:center}
