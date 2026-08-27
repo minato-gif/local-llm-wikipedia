@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-08-26"
+    "last_updated": "2026-08-27"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -39,9 +39,40 @@
     "https://huggingface.co/Princecode/naabiga-ia-gguf",
     "https://huggingface.co/mradermacher/Qwen3.8-27B-Fimi-2-i1-GGUF",
     "https://huggingface.co/ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
-    "https://huggingface.co/mradermacher/Huihui-Ministral-3-8B-Reasoning-2512-abliterated-i1-GGUF"
+    "https://huggingface.co/mradermacher/Huihui-Ministral-3-8B-Reasoning-2512-abliterated-i1-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10642",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10639",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10638",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.1",
+    "https://huggingface.co/blog/huggingface/tito",
+    "https://huggingface.co/Arki05/Qwen3.8-27B-GGUF-shards",
+    "https://huggingface.co/MorinoNushi/DeepSeek-V4-Flash-0731-heretic-abliterated-v2-GGUF-lora",
+    "https://huggingface.co/DevQuasar/zai-org.GLM-5.3-Flash-GGUF",
+    "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10636",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10635"
   ],
   "entries": [
+    {
+      "id": "2026-08-27-5552d7648abd",
+      "date": "2026-08-27",
+      "title": "Ollama v0.33.1がリリース、Qwen3.8 Flash NextのMLXサポートなどを追加",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.33.1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaがv0.33.1をリリースしました。Apple Silicon（MLX）環境でのQwen3.8 Flash Nextサポート追加や、mlxrunnerにおける構造化出力への対応、Metal GPUのタイムアウト回避などが含まれています。",
+      "impact": "Apple Silicon環境での主要モデルの利便性と安定性が向上します。特にQwen3.8 Flash Nextのサポートと構造化出力の追加により、Macユーザーのローカル開発ワークフローが改善されます。",
+      "details": "本バージョンではMLXバックエンドの更新が行われ、Qwen3.8 Flash Nextモデルのサポートが追加されました。また、mlxrunnerにおいて構造化出力がサポートされたほか、低速なストレージからモデルを読み込む際に発生しうるMetal GPUのタイムアウトを回避する修正が施されています。llama.cppの更新やcmakeのパッチ修正も含まれています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Metal"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-26-251bc4f2dee9",
       "date": "2026-08-26",
