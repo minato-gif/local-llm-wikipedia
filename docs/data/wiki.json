@@ -50,7 +50,11 @@
     "https://huggingface.co/DevQuasar/zai-org.GLM-5.3-Flash-GGUF",
     "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10636",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10635"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10635",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10643",
+    "https://huggingface.co/Baekpica/Qwen3.8-Flash-Next-Mixed-Quant-SSD-PLE-GGUF",
+    "https://huggingface.co/kingjones777/Qwen3.8-Flash-Next-ROCmFP4-STRIX_LEAN-GGUF",
+    "https://huggingface.co/gguf-org/pig-clip"
   ],
   "entries": [
     {
