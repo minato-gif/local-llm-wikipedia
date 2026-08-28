@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-08-27"
+    "last_updated": "2026-08-28"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -54,9 +54,43 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10643",
     "https://huggingface.co/Baekpica/Qwen3.8-Flash-Next-Mixed-Quant-SSD-PLE-GGUF",
     "https://huggingface.co/kingjones777/Qwen3.8-Flash-Next-ROCmFP4-STRIX_LEAN-GGUF",
-    "https://huggingface.co/gguf-org/pig-clip"
+    "https://huggingface.co/gguf-org/pig-clip",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10665",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10664",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10663",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10662",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10661",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10660",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10659",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10658",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.2-rc1",
+    "https://lmstudio.ai/changelog/bionic-v1.1.0",
+    "https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally",
+    "https://huggingface.co/blog/sensenova/neo-unify",
+    "https://huggingface.co/blog/ResterChed/flux-3",
+    "https://huggingface.co/batuhan-elibuyuk/logicer-ggufs-public",
+    "https://huggingface.co/audio-cpp/audio.cpp-gguf"
   ],
   "entries": [
+    {
+      "id": "2026-08-28-eff947dca99a",
+      "date": "2026-08-28",
+      "title": "Ollama v0.33.2リリース候補の公開",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.33.2-rc1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "ローカルLLMランタイムであるOllamaの最新版v0.33.2-rc1が公開されました。デスクトップアプリでのシステムダークモードの復元や、モデルカタログ変更時のプロキシ動作の継続などの修正が含まれています。",
+      "impact": "デスクトップアプリの表示不具合の修正や、複数モデル運用時のプロキシの安定性向上が図られています。",
+      "details": "今回のリリース候補では、デスクトップアプリにおけるシステムダークモードの表示不具合が修正され、適切に反映されるようになりました。また、モデルカタログが変更された際にもリクエストを継続するプロキシの改善や、macOSアプリ間でのHandoffの同期機能の修正など、細かい安定性の向上が行われています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-27-5552d7648abd",
       "date": "2026-08-27",
