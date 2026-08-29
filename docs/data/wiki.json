@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-08-28"
+    "last_updated": "2026-08-29"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -69,9 +69,67 @@
     "https://huggingface.co/blog/sensenova/neo-unify",
     "https://huggingface.co/blog/ResterChed/flux-3",
     "https://huggingface.co/batuhan-elibuyuk/logicer-ggufs-public",
-    "https://huggingface.co/audio-cpp/audio.cpp-gguf"
+    "https://huggingface.co/audio-cpp/audio.cpp-gguf",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10679",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10678",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10677",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10676",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10675",
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.120",
+    "https://huggingface.co/unsloth/GLM-5.3-GGUF",
+    "https://huggingface.co/tooltd/Qwen3.8-27B-IQ4-XS-16GB-VRAM-GGUF",
+    "https://huggingface.co/mzoelfakar/Al-Khwarizmi-3B-GGUF",
+    "https://huggingface.co/mradermacher/jais-adapted-13b-chat-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10673",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10672",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10670",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.2"
   ],
   "entries": [
+    {
+      "id": "2026-08-29-e7382aac1445",
+      "date": "2026-08-29",
+      "title": "KoboldCpp v1.120がリリース、DirectIO対応や新モデルのサポートを追加",
+      "source": "GitHub Releases / LostRuins/koboldcpp",
+      "source_url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.120",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "KoboldCpp v1.120がリリースされ、モデルの読み込みモードにDirectIO（--usedirectio）が新たに追加されました。これに伴いmlockとmmapの併用が可能になったほか、Qwen3.8-Flash-NextやLing-3.0-flashなどの新しいモデル形式がサポートされています。また、アシスタント生成のプレフィルに関する不具合修正や、Kobold Liteの更新、画像生成機能の同期と修正なども含まれています。",
+      "impact": "モデル読み込みの効率化や柔軟性が向上し、最新の主要モデルに対応したことで、ローカル環境での推論や運用がより快適になります。特にDirectIOの追加やmlock/mmapの組み合わせは、大規模モデルを扱うユーザーにとって有用な改善です。",
+      "details": "今回のアップデートでは、誤ってフェイルセーフモードが選択される不具合や、アシスタント生成のプレフィルが不適切にトリガーされる問題が修正されました。新機能としては、DirectIOによるモデルロードや、mlockとmmapの同時利用が可能になっています。また、Qwen3.8-Flash-NextおよびLing-3.0-flashモデルが完全にサポートされ、Kobold Liteの複数な修正に加え、ツール呼び出しに対応したカスタムJavaScriptツールのユーザー設定機能が追加されました。",
+      "tags": [
+        "KoboldCpp",
+        "GitHub Release",
+        "GGUF",
+        "CUDA",
+        "ROCm",
+        "Vulkan",
+        "量子化",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-08-29-64d6e2fa1c39",
+      "date": "2026-08-28",
+      "title": "Ollama v0.33.2リリース、macOS版の挙動やダークモードの修正を実施",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.33.2",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "Ollama v0.33.2が公開され、macOSアプリにおけるいくつかの不具合が修正されました。システムの外観設定への追従が再度有効化され、ダークモードのサポートが復元されています。さらに、すでに起動中のインスタンスがある場合に二重起動してしまう問題や、モデルカタログ更新時にClaude Desktopプロキシが進行中のリクエストを中断してしまう挙動が修正されました。",
+      "impact": "主にmacOS環境におけるデスクトップアプリの使い勝手と安定性が向上し、システム連動のダークモードやプロセス管理の不具合が解消されています。",
+      "details": "このマイナーアップデートでは、Ollamaアプリがシステムの外観設定に再び正しく従うようになり、ダークモードの表示が復元されました。また、macOSアプリにおいて、すでに実行中のインスタンスへ正常に処理を引き継ぐように修正され、不要な2重起動が防止されます。加えて、Claude Desktopプロキシがモデルカタログの更新時に既存の処理中リクエストを割り込み停止させないよう改善が行われています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-28-eff947dca99a",
       "date": "2026-08-28",
