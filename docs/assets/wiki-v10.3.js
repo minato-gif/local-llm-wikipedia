@@ -146,7 +146,7 @@
   const app = document.querySelector("#app");
   if (app) {
     const observer = new MutationObserver(scheduleApply);
-    observer.observe(app, {childList:true, subtree:true});
+    observer.observe(app, {childList:true});
   }
 
   window.addEventListener("hashchange", ()=>setTimeout(applyResearchStatus, 0));
