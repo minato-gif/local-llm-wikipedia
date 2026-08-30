@@ -118,7 +118,11 @@
     "https://huggingface.co/Q1ngMang/Ling-3.0-tiny-sub3bit-PPLp10-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10698",
     "https://huggingface.co/mradermacher/Tema_Q-X7-Thinking-i1-GGUF",
-    "https://huggingface.co/mradermacher/Agens-Pilot-GGUF"
+    "https://huggingface.co/mradermacher/Agens-Pilot-GGUF",
+    "https://huggingface.co/LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V11-GGUF",
+    "https://huggingface.co/tiyuvta/Qwen3.8-27B-NVFP4-MTP-GGUF",
+    "https://huggingface.co/steampunque/Qwen3.5-4B-MP-GGUF",
+    "https://huggingface.co/tiyuvta/Ornith-1.5-9B-NVFP4-MTP-GGUF"
   ],
   "entries": [
     {
@@ -155,11 +159,102 @@
         "library_name": "",
         "downloads": 5477,
         "likes": 10,
-        "last_modified": "2026-08-30T03:26:08.000Z",
+        "last_modified": "2026-08-30T15:16:18.000Z",
         "quantizations": [
-          "BF16"
+          "BF16",
+          "Q3_XL",
+          "Q2_K"
         ],
-        "gguf_file_count": 14,
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 1164010144,
+            "files": [
+              "GLM-5.3-Flash-mmproj-bf16.gguf"
+            ],
+            "size": "1.1 GB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 128259433120,
+            "files": [
+              "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00003-of-00003.gguf",
+              "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00001-of-00003.gguf",
+              "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00002-of-00003.gguf"
+            ],
+            "size": "119.5 GB"
+          },
+          {
+            "quantization": "Q3_XL",
+            "size_bytes": 154834543200,
+            "files": [
+              "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00004-of-00004.gguf",
+              "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00002-of-00004.gguf",
+              "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00003-of-00004.gguf",
+              "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00001-of-00004.gguf"
+            ],
+            "size": "144.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 9,
         "gguf_files": [
           {
             "name": "imatrix/GLM-5.3-Flash-imatrix.gguf",
@@ -175,73 +270,43 @@
           },
           {
             "name": "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00004-of-00004.gguf",
-            "quantization": "",
+            "quantization": "Q3_XL",
             "size_bytes": 5694702080,
             "size": "5.3 GB"
           },
           {
             "name": "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00003-of-00003.gguf",
-            "quantization": "",
+            "quantization": "Q2_K",
             "size_bytes": 29219030240,
             "size": "27.2 GB"
           },
           {
-            "name": "Q5_K_M/GLM-5.3-Flash-Q5_K_M-00005-of-00005.gguf",
-            "quantization": "",
-            "size_bytes": 44228408544,
-            "size": "41.2 GB"
-          },
-          {
-            "name": "Q5_K_M/GLM-5.3-Flash-Q5_K_M-00001-of-00005.gguf",
-            "quantization": "",
-            "size_bytes": 48354393088,
-            "size": "45.0 GB"
-          },
-          {
             "name": "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00001-of-00003.gguf",
-            "quantization": "",
+            "quantization": "Q2_K",
             "size_bytes": 49257746432,
             "size": "45.9 GB"
           },
           {
-            "name": "Q5_K_M/GLM-5.3-Flash-Q5_K_M-00003-of-00005.gguf",
-            "quantization": "",
-            "size_bytes": 49411449728,
-            "size": "46.0 GB"
-          },
-          {
-            "name": "Q5_K_M/GLM-5.3-Flash-Q5_K_M-00004-of-00005.gguf",
-            "quantization": "",
-            "size_bytes": 49411449728,
-            "size": "46.0 GB"
-          },
-          {
-            "name": "Q5_K_M/GLM-5.3-Flash-Q5_K_M-00002-of-00005.gguf",
-            "quantization": "",
-            "size_bytes": 49420463040,
-            "size": "46.0 GB"
-          },
-          {
             "name": "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00002-of-00004.gguf",
-            "quantization": "",
+            "quantization": "Q3_XL",
             "size_bytes": 49644428576,
             "size": "46.2 GB"
           },
           {
             "name": "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00003-of-00004.gguf",
-            "quantization": "",
+            "quantization": "Q3_XL",
             "size_bytes": 49653319264,
             "size": "46.2 GB"
           },
           {
             "name": "Q2_K-Q3_K-3.20bpw/GLM-5.3-Flash-Q2_K-Q3_K-3.20bpw-00002-of-00003.gguf",
-            "quantization": "",
+            "quantization": "Q2_K",
             "size_bytes": 49782656448,
             "size": "46.4 GB"
           },
           {
             "name": "Q3_XL-3.86bpw/GLM-5.3-Flash-Q3_XL-3.86bpw-00001-of-00004.gguf",
-            "quantization": "",
+            "quantization": "Q3_XL",
             "size_bytes": 49842093280,
             "size": "46.4 GB"
           }
@@ -249,7 +314,7 @@
         "hardware_hint": "確認できたGGUFのファイル容量は 488.9 MB〜46.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
         "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
       },
-      "enrichment_version": 10,
+      "enrichment_version": 101,
       "article_sections": [
         {
           "title": "何が公開された？",
@@ -261,7 +326,7 @@
         },
         {
           "title": "量子化・ファイル構成",
-          "text": "ファイル名から判別できた量子化は BF16。GGUFファイルは 14 件確認できました。"
+          "text": "ファイル名から判別できた量子化は BF16, Q3_XL, Q2_K。GGUFファイルは 9 件確認できました。"
         },
         {
           "title": "どんなPCなら使えそう？",
@@ -316,18 +381,134 @@
         "downloads": 7673,
         "likes": 11,
         "last_modified": "2026-08-30T12:51:55.000Z",
-        "quantizations": [],
+        "quantizations": [
+          "Q4_K_S",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 500340960,
+            "files": [
+              "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q4_K_S.gguf"
+            ],
+            "size": "477.2 MB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 614852064,
+            "files": [
+              "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q6_K.gguf"
+            ],
+            "size": "586.4 MB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 500340960,
+            "files": [
+              "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q4_K_S.gguf"
+            ],
+            "size": "477.2 MB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q6_K",
+            "size_bytes": 614852064,
+            "files": [
+              "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q6_K.gguf"
+            ],
+            "size": "586.4 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 500340960,
+            "files": [
+              "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q4_K_S.gguf"
+            ],
+            "size": "477.2 MB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_S",
+          "model_file_size_gib": 0.47,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
         "gguf_file_count": 9,
         "gguf_files": [
           {
             "name": "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q4_K_S.gguf",
-            "quantization": "",
+            "quantization": "Q4_K_S",
             "size_bytes": 500340960,
             "size": "477.2 MB"
           },
           {
             "name": "mmproj-Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-Q6_K.gguf",
-            "quantization": "",
+            "quantization": "Q6_K",
             "size_bytes": 614852064,
             "size": "586.4 MB"
           },
@@ -377,7 +558,7 @@
         "hardware_hint": "確認できたGGUFのファイル容量は 477.2 MB〜13.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
         "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
       },
-      "enrichment_version": 10,
+      "enrichment_version": 101,
       "article_sections": [
         {
           "title": "何が公開された？",
@@ -386,6 +567,10 @@
         {
           "title": "モデルの特徴",
           "text": "元モデルは DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_K_S, Q6_K。GGUFファイルは 9 件確認できました。"
         },
         {
           "title": "どんなPCなら使えそう？",
@@ -523,19 +708,137 @@
         "likes": 27,
         "last_modified": "2026-08-26T10:16:16.000Z",
         "quantizations": [
+          "Q4_0",
+          "Q8_0",
           "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 20053999104,
+            "files": [
+              "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf"
+            ],
+            "size": "18.7 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 35761208832,
+            "files": [
+              "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+            ],
+            "size": "33.3 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 67269353472,
+            "files": [
+              "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16.gguf",
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16.gguf"
+            ],
+            "size": "62.6 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_0",
+            "size_bytes": 20053999104,
+            "files": [
+              "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf"
+            ],
+            "size": "18.7 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 35761208832,
+            "files": [
+              "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+            ],
+            "size": "33.3 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_0",
+          "model_file_size_gib": 18.68,
+          "system_ram_min_gib": 23.5,
+          "system_ram_recommended_gib": 29.5,
+          "full_gpu_vram_rough_gib": 22.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
         ],
         "gguf_file_count": 6,
         "gguf_files": [
           {
             "name": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
-            "quantization": "",
+            "quantization": "Q4_0",
             "size_bytes": 1155907520,
             "size": "1.1 GB"
           },
           {
             "name": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
-            "quantization": "",
+            "quantization": "Q8_0",
             "size_bytes": 2175713216,
             "size": "2.0 GB"
           },
@@ -547,13 +850,13 @@
           },
           {
             "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
-            "quantization": "",
+            "quantization": "Q4_0",
             "size_bytes": 18898091584,
             "size": "17.6 GB"
           },
           {
             "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
-            "quantization": "",
+            "quantization": "Q8_0",
             "size_bytes": 33585495616,
             "size": "31.3 GB"
           },
@@ -567,7 +870,7 @@
         "hardware_hint": "確認できたGGUFのファイル容量は 1.1 GB〜58.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
         "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
       },
-      "enrichment_version": 10,
+      "enrichment_version": 101,
       "article_sections": [
         {
           "title": "何が公開された？",
@@ -579,7 +882,7 @@
         },
         {
           "title": "量子化・ファイル構成",
-          "text": "ファイル名から判別できた量子化は BF16。GGUFファイルは 6 件確認できました。"
+          "text": "ファイル名から判別できた量子化は Q4_0, Q8_0, BF16。GGUFファイルは 6 件確認できました。"
         },
         {
           "title": "どんなPCなら使えそう？",
