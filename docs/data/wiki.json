@@ -98,7 +98,23 @@
     "https://huggingface.co/leok7v/Ternary-Bonsai-1.7B-gguf",
     "https://huggingface.co/leok7v/Ternary-Bonsai-27B-gguf",
     "https://huggingface.co/mradermacher/neo-2-345M-C2-GGUF",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10681"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10681",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10697",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10696",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10695",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10694",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10693",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10692",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10691",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10690",
+    "https://huggingface.co/reaperdoesntknow/SMOLM2Prover-GGUF",
+    "https://huggingface.co/reaperdoesntknow/Qwen3.5-2B-CyberSec-GGUF",
+    "https://huggingface.co/reaperdoesntknow/Qwen3.5-0.8-Cyber-GGUF",
+    "https://huggingface.co/reaperdoesntknow/Qwen3-1.7B-Distilled-30B-A3B-SFT-GGUF",
+    "https://huggingface.co/reaperdoesntknow/Qwen3-1.7B-Coder-Distilled-SFT-GGUF",
+    "https://huggingface.co/reaperdoesntknow/Qwen3-0.6B-Distilled-30B-A3B-Thinking-SFT-GGUF",
+    "https://huggingface.co/reaperdoesntknow/DualMinded-Qwen3-1.7B-GGUF",
+    "https://huggingface.co/reaperdoesntknow/DualMind-TKD-Agentic-1.7B-GGUF"
   ],
   "entries": [
     {
