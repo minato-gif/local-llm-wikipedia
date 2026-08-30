@@ -1,0 +1,72 @@
+
+/* Local LLM Wiki v10.3.2 - research status compact layout */
+.research-status {
+  margin: 14px 0 20px;
+}
+
+.research-status .research-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.research-status .research-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin: 8px 0 12px;
+}
+
+.research-status .research-summary-item {
+  min-width: 0;
+}
+
+.research-status .research-summary-label {
+  display: block;
+  font-size: 0.82em;
+  opacity: 0.72;
+  margin-bottom: 2px;
+}
+
+.research-status .research-summary-value {
+  display: block;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.research-status .research-history-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 6px 12px;
+  margin-top: 5px;
+}
+
+.research-status .research-history-label {
+  font-weight: 600;
+}
+
+.research-status .research-latest {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(127,127,127,.45);
+}
+
+.research-status .research-latest-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .research-status .research-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .research-status .research-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-status .research-history-row {
+    grid-template-columns: 1fr;
+  }
+}
