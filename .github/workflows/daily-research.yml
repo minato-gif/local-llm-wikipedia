@@ -16,7 +16,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -33,6 +33,9 @@ jobs:
 
       - name: Research and update wiki
         run: python scripts/research.py
+
+      - name: Enrich model articles with primary metadata
+        run: python scripts/enrich.py
 
       - name: Curate important news and summarize in Japanese
         env:
