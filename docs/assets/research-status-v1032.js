@@ -1,39 +1,17 @@
-/* Local LLM Wiki v10.3.2 - research status layout only
- * Safe formatter: does not create/observe pages, does not use MutationObserver.
- * It only reformats an already-rendered .research-status box.
+/* Local LLM Wiki v10.3.2.1
+ * Safe research-status generator + compact layout.
+ * No MutationObserver. Finite retries only.
  */
 (()=>{
+  const MARK = "data-research-status-v10321";
+
   const escHtml = v => String(v ?? "").replace(/[&<>"']/g,c=>({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   }[c]));
 
-  function getCurrentData(){
-    const route = location.hash || "#/";
-    const maintenance = window.MAINTENANCE || {};
-    if (maintenance[route]) return maintenance[route];
+  const routeNow = () => location.hash || "#/";
 
-    if (route.startsWith("#/article/")) {
-      try {
-        const id = decodeURIComponent(route.split("/").slice(2).join("/"));
-        if (typeof DB !== "undefined" && DB && Array.isArray(DB.entries)) {
-          const e = DB.entries.find(x=>x && x.id===id && x.category==="モデル");
-          if (e) {
-            return {
-              first_published:e.first_published || e.date || "",
-              last_researched:e.last_researched || "",
-              last_updated:e.last_updated || e.date || "",
-              update_count:e.update_count || 0,
-              research_history:e.research_history || [],
-              latest_findings:e.latest_findings || ""
-            };
-          }
-        }
-      } catch (_) {}
-    }
-    return null;
-  }
-
-  function dates(history, changedOnly=false){
+  function historyDates(history, changedOnly=false){
     const xs=(Array.isArray(history)?history:[])
       .filter(x=>x && (!changedOnly || x.changed))
       .map(x=>x.date)
@@ -41,18 +19,44 @@
     return xs.length ? xs.join(" / ") : "なし";
   }
 
+  function staticData(){
+    const m=window.MAINTENANCE || {};
+    return m[routeNow()] || null;
+  }
+
+  function modelData(){
+    const route=routeNow();
+    if(!route.startsWith("#/article/")) return null;
+    try{
+      const id=decodeURIComponent(route.split("/").slice(2).join("/"));
+      if(typeof DB==="undefined" || !DB || !Array.isArray(DB.entries)) return null;
+      const e=DB.entries.find(x=>x && x.id===id && x.category==="モデル");
+      if(!e) return null;
+      return {
+        first_published:e.first_published || e.date || "",
+        last_researched:e.last_researched || "",
+        last_updated:e.last_updated || e.date || "",
+        update_count:e.update_count || 0,
+        research_history:e.research_history || [],
+        latest_findings:e.latest_findings || ""
+      };
+    }catch(_){
+      return null;
+    }
+  }
+
+  function currentData(){
+    return staticData() || modelData();
+  }
+
   function value(v, fallback="未実施"){
     return v ? escHtml(v) : fallback;
   }
 
-  function formatExistingStatus(){
-    const box=document.querySelector("#app .research-status");
-    if(!box || box.dataset.compactLayout==="1") return;
-
-    const d=getCurrentData();
-    if(!d) return;
-
-    box.dataset.compactLayout="1";
+  function makeBox(d){
+    const box=document.createElement("div");
+    box.className="notice research-status";
+    box.setAttribute(MARK,"1");
     box.innerHTML=`
       <div class="research-title">継続調査ステータス</div>
 
@@ -77,11 +81,12 @@
 
       <div class="research-history-row">
         <div class="research-history-label">追加調査</div>
-        <div>${escHtml(dates(d.research_history,false))}</div>
+        <div>${escHtml(historyDates(d.research_history,false))}</div>
       </div>
+
       <div class="research-history-row">
         <div class="research-history-label">追加更新</div>
-        <div>${escHtml(dates(d.research_history,true))}</div>
+        <div>${escHtml(historyDates(d.research_history,true))}</div>
       </div>
 
       ${d.latest_findings ? `
@@ -90,16 +95,70 @@
           <div>${escHtml(d.latest_findings)}</div>
         </div>` : ""}
     `;
+    return box;
   }
 
-  function run(){
-    setTimeout(formatExistingStatus, 0);
-    setTimeout(formatExistingStatus, 120);
-    setTimeout(formatExistingStatus, 500);
+  function clearBoxes(){
+    document.querySelectorAll(`[${MARK}], #app .research-status`).forEach(x=>x.remove());
   }
 
-  window.addEventListener("hashchange", run);
-  window.addEventListener("pageshow", run);
-  document.addEventListener("DOMContentLoaded", run);
-  run();
+  function renderStatus(){
+    const app=document.querySelector("#app");
+    if(!app) return false;
+
+    const article=app.querySelector(".article");
+    if(!article) return false;
+
+    const data=currentData();
+
+    clearBoxes();
+    if(!data) return true;
+
+    const box=makeBox(data);
+
+    const meta=article.querySelector(":scope > .meta");
+    if(meta){
+      meta.insertAdjacentElement("afterend",box);
+      return true;
+    }
+
+    const h1=article.querySelector(":scope > h1");
+    if(h1){
+      h1.insertAdjacentElement("afterend",box);
+      return true;
+    }
+
+    article.prepend(box);
+    return true;
+  }
+
+  let retryToken=0;
+
+  function scheduleRender(){
+    const token=++retryToken;
+    let tries=0;
+
+    const attempt=()=>{
+      if(token!==retryToken) return;
+      tries++;
+
+      const done=renderStatus();
+      if(!done && tries<20){
+        setTimeout(attempt,250);
+      }
+    };
+
+    setTimeout(attempt,0);
+  }
+
+  // wiki.js has already registered its hashchange handler before this file loads.
+  // We run after it via setTimeout, with finite retries for the initial async DB fetch.
+  window.addEventListener("hashchange",scheduleRender);
+  window.addEventListener("pageshow",scheduleRender);
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",scheduleRender,{once:true});
+  }else{
+    scheduleRender();
+  }
 })();
