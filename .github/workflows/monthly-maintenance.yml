@@ -1,0 +1,53 @@
+name: Monthly Wiki Maintenance
+
+on:
+  schedule:
+    # 毎月1日 00:30 UTC = 09:30 JST
+    - cron: "30 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-local-llm-wiki-maintenance
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Review evergreen pages
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python scripts/monthly_refresh.py
+
+      - name: Validate wiki data
+        run: python scripts/healthcheck.py
+
+      - name: Commit maintenance changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No maintenance changes."
+            exit 0
+          fi
+          git config user.name "local-llm-wiki-bot"
+          git config user.email "local-llm-wiki-bot@users.noreply.github.com"
+          git add docs/data/maintenance.js
+          git commit -m "docs: periodic wiki maintenance $(date -u +%F)"
+          git push
