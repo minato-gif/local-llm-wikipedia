@@ -124,9 +124,462 @@
     "https://huggingface.co/steampunque/Qwen3.5-4B-MP-GGUF",
     "https://huggingface.co/tiyuvta/Ornith-1.5-9B-NVFP4-MTP-GGUF",
     "https://huggingface.co/LuffyTheFox/Tiel-Coder-35B-A3B-Genesis-Hermes-GGUF",
-    "https://huggingface.co/mradermacher/Big-Randy-NSFW-14B-GGUF"
+    "https://huggingface.co/mradermacher/Big-Randy-NSFW-14B-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10705",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10704",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10703",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10702",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10701",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10700",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10699",
+    "https://huggingface.co/mradermacher/FableOpus-9B-Linear-GGUF",
+    "https://huggingface.co/mradermacher/FableOpus-9B-TIES-GGUF",
+    "https://huggingface.co/mradermacher/FableOpus-9B-Delta-GGUF",
+    "https://huggingface.co/wacomctl672/Nemotron-3-Nano-Omni-30B-Abliterated-MM-GGUF",
+    "https://huggingface.co/mradermacher/Parable-Nanbeige4.2-3B-Claude-Fable-5-heretic-GGUF",
+    "https://huggingface.co/mradermacher/LFM2-2.6B-Longevity-GGUF",
+    "https://huggingface.co/AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-08-31-60d253390f3a",
+      "date": "2026-08-31",
+      "title": "Nemotron-3-Nano-Omni-30B系モデルのGGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/wacomctl672/Nemotron-3-Nano-Omni-30B-Abliterated-MM-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Nemotron-3-Nano-Omni-30BをベースにしたAbliteratedマルチモーダルモデルのGGUF量子化版が公開されました。Q4_K_MやQ8_0などの量子化フォーマットが提供されています。",
+      "impact": "NVIDIAのNemotron系モデルをローカル環境で実行する際の選択肢を広げ、コンシューマー向けGPUでのマルチモーダル推論を容易にします。",
+      "details": "divinetribe/Nemotron-3-Nano-Omni-30B-Abliterated-MM-bf16をベースとしたGGUF形式の量子化モデルです。Q4_K_M（ファイルサイズ約22.83GB、推奨システムメモリ35.0GB）およびQ8_0が用意されており、ggml-orgのq8_0用mmprojを用いたマルチモーダル機能のテストが行われています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "license:other",
+        "endpoints_compatible",
+        "region:us",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "wacomctl672/Nemotron-3-Nano-Omni-30B-Abliterated-MM-GGUF",
+        "author": "wacomctl672",
+        "license": "other",
+        "base_model": "divinetribe/Nemotron-3-Nano-Omni-30B-Abliterated-MM-bf16",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 655,
+        "likes": 0,
+        "last_modified": "2026-08-31T00:09:21.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 24515133824,
+            "files": [
+              "nemotron-omni-abliterated-q4_k_m.gguf"
+            ],
+            "size": "22.8 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 33585499520,
+            "files": [
+              "nemotron-omni-q8_0.gguf"
+            ],
+            "size": "31.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 24515133824,
+            "files": [
+              "nemotron-omni-abliterated-q4_k_m.gguf"
+            ],
+            "size": "22.8 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 33585499520,
+            "files": [
+              "nemotron-omni-q8_0.gguf"
+            ],
+            "size": "31.3 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 24515133824,
+            "files": [
+              "nemotron-omni-abliterated-q4_k_m.gguf"
+            ],
+            "size": "22.8 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 22.83,
+          "system_ram_min_gib": 28.5,
+          "system_ram_recommended_gib": 35.0,
+          "full_gpu_vram_rough_gib": 27.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "nemotron-omni-abliterated-q4_k_m.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 24515133824,
+            "size": "22.8 GB"
+          },
+          {
+            "name": "nemotron-omni-q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 33585499520,
+            "size": "31.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 22.8 GB〜31.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「wacomctl672/Nemotron-3-Nano-Omni-30B-Abliterated-MM-GGUF」が更新されています。確認時点の指標は downloads=655、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは divinetribe/Nemotron-3-Nano-Omni-30B-Abliterated-MM-bf16。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_K_M, Q8_0。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 22.8 GB〜31.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-08-31-0da4e0f6647b",
+      "date": "2026-08-31",
+      "title": "GLM-5.3-Flash-UNCENSOREDのGGUF量子化版が登場",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "GLM-5.3-Flash-UNCENSORED-FP8をベースにしたGGUF量子化モデルが公開されました。Q2_K_XL、Q3_K_XL、Q4_K_XLなどの量子化フォーマットが含まれています。",
+      "impact": "最新のGLMシリーズのアンサンスレッド版をローカルのllama.cppエコシステムで利用できるようにするモデルです。",
+      "details": "dealignai/GLM-5.3-Flash-UNCENSORED-FP8を元に変換されたGGUFモデルです。利用時にはUnslothによるllama.cppの特定ブランチ（glm5next/upstream）の利用が指定されており、カスタム環境での動作を前提としています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "endpoints_compatible",
+        "region:us",
+        "imatrix",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF",
+        "author": "AliceThirty",
+        "license": "",
+        "base_model": "dealignai/GLM-5.3-Flash-UNCENSORED-FP8",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 141,
+        "likes": 3,
+        "last_modified": "2026-08-30T23:20:01.000Z",
+        "quantizations": [
+          "Q3_K_XL",
+          "Q4_K_XL",
+          "Q2_K_XL"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_K_XL",
+            "size_bytes": 108692267872,
+            "files": [
+              "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00003-of-00003.gguf",
+              "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00001-of-00003.gguf",
+              "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00002-of-00003.gguf"
+            ],
+            "size": "101.2 GB"
+          },
+          {
+            "quantization": "Q3_K_XL",
+            "size_bytes": 147288966080,
+            "files": [
+              "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00004-of-00004.gguf",
+              "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00002-of-00004.gguf",
+              "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00003-of-00004.gguf",
+              "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00001-of-00004.gguf"
+            ],
+            "size": "137.2 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 199931700352,
+            "files": [
+              "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00005-of-00005.gguf",
+              "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00001-of-00005.gguf",
+              "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00003-of-00005.gguf",
+              "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00002-of-00005.gguf",
+              "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00004-of-00005.gguf"
+            ],
+            "size": "186.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 12,
+        "gguf_files": [
+          {
+            "name": "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00004-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 2149650656,
+            "size": "2.0 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00005-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 5962727680,
+            "size": "5.6 GB"
+          },
+          {
+            "name": "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00003-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 11219966752,
+            "size": "10.4 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00001-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 47750338048,
+            "size": "44.5 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00002-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 48246754720,
+            "size": "44.9 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00003-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 48305374944,
+            "size": "45.0 GB"
+          },
+          {
+            "name": "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00001-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 48473045248,
+            "size": "45.1 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00003-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 48497855328,
+            "size": "45.2 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q3_K_XL-00001-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 48587185760,
+            "size": "45.3 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00002-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 48769328032,
+            "size": "45.4 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q4_K_XL-00004-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 48951451264,
+            "size": "45.6 GB"
+          },
+          {
+            "name": "UD-Q2_K_XL/GLM-5.3-Flash-UNCENSORED-FP8-UD-Q2_K_XL-00002-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 48999255872,
+            "size": "45.6 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 2.0 GB〜45.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF」が更新されています。確認時点の指標は downloads=141、likes=3 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは dealignai/GLM-5.3-Flash-UNCENSORED-FP8。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q3_K_XL, Q4_K_XL, Q2_K_XL。GGUFファイルは 12 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 2.0 GB〜45.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-30-c521eedfedc4",
       "date": "2026-08-30",
