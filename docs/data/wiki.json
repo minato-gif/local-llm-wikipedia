@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-08-31"
+    "last_updated": "2026-09-01"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -138,7 +138,23 @@
     "https://huggingface.co/wacomctl672/Nemotron-3-Nano-Omni-30B-Abliterated-MM-GGUF",
     "https://huggingface.co/mradermacher/Parable-Nanbeige4.2-3B-Claude-Fable-5-heretic-GGUF",
     "https://huggingface.co/mradermacher/LFM2-2.6B-Longevity-GGUF",
-    "https://huggingface.co/AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF"
+    "https://huggingface.co/AliceThirty/GLM-5.3-Flash-UNCENSORED-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10729",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10728",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10727",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10726",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10724",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10723",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10721",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10720",
+    "https://lmstudio.ai/changelog/bionic-v1.1.1",
+    "https://huggingface.co/blog/joelniklaus/technical-writing-in-the-agentic-era",
+    "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+    "https://huggingface.co/mradermacher/Qwen3.5-9B-abliterated-i1-GGUF",
+    "https://huggingface.co/mradermacher/Qwen3.5-9B-abliterated-GGUF",
+    "https://huggingface.co/AnonimousA/Qwen3.8-Flash-Next-REAP-320-GGUF",
+    "https://huggingface.co/NamanAgnih0tri/AlphaRoute-0.8B-v1.0-GGUF",
+    "https://huggingface.co/L-Alchemyst/GLM-5.3-GGUF"
   ],
   "entries": [
     {
