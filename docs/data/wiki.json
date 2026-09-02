@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-01"
+    "last_updated": "2026-09-02"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -154,9 +154,47 @@
     "https://huggingface.co/mradermacher/Qwen3.5-9B-abliterated-GGUF",
     "https://huggingface.co/AnonimousA/Qwen3.8-Flash-Next-REAP-320-GGUF",
     "https://huggingface.co/NamanAgnih0tri/AlphaRoute-0.8B-v1.0-GGUF",
-    "https://huggingface.co/L-Alchemyst/GLM-5.3-GGUF"
+    "https://huggingface.co/L-Alchemyst/GLM-5.3-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10752",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10751",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10750",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10749",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10743",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10742",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10741",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10740",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.3-rc0",
+    "https://huggingface.co/blog/TechforHumans/evaluating-llms-under-production-parity",
+    "https://huggingface.co/blog/not-lain/kv-caching",
+    "https://huggingface.co/mradermacher/Qwen3.5-4B-abliterated-GGUF",
+    "https://huggingface.co/ewinregirgojr/Qwen3.8-19B-Pruned-GGUF",
+    "https://huggingface.co/Ttimms/Bible-Assistant-Qwen3.5-4B-v2-GGUF",
+    "https://huggingface.co/Ttimms/Ornith-1.5-35B-A3B-REAP-50-GGUF",
+    "https://huggingface.co/SZLHOLDINGS/SZL-Khipu-1.5B-GGUF",
+    "https://huggingface.co/Ttimms/KAT-Coder-V2.5-Dev-REAP-50-GGUF",
+    "https://huggingface.co/mradermacher/Qwen3.5-4B-abliterated-i1-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-09-02-cb158ba7cb7e",
+      "date": "2026-09-02",
+      "title": "Ollama v0.33.3-rc0リリース：GGUFモデルのデフォルトパラメータ適用をサポート",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.33.3-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaの新しいリリース候補版となるv0.33.3-rc0が公開されました。本バージョンでは、GGUFモデル側で定義されたデフォルトパラメータが正常に反映されるように改善されています。また、内部のMLXやllama.cpp関連コンポーネントのアップデートも含まれています。",
+      "impact": "Ollamaを利用したローカル推論において、GGUFファイルに埋め込まれた設定値がより正確に適用されるようになり、モデル管理の利便性が向上します。",
+      "details": "Ollama v0.33.3-rc0がGitHub Releasesにて公開されました。主な変更点として、GGUFモデル形式内で定義されているデフォルトパラメータを正しく尊重する挙動へと修正されています。さらに、Apple Silicon向けのMLXや、バックエンドの推論エンジンであるllama.cppなどの主要依存ライブラリの更新が実施されており、全体的な互換性と安定性の向上が図られています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-08-31-60d253390f3a",
       "date": "2026-08-31",
