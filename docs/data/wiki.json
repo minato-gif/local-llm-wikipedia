@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-02"
+    "last_updated": "2026-09-03"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -172,9 +172,426 @@
     "https://huggingface.co/Ttimms/Ornith-1.5-35B-A3B-REAP-50-GGUF",
     "https://huggingface.co/SZLHOLDINGS/SZL-Khipu-1.5B-GGUF",
     "https://huggingface.co/Ttimms/KAT-Coder-V2.5-Dev-REAP-50-GGUF",
-    "https://huggingface.co/mradermacher/Qwen3.5-4B-abliterated-i1-GGUF"
+    "https://huggingface.co/mradermacher/Qwen3.5-4B-abliterated-i1-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10772",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10771",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10770",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10769",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10767",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10766",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10764",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10763",
+    "https://huggingface.co/blog/KangLiao/puffin-world",
+    "https://huggingface.co/RobinsonLabs/Qwen3.6-35B-A3B-abliterated-GGUF",
+    "https://huggingface.co/peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF",
+    "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+    "https://huggingface.co/ricer0ll/Miko-v1-m7-GGUF",
+    "https://huggingface.co/AbteeXAILab/lumynax-reasoning-deepseek-r1-qwen-7b-gguf",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.3-rc2"
   ],
   "entries": [
+    {
+      "id": "2026-09-03-02a5a777f8c0",
+      "date": "2026-09-03",
+      "title": "Dirk-Qwen3.8-27B-GGUFの公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Qwen3.8-27BをベースにしたGGUFフォーマットの量子化モデル「Dirk-Qwen3.8-27B-GGUF」が公開されました。多様な量子化オプションを取り揃え、Hugging Face上で多くのダウンロード数を集めています。",
+      "impact": "ローカル環境でQwen3.8-27B系列の高精度な推論やエージェント開発を行う際の選択肢を広げます。",
+      "details": "peculiar-ragdollにより公開された本モデルは、Apache-2.0ライセンスの下で提供されており、F16から各種IQ量子化、Q4_K_Sなど多数の量子化バリエーションが用意されています。Q4_K_S構成では約14.3GBのファイルサイズとなっており、一般的なローカル環境での実行が可能です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "qwen3_5",
+        "qwen3.8",
+        "mtp",
+        "speculative-decoding",
+        "token-efficient",
+        "agentic-coding"
+      ],
+      "model_meta": {
+        "model_id": "peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF",
+        "author": "peculiar-ragdoll",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 41121,
+        "likes": 143,
+        "last_modified": "2026-09-02T23:50:01.000Z",
+        "quantizations": [
+          "F16",
+          "IQ2_XS",
+          "IQ2_S",
+          "Q2_K_XL",
+          "IQ3_XXS",
+          "IQ3_S",
+          "Q3_K_XL",
+          "IQ4_XS",
+          "Q4_K_S",
+          "Q4_K_XL",
+          "Q5_K_XL",
+          "Q6_K",
+          "Q6_K_XL",
+          "Q8_K_L",
+          "Q8_K_XL"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 927607488,
+            "files": [
+              "mmproj-F16.gguf"
+            ],
+            "size": "884.6 MB"
+          },
+          {
+            "quantization": "IQ2_XS",
+            "size_bytes": 8771332416,
+            "files": [
+              "Dirk-Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf"
+            ],
+            "size": "8.2 GB"
+          },
+          {
+            "quantization": "IQ2_S",
+            "size_bytes": 9608001856,
+            "files": [
+              "Dirk-Qwen3.8-27B-GSQ-RCO-IQ2_S.gguf"
+            ],
+            "size": "8.9 GB"
+          },
+          {
+            "quantization": "Q2_K_XL",
+            "size_bytes": 9829000736,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q2_K_XL.gguf"
+            ],
+            "size": "9.2 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 10442848576,
+            "files": [
+              "Dirk-Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf"
+            ],
+            "size": "9.7 GB"
+          },
+          {
+            "quantization": "IQ3_S",
+            "size_bytes": 12120037696,
+            "files": [
+              "Dirk-Qwen3.8-27B-GSQ-RCO-IQ3_S.gguf"
+            ],
+            "size": "11.3 GB"
+          },
+          {
+            "quantization": "Q3_K_XL",
+            "size_bytes": 13146412576,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q3_K_XL.gguf"
+            ],
+            "size": "12.2 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 14252865056,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-IQ4_XS.gguf"
+            ],
+            "size": "13.3 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 15358232096,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q4_K_S.gguf"
+            ],
+            "size": "14.3 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 17559197216,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q4_K_XL.gguf"
+            ],
+            "size": "16.4 GB"
+          },
+          {
+            "quantization": "Q5_K_XL",
+            "size_bytes": 20876957216,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q5_K_XL.gguf"
+            ],
+            "size": "19.4 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 21983696416,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q6_K.gguf"
+            ],
+            "size": "20.5 GB"
+          },
+          {
+            "quantization": "Q6_K_XL",
+            "size_bytes": 25299080736,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q6_K_XL.gguf"
+            ],
+            "size": "23.6 GB"
+          },
+          {
+            "quantization": "Q8_K_L",
+            "size_bytes": 28045714976,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q8_K_L.gguf"
+            ],
+            "size": "26.1 GB"
+          },
+          {
+            "quantization": "Q8_K_XL",
+            "size_bytes": 31458010752,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q8_K_XL.gguf"
+            ],
+            "size": "29.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 15358232096,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q4_K_S.gguf"
+            ],
+            "size": "14.3 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q6_K",
+            "size_bytes": 21983696416,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-Q6_K.gguf"
+            ],
+            "size": "20.5 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 14252865056,
+            "files": [
+              "Dirk-Qwen3.8-27B-UD-IQ4_XS.gguf"
+            ],
+            "size": "13.3 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_S",
+          "model_file_size_gib": 14.3,
+          "system_ram_min_gib": 18.5,
+          "system_ram_recommended_gib": 23.5,
+          "full_gpu_vram_rough_gib": 17.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカード内にLM Studio関連記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "MLX",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 15,
+        "gguf_files": [
+          {
+            "name": "mmproj-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 927607488,
+            "size": "884.6 MB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf",
+            "quantization": "IQ2_XS",
+            "size_bytes": 8771332416,
+            "size": "8.2 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-GSQ-RCO-IQ2_S.gguf",
+            "quantization": "IQ2_S",
+            "size_bytes": 9608001856,
+            "size": "8.9 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q2_K_XL.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 9829000736,
+            "size": "9.2 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 10442848576,
+            "size": "9.7 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-GSQ-RCO-IQ3_S.gguf",
+            "quantization": "IQ3_S",
+            "size_bytes": 12120037696,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q3_K_XL.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 13146412576,
+            "size": "12.2 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 14252865056,
+            "size": "13.3 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 15358232096,
+            "size": "14.3 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q4_K_XL.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 17559197216,
+            "size": "16.4 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q5_K_XL.gguf",
+            "quantization": "Q5_K_XL",
+            "size_bytes": 20876957216,
+            "size": "19.4 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 21983696416,
+            "size": "20.5 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q6_K_XL.gguf",
+            "quantization": "Q6_K_XL",
+            "size_bytes": 25299080736,
+            "size": "23.6 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q8_K_L.gguf",
+            "quantization": "Q8_K_L",
+            "size_bytes": 28045714976,
+            "size": "26.1 GB"
+          },
+          {
+            "name": "Dirk-Qwen3.8-27B-UD-Q8_K_XL.gguf",
+            "quantization": "Q8_K_XL",
+            "size_bytes": 31458010752,
+            "size": "29.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 884.6 MB〜29.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF」が更新されています。確認時点の指標は downloads=41,121、likes=143 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は F16, IQ2_XS, IQ2_S, Q2_K_XL, IQ3_XXS, IQ3_S, Q3_K_XL, IQ4_XS, Q4_K_S, Q4_K_XL, Q5_K_XL, Q6_K, Q6_K_XL, Q8_K_L, Q8_K_XL。GGUFファイルは 15 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 884.6 MB〜29.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-02-cb158ba7cb7e",
       "date": "2026-09-02",
