@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-03"
+    "last_updated": "2026-09-04"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -187,9 +187,792 @@
     "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
     "https://huggingface.co/ricer0ll/Miko-v1-m7-GGUF",
     "https://huggingface.co/AbteeXAILab/lumynax-reasoning-deepseek-r1-qwen-7b-gguf",
-    "https://github.com/ollama/ollama/releases/tag/v0.33.3-rc2"
+    "https://github.com/ollama/ollama/releases/tag/v0.33.3-rc2",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10793",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10792",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10791",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10790",
+    "https://huggingface.co/unsloth/DeepSeek-V4-Flash-Vision-Exp-GGUF",
+    "https://huggingface.co/mradermacher/GoldDiamondGold-Abliterated-L33-70b-i1-GGUF",
+    "https://huggingface.co/abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10786",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10785",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10784",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10783",
+    "https://github.com/ollama/ollama/releases/tag/v0.33.3"
   ],
   "entries": [
+    {
+      "id": "2026-09-04-a44f5acb0954",
+      "date": "2026-09-02",
+      "title": "Ollama v0.33.3リリース：Gemma4のMLX画像・音声対応とキャッシュトークン報告機能を追加",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.33.3",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaのv0.33.3がリリースされました。MLXエンジンにおけるgemma4の画像・音声対応、プロンプトのキャッシュトークン報告、GGUFモデルのデフォルトパラメータの尊重などが含まれています。",
+      "impact": "Apple Silicon（MLX）環境でのマルチモーダル利用の強化や、キャッシュ効率の可視化、GGUFモデルの運用性向上が図られています。",
+      "details": "Ollama v0.33.3では、MLXエンジンでのgemma4による画像および音声処理がサポートされました。また、プロンプトのキャッシュトークン数の報告機能や、GGUFモデル内で定義されたデフォルトパラメータを正しく反映する修正が行われています。さらに、MLX、MLX-C、およびllama.cppのコンポーネントが更新され、全体的な安定性と互換性が改善されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-04-07014ff6e7da",
+      "date": "2026-09-04",
+      "title": "DeepSeek-V4-Flash-Vision-ExpのGGUF量子化モデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/unsloth/DeepSeek-V4-Flash-Vision-Exp-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Unslothによる「DeepSeek-V4-Flash-Vision-Exp-GGUF」が公開されました。多様な量子化フォーマット（IQ4_XSやQ4_K_XLなど）が用意され、ローカル環境での実行に対応しています。",
+      "impact": "大規模なビジョン言語モデルであるDeepSeek-V4-Flash-Vision-Expを、多様な量子化によってローカル環境で試行できるようになります。",
+      "details": "deepseek-aiのDeepSeek-V4-Flash-Vision-ExpをベースとしたGGUF量子化モデルです。UnslothのDynamic 3.0量子化技術を活用し、IQシリーズやQシリーズなどの豊富な量子化バリエーションが提供されています。モデルファイルサイズは約127.28 GiB（推奨量子化IQ4_XS）となっており、実行には十分なシステムメモリとVRAMの確保が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "unsloth",
+        "deepseek",
+        "license:mit",
+        "endpoints_compatible",
+        "region:us",
+        "imatrix"
+      ],
+      "model_meta": {
+        "model_id": "unsloth/DeepSeek-V4-Flash-Vision-Exp-GGUF",
+        "author": "unsloth",
+        "license": "mit",
+        "base_model": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "transformers",
+        "downloads": 2987,
+        "likes": 62,
+        "last_modified": "2026-09-04T00:41:59.000Z",
+        "quantizations": [
+          "Q4_K_XL",
+          "Q8_K_XL",
+          "IQ1_M",
+          "IQ1_S",
+          "IQ2_XXS",
+          "IQ3_S",
+          "IQ3_XXS",
+          "IQ4_XS",
+          "Q2_K_XL",
+          "Q3_K_XL",
+          "F16",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 933258432,
+            "files": [
+              "mmproj-F16.gguf"
+            ],
+            "size": "890.0 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 934462656,
+            "files": [
+              "mmproj-BF16.gguf"
+            ],
+            "size": "891.2 MB"
+          },
+          {
+            "quantization": "IQ1_S",
+            "size_bytes": 82438622112,
+            "files": [
+              "UD-IQ1_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_S-00001-of-00003.gguf",
+              "UD-IQ1_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_S-00003-of-00003.gguf",
+              "UD-IQ1_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_S-00002-of-00003.gguf"
+            ],
+            "size": "76.8 GB"
+          },
+          {
+            "quantization": "IQ1_M",
+            "size_bytes": 86867807104,
+            "files": [
+              "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00001-of-00003.gguf",
+              "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00003-of-00003.gguf",
+              "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00002-of-00003.gguf"
+            ],
+            "size": "80.9 GB"
+          },
+          {
+            "quantization": "IQ2_XXS",
+            "size_bytes": 90693012352,
+            "files": [
+              "UD-IQ2_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ2_XXS-00001-of-00003.gguf",
+              "UD-IQ2_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ2_XXS-00003-of-00003.gguf",
+              "UD-IQ2_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ2_XXS-00002-of-00003.gguf"
+            ],
+            "size": "84.5 GB"
+          },
+          {
+            "quantization": "Q2_K_XL",
+            "size_bytes": 96832555936,
+            "files": [
+              "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00001-of-00003.gguf",
+              "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00003-of-00003.gguf",
+              "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00002-of-00003.gguf"
+            ],
+            "size": "90.2 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 102999936000,
+            "files": [
+              "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00001-of-00004.gguf",
+              "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00004-of-00004.gguf",
+              "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00003-of-00004.gguf",
+              "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00002-of-00004.gguf"
+            ],
+            "size": "95.9 GB"
+          },
+          {
+            "quantization": "IQ3_S",
+            "size_bytes": 114391665664,
+            "files": [
+              "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00001-of-00004.gguf",
+              "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00004-of-00004.gguf",
+              "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00002-of-00004.gguf",
+              "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00003-of-00004.gguf"
+            ],
+            "size": "106.5 GB"
+          },
+          {
+            "quantization": "Q3_K_XL",
+            "size_bytes": 128206777376,
+            "files": [
+              "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00001-of-00004.gguf",
+              "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00004-of-00004.gguf",
+              "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00002-of-00004.gguf",
+              "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00003-of-00004.gguf"
+            ],
+            "size": "119.4 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 136662494240,
+            "files": [
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00001-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00004-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00002-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00003-of-00004.gguf"
+            ],
+            "size": "127.3 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 155095288672,
+            "files": [
+              "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00001-of-00005.gguf",
+              "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00005-of-00005.gguf",
+              "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00002-of-00005.gguf",
+              "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00003-of-00005.gguf",
+              "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00004-of-00005.gguf"
+            ],
+            "size": "144.4 GB"
+          },
+          {
+            "quantization": "Q8_K_XL",
+            "size_bytes": 161869663072,
+            "files": [
+              "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00001-of-00005.gguf",
+              "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00005-of-00005.gguf",
+              "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00002-of-00005.gguf",
+              "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00004-of-00005.gguf",
+              "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00003-of-00005.gguf"
+            ],
+            "size": "150.8 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 136662494240,
+            "files": [
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00001-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00004-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00002-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00003-of-00004.gguf"
+            ],
+            "size": "127.3 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 136662494240,
+            "files": [
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00001-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00004-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00002-of-00004.gguf",
+              "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00003-of-00004.gguf"
+            ],
+            "size": "127.3 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 127.28,
+          "system_ram_min_gib": 148.5,
+          "system_ram_recommended_gib": 176.0,
+          "full_gpu_vram_rough_gib": 147.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 40,
+        "gguf_files": [
+          {
+            "name": "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00001-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 5304960,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00001-of-00005.gguf",
+            "quantization": "Q8_K_XL",
+            "size_bytes": 5304960,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00001-of-00003.gguf",
+            "quantization": "IQ1_M",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ1_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_S-00001-of-00003.gguf",
+            "quantization": "IQ1_S",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ2_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ2_XXS-00001-of-00003.gguf",
+            "quantization": "IQ2_XXS",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00001-of-00004.gguf",
+            "quantization": "IQ3_S",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00001-of-00004.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00001-of-00004.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00001-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00001-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 5305248,
+            "size": "5.1 MB"
+          },
+          {
+            "name": "mmproj-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 933258432,
+            "size": "890.0 MB"
+          },
+          {
+            "name": "mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 934462656,
+            "size": "891.2 MB"
+          },
+          {
+            "name": "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00004-of-00004.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 4071015712,
+            "size": "3.8 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00005-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 7174505088,
+            "size": "6.7 GB"
+          },
+          {
+            "name": "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00005-of-00005.gguf",
+            "quantization": "Q8_K_XL",
+            "size_bytes": 13481997024,
+            "size": "12.6 GB"
+          },
+          {
+            "name": "UD-IQ3_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_S-00004-of-00004.gguf",
+            "quantization": "IQ3_S",
+            "size_bytes": 14760026240,
+            "size": "13.7 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00004-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 29317659776,
+            "size": "27.3 GB"
+          },
+          {
+            "name": "UD-IQ1_S/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_S-00003-of-00003.gguf",
+            "quantization": "IQ1_S",
+            "size_bytes": 32441484736,
+            "size": "30.2 GB"
+          },
+          {
+            "name": "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00003-of-00003.gguf",
+            "quantization": "IQ1_M",
+            "size_bytes": 37472629600,
+            "size": "34.9 GB"
+          },
+          {
+            "name": "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00004-of-00004.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 37620787776,
+            "size": "35.0 GB"
+          },
+          {
+            "name": "UD-IQ2_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ2_XXS-00003-of-00003.gguf",
+            "quantization": "IQ2_XXS",
+            "size_bytes": 41096508256,
+            "size": "38.3 GB"
+          },
+          {
+            "name": "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00003-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 47390237120,
+            "size": "44.1 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00002-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 48935523072,
+            "size": "45.6 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q4_K_XL-00003-of-00005.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 48980787136,
+            "size": "45.6 GB"
+          },
+          {
+            "name": "UD-Q8_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q8_K_XL-00002-of-00005.gguf",
+            "quantization": "Q8_K_XL",
+            "size_bytes": 49215492960,
+            "size": "45.8 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q3_K_XL-00002-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 49350774208,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "UD-IQ1_M/DeepSeek-V4-Flash-Vision-Exp-UD-IQ1_M-00002-of-00003.gguf",
+            "quantization": "IQ1_M",
+            "size_bytes": 49389872256,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "UD-IQ4_XS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ4_XS-00002-of-00004.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 49431060672,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "UD-Q2_K_XL/DeepSeek-V4-Flash-Vision-Exp-UD-Q2_K_XL-00002-of-00003.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 49437013568,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "UD-IQ3_XXS/DeepSeek-V4-Flash-Vision-Exp-UD-IQ3_XXS-00003-of-00004.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 49437886752,
+            "size": "46.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 5.1 MB〜46.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「unsloth/DeepSeek-V4-Flash-Vision-Exp-GGUF」が更新されています。確認時点の指標は downloads=2,987、likes=62 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは deepseek-ai/DeepSeek-V4-Flash-Vision-Exp。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_K_XL, Q8_K_XL, IQ1_M, IQ1_S, IQ2_XXS, IQ3_S, IQ3_XXS, IQ4_XS, Q2_K_XL, Q3_K_XL, F16, BF16。GGUFファイルは 40 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 5.1 MB〜46.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-04-bdfe8f1baa62",
+      "date": "2026-09-04",
+      "title": "K2-Horizon-MoVA-36B-A4BのGGUF量子化モデルが登場",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "IFMの長コンテキスト対応Mixture-of-Expertsモデル「K2-Horizon-MoVA-36B-A4B」のGGUF量子化版が公開されました。利用には対応ビルドのllama.cppフォークが必要です。",
+      "impact": "512kコンテキストをサポートする大型MoVAモデルをローカルで利用するための選択肢が広がりますが、アーキテクチャの特性上、専用のランタイム対応が求められます。",
+      "details": "abenzerpsにより公開された「K2-Horizon-MoVA-36B-A4B-GGUF」は、スパースMixture-of-Expertsアーキテクチャを採用した長コンテキストモデルの量子化版です。モデルファイルサイズはQ4_K_M量子化で約20.83 GiBとなっています。なお、K2 Horizonアーキテクチャの特殊性から、アップストリームにマージされるまではMBZUAI-IFMのllama.cppフォークを使用する必要があります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "k2-horizon",
+        "long-context",
+        "512k-context",
+        "mixture-of-experts",
+        "mova",
+        "text-generation"
+      ],
+      "model_meta": {
+        "model_id": "abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF",
+        "author": "abenzerps",
+        "license": "apache-2.0",
+        "base_model": "IFM/K2-Horizon-MoVA-36B-A4B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 0,
+        "likes": 3,
+        "last_modified": "2026-09-03T22:47:50.000Z",
+        "quantizations": [
+          "Q3_K_M",
+          "Q4_0",
+          "Q4_K_M",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 17661219936,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q3_K_M.gguf"
+            ],
+            "size": "16.4 GB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 21280078176,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q4_0.gguf"
+            ],
+            "size": "19.8 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 22368011616,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+            ],
+            "size": "20.8 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 26439456096,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q5_K_M.gguf"
+            ],
+            "size": "24.6 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 30765365856,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q6_K.gguf"
+            ],
+            "size": "28.7 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 39831174496,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q8_0.gguf"
+            ],
+            "size": "37.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 22368011616,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+            ],
+            "size": "20.8 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 26439456096,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q5_K_M.gguf"
+            ],
+            "size": "24.6 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q3_K_M",
+            "size_bytes": 17661219936,
+            "files": [
+              "K2-Horizon-MoVA-36B-A4B-Q3_K_M.gguf"
+            ],
+            "size": "16.4 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 20.83,
+          "system_ram_min_gib": 26.0,
+          "system_ram_recommended_gib": 32.5,
+          "full_gpu_vram_rough_gib": 25.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 17661219936,
+            "size": "16.4 GB"
+          },
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 21280078176,
+            "size": "19.8 GB"
+          },
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 22368011616,
+            "size": "20.8 GB"
+          },
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 26439456096,
+            "size": "24.6 GB"
+          },
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 30765365856,
+            "size": "28.7 GB"
+          },
+          {
+            "name": "K2-Horizon-MoVA-36B-A4B-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 39831174496,
+            "size": "37.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 16.4 GB〜37.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF」が更新されています。確認時点の指標は downloads=0、likes=3 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは IFM/K2-Horizon-MoVA-36B-A4B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q3_K_M, Q4_0, Q4_K_M, Q5_K_M, Q6_K, Q8_0。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 16.4 GB〜37.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-03-02a5a777f8c0",
       "date": "2026-09-03",
