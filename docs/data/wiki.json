@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-04"
+    "last_updated": "2026-09-05"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -199,9 +199,49 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10785",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10784",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10783",
-    "https://github.com/ollama/ollama/releases/tag/v0.33.3"
+    "https://github.com/ollama/ollama/releases/tag/v0.33.3",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.0",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10816",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10814",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10813",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10809",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10798",
+    "https://huggingface.co/blog/TheAgenticDataCompany/open-yap-1k",
+    "https://huggingface.co/mradermacher/Qwen3.5-122B-A10B-abliterated-v1-i1-GGUF",
+    "https://huggingface.co/MonsterMMORPG/Wan_GGUF",
+    "https://huggingface.co/NANI-Nithin/K2-Horizon-MoVA-36B-A4B-GGUF",
+    "https://huggingface.co/Brunobkr/OFFELLIA_insraq_LFM2.5-2.6B-heretic.gguf",
+    "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-RR-Abliterated-GGUF",
+    "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-DeepRefusal-Broken-GGUF",
+    "https://huggingface.co/mradermacher/Artemis-31B-v1h-GGUF-GGUF",
+    "https://huggingface.co/mradermacher/Artemis-31B-v1h-GGUF-i1-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10797",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10796"
   ],
   "entries": [
+    {
+      "id": "2026-09-05-00d687ad36ad",
+      "date": "2026-09-05",
+      "title": "llama.cpp v0.4.0がリリース、初期モデル対応やGGMLの更新を実施",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.0",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cppのバージョン0.4.0が公開され、Qwen3.8-Flash-NextやNemotron-3-Puzzleへの初期対応が行われました。また、GGMLが0.23.0に更新され、スパースFlash AttentionやRDMA関連の改善が含まれています。",
+      "impact": "主要な新モデルへの対応や推論ランタイムの基盤であるGGMLのアップデートが行われ、対応モデルの拡大と処理効率の向上が期待されます。",
+      "details": "llama.cpp v0.4.0では、新たにQwen3.8-Flash-NextやNemotron-3-Puzzleのサポートが追加されました。加えて、オンデマンドのテンソル読み込み、スロットごとのサーバーコンテキスト制限、動画入力オプションなどが導入されています。さらにGGMLが0.23.0へと更新され、スパースFlash AttentionやRDMAに関わる重要な変更が組み込まれており、APIの変更や量子化パラメータの追加なども行われています。",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "量子化",
+        "マルチモーダル",
+        "Context",
+        "Flash Attention"
+      ],
+      "curated": true,
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-04-a44f5acb0954",
       "date": "2026-09-02",
