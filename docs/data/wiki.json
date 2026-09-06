@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-05"
+    "last_updated": "2026-09-06"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -216,9 +216,36 @@
     "https://huggingface.co/mradermacher/Artemis-31B-v1h-GGUF-GGUF",
     "https://huggingface.co/mradermacher/Artemis-31B-v1h-GGUF-i1-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10797",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10796"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10796",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.0-rc1",
+    "https://huggingface.co/hexera-org/GmshNet-8B-v0.1-GGUF",
+    "https://huggingface.co/Jackrong/Qwopus3.8-27B-Flash-GGUF",
+    "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-RR-Abliterated-i1-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10819",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10818",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10817"
   ],
   "entries": [
+    {
+      "id": "2026-09-06-03689fae0369",
+      "date": "2026-09-06",
+      "title": "Ollama v0.34.0リリース：ChatGPT Desktop連携やApple Silicon向け最適化を追加",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.0-rc1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaの最新バージョンv0.34.0-rc1が公開されました。ChatGPT Desktopから直接Ollamaのモデルを利用できる機能がmacOS向けに追加されたほか、Apple Silicon環境での構造化出力性能の改善や、OpenAI互換クライアント向けの機能拡張が行われています。",
+      "impact": "macOSのChatGPT Desktopアプリから既存のワークフローを変えずにオープンモデルを利用可能になり、利便性が大幅に向上します。また、Apple Silicon環境での構造化出力のパフォーマンス改善や、画像処理の不具合修正が含まれています。",
+      "details": "Ollamaのv0.34.0-rc1では、ChatGPT Desktop内でのOllamaモデル直接利用がサポートされ、MacOS上のOllamaアプリから簡単にセットアップを行えます。さらに、Apple Siliconにおける構造化出力のパフォーマンス向上、OpenAI互換クライアント向けのツール検索とレスポンス圧縮への対応、および圧縮されたレスポンスを介した画像処理の修正が行われています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-05-00d687ad36ad",
       "date": "2026-09-05",
