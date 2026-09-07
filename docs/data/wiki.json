@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-06"
+    "last_updated": "2026-09-07"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -223,9 +223,544 @@
     "https://huggingface.co/mradermacher/Llama-3-8B-Instruct-RR-Abliterated-i1-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10819",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10818",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10817"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10817",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10830",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10829",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10828",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10827",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10826",
+    "https://huggingface.co/cdanis/Ornith-1.5-397B-GGUF-imatrix",
+    "https://huggingface.co/NANI-Nithin/Muse-Glimmer-30B-GGUF",
+    "https://huggingface.co/rahul7star/gemma-gguf",
+    "https://huggingface.co/Cyronius/Qwen3.8-Flash-Next-131B-A6B-GGUF",
+    "https://huggingface.co/wfakhri/OTel-2.0-LLM-31B-IT-GGUF",
+    "https://huggingface.co/fumetodev/Hy-MT2-1.8B-JP-Manga-Finetune-v5-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10825",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10823",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10822"
   ],
   "entries": [
+    {
+      "id": "2026-09-07-fac9520b3e7f",
+      "date": "2026-09-07",
+      "title": "Metaの30Bマルチモーダルモデル「Muse-Glimmer-30B」のGGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/NANI-Nithin/Muse-Glimmer-30B-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Metaのマルチモーダルモデル「Muse-Glimmer-30B」に対応するGGUF形式の量子化モデルが公開されました。F16から各種IQ量子化、Q4_K_Mなどの幅広い量子化バリエーションが提供され、ローカル環境での実行が可能になっています。",
+      "impact": "Metaのマルチモーダル大規模言語モデルを手元で実行できるようになり、画像理解や推論、コード生成などのタスクをローカル環境で検証することが容易になります。",
+      "details": "ライセンスはApache-2.0を採用しており、商用利用や改変を含めて柔軟な活用が可能です。推奨量子化であるQ4_K_Mでは、モデルファイルサイズが約15.77 GiBとなっており、動作には最低20.5 GiB、推奨25.5 GiBのシステムRAMが必要とされています。マルチモーダルや長コンテキスト、エージェント用途を想定したモデルのローカル運用において有用な選択肢となります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama.cpp",
+        "gguf",
+        "muse-glimmer",
+        "muse-glimmer-30b",
+        "llama-cpp",
+        "multimodal",
+        "vision-language-model",
+        "agentic-ai"
+      ],
+      "model_meta": {
+        "model_id": "NANI-Nithin/Muse-Glimmer-30B-GGUF",
+        "author": "NANI-Nithin",
+        "license": "apache-2.0",
+        "base_model": "meta-models/Muse-Glimmer-30B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "llama.cpp",
+        "downloads": 4927,
+        "likes": 4,
+        "last_modified": "2026-09-07T00:25:22.000Z",
+        "quantizations": [
+          "F16",
+          "Q1_0",
+          "IQ1_S",
+          "Q2_0",
+          "Q2_K_S",
+          "Q2_K",
+          "Q3_K_S",
+          "IQ3_M",
+          "Q3_K_M",
+          "Q3_K_L",
+          "IQ4_XS",
+          "Q4_0",
+          "Q4_K_S",
+          "IQ4_NL",
+          "Q4_K_M",
+          "Q4_1",
+          "Q5_0",
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q5_1"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q1_0",
+            "size_bytes": 4849682816,
+            "files": [
+              "Muse-Glimmer-30B-Q1_0.gguf"
+            ],
+            "size": "4.5 GB"
+          },
+          {
+            "quantization": "IQ1_S",
+            "size_bytes": 6526419072,
+            "files": [
+              "Muse-Glimmer-30B-IQ1_S.gguf"
+            ],
+            "size": "6.1 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 8955682688,
+            "files": [
+              "Muse-Glimmer-30B-Q2_0.gguf"
+            ],
+            "size": "8.3 GB"
+          },
+          {
+            "quantization": "Q2_K_S",
+            "size_bytes": 10027704704,
+            "files": [
+              "Muse-Glimmer-30B-Q2_K_S.gguf"
+            ],
+            "size": "9.3 GB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 10686701952,
+            "files": [
+              "Muse-Glimmer-30B-Q2_K.gguf"
+            ],
+            "size": "10.0 GB"
+          },
+          {
+            "quantization": "Q3_K_S",
+            "size_bytes": 12512312960,
+            "files": [
+              "Muse-Glimmer-30B-Q3_K_S.gguf"
+            ],
+            "size": "11.7 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 12818272704,
+            "files": [
+              "Muse-Glimmer-30B-IQ3_M.gguf"
+            ],
+            "size": "11.9 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 13680520832,
+            "files": [
+              "Muse-Glimmer-30B-Q3_K_M.gguf"
+            ],
+            "size": "12.7 GB"
+          },
+          {
+            "quantization": "Q3_K_L",
+            "size_bytes": 14682435200,
+            "files": [
+              "Muse-Glimmer-30B-Q3_K_L.gguf"
+            ],
+            "size": "13.7 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 15343029952,
+            "files": [
+              "Muse-Glimmer-30B-IQ4_XS.gguf"
+            ],
+            "size": "14.3 GB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 16032980544,
+            "files": [
+              "Muse-Glimmer-30B-Q4_0.gguf"
+            ],
+            "size": "14.9 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 16133513088,
+            "files": [
+              "Muse-Glimmer-30B-Q4_K_S.gguf"
+            ],
+            "size": "15.0 GB"
+          },
+          {
+            "quantization": "IQ4_NL",
+            "size_bytes": 16143733440,
+            "files": [
+              "Muse-Glimmer-30B-IQ4_NL.gguf"
+            ],
+            "size": "15.0 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16935291584,
+            "files": [
+              "Muse-Glimmer-30B-Q4_K_M.gguf"
+            ],
+            "size": "15.8 GB"
+          },
+          {
+            "quantization": "Q4_1",
+            "size_bytes": 17689765440,
+            "files": [
+              "Muse-Glimmer-30B-Q4_1.gguf"
+            ],
+            "size": "16.5 GB"
+          },
+          {
+            "quantization": "Q5_0",
+            "size_bytes": 19346550336,
+            "files": [
+              "Muse-Glimmer-30B-Q5_0.gguf"
+            ],
+            "size": "18.0 GB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 19346550656,
+            "files": [
+              "Muse-Glimmer-30B-Q5_K_S.gguf"
+            ],
+            "size": "18.0 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19811375808,
+            "files": [
+              "Muse-Glimmer-30B-Q5_K_M.gguf"
+            ],
+            "size": "18.5 GB"
+          },
+          {
+            "quantization": "Q5_1",
+            "size_bytes": 21003335232,
+            "files": [
+              "Muse-Glimmer-30B-Q5_1.gguf"
+            ],
+            "size": "19.6 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 22867215296,
+            "files": [
+              "Muse-Glimmer-30B-Q6_K.gguf"
+            ],
+            "size": "21.3 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 29612958144,
+            "files": [
+              "Muse-Glimmer-30B-Q8_0.gguf"
+            ],
+            "size": "27.6 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 55725514048,
+            "files": [
+              "Muse-Glimmer-30B-BF16.gguf"
+            ],
+            "size": "51.9 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 59572878720,
+            "files": [
+              "mmproj-Muse-Glimmer-30B-F16.gguf",
+              "Muse-Glimmer-30B-F16.gguf"
+            ],
+            "size": "55.5 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16935291584,
+            "files": [
+              "Muse-Glimmer-30B-Q4_K_M.gguf"
+            ],
+            "size": "15.8 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19811375808,
+            "files": [
+              "Muse-Glimmer-30B-Q5_K_M.gguf"
+            ],
+            "size": "18.5 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 12818272704,
+            "files": [
+              "Muse-Glimmer-30B-IQ3_M.gguf"
+            ],
+            "size": "11.9 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 15.77,
+          "system_ram_min_gib": 20.5,
+          "system_ram_recommended_gib": 25.5,
+          "full_gpu_vram_rough_gib": 19.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカード内にLM Studio関連記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "明示あり",
+            "basis": "モデルカード内にKoboldCpp関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "中",
+            "basis": "多言語対応の記載はありますが、日本語品質は個別確認が必要です。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 24,
+        "gguf_files": [
+          {
+            "name": "mmproj-Muse-Glimmer-30B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 3847367616,
+            "size": "3.6 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q1_0.gguf",
+            "quantization": "Q1_0",
+            "size_bytes": 4849682816,
+            "size": "4.5 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-IQ1_S.gguf",
+            "quantization": "IQ1_S",
+            "size_bytes": 6526419072,
+            "size": "6.1 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 8955682688,
+            "size": "8.3 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q2_K_S.gguf",
+            "quantization": "Q2_K_S",
+            "size_bytes": 10027704704,
+            "size": "9.3 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 10686701952,
+            "size": "10.0 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q3_K_S.gguf",
+            "quantization": "Q3_K_S",
+            "size_bytes": 12512312960,
+            "size": "11.7 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 12818272704,
+            "size": "11.9 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 13680520832,
+            "size": "12.7 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q3_K_L.gguf",
+            "quantization": "Q3_K_L",
+            "size_bytes": 14682435200,
+            "size": "13.7 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 15343029952,
+            "size": "14.3 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 16032980544,
+            "size": "14.9 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 16133513088,
+            "size": "15.0 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-IQ4_NL.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 16143733440,
+            "size": "15.0 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 16935291584,
+            "size": "15.8 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "size_bytes": 17689765440,
+            "size": "16.5 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "size_bytes": 19346550336,
+            "size": "18.0 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 19346550656,
+            "size": "18.0 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 19811375808,
+            "size": "18.5 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "size_bytes": 21003335232,
+            "size": "19.6 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 22867215296,
+            "size": "21.3 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 29612958144,
+            "size": "27.6 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 55725511104,
+            "size": "51.9 GB"
+          },
+          {
+            "name": "Muse-Glimmer-30B-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 55725514048,
+            "size": "51.9 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 3.6 GB〜51.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「NANI-Nithin/Muse-Glimmer-30B-GGUF」が更新されています。確認時点の指標は downloads=4,927、likes=4 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは meta-models/Muse-Glimmer-30B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は F16, Q1_0, IQ1_S, Q2_0, Q2_K_S, Q2_K, Q3_K_S, IQ3_M, Q3_K_M, Q3_K_L, IQ4_XS, Q4_0, Q4_K_S, IQ4_NL, Q4_K_M, Q4_1, Q5_0, Q5_K_S, Q5_K_M, Q5_1, Q6_K, Q8_0, BF16。GGUFファイルは 24 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 3.6 GB〜51.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-06-03689fae0369",
       "date": "2026-09-06",
