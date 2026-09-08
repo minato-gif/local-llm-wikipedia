@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-07"
+    "last_updated": "2026-09-08"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -237,7 +237,21 @@
     "https://huggingface.co/fumetodev/Hy-MT2-1.8B-JP-Manga-Finetune-v5-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10825",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10823",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10822"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10822",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10852",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10850",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10844",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10842",
+    "https://huggingface.co/blog/lucifertrj/turboquant-quantization-explained",
+    "https://huggingface.co/neureps/warmly-qwen35-2b-enko-gguf",
+    "https://huggingface.co/mradermacher/SignOfFour-i1-GGUF",
+    "https://huggingface.co/ewin-reg/WeMM-Embedding-2B-GGUF",
+    "https://huggingface.co/abenzerps/MiniCPM5-2B-GGUF",
+    "https://huggingface.co/tuanhdev/vidroidcall-qwen3-0.6B-nlu-gguf-v6",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10840",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10839",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10837",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10835"
   ],
   "entries": [
     {
