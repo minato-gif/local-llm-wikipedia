@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-08"
+    "last_updated": "2026-09-09"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -251,9 +251,339 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10840",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10839",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10837",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10835"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10835",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10867",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10865",
+    "https://lmstudio.ai/changelog/bionic-v1.1.2",
+    "https://huggingface.co/mradermacher/qwen-3.8-27b-abliterated-i1-GGUF",
+    "https://huggingface.co/professorf/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-gguf",
+    "https://huggingface.co/mradermacher/Muslim-6B-PRO-i1-GGUF",
+    "https://huggingface.co/TanMan138/functiongemma-270m-it-mrehab-ft-GGUF",
+    "https://huggingface.co/julianmb/Nex-N2.5-mini-ROCmFP4-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10864",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10863",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10859",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10858",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10857",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10856"
   ],
   "entries": [
+    {
+      "id": "2026-09-09-f623444cda89",
+      "date": "2026-09-09",
+      "title": "LM StudioのBionic 1.1.2がリリース",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.1.2",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "ローカルLLM向けの人気デスクトップクライアントであるLM Studioにおいて、Bionic v1.1.2が新たにリリースされました。本バージョンでは細かな機能改善や不具合の修正が行われており、ローカル環境でのモデル実行体験の向上が図られています。ユーザーは公式の変更履歴から詳細を確認してアップデートを行うことができます。",
+      "impact": "LM Studioを利用している開発者や一般ユーザーに対し、安定性の向上や操作性の改善を提供します。ローカルLLMの運用環境における利便性が高まります。",
+      "details": "LM Studioの更新版であるBionic v1.1.2が公開されました。公式ページ上で新しい更新内容が検出されており、ローカルLLMの実行や管理をより快適に行うための各種修正が含まれています。詳細な変更点や適用手順については公式のチェンジログを参照してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-09-19172aeb309b",
+      "date": "2026-09-09",
+      "title": "NVIDIA Nemotron-3.5-Lightning-30BのGGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/professorf/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-gguf",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "NVIDIAのNemotron-3.5-Lightning-30BをベースにしたGGUF形式の量子化モデルがHugging Faceに公開されました。研究再現性目的にて量子化されたものであり、Q2_KからQ8_0、BF16までの多様な量子化バリエーションが提供されています。",
+      "impact": "NVIDIAの主要モデルを手元のローカル環境で効率的に実行するための選択肢が広がります。多様な量子化フォーマットにより、ハードウェアリソースに応じた柔軟な運用が可能になります。",
+      "details": "研究再現性を目的として量子化されたNVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-ggufが公開されました。Q2_K、Q3_K_M、Q4_K_M、Q5_K_M、Q6_K、Q8_0、BF16などの量子化モデルが含まれており、推奨されるQ4_K_M構成では約23.68GiBのファイルサイズとなります。システム要件として、最小約29.5GiB、推奨約36.0GiBのシステムRAMが見込まれています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "nvidia",
+        "pytorch",
+        "nemotron-3.5",
+        "text-generation",
+        "en",
+        "es"
+      ],
+      "model_meta": {
+        "model_id": "professorf/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-gguf",
+        "author": "professorf",
+        "license": "other",
+        "base_model": "",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "transformers",
+        "downloads": 328,
+        "likes": 0,
+        "last_modified": "2026-09-09T00:56:15.000Z",
+        "quantizations": [
+          "Q2_K",
+          "Q3_K_M",
+          "Q4_K_M",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 18655807680,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q2_k.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 20680135104,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q3_k_m.gguf"
+            ],
+            "size": "19.3 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 25430739648,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q4_k_m.gguf"
+            ],
+            "size": "23.7 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 27040754880,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q5_k_m.gguf"
+            ],
+            "size": "25.2 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 34921148352,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q6_k.gguf"
+            ],
+            "size": "32.5 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 35004643008,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q8_0.gguf"
+            ],
+            "size": "32.6 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 65852184768,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-f16.gguf"
+            ],
+            "size": "61.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 25430739648,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q4_k_m.gguf"
+            ],
+            "size": "23.7 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 27040754880,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q5_k_m.gguf"
+            ],
+            "size": "25.2 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q3_K_M",
+            "size_bytes": 20680135104,
+            "files": [
+              "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q3_k_m.gguf"
+            ],
+            "size": "19.3 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 23.68,
+          "system_ram_min_gib": 29.5,
+          "system_ram_recommended_gib": 36.0,
+          "full_gpu_vram_rough_gib": 28.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          },
+          {
+            "name": "SGLang",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "高",
+            "basis": "日本語対応を示す記載があります。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 8,
+        "gguf_files": [
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q2_k.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 18655807680,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q3_k_m.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 20680135104,
+            "size": "19.3 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4.gguf",
+            "quantization": "",
+            "size_bytes": 22459680096,
+            "size": "20.9 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q4_k_m.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 25430739648,
+            "size": "23.7 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q5_k_m.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 27040754880,
+            "size": "25.2 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q6_k.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 34921148352,
+            "size": "32.5 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 35004643008,
+            "size": "32.6 GB"
+          },
+          {
+            "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-f16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 65852184768,
+            "size": "61.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 17.4 GB〜61.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「professorf/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16-gguf」が更新されています。確認時点の指標は downloads=328、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q2_K, Q3_K_M, Q4_K_M, Q5_K_M, Q6_K, Q8_0, BF16。GGUFファイルは 8 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 17.4 GB〜61.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-07-fac9520b3e7f",
       "date": "2026-09-07",
