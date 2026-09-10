@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-09"
+    "last_updated": "2026-09-10"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -265,9 +265,349 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10859",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10858",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10857",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10856"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10856",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10883",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10881",
+    "https://huggingface.co/ChrisColeTech/LTX-2.5-uncensored-v1.1-GGUF",
+    "https://huggingface.co/peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF",
+    "https://huggingface.co/peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP",
+    "https://huggingface.co/sigmanih/google-gemma-4-12B-it-GGUF-Q4_K_M",
+    "https://huggingface.co/sigmanih/Qwen3.8-27B-GGUF-Q4_K_S",
+    "https://huggingface.co/sigmanih/Qwen-Qwen2.5-Coder-14B-Instruct-GGUF-Q4_K_M",
+    "https://huggingface.co/sigmanih/sigma-alpaca-3b-gguf",
+    "https://huggingface.co/sigmanih/Qwen-Qwen3-0.6B-GGUF-Q4_K_S",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10878",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10877",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10876",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10875",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10874",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10873"
   ],
   "entries": [
+    {
+      "id": "2026-09-10-eb1f4d2fda1e",
+      "date": "2026-09-10",
+      "title": "Tiel-Coder-35B-A3B-GGUFの公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Ornith-1.5-35B-A3Bをベースにした動的量子化GGUFモデル「peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF」が公開されました。Hugging Face上で多数のダウンロードと高い評価を獲得しています。",
+      "impact": "プログラミングやエージェント用途に特化した大規模なGGUFモデルであり、ローカル環境での高度なコード生成や推論の検証に有用です。",
+      "details": "本モデルはMITライセンスの下で公開され、BF16から各種IQ/Qquantization（Q4_K_Sなど）までの幅広い量子化フォーマットが用意されています。推奨量子化であるQ4_K_Sでのモデルファイルサイズは約19.46 GiBとなっており、実行時には十分なシステムRAMおよびVRAMの確保が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "qwen35moe",
+        "moe",
+        "imatrix",
+        "unsloth-dynamic",
+        "agentic-coding",
+        "token-efficient"
+      ],
+      "model_meta": {
+        "model_id": "peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF",
+        "author": "peculiar-ragdoll",
+        "license": "mit",
+        "base_model": "ornith-ai/Ornith-1.5-35B-A3B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 282068,
+        "likes": 246,
+        "last_modified": "2026-09-09T23:49:51.000Z",
+        "quantizations": [
+          "BF16",
+          "Q2_K_XL",
+          "IQ3_XXS",
+          "Q3_K_XL",
+          "IQ4_XS",
+          "Q4_K_S",
+          "Q4_K_XL",
+          "Q5_K_XL",
+          "Q6_K_XL",
+          "Q8_K_XL"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 902822016,
+            "files": [
+              "mmproj-BF16.gguf"
+            ],
+            "size": "861.0 MB"
+          },
+          {
+            "quantization": "Q2_K_XL",
+            "size_bytes": 12290649152,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q2_K_XL.gguf"
+            ],
+            "size": "11.4 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 13211176000,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-IQ3_XXS.gguf"
+            ],
+            "size": "12.3 GB"
+          },
+          {
+            "quantization": "Q3_K_XL",
+            "size_bytes": 16845532224,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q3_K_XL.gguf"
+            ],
+            "size": "15.7 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 17730530368,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-IQ4_XS.gguf"
+            ],
+            "size": "16.5 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 20893035584,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q4_K_S.gguf"
+            ],
+            "size": "19.5 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 22360476736,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q4_K_XL.gguf"
+            ],
+            "size": "20.8 GB"
+          },
+          {
+            "quantization": "Q5_K_XL",
+            "size_bytes": 26592529472,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q5_K_XL.gguf"
+            ],
+            "size": "24.8 GB"
+          },
+          {
+            "quantization": "Q6_K_XL",
+            "size_bytes": 31843798080,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q6_K_XL.gguf"
+            ],
+            "size": "29.7 GB"
+          },
+          {
+            "quantization": "Q8_K_XL",
+            "size_bytes": 38451203136,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q8_K_XL.gguf"
+            ],
+            "size": "35.8 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 20893035584,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-Q4_K_S.gguf"
+            ],
+            "size": "19.5 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 17730530368,
+            "files": [
+              "Tiel-Coder-35B-A3B-UD-IQ4_XS.gguf"
+            ],
+            "size": "16.5 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_S",
+          "model_file_size_gib": 19.46,
+          "system_ram_min_gib": 24.5,
+          "system_ram_recommended_gib": 30.5,
+          "full_gpu_vram_rough_gib": 23.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 12,
+        "gguf_files": [
+          {
+            "name": "Tiel-Coder-35B-A3B.imatrix.gguf",
+            "quantization": "",
+            "size_bytes": 192223936,
+            "size": "183.3 MB"
+          },
+          {
+            "name": "mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 902822016,
+            "size": "861.0 MB"
+          },
+          {
+            "name": "mtp-Tiel-Coder-35B-A3B.gguf",
+            "quantization": "",
+            "size_bytes": 1493665664,
+            "size": "1.4 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q2_K_XL.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 12290649152,
+            "size": "11.4 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-IQ3_XXS.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 13211176000,
+            "size": "12.3 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q3_K_XL.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 16845532224,
+            "size": "15.7 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 17730530368,
+            "size": "16.5 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 20893035584,
+            "size": "19.5 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q4_K_XL.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 22360476736,
+            "size": "20.8 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q5_K_XL.gguf",
+            "quantization": "Q5_K_XL",
+            "size_bytes": 26592529472,
+            "size": "24.8 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q6_K_XL.gguf",
+            "quantization": "Q6_K_XL",
+            "size_bytes": 31843798080,
+            "size": "29.7 GB"
+          },
+          {
+            "name": "Tiel-Coder-35B-A3B-UD-Q8_K_XL.gguf",
+            "quantization": "Q8_K_XL",
+            "size_bytes": 38451203136,
+            "size": "35.8 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 183.3 MB〜35.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF」が更新されています。確認時点の指標は downloads=282,068、likes=246 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは ornith-ai/Ornith-1.5-35B-A3B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は BF16, Q2_K_XL, IQ3_XXS, Q3_K_XL, IQ4_XS, Q4_K_S, Q4_K_XL, Q5_K_XL, Q6_K_XL, Q8_K_XL。GGUFファイルは 12 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 183.3 MB〜35.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-09-f623444cda89",
       "date": "2026-09-09",
