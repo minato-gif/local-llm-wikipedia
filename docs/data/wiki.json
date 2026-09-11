@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-10"
+    "last_updated": "2026-09-11"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -281,9 +281,47 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10876",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10875",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10874",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10873"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10873",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10901",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10900",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10899",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10897",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10896",
+    "https://huggingface.co/blog/bartowski/per-tensor-layout-maps-for-gguf-quantization",
+    "https://huggingface.co/blog/Agenten/was-sind-ki-agenten",
+    "https://huggingface.co/adsyamsafa/Qwen3.5-4B-Hermes-Distill-GGUF",
+    "https://huggingface.co/DavidAU/Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF",
+    "https://huggingface.co/vcruz305/DeepSeek-V4.1-Flash-GGUF",
+    "https://huggingface.co/fallentree/Gemma4-31B-Uncensored-GP100-GGUF",
+    "https://huggingface.co/audio-cpp/Yue2-3B-GGUF",
+    "https://huggingface.co/jakeatx/slimder-qwen38-reap384-depth40-mb4-5-GGUF",
+    "https://huggingface.co/jakeatx/Qwen3.8-27B-ATX-IQ4_XS-M-GGUF",
+    "https://huggingface.co/jakeatx/Qwopus3.8-27B-Flash-ATX-IQ4_XS-M-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10894",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10893",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10892"
   ],
   "entries": [
+    {
+      "id": "2026-09-11-46b4788e1515",
+      "date": "2026-09-11",
+      "title": "GGUF量子化におけるテンソル別レイアウトマップの導入解説",
+      "source": "Hugging Face Blog",
+      "source_url": "https://huggingface.co/blog/bartowski/per-tensor-layout-maps-for-gguf-quantization",
+      "category": "モデル・技術",
+      "priority": "高",
+      "summary": "Hugging Faceブログにて、GGUF量子化におけるテンソル別のレイアウトマップの仕組みと活用方法についての解説記事が公開されました。モデルの各層やテンソルごとに最適な量子化設定を適用することで、精度と効率の最適化を図る技術です。",
+      "impact": "多様なアーキテクチャを持つ大規模モデルにおいて、より精密な量子化プロファイルを作成・適用できるようになり、ローカル環境でのメモリ効率と推論精度の両立に貢献します。",
+      "details": "bartowski氏による本記事では、GGUF形式における量子化の粒度を細かく制御するためのテンソル別レイアウトマップの概念が説明されています。一律の量子化ではなく、特定のテンソル層に応じた適切な精度割り当てを行うことで、モデルの品質低下を最小限に抑えつつファイルサイズとメモリ使用量を削減することが可能です。",
+      "tags": [
+        "Hugging Face Blog",
+        "GGUF",
+        "量子化"
+      ],
+      "curated": true,
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-10-eb1f4d2fda1e",
       "date": "2026-09-10",
