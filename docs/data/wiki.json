@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-11"
+    "last_updated": "2026-09-12"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -299,9 +299,383 @@
     "https://huggingface.co/jakeatx/Qwopus3.8-27B-Flash-ATX-IQ4_XS-M-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10894",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10893",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10892"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10892",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10917",
+    "https://huggingface.co/blog/ivanmikhnenkov/tinydit-text-to-image-from-scratch-one-gpu",
+    "https://huggingface.co/blog/GGUFGuy/lorem-ipsum",
+    "https://huggingface.co/gbuzhf/Ornith-1.5-35B-A3B-Abliterated-CyberTiel-Calibrated-MTPv2-ICE-GGUF",
+    "https://huggingface.co/veldierin/Artemis-31B-v1q-GGUF",
+    "https://huggingface.co/mradermacher/Boulesis-26B-A4B-i1-GGUF",
+    "https://huggingface.co/antirez/deepseek-v4.1-flash-gguf",
+    "https://huggingface.co/AMAImedia/Qwen3.5-9B-NeoHorse1-Heretic-NOESIS-BF16-GGUF",
+    "https://huggingface.co/mradermacher/kanana-1.5-8b-instruct-2505-Persona-Merged-GGUF",
+    "https://huggingface.co/Myric/gpt-oss-78B-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10909",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10908",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10907",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10906",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10905",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10903",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10902"
   ],
   "entries": [
+    {
+      "id": "2026-09-12-20d02c4a26d0",
+      "date": "2026-09-12",
+      "title": "Gemma 4ベースのロールプレイ向けファインチューン「Artemis-31B-v1q-GGUF」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/veldierin/Artemis-31B-v1q-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Googleの「gemma-4-31B-it」をベースにしたロールプレイ特化モデル「Artemis-31B-v1q-GGUF」が公開されました。ローカル環境での利用を想定し、IQ4_XS量子化などが提供されています。",
+      "impact": "Gemma 4アーキテクチャを採用した31B規模のロールプレイ特化モデルを、ローカルのllama.cpp等の環境で効率的に実行可能になります。",
+      "details": "本モデルはgoogle/gemma-4-31B-itをベースに、専用のロールプレイデータセットでファインチューンされたモデルのGGUF版です。推奨量子化としてIQ4_XSが指定されており、モデルファイルサイズは約31.56GiB、実行には38.5GiB以上のシステムRAMが推奨されています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "endpoints_compatible",
+        "region:us",
+        "imatrix",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "veldierin/Artemis-31B-v1q-GGUF",
+        "author": "veldierin",
+        "license": "",
+        "base_model": "google/gemma-4-31B-it, BeaverAI/Artemis-31B-v1q-GGUF",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 1164,
+        "likes": 2,
+        "last_modified": "2026-09-12T00:21:55.000Z",
+        "quantizations": [
+          "IQ4_XS"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 33891685408,
+            "files": [
+              "Artemis-31B-v1q-i1-mr-IQ4_XS.gguf",
+              "Artemis-31B-v1q-i1-bt-IQ4_XS.gguf"
+            ],
+            "size": "31.6 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 33891685408,
+            "files": [
+              "Artemis-31B-v1q-i1-mr-IQ4_XS.gguf",
+              "Artemis-31B-v1q-i1-bt-IQ4_XS.gguf"
+            ],
+            "size": "31.6 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 33891685408,
+            "files": [
+              "Artemis-31B-v1q-i1-mr-IQ4_XS.gguf",
+              "Artemis-31B-v1q-i1-bt-IQ4_XS.gguf"
+            ],
+            "size": "31.6 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 31.56,
+          "system_ram_min_gib": 38.5,
+          "system_ram_recommended_gib": 47.0,
+          "full_gpu_vram_rough_gib": 37.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "Artemis-31B-v1q-i1-mr-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 16735791616,
+            "size": "15.6 GB"
+          },
+          {
+            "name": "Artemis-31B-v1q-i1-bt-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 17155893792,
+            "size": "16.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 15.6 GB〜16.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「veldierin/Artemis-31B-v1q-GGUF」が更新されています。確認時点の指標は downloads=1,164、likes=2 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは google/gemma-4-31B-it, BeaverAI/Artemis-31B-v1q-GGUF。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は IQ4_XS。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 15.6 GB〜16.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-12-b16a6932fb3f",
+      "date": "2026-09-12",
+      "title": "Qwen系MoEベースの非検閲モデル「Ornith-1.5-35B-A3B-Abliterated-GGUF」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/gbuzhf/Ornith-1.5-35B-A3B-Abliterated-CyberTiel-Calibrated-MTPv2-ICE-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Qwen系MoEベースの「Huihui-Ornith-1.5-35B-A3B-abliterated」をベースにしたGGUFモデルが公開されました。独自のMTPv2ヘッドや重要度マトリクスを用いた調整が行われています。",
+      "impact": "リクエストに対する拒否行動が抑制されたアブライトレート（非検閲）版のMoEモデルを、ローカル環境で利用できるようになります。",
+      "details": "トランクマッチされた重要度マトリクス（imatrix）を使用して量子化が行われており、モデル固有のMTPv2ヘッドやQwen-Sharpチャットテンプレートが組み込まれています。非検閲モデルであるため、利用時はOSレベルでのサンドボックス化などの適切な配慮が推奨されています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "qwen35moe",
+        "moe",
+        "imatrix",
+        "ICE",
+        "mtp",
+        "abliterated"
+      ],
+      "model_meta": {
+        "model_id": "gbuzhf/Ornith-1.5-35B-A3B-Abliterated-CyberTiel-Calibrated-MTPv2-ICE-GGUF",
+        "author": "gbuzhf",
+        "license": "mit",
+        "base_model": "huihui-ai/Huihui-Ornith-1.5-35B-A3B-abliterated",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 1392,
+        "likes": 1,
+        "last_modified": "2026-09-12T00:58:06.000Z",
+        "quantizations": [
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 71067016544,
+            "files": [
+              "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-BF16.gguf"
+            ],
+            "size": "66.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 5,
+        "gguf_files": [
+          {
+            "name": "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-19G-ICE.gguf",
+            "quantization": "",
+            "size_bytes": 18822569280,
+            "size": "17.5 GB"
+          },
+          {
+            "name": "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-21G-ICE.gguf",
+            "quantization": "",
+            "size_bytes": 20848418112,
+            "size": "19.4 GB"
+          },
+          {
+            "name": "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-23G-ICE.gguf",
+            "quantization": "",
+            "size_bytes": 22836518208,
+            "size": "21.3 GB"
+          },
+          {
+            "name": "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-25G-ICE.gguf",
+            "quantization": "",
+            "size_bytes": 24849784128,
+            "size": "23.1 GB"
+          },
+          {
+            "name": "Ornith-1.5-35B-A3B-Abliterated-CyberTiel_Calibrated-MTPv2-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 71067016544,
+            "size": "66.2 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 17.5 GB〜66.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「gbuzhf/Ornith-1.5-35B-A3B-Abliterated-CyberTiel-Calibrated-MTPv2-ICE-GGUF」が更新されています。確認時点の指標は downloads=1,392、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは huihui-ai/Huihui-Ornith-1.5-35B-A3B-abliterated。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は BF16。GGUFファイルは 5 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 17.5 GB〜66.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-11-46b4788e1515",
       "date": "2026-09-11",
