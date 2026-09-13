@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-12"
+    "last_updated": "2026-09-13"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -316,7 +316,19 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10906",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10905",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10903",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10902"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10902",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10935",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10934",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10933",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10932",
+    "https://huggingface.co/blog/sergiopaniego/rl-environments-2026",
+    "https://huggingface.co/AMAImedia/DeepSeek-V4.1-Flash-FP8-GGUF",
+    "https://huggingface.co/vincespeed/Qwen3.8-27B-No-MTP-GGUF-Dflash2",
+    "https://huggingface.co/mousebar01/Pixal3D.cpp-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10931",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10930",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10929",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10927"
   ],
   "entries": [
     {
