@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-13"
+    "last_updated": "2026-09-14"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -328,9 +328,285 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10931",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10930",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10929",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10927"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10927",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10948",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10947",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10946",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10944",
+    "https://huggingface.co/handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf",
+    "https://huggingface.co/handy-computer/whisper-tiny-gguf",
+    "https://huggingface.co/handy-computer/whisper-tiny.en-gguf",
+    "https://huggingface.co/handy-computer/whisper-small-gguf",
+    "https://huggingface.co/handy-computer/whisper-medium-gguf",
+    "https://huggingface.co/handy-computer/whisper-small.en-gguf",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10941",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10938",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10937",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10936"
   ],
   "entries": [
+    {
+      "id": "2026-09-14-6e6a723ce9da",
+      "date": "2026-09-14",
+      "title": "NVIDIA Nemotron-3.5 ASR Streaming 0.6BのGGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "NVIDIAの音声認識モデル「nemotron-3.5-asr-streaming-0.6b」のGGUF量子化モデルが公開されました。トランスクリプション向けの軽量なストリーミング音声認識に対応しています。",
+      "impact": "ローカル環境での音声認識処理において、軽量なモデルをGGUF形式で効率的に実行できるようになります。対応言語も多数含まれており、多言語の音声文字起こし用途での活用が期待されます。",
+      "details": "handy-computer氏により、nvidia/nemotron-3.5-asr-streaming-0.6bをベースとしたGGUF量子化モデルが公開されました。Q4_K_MやQ5_K_Mなどの量子化バリエーションが用意されており、transcribe.cppライブラリおよび自動音声認識パイプラインに対応しています。多言語の音声処理をローカル環境で効率的に実行するための選択肢となります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transcribe.cpp",
+        "gguf",
+        "asr",
+        "speech-to-text",
+        "parakeet",
+        "conformer",
+        "rnnt",
+        "streaming"
+      ],
+      "model_meta": {
+        "model_id": "handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf",
+        "author": "handy-computer",
+        "license": "other",
+        "base_model": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "automatic-speech-recognition",
+        "library_name": "transcribe.cpp",
+        "downloads": 1806896,
+        "likes": 10,
+        "last_modified": "2026-09-13T23:56:38.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0",
+          "F16",
+          "F32"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 495831520,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q4_K_M.gguf"
+            ],
+            "size": "472.9 MB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 559647200,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q5_K_M.gguf"
+            ],
+            "size": "533.7 MB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 621356512,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q6_K.gguf"
+            ],
+            "size": "592.6 MB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 751094240,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q8_0.gguf"
+            ],
+            "size": "716.3 MB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 1277750240,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-F16.gguf"
+            ],
+            "size": "1.2 GB"
+          },
+          {
+            "quantization": "F32",
+            "size_bytes": 2552277984,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-F32.gguf"
+            ],
+            "size": "2.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 495831520,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q4_K_M.gguf"
+            ],
+            "size": "472.9 MB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 559647200,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q5_K_M.gguf"
+            ],
+            "size": "533.7 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 495831520,
+            "files": [
+              "nemotron-3.5-asr-streaming-0.6b-Q4_K_M.gguf"
+            ],
+            "size": "472.9 MB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 0.46,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "情報不足",
+            "basis": "対話用途を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "中",
+            "basis": "多言語対応の記載はありますが、日本語品質は個別確認が必要です。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 495831520,
+            "size": "472.9 MB"
+          },
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 559647200,
+            "size": "533.7 MB"
+          },
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 621356512,
+            "size": "592.6 MB"
+          },
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 751094240,
+            "size": "716.3 MB"
+          },
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 1277750240,
+            "size": "1.2 GB"
+          },
+          {
+            "name": "nemotron-3.5-asr-streaming-0.6b-F32.gguf",
+            "quantization": "F32",
+            "size_bytes": 2552277984,
+            "size": "2.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 472.9 MB〜2.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf」が更新されています。確認時点の指標は downloads=1,806,896、likes=10 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは nvidia/nemotron-3.5-asr-streaming-0.6b。用途タグは automatic-speech-recognition。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_K_M, Q5_K_M, Q6_K, Q8_0, F16, F32。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 472.9 MB〜2.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-12-20d02c4a26d0",
       "date": "2026-09-12",
