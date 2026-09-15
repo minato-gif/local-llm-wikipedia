@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-14"
+    "last_updated": "2026-09-15"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -342,9 +342,58 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10941",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10938",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10937",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10936"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10936",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10970",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10969",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10964",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.1-rc1",
+    "https://huggingface.co/juiceb0xc0de/bella-bartender-gemma-e4b-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10956",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10955",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10952",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10951"
   ],
   "entries": [
+    {
+      "id": "2026-09-15-c8ac6eb8f2a7",
+      "date": "2026-09-15",
+      "title": "llama.cpp v0.4.1がリリース、新規モデルのサポートとコア機能の改善を実施",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cpp v0.4.1が公開され、Maple 20B-A1BやTencent Hy 4、Spark2.5のサポートが追加されました。また、ggmlがv0.24.0に更新され、JSONスキーマ処理やチャットパース、DeepSeek2やGLM-MoEなどのKVキャッシュ割り当てに関する修正が行われています。",
+      "impact": "多様な新アーキテクチャのモデルに対応し、量子化ランタイム全体の互換性と安定性が向上しました。",
+      "details": "llama.cpp v0.4.1では、Maple 20B-A1B、Tencent Hy 4、Spark2.5といった新しいモデルアーキテクチャのサポートが追加されました。加えて、ggmlのv0.24.0へのアップデートや、Kimi-K3のリカレントステートロールバック対応、DeepSeek2やGLM-MoEモデルにおけるMTPコンテキストKVキャッシュ割り当ての修正など、コア部分の信頼性が高められています。API変更として、`llama_sampler_chain_n()`の戻り値がintからint32_tに変更されました。",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Context"
+      ],
+      "curated": true,
+      "editorial_bucket": "GPU高速化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-15-4e49e202bf0b",
+      "date": "2026-09-15",
+      "title": "Ollama v0.34.1リリース候補が公開、MLX環境のメモリ管理を改善",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.1-rc1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "Ollama v0.34.1-rc1が公開され、MLXランタイムにおけるプレフィックスキャッシュの動作や空きメモリ確認処理が改善されました。さらに、トークンの繰り返し制限の引き上げや、UIレイアウトの調整が行われています。",
+      "impact": "Apple SiliconのMLX環境におけるメモリ効率とモデル切り替えの安定性が向上します。",
+      "details": "Ollama v0.34.1-rc1では、MLXランタイムでのプレフィックスキャッシュスナップショットの破棄処理や、次モデルのロード前にアクティブなランナーの終了を待つシステム空きメモリチェック機能が追加され、メモリ管理が強化されました。また、トークンの繰り返し制限値が100に引き上げられ、不完全な結果の返却ではなくエラーを返すように変更されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-14-6e6a723ce9da",
       "date": "2026-09-14",
