@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-15"
+    "last_updated": "2026-09-16"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -352,9 +352,69 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10956",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10955",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10952",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b10951"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10951",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10991",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10990",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10989",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10988",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.2-rc0",
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.121",
+    "https://lmstudio.ai/changelog/bionic-v1.1.3",
+    "https://huggingface.co/blog/quao627/your-inference-server-is-secretly-a-learner-reef",
+    "https://huggingface.co/xCloudinfo/Qwen3.8-27B-Uncensored-GGUF",
+    "https://huggingface.co/jakeatx/Qwen3.8-Perian-GGUF",
+    "https://huggingface.co/smalinin/DeepSeek-V4.1-Flash-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10985",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10984",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10983",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10982",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.1"
   ],
   "entries": [
+    {
+      "id": "2026-09-16-b8d24bc4944c",
+      "date": "2026-09-16",
+      "title": "KoboldCpp v1.121リリース：Minimax H3のメディアリファレンス対応と各種バグ修正",
+      "source": "GitHub Releases / LostRuins/koboldcpp",
+      "source_url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.121",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMフロントエンドのKoboldCppがv1.121をリリースしました。Minimax H3モデルへのメディアリファレンス（音声クリップや複数画像の添付）対応や、Kimi・Deepseek V4 Flashモデルにおけるツール呼び出しの修正が行われています。",
+      "impact": "マルチモーダル機能の拡張により、Minimax H3を活用した動画生成などの多様なワークフローがローカル環境で実現可能になります。また、主要モデルのツール呼び出しの安定性も向上しています。",
+      "details": "主な変更点として、Minimax H3向けのメディアリファレンス対応が追加され、音声や画像の添付による動画生成が可能になりました。また、KimiモデルやDeepseek V4 Flashのツール呼び出しサポートの修正、ストリーミング中の競合状態の解消、WebSearchのUTF-8処理の改善などが含まれています。さらに、--analyze機能で.safetensorsファイルのメタデータ解析に対応しました。",
+      "tags": [
+        "KoboldCpp",
+        "GitHub Release",
+        "GGUF",
+        "CUDA",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-16-538209803fee",
+      "date": "2026-09-15",
+      "title": "Ollama v0.34.1リリース：MLX safetensors作成の正式対応とApple Siliconメモリ管理の改善",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaがv0.34.1をリリースしました。Apple Silicon上のMLX safetensorsを用いたモデル作成が実験的機能から正式対応となり、メモリハンドリングやAPIの高速化が行われています。",
+      "impact": "Apple SiliconユーザーにとってMLX形式のモデル運用がより安定し、大規模なモデルライブラリでのAPI応答速度が大幅に改善されるため、実用性が大きく向上します。",
+      "details": "今回の更新では、MLX safetensorsを使用した`ollama create`が正式機能となりました。なお、GGUFモデルの作成にはllama.cppのツールによる変換・量子化が必要となります。また、Apple SiliconにおけるMLXメモリハンドリングの改善、無限ループトークン検出のしきい値調整（誤検知の削減）、`/api/tags`エンドポイントの高速化（コールドスタート時3.1秒から約294msへ短縮）などが実施されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF",
+        "量子化",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-15-c8ac6eb8f2a7",
       "date": "2026-09-15",
