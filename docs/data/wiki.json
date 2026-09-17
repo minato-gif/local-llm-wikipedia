@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-16"
+    "last_updated": "2026-09-17"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -368,9 +368,43 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10984",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10983",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10982",
-    "https://github.com/ollama/ollama/releases/tag/v0.34.1"
+    "https://github.com/ollama/ollama/releases/tag/v0.34.1",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11010",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11009",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11007",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11006",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11005",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11003",
+    "https://huggingface.co/windowsxp811203/Qwen3.8-Flash-Next-Abliterated-GGUF",
+    "https://huggingface.co/Baekpica/Ling-3.0-flash-VL-Mixed-Quant-GGUF",
+    "https://huggingface.co/IsValorum/Iris-mini-MTP-APEX-I-MiniPlus-GGUF",
+    "https://huggingface.co/IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-GGUF",
+    "https://huggingface.co/IsValorum/Apodex-1.1-mini-APEX-I-MiniPlus-V2-GGUF",
+    "https://huggingface.co/IsValorum/Occamy-1.0-APEX-I-MiniPlus-V2-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11002",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11001",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.2-rc1"
   ],
   "entries": [
+    {
+      "id": "2026-09-17-50a0bafe6e7d",
+      "date": "2026-09-16",
+      "title": "Ollama v0.34.2が公開",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.2-rc1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "ローカルLLMランタイムのOllamaがv0.34.2へとアップデートされました。主な変更点としてバックエンドのllama.cppの更新が含まれています。",
+      "impact": "バックエンドのllama.cppの更新に伴い、最新のモデル対応や量子化形式の改善、推論パフォーマンスの向上が期待されます。",
+      "details": "Ollamaのv0.34.2リリース候補版が公開されました。今回のアップデートでは、主に内部エンジンであるllama.cppの更新が行われており、ローカル環境での実行安定性や互換性の改善が含まれています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-16-b8d24bc4944c",
       "date": "2026-09-16",
