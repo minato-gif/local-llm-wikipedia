@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-17"
+    "last_updated": "2026-09-18"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -383,9 +383,43 @@
     "https://huggingface.co/IsValorum/Occamy-1.0-APEX-I-MiniPlus-V2-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11002",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11001",
-    "https://github.com/ollama/ollama/releases/tag/v0.34.2-rc1"
+    "https://github.com/ollama/ollama/releases/tag/v0.34.2-rc1",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11028",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11027",
+    "https://lmstudio.ai/changelog/bionic-v1.1.4",
+    "https://huggingface.co/blog/ariG23498/funes-lance",
+    "https://huggingface.co/soyaakinohara/Qwen-3.8-flash-next-heretic-3.78bpw-gguf",
+    "https://huggingface.co/soyaakinohara/qwen3.8-27b-abliterated-3.69bpw-12GB-MTP.gguf",
+    "https://huggingface.co/soyaakinohara/Spark-X2.5-4B-Heretic-jp-gguf",
+    "https://huggingface.co/soyaakinohara/gemma-4-31b-it-heretic-3.68bpw-14gb.gguf",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11026",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11025",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11024",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11022",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11020",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11019",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.2"
   ],
   "entries": [
+    {
+      "id": "2026-09-18-3c8be464dfa2",
+      "date": "2026-09-16",
+      "title": "Ollama v0.34.2がリリース、初回セットアップ機能とMLX推論のメモリバグ修正",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.2",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "Ollamaの最新版v0.34.2が公開され、コマンド実行時の初回セットアップ機能が追加されました。また、macOSおよびWindowsのデスクトップアプリとの設定共有や、MLXを用いた speculative decoding（予測デコーディング）におけるメモリリークの修正が含まれています。",
+      "impact": "ローカル環境での初期セットアップが簡素化され、macOSやWindowsのデスクトップアプリとの連携が向上します。さらに、長文生成時のメモリ異常増加が修正されたことで、Apple Silicon環境での推論安定性が改善されます。",
+      "details": "Ollama v0.34.2では、`ollama`コマンド実行時にサインインやローカル継続を選択できる初回セットアップ画面が導入されました。この設定はmacOSおよびWindowsのデスクトップアプリと共有されます。さらに、デスクトップアプリのAppsページを直接開くカスタムプロトコル`ollama://apps`が追加されました。また、MLXを使用した speculative decoding において長文生成時に発生していた過度なメモリ増加の問題が修正され、バックエンドのllama.cppも最新化されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-17-50a0bafe6e7d",
       "date": "2026-09-16",
