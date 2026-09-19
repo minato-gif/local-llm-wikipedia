@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "docs/**"
+      - "scripts/generate_static.py"
       - ".github/workflows/pages.yml"
 
   workflow_run:
@@ -38,6 +39,9 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - name: Generate crawlable HTML pages
+        run: python scripts/generate_static.py --output docs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

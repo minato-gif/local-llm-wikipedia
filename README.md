@@ -2,6 +2,8 @@
 
 ローカルLLM関連の最新情報を **毎日自動収集 → 差分判定 → 記事化 → Git commit → GitHub Pagesへ再公開** する静的Wikiです。
 
+公開時には `scripts/generate_static.py` が、常設ガイドと公開基準を満たした記事を通常URLのHTMLへ変換します。各ページはJavaScriptなしでも本文を読めるため、検索エンジンからも個別ページとして認識できます。
+
 ## 完全自動化の流れ
 
 1. GitHub Actions が毎日 08:00 JST に起動
@@ -11,6 +13,15 @@
 5. 日次記事を自動生成
 6. 変更があれば bot が commit / push
 7. GitHub Pages が自動再デプロイ
+
+## 公開URLと品質ゲート
+
+- 常設ガイド: `/guide/models/` など
+- 新着記事: `/articles/<記事ID>/`
+- 記事一覧: `/articles/`
+- `sitemap.xml`、`robots.txt`、RSS、canonical、構造化データを公開時に自動生成
+- 編集済み・出典あり・本文量が基準以上の記事だけを一覧とサイトマップに掲載
+- 薄いプレースホルダーやリリース候補は削除せず、`noindex` の保管ページとして残す
 
 ## 主な監視対象
 
