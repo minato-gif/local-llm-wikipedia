@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wikipedia",
     "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-18"
+    "last_updated": "2026-09-19"
   },
   "seen_urls": [
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
@@ -398,9 +398,733 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11022",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11020",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11019",
-    "https://github.com/ollama/ollama/releases/tag/v0.34.2"
+    "https://github.com/ollama/ollama/releases/tag/v0.34.2",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11046",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11045",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11044",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11043",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11042",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11040",
+    "https://github.com/ollama/ollama/releases/tag/v0.34.3-rc0",
+    "https://lmstudio.ai/changelog/bionic-v1.1.5",
+    "https://huggingface.co/IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF",
+    "https://huggingface.co/mradermacher/guru-32B-i1-GGUF",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11039",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11037"
   ],
   "entries": [
+    {
+      "id": "2026-09-19-099339ac1537",
+      "date": "2026-09-19",
+      "title": "Ollama v0.34.3が公開、思考コントロールの広告やApple SiliconでのNemotron H対応などを追加",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.34.3-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaのv0.34.3プレリリース版が公開されました。API経由でのモデルの思考コントロール（thinking controls）の広告機能追加や、Apple SiliconにおけるMLXを用いたNemotron Hビジョンモデルのサポートが行われています。",
+      "impact": "APIを利用したモデルの思考機能の制御や、Apple Silicon環境でのマルチモーダルモデルの活用範囲が広がります。",
+      "details": "今回の更新により、`GET /api/show`エンドポイントで各モデルの思考コントロールの設定値やデフォルト値が確認できるようになりました。また、Apple Silicon環境（MLX）でのNemotron Hビジョンモデルのサポートが追加され、macOSアプリ起動時のウィンドウ復元挙動も修正されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Vision"
+      ],
+      "curated": true,
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-19-8ee3644b0af2",
+      "date": "2026-09-19",
+      "title": "Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUFモデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "IsValorumによるGGUFフォーマットの量子化モデル「Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF」が公開されました。ファイルサイズは0.57GiB（Q8_0）で、多様な言語やマルチモーダル機能に対応しています。",
+      "impact": "軽量なマルチモーダルモデルをローカル環境で効率的に実行するための選択肢が増加します。",
+      "details": "本モデルはベースにnex-agi/Nex-N2.5-miniを採用し、Apache-2.0ライセンスの下で提供されています。Q8_0量子化版が用意されており、システムRAMは最低3.0GiB、推奨5.0GiB、GPU VRAMは約2.0GiBの環境を目安に動作します。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "quantization",
+        "quantized",
+        "apex",
+        "custom-quantization",
+        "unsloth-studio",
+        "moe",
+        "multimodal"
+      ],
+      "model_meta": {
+        "model_id": "IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF",
+        "author": "IsValorum",
+        "license": "apache-2.0",
+        "base_model": "nex-agi/Nex-N2.5-mini",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 1027,
+        "likes": 2,
+        "last_modified": "2026-09-18T23:19:00.000Z",
+        "quantizations": [
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 610655200,
+            "files": [
+              "mmproj-Q8_0.gguf"
+            ],
+            "size": "582.4 MB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 610655200,
+            "files": [
+              "mmproj-Q8_0.gguf"
+            ],
+            "size": "582.4 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 0.57,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 610655200,
+            "size": "582.4 MB"
+          },
+          {
+            "name": "Nex-N2.5-mini.APEX-I-MiniPlus-V1.gguf",
+            "quantization": "",
+            "size_bytes": 14564195456,
+            "size": "13.6 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 582.4 MB〜13.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF」が更新されています。確認時点の指標は downloads=1,027、likes=2 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは nex-agi/Nex-N2.5-mini。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q8_0。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 582.4 MB〜13.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-19-c2f263ca0925",
+      "date": "2026-09-19",
+      "title": "guru-32Bのimatrix量子化GGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/mradermacher/guru-32B-i1-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "mradermacher氏により、IFM/guru-32Bをベースにした多様な量子化レベルのGGUFモデルが公開されました。IQ1からQ6_Kまで幅広い選択肢が用意されています。",
+      "impact": "32Bパラメータ規模の大規模モデルを、手元のVRAMやRAMの容量に合わせて細かく調整して動かすことが可能になります。",
+      "details": "CC-BY-NC-4.0ライセンスで提供されており、推奨量子化はQ4_K_Mとなっています。Q4_K_M使用時のモデルファイルサイズは約18.49GiBであり、システムRAMは最低23.5GiB（推奨29.0GiB）、GPU VRAMは約22.5GiBの環境が想定されています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "en",
+        "base_model:IFM/guru-32B",
+        "license:cc-by-nc-4.0",
+        "endpoints_compatible",
+        "region:us",
+        "imatrix"
+      ],
+      "model_meta": {
+        "model_id": "mradermacher/guru-32B-i1-GGUF",
+        "author": "mradermacher",
+        "license": "cc-by-nc-4.0",
+        "base_model": "IFM/guru-32B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "transformers",
+        "downloads": 414,
+        "likes": 0,
+        "last_modified": "2026-09-18T23:46:29.000Z",
+        "quantizations": [
+          "IQ1_S",
+          "IQ1_M",
+          "IQ2_XXS",
+          "IQ2_XS",
+          "IQ2_S",
+          "IQ2_M",
+          "Q2_K_S",
+          "Q2_K",
+          "IQ3_XXS",
+          "IQ3_XS",
+          "Q3_K_S",
+          "IQ3_S",
+          "IQ3_M",
+          "Q3_K_M",
+          "Q3_K_L",
+          "IQ4_XS",
+          "Q4_0",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q4_1"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "IQ1_S",
+            "size_bytes": 7274507232,
+            "files": [
+              "guru-32B.i1-IQ1_S.gguf"
+            ],
+            "size": "6.8 GB"
+          },
+          {
+            "quantization": "IQ1_M",
+            "size_bytes": 7932160992,
+            "files": [
+              "guru-32B.i1-IQ1_M.gguf"
+            ],
+            "size": "7.4 GB"
+          },
+          {
+            "quantization": "IQ2_XXS",
+            "size_bytes": 9028250592,
+            "files": [
+              "guru-32B.i1-IQ2_XXS.gguf"
+            ],
+            "size": "8.4 GB"
+          },
+          {
+            "quantization": "IQ2_XS",
+            "size_bytes": 9957551072,
+            "files": [
+              "guru-32B.i1-IQ2_XS.gguf"
+            ],
+            "size": "9.3 GB"
+          },
+          {
+            "quantization": "IQ2_S",
+            "size_bytes": 10387569632,
+            "files": [
+              "guru-32B.i1-IQ2_S.gguf"
+            ],
+            "size": "9.7 GB"
+          },
+          {
+            "quantization": "IQ2_M",
+            "size_bytes": 11264441312,
+            "files": [
+              "guru-32B.i1-IQ2_M.gguf"
+            ],
+            "size": "10.5 GB"
+          },
+          {
+            "quantization": "Q2_K_S",
+            "size_bytes": 11488000992,
+            "files": [
+              "guru-32B.i1-Q2_K_S.gguf"
+            ],
+            "size": "10.7 GB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 12313099232,
+            "files": [
+              "guru-32B.i1-Q2_K.gguf"
+            ],
+            "size": "11.5 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 12839271392,
+            "files": [
+              "guru-32B.i1-IQ3_XXS.gguf"
+            ],
+            "size": "12.0 GB"
+          },
+          {
+            "quantization": "IQ3_XS",
+            "size_bytes": 13705513952,
+            "files": [
+              "guru-32B.i1-IQ3_XS.gguf"
+            ],
+            "size": "12.8 GB"
+          },
+          {
+            "quantization": "Q3_K_S",
+            "size_bytes": 14392331232,
+            "files": [
+              "guru-32B.i1-Q3_K_S.gguf"
+            ],
+            "size": "13.4 GB"
+          },
+          {
+            "quantization": "IQ3_S",
+            "size_bytes": 14436895712,
+            "files": [
+              "guru-32B.i1-IQ3_S.gguf"
+            ],
+            "size": "13.4 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 14810123232,
+            "files": [
+              "guru-32B.i1-IQ3_M.gguf"
+            ],
+            "size": "13.8 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 15935048672,
+            "files": [
+              "guru-32B.i1-Q3_K_M.gguf"
+            ],
+            "size": "14.8 GB"
+          },
+          {
+            "quantization": "Q3_K_L",
+            "size_bytes": 17247079392,
+            "files": [
+              "guru-32B.i1-Q3_K_L.gguf"
+            ],
+            "size": "16.1 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 17693154272,
+            "files": [
+              "guru-32B.i1-IQ4_XS.gguf"
+            ],
+            "size": "16.5 GB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 18711010272,
+            "files": [
+              "guru-32B.i1-Q4_0.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 18784410592,
+            "files": [
+              "guru-32B.i1-Q4_K_S.gguf"
+            ],
+            "size": "17.5 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19851336672,
+            "files": [
+              "guru-32B.i1-Q4_K_M.gguf"
+            ],
+            "size": "18.5 GB"
+          },
+          {
+            "quantization": "Q4_1",
+            "size_bytes": 20639243232,
+            "files": [
+              "guru-32B.i1-Q4_1.gguf"
+            ],
+            "size": "19.2 GB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 22638255072,
+            "files": [
+              "guru-32B.i1-Q5_K_S.gguf"
+            ],
+            "size": "21.1 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 23262157792,
+            "files": [
+              "guru-32B.i1-Q5_K_M.gguf"
+            ],
+            "size": "21.7 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 26886155232,
+            "files": [
+              "guru-32B.i1-Q6_K.gguf"
+            ],
+            "size": "25.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19851336672,
+            "files": [
+              "guru-32B.i1-Q4_K_M.gguf"
+            ],
+            "size": "18.5 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 23262157792,
+            "files": [
+              "guru-32B.i1-Q5_K_M.gguf"
+            ],
+            "size": "21.7 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 14810123232,
+            "files": [
+              "guru-32B.i1-IQ3_M.gguf"
+            ],
+            "size": "13.8 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 18.49,
+          "system_ram_min_gib": 23.5,
+          "system_ram_recommended_gib": 29.0,
+          "full_gpu_vram_rough_gib": 22.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 23,
+        "gguf_files": [
+          {
+            "name": "guru-32B.i1-IQ1_S.gguf",
+            "quantization": "IQ1_S",
+            "size_bytes": 7274507232,
+            "size": "6.8 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ1_M.gguf",
+            "quantization": "IQ1_M",
+            "size_bytes": 7932160992,
+            "size": "7.4 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ2_XXS.gguf",
+            "quantization": "IQ2_XXS",
+            "size_bytes": 9028250592,
+            "size": "8.4 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ2_XS.gguf",
+            "quantization": "IQ2_XS",
+            "size_bytes": 9957551072,
+            "size": "9.3 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ2_S.gguf",
+            "quantization": "IQ2_S",
+            "size_bytes": 10387569632,
+            "size": "9.7 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ2_M.gguf",
+            "quantization": "IQ2_M",
+            "size_bytes": 11264441312,
+            "size": "10.5 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q2_K_S.gguf",
+            "quantization": "Q2_K_S",
+            "size_bytes": 11488000992,
+            "size": "10.7 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 12313099232,
+            "size": "11.5 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ3_XXS.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 12839271392,
+            "size": "12.0 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ3_XS.gguf",
+            "quantization": "IQ3_XS",
+            "size_bytes": 13705513952,
+            "size": "12.8 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q3_K_S.gguf",
+            "quantization": "Q3_K_S",
+            "size_bytes": 14392331232,
+            "size": "13.4 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ3_S.gguf",
+            "quantization": "IQ3_S",
+            "size_bytes": 14436895712,
+            "size": "13.4 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 14810123232,
+            "size": "13.8 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 15935048672,
+            "size": "14.8 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q3_K_L.gguf",
+            "quantization": "Q3_K_L",
+            "size_bytes": 17247079392,
+            "size": "16.1 GB"
+          },
+          {
+            "name": "guru-32B.i1-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 17693154272,
+            "size": "16.5 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 18711010272,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 18784410592,
+            "size": "17.5 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 19851336672,
+            "size": "18.5 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "size_bytes": 20639243232,
+            "size": "19.2 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 22638255072,
+            "size": "21.1 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 23262157792,
+            "size": "21.7 GB"
+          },
+          {
+            "name": "guru-32B.i1-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 26886155232,
+            "size": "25.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 6.8 GB〜25.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「mradermacher/guru-32B-i1-GGUF」が更新されています。確認時点の指標は downloads=414、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは IFM/guru-32B。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は IQ1_S, IQ1_M, IQ2_XXS, IQ2_XS, IQ2_S, IQ2_M, Q2_K_S, Q2_K, IQ3_XXS, IQ3_XS, Q3_K_S, IQ3_S, IQ3_M, Q3_K_M, Q3_K_L, IQ4_XS, Q4_0, Q4_K_S, Q4_K_M, Q4_1, Q5_K_S, Q5_K_M, Q6_K。GGUFファイルは 23 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 6.8 GB〜25.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-18-3c8be464dfa2",
       "date": "2026-09-16",
