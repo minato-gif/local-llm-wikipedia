@@ -1,10 +1,15 @@
 {
   "site": {
     "title": "Local LLM Wikipedia",
-    "description": "ローカルLLMのモデル、ランタイム、量子化、フロントエンド、ハードウェア動向を日次で自動追跡するWiki。",
-    "last_updated": "2026-09-19"
+    "description": "ローカルLLMのモデル、ランタイム、量子化、ハードウェアに加え、大手AI開発元と新興技術の重要動向を日次で追跡するWiki。",
+    "last_updated": "2026-09-20"
   },
   "seen_urls": [
+    "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "https://openai.com/index/gpt-6-astra/",
+    "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+    "https://prismml.com/news/bonsai-2-27b",
+    "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10631",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10630",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b10629",
@@ -413,6 +418,99 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11037"
   ],
   "entries": [
+    {
+      "id": "2026-09-17-ternary-bonsai-2-27b",
+      "date": "2026-09-17",
+      "title": "PrismMLがTernary Bonsai 2 27Bを公開、27Bモデルを約5.9GBに圧縮",
+      "source": "PrismML News",
+      "source_url": "https://prismml.com/news/bonsai-2-27b",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "PrismMLは、Qwen3.8 27Bを基盤とする三値化モデル「Ternary Bonsai 2 27B」を公開しました。同社によると実効1.76bit/weight、モデル容量約5.9GBで、262Kコンテキストとテキスト・画像入力に対応します。GGUF版も公式Hugging Faceで配布されています。",
+      "impact": "27B級モデルを一般的なPCでも扱いやすい容量へ縮小しており、メモリ容量を抑えたローカル推論の有力候補です。ただし、実行時にはモデル本体以外にKVキャッシュなどのメモリが必要で、長いコンテキストや画像入力では消費量が大きくなります。",
+      "details": "PrismMLはBonsai 2について、重みを{-1, 0, +1}に制限する三値化を採用し、元モデルより約9分の1の容量で、同社の集計ベンチマーク上は性能の98.2%を維持したと説明しています。これらの性能値は開発元による評価なので、用途別の独立検証も確認が必要です。Apache 2.0で公開され、GGUF版は対応するllama.cpp系ランタイムでのローカル実行候補になります。",
+      "tags": [
+        "PrismML",
+        "Bonsai 2",
+        "Ternary",
+        "GGUF",
+        "量子化",
+        "マルチモーダル",
+        "Apache 2.0"
+      ],
+      "curated": true,
+      "editorial_bucket": "主要モデル",
+      "summary_method": "公式一次情報を編集部で確認"
+    },
+    {
+      "id": "2026-09-15-jev-system-one-model",
+      "date": "2026-09-15",
+      "title": "TypeSafe AIが意思決定特化モデル「Jev」を発表、文章生成ではなく型付き判断を返す新設計",
+      "source": "TypeSafe AI Blog",
+      "source_url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "TypeSafe AIは、ソフトウェア内の判断処理に特化した「System One Model」の第1弾としてJevを早期提供しました。一般的な生成LLMのように文章を1トークンずつ生成せず、選択肢、スコア、確率と信頼度を型付きデータとして並列に返す設計です。",
+      "impact": "Jevは現時点でダウンロード可能なローカルLLMではなく、TypeSafeのサービスとして提供される意思決定モデルです。一方、エージェントのルーティング、分類、承認判定などに生成LLMを使う現在の設計を見直す動きにつながる可能性があります。",
+      "details": "TypeSafe AIは、Jevが文字列生成を行わない代わりに、あらかじめ定義した型に沿う判断と確率を一度に返すと説明しています。学習には同社がRLCD（Reinforcement Learning for Calibrated Decisions）と呼ぶ手法を採用しています。速度や費用に関する数値は同社評価に基づくため、独立した検証結果とは分けて読む必要があります。用途はチャットではなく、問い合わせ分類、ツール選択、リスク判定、ワークフロー内の分岐などです。",
+      "tags": [
+        "TypeSafe AI",
+        "Jev",
+        "System One Model",
+        "意思決定モデル",
+        "AIエージェント",
+        "新アーキテクチャ"
+      ],
+      "curated": true,
+      "editorial_bucket": "新興技術",
+      "summary_method": "公式一次情報を編集部で確認"
+    },
+    {
+      "id": "2026-09-03-openai-gpt-6-astra",
+      "date": "2026-09-03",
+      "title": "OpenAIがGPT-6 Astraを発表、コンピュータ操作・研究・開発作業を強化",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIはGPT-6 Astraを発表し、ChatGPT、Codex、APIなどへ段階的に提供すると案内しました。コンピュータ操作、ブラウジング、ソフトウェア開発、科学研究、専門業務を横断する長い作業を重視したフロンティアモデルです。",
+      "impact": "クラウド提供モデルの発表であり、ローカル実行用ウェイトの公開ではありません。ただし、エージェント機能やコンピュータ操作が主要モデルの中心機能になったことで、ローカルLLM側でもツール利用、長文脈、操作安全性の実装競争が強まると考えられます。",
+      "details": "OpenAIの公式発表では、GPT-6 AstraをChatGPTの各プラン、Codex、OpenAI API、Microsoft Azure、AWS Bedrockへ展開するとしています。性能値や他モデルとの比較はOpenAI自身の評価を含むため、第三者ベンチマークと区別して扱います。また同社は別途、安全性評価においてサイバー能力がPreparedness FrameworkのCritical水準に達したと説明しており、能力向上と同時にアクセス制御や監視強化が重要な論点になっています。",
+      "tags": [
+        "OpenAI",
+        "GPT-6 Astra",
+        "フロンティアモデル",
+        "コンピュータ操作",
+        "AIエージェント",
+        "公式発表"
+      ],
+      "curated": true,
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "公式一次情報を編集部で確認"
+    },
+    {
+      "id": "2026-09-01-anthropic-fable-mythos-5-1",
+      "date": "2026-09-01",
+      "title": "AnthropicがClaude Fable 5.1とMythos 5.1を発表、用途別に安全策を分けて提供",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、コーディングと知識作業を重視したClaude Fable 5.1とClaude Mythos 5.1を発表しました。両者は同じ基盤モデルを使いながら、一般提供版と、サイバーセキュリティ・生命科学向けの限定アクセス版で安全策と提供範囲を分けています。",
+      "impact": "ローカル配布モデルではありませんが、同一の基盤モデルを用途とリスクに応じて異なる安全策で提供する方式は、今後のモデル配布、権限管理、企業導入に影響する動きです。ローカルLLMでも能力だけでなく、実行権限と監査方法の設計が重要になります。",
+      "details": "Anthropicによると、Fable 5.1は一般利用向け、Mythos 5.1は信頼されたアクセス制度を通じてサイバーセキュリティや生命科学の専門作業に提供されます。同社はキャッシュ読み込み料金の変更による典型的な利用費の低下や、顧客管理下のストレージを使う仕組みも説明しています。能力・価格・安全性に関する主張は公式発表に基づくため、利用時にはAPI仕様、提供地域、独立評価もあわせて確認する必要があります。",
+      "tags": [
+        "Anthropic",
+        "Claude Fable 5.1",
+        "Claude Mythos 5.1",
+        "AI安全性",
+        "アクセス制御",
+        "公式発表"
+      ],
+      "curated": true,
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "公式一次情報を編集部で確認"
+    },
     {
       "id": "2026-09-19-099339ac1537",
       "date": "2026-09-19",

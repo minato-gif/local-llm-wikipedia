@@ -1,6 +1,6 @@
 # Local LLM Wikipedia
 
-ローカルLLM関連の最新情報を **毎日自動収集 → 差分判定 → 記事化 → Git commit → GitHub Pagesへ再公開** する静的Wikiです。
+ローカルLLMとAI業界の重要動向を **毎日自動収集 → 差分判定 → 記事化 → Git commit → GitHub Pagesへ再公開** する静的Wikiです。
 
 公開時には `scripts/generate_static.py` が、常設ガイドと公開基準を満たした記事を通常URLのHTMLへ変換します。各ページはJavaScriptなしでも本文を読めるため、検索エンジンからも個別ページとして認識できます。
 
@@ -34,6 +34,8 @@
 - LM Studio changelog
 - Hugging Face Blog
 - Hugging Face上の主要ローカルLLMモデル動向
+- OpenAI / Anthropic / Google DeepMind / Meta AI / Mistral / xAI の公式ニュース
+- TypeSafe AIなど、新しいモデル設計や推論方式を発表する新興開発元
 
 監視対象は `sources.json` で増減できます。
 

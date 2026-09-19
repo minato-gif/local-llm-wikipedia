@@ -8,15 +8,35 @@ DB = Path(__file__).resolve().parents[1] / "docs/data/wiki.json"
 TODAY = datetime.now(timezone(timedelta(hours=9))).date().isoformat()
 MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
-# 1日あたりの記事数。重要ニュースを中心に最大5件まで掲載する。
-MAX_ITEMS, MIN_SCORE = 5, 4
+# 1日あたりの記事数。ローカルLLMと重要なAI業界動向を最大6件まで掲載する。
+MAX_ITEMS, MIN_SCORE = 6, 4
 
 MAJOR_MODEL_FAMILIES = [
     "qwen", "deepseek", "gemma", "mistral", "llama", "nemotron", "phi",
     "minimax", "glm", "kimi", "liquid", "falcon", "command-r", "granite",
+    "bonsai", "ternary",
 ]
 
 MAJOR_TOOLS = ["lm studio", "ollama"]
+
+INDUSTRY_CATEGORY = "新技術・業界動向"
+MAJOR_AI_LABS = [
+    "openai", "anthropic", "claude", "google deepmind", "google ai",
+    "meta ai", "mistral", "xai", "deepseek", "qwen", "alibaba",
+]
+EMERGING_TECH_TERMS = [
+    "new architecture", "architecture", "system one", "decision model",
+    "parallel sampler", "rlcd", "new model", "frontier model", "open weight",
+    "open-weight", "agent", "reasoning", "multimodal", "inference",
+    "新アーキテクチャ", "意思決定モデル", "新モデル", "推論方式",
+]
+INDUSTRY_MATERIAL_TERMS = [
+    "model", "launch", "release", "introducing", "research", "architecture",
+    "agent", "api", "benchmark", "open weight", "open-weight", "safety",
+    "security", "funding", "acquisition", "partnership", "compute",
+    "infrastructure", "pricing", "policy", "regulation", "governance",
+    "モデル", "公開", "発表", "研究", "安全", "提携", "買収", "資金調達",
+]
 
 QUANT_TERMS = [
     "quantization", "quantized", "quant", "gguf", "awq", "gptq", "exl2",
@@ -65,6 +85,10 @@ def classify(e):
     is_major_tool = any(x in source_l or x in text for x in MAJOR_TOOLS)
     is_model = category == "モデル" or "hugging face models" in source_l
     is_major_model = is_model and any(x in text for x in MAJOR_MODEL_FAMILIES)
+    is_industry = category == INDUSTRY_CATEGORY
+    is_major_lab = is_industry and any(x in source_l or x in text for x in MAJOR_AI_LABS)
+    is_emerging_tech = is_industry and any(x in text for x in EMERGING_TECH_TERMS)
+    is_material_industry = is_industry and any(x in text for x in INDUSTRY_MATERIAL_TERMS)
     is_quant = any(x in text for x in QUANT_TERMS)
     is_gpu = any(x in text for x in GPU_TERMS)
     is_versioned_release = bool(re.search(r"\bv?\d+\.\d+(?:\.\d+)?\b", title, re.I))
@@ -72,7 +96,11 @@ def classify(e):
     is_llama_nightly = bool(re.search(r"llama\.cpp:\s*b\d+\b", title, re.I))
     is_critical = any(x in text for x in ["security", "vulnerability", "breaking", "license", "deprecated"])
 
-    if is_major_model:
+    if is_industry and is_major_lab:
+        bucket = "大手AI開発元"
+    elif is_industry:
+        bucket = "新興技術"
+    elif is_major_model:
         bucket = "主要モデル"
     elif is_major_tool:
         bucket = "LM Studio / Ollama"
@@ -91,6 +119,10 @@ def classify(e):
         "is_major_tool": is_major_tool,
         "is_model": is_model,
         "is_major_model": is_major_model,
+        "is_industry": is_industry,
+        "is_major_lab": is_major_lab,
+        "is_emerging_tech": is_emerging_tech,
+        "is_material_industry": is_material_industry,
         "is_quant": is_quant,
         "is_gpu": is_gpu,
         "is_versioned_release": is_versioned_release,
@@ -105,6 +137,18 @@ def score(e):
     c = classify(e)
     text = c["text"]
     s = 1
+
+    # 大手AI開発元の主要発表と、新しいモデル設計・推論方式を優先。
+    if c["is_industry"]:
+        s += 2
+        if c["is_material_industry"]:
+            s += 5
+        if c["is_major_lab"] and c["is_material_industry"]:
+            s += 2
+        if c["is_emerging_tech"]:
+            s += 3
+        if c["is_release"]:
+            s += 2
 
     # 1. 主要モデルの新規公開・大きな更新を最優先。
     if c["is_major_model"]:
@@ -176,7 +220,12 @@ def fallback(e, s):
     product = e.get("source", "関連ツール").replace("GitHub Releases / ", "")
     c = classify(e)
 
-    if c["is_major_model"]:
+    if c["is_industry"]:
+        if c["is_major_lab"]:
+            summary = f"{product}から、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。"
+        else:
+            summary = f"{product}から、既存の生成LLMとは異なる新技術または新しいモデル設計が発表されました。用途、提供形態、検証可能な根拠を整理して追跡します。"
+    elif c["is_major_model"]:
         summary = "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。"
     elif c["is_major_tool"]:
         summary = f"{product}でローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。"
@@ -191,7 +240,10 @@ def fallback(e, s):
     else:
         summary = f"{product}でローカルLLM利用者に影響する重要な更新が公開されました。実用面で確認する価値がある内容として選定しています。"
 
-    impact = "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。"
+    if c["is_industry"]:
+        impact = "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。"
+    else:
+        impact = "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。"
     z = dict(e)
     z.update(
         priority="高" if s >= 9 else "中",
@@ -228,11 +280,11 @@ def gemini(items):
     prompt = f"""あなたはローカルLLM専門Wikiの日本語編集者です。候補から掲載価値が高いニュースを最大{MAX_ITEMS}件選び、日本語で要約してください。
 
 優先順位:
-1. 主要モデル（Qwen、DeepSeek、Gemma、Mistral、Llama、Nemotron、Phi、MiniMax、GLM、Kimi等）の新規公開・主要版
-2. LM Studio / Ollama の大型アップデート
-3. 量子化・GGUF・AWQ/GPTQ/EXL2・4bit/8bit等の重要な改善
-4. CUDA / ROCm / Vulkan / Metal / Flash Attention / KV cache / GPU offload等の推論高速化
-5. セキュリティ、ライセンス、互換性、破壊的変更
+1. OpenAI、Anthropic、Google DeepMind、Meta AI、Mistral、xAI等の大手AI開発元によるモデル公開・大きな研究/製品方針の変更
+2. Jevのような新アーキテクチャ、新しい推論方式、意思決定モデルなどの新興技術
+3. 主要モデル（Qwen、DeepSeek、Gemma、Mistral、Llama、Nemotron、Phi、MiniMax、GLM、Kimi、Bonsai等）の新規公開・主要版
+4. LM Studio / Ollama の大型アップデート
+5. 量子化・GPU高速化、セキュリティ、ライセンス、互換性、破壊的変更
 
 原則除外:
 CI、テスト、文書、typo、内部refactor、cleanup、影響の小さいnightly、小規模な個人GGUF変換。
@@ -311,27 +363,33 @@ def main():
     counts = {}
     major_model_count = 0
 
-    for e, s in ranked:
+    def add_candidate(e, s):
+        nonlocal major_model_count
         src = e.get("source", "")
         c = classify(e)
-
-        # 細かな llama.cpp nightly は、重大なセキュリティ/互換性問題を除き掲載しない。
         if c["is_llama_nightly"] and not c["is_critical"]:
-            continue
-
-        # 同じ情報源による独占を避ける。
+            return False
         if counts.get(src, 0) >= 2:
-            continue
-
-        # 主要モデル記事は最大2件。モデル記事だけで埋まるのを防ぐ。
+            return False
         if c["is_major_model"] and major_model_count >= 2:
-            continue
-
+            return False
         counts[src] = counts.get(src, 0) + 1
         if c["is_major_model"]:
             major_model_count += 1
-
         limited.append((e, s))
+        return True
+
+    # 重要な業界動向がモデル変換記事に押し出されないよう、毎日最大2枠を先に確保。
+    for e, s in ranked:
+        if classify(e)["is_industry"]:
+            add_candidate(e, s)
+        if sum(1 for item, _ in limited if classify(item)["is_industry"]) >= 2:
+            break
+
+    for e, s in ranked:
+        if any(existing.get("source_url") == e.get("source_url") for existing, _ in limited):
+            continue
+        add_candidate(e, s)
         if len(limited) >= MAX_ITEMS:
             break
 
@@ -340,6 +398,10 @@ def main():
         curated = [fallback(e, s) for e, s in limited]
 
     db["entries"] = curated + keep
+    db["seen_urls"] = list(dict.fromkeys(
+        db.get("seen_urls", [])
+        + [e.get("source_url") for e in curated if e.get("source_url")]
+    ))
 
     if raw or curated:
         db["site"]["last_updated"] = TODAY

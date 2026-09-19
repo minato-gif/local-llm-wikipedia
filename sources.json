@@ -51,12 +51,83 @@
       "priority": "中"
     }
   ],
+  "industry_pages": [
+    {
+      "name": "OpenAI News",
+      "company": "OpenAI",
+      "url": "https://openai.com/news/",
+      "path_prefixes": ["/index/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "Anthropic Newsroom",
+      "company": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "path_prefixes": ["/news/", "/claude-"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "Google DeepMind News",
+      "company": "Google DeepMind",
+      "url": "https://deepmind.google/discover/blog/",
+      "path_prefixes": ["/blog/", "/discover/blog/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "Meta AI Blog",
+      "company": "Meta AI",
+      "url": "https://ai.meta.com/blog/",
+      "path_prefixes": ["/blog/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "Mistral News",
+      "company": "Mistral AI",
+      "url": "https://mistral.ai/news/",
+      "path_prefixes": ["/news/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "xAI News",
+      "company": "xAI",
+      "url": "https://x.ai/news",
+      "path_prefixes": ["/news/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 10
+    },
+    {
+      "name": "TypeSafe AI Blog",
+      "company": "TypeSafe AI",
+      "url": "https://typesafe.ai/blog",
+      "path_prefixes": ["/blog/"],
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "max_age_days": 14
+    }
+  ],
   "huggingface_queries": [
     {
       "query": "GGUF",
       "category": "モデル",
       "priority": "中",
       "limit": 20
+    },
+    {
+      "query": "Ternary-Bonsai",
+      "category": "モデル",
+      "priority": "高",
+      "limit": 10
     }
   ]
 }

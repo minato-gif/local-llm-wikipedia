@@ -79,6 +79,7 @@ def category_slug(category: str) -> str:
     known = {
         "モデル": "models",
         "モデル・技術": "model-technology",
+        "新技術・業界動向": "ai-industry-trends",
         "推論ランタイム": "inference-runtimes",
         "フロントエンド": "frontends",
         "フロントエンド・ランタイム": "frontends-runtimes",
@@ -160,6 +161,7 @@ def home_html(site: dict, entries: list[dict]) -> str:
         ("/guide/compare/", "モデル比較", "用途、規模、実行しやすさを横並びで比較します。"),
         ("/guide/download/", "モデルの選び方", "GGUFやQ4_K_Mなど、ダウンロード画面の見方を説明します。"),
         ("/guide/troubleshoot/", "トラブルシューティング", "ロード失敗、VRAM不足、速度低下などを症状別に確認します。"),
+        ("/category/ai-industry-trends/", "新技術・業界動向", "大手AI開発元の主要発表と、Jevのような新しい技術潮流を追跡します。"),
     ]
     card_html = "".join(
         f'<div class="card"><h3><a href="{url}">{esc(title)}</a></h3><p>{esc(text)}</p></div>'
@@ -342,7 +344,7 @@ def build(output: Path) -> dict:
 
     common_schema = {"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME, "url": BASE_URL + "/", "inLanguage": "ja"}
     write_page(output, "/", layout(title=SITE_NAME, description=db["site"]["description"], canonical=BASE_URL + "/", body=home_html(db["site"], published), categories=categories, schema=common_schema, legacy_redirect=True))
-    write_page(output, "/articles/", layout(title=f"記事一覧 - {SITE_NAME}", description="ローカルLLMの常設ガイドと、一次情報を確認した新着記事の一覧です。", canonical=BASE_URL + "/articles/", body=content_index_html(static_pages, published), categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": "記事一覧", "url": BASE_URL + "/articles/", "inLanguage": "ja"}))
+    write_page(output, "/articles/", layout(title=f"記事一覧 - {SITE_NAME}", description="ローカルLLMの常設ガイドと、AI業界の重要動向を含む新着記事の一覧です。", canonical=BASE_URL + "/articles/", body=content_index_html(static_pages, published), categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": "記事一覧", "url": BASE_URL + "/articles/", "inLanguage": "ja"}))
 
     sitemap: list[tuple[str, str]] = [(BASE_URL + "/", db["site"].get("last_updated", "")), (BASE_URL + "/articles/", db["site"].get("last_updated", ""))]
     for page in static_pages:
@@ -358,7 +360,12 @@ def build(output: Path) -> dict:
     for category in categories:
         route = f'/category/{category_slug(category)}/'
         items = [entry for entry in recent if entry.get("category") == category]
-        write_page(output, route, layout(title=f"{category}の記事 - {SITE_NAME}", description=f"{category}に関するローカルLLM記事の一覧です。", canonical=BASE_URL + route, body=f'<div class="article"><h1>カテゴリ: {esc(category)}</h1>{list_html(items)}</div>', categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{category}の記事", "url": BASE_URL + route}))
+        description = (
+            "大手AI開発元の主要発表と、新しいモデル設計・推論方式などの業界動向をまとめています。"
+            if category == "新技術・業界動向"
+            else f"{category}に関するローカルLLM記事の一覧です。"
+        )
+        write_page(output, route, layout(title=f"{category}の記事 - {SITE_NAME}", description=description, canonical=BASE_URL + route, body=f'<div class="article"><h1>カテゴリ: {esc(category)}</h1>{list_html(items)}</div>', categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{category}の記事", "url": BASE_URL + route}))
         sitemap.append((BASE_URL + route, db["site"].get("last_updated", "")))
 
     for entry in all_entries:
