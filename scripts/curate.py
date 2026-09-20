@@ -245,14 +245,16 @@ def fallback(e, s):
     else:
         impact = "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。"
     z = dict(e)
+    source_details = cut(e.get("details") or e.get("summary") or "一次情報の内容を十分に整理できていません。", 900)
     z.update(
         priority="高" if s >= 9 else "中",
         summary=cut(summary, 320),
         impact=cut(impact, 260),
-        details="重要点を日本語で要約しています。完全な技術変更は出典の公式ページを参照してください。",
+        details=source_details,
         curated=True,
+        quality_status="needs_review",
         editorial_bucket=c["bucket"],
-        summary_method="ルールベース日本語要約",
+        summary_method="ルールベース候補整理（公開保留）",
     )
     return z
 
@@ -293,6 +295,8 @@ CI、テスト、文書、typo、内部refactor、cleanup、影響の小さいni
 
 JSONのみ:
 {{"items":[{{"source_url":"入力と完全一致","include":true,"importance":"高または中","title_ja":"自然な日本語タイトル","summary_ja":"120〜220字の2〜3文","impact_ja":"80〜160字","details_ja":"160〜320字"}}]}}
+
+details_jaには発表内容だけでなく、確認できる制約・未確定事項・ローカル実行との関係を含めてください。API専用・クローズドウェイトの発表をローカル実行可能と誤解させないでください。
 
 候補:{json.dumps(src, ensure_ascii=False)}"""
 
@@ -337,6 +341,7 @@ JSONのみ:
             details=cut(a.get("details_ja", ""), 480),
             priority=a.get("importance") if a.get("importance") in ["高", "中"] else ("高" if s >= 9 else "中"),
             curated=True,
+            quality_status="source_summarized",
             editorial_bucket=c["bucket"],
             summary_method=f"Gemini / {MODEL}",
         )

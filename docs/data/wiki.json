@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Local LLM Wikipedia",
-    "description": "ローカルLLMのモデル、ランタイム、量子化、ハードウェアに加え、大手AI開発元と新興技術の重要動向を日次で追跡するWiki。",
+    "title": "Local LLM Wiki",
+    "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
     "last_updated": "2026-09-20"
   },
   "seen_urls": [
@@ -440,7 +440,8 @@
       ],
       "curated": true,
       "editorial_bucket": "大手AI開発元",
-      "summary_method": "Gemini / gemini-3.5-flash-lite"
+      "summary_method": "Gemini / gemini-3.5-flash-lite",
+      "quality_status": "source_summarized"
     },
     {
       "id": "2026-09-20-cd4e0f9a6110",
@@ -451,8 +452,8 @@
       "category": "新技術・業界動向",
       "priority": "高",
       "summary": "OpenAIは、新フラッグシップモデル「Sol」を含む「GPT-5.6」ファミリーの一般提供を開始しました。日常業務向けの「Terra」や高コスト効率の「Luna」も含まれ、コーディングや科学分野などで優れた性能をより低いコストで実現します。",
-      "impact": "より少ないトークンで高度なタスクを処理可能にし、AI開発・利用における性能対価格比を大きく向上させます。",
-      "details": "GPT-5.6ファミリーは、コーディングや知識労働、サイバーセキュリティ、科学などの分野で最先端の結果をもたらすフラッグシップモデルの「Sol」、日常業務向けの「Terra」、コスト効率に優れた「Luna」で構成されています。推論ごとの知性と効率性を高め、従来や競合のフロンティアモデルを上回る成果をより低コストで提供します。また、最も要求の厳しい作業を加速するための「ultra」オプションも導入されています。",
+      "impact": "GPT-5.6はクラウドAPIで提供されるモデルで、ローカル実行用ウェイトの公開ではありません。ローカルLLMとの比較では、開発元が示す性能や価格だけでなく、データの外部送信、継続費用、オフライン性、監査要件を分けて判断する必要があります。",
+      "details": "GPT-5.6ファミリーは、コーディングや知識労働、サイバーセキュリティ、科学などを対象とする「Sol」、日常業務向けの「Terra」、コスト効率を重視する「Luna」で構成されています。「ultra」は特に難しい作業へ追加の推論資源を使う選択肢です。性能と費用に関する比較値はOpenAI自身の評価に基づくため、独立した検証や実際の入出力条件と分けて読む必要があります。ローカル用途では直接の導入候補ではなく、クラウド利用との比較基準として扱います。",
       "tags": [
         "OpenAI",
         "AI業界動向",
@@ -460,7 +461,8 @@
       ],
       "curated": true,
       "editorial_bucket": "大手AI開発元",
-      "summary_method": "Gemini / gemini-3.5-flash-lite"
+      "summary_method": "Gemini / gemini-3.5-flash-lite",
+      "quality_status": "source_summarized"
     },
     {
       "id": "2026-09-17-ternary-bonsai-2-27b",
@@ -484,7 +486,13 @@
       ],
       "curated": true,
       "editorial_bucket": "主要モデル",
-      "summary_method": "公式一次情報を編集部で確認"
+      "summary_method": "公式一次情報を編集部で確認",
+      "quality_status": "editorially_reviewed",
+      "verification_note": "公式GGUFの配布と仕様を確認。速度・品質は実機未検証です。",
+      "references": [
+        {"label": "PrismML — Bonsai 2 27B 発表", "url": "https://prismml.com/news/bonsai-2-27b"},
+        {"label": "Hugging Face — 公式GGUFモデルカード", "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf"}
+      ]
     },
     {
       "id": "2026-09-15-jev-system-one-model",
@@ -507,7 +515,13 @@
       ],
       "curated": true,
       "editorial_bucket": "新興技術",
-      "summary_method": "公式一次情報を編集部で確認"
+      "summary_method": "公式一次情報を編集部で確認",
+      "quality_status": "editorially_reviewed",
+      "verification_note": "提供形態と設計思想を公式発表で確認。モデル出力は実機未検証です。",
+      "references": [
+        {"label": "TypeSafe AI — System One ModelsとJevの発表", "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"},
+        {"label": "TypeSafe AI — 公式サイト", "url": "https://typesafe.ai/"}
+      ]
     },
     {
       "id": "2026-09-03-openai-gpt-6-astra",
@@ -530,7 +544,13 @@
       ],
       "curated": true,
       "editorial_bucket": "大手AI開発元",
-      "summary_method": "公式一次情報を編集部で確認"
+      "summary_method": "公式一次情報を編集部で確認",
+      "quality_status": "editorially_reviewed",
+      "verification_note": "製品発表と安全性概要を確認。クラウド提供であり、ローカル実行は未検証です。",
+      "references": [
+        {"label": "OpenAI — GPT-6 Astra 発表", "url": "https://openai.com/index/gpt-6-astra/"},
+        {"label": "OpenAI — GPT-6 Astra 安全性概要", "url": "https://openai.com/index/safety-overview-gpt-6-astra/"}
+      ]
     },
     {
       "id": "2026-09-01-anthropic-fable-mythos-5-1",
@@ -553,7 +573,13 @@
       ],
       "curated": true,
       "editorial_bucket": "大手AI開発元",
-      "summary_method": "公式一次情報を編集部で確認"
+      "summary_method": "公式一次情報を編集部で確認",
+      "quality_status": "editorially_reviewed",
+      "verification_note": "製品発表とシステムカード一覧を確認。API出力は実機未検証です。",
+      "references": [
+        {"label": "Anthropic — Claude Fable 5.1 / Mythos 5.1 発表", "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"},
+        {"label": "Anthropic — モデルシステムカード一覧", "url": "https://www.anthropic.com/system-cards"}
+      ]
     },
     {
       "id": "2026-09-19-099339ac1537",

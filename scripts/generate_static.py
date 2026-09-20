@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DOCS = ROOT / "docs"
 BASE_URL = "https://localllmwiki.com"
 SITE_NAME = "Local LLM Wiki"
+EDITOR_NAME = "Local LLM Wiki運営者"
 
 
 def esc(value: object) -> str:
@@ -111,7 +112,10 @@ def is_publishable(entry: dict) -> bool:
     source_url = str(entry.get("source_url", ""))
     if not entry.get("curated") or not source_url:
         return False
-    if article_text_length(entry) < 280:
+    if entry.get("quality_status") == "needs_review":
+        return False
+    minimum_length = 260 if entry.get("model_meta") else 400
+    if article_text_length(entry) < minimum_length:
         return False
     if "リリース候補" in title or re.search(r"(?:-|/)rc\d*\b", source_url, re.I):
         return False
@@ -124,8 +128,9 @@ def list_html(entries: list[dict]) -> str:
     rows = []
     for entry in entries:
         tags = "".join(f'<span class="badge">{esc(tag)}</span>' for tag in entry.get("tags", [])[:5])
+        search_text = " ".join(str(entry.get(key, "")) for key in ("title", "summary", "category", "source", "tags"))
         rows.append(
-            '<article class="entry">'
+            f'<article class="entry" data-search="{esc(search_text.lower())}">'
             f'<div class="meta">{esc(entry.get("date"))} · {esc(entry.get("source"))}</div>'
             f'<h3><a href="/articles/{quote(str(entry["id"]), safe="")}/">{esc(entry.get("title"))}</a></h3>'
             f'<p>{esc(entry.get("summary"))}</p>'
@@ -147,12 +152,14 @@ def static_kind(route: str) -> str:
         "models": "モデル解説",
         "hardware": "ハードウェア",
         "basics": "入門",
+        "model-checklist": "選定ガイド",
+        "editorial-policy": "編集方針",
     }
     return next((label for key, label in labels.items() if key in route), "解説")
 
 
 def home_html(site: dict, entries: list[dict]) -> str:
-    latest = sorted(entries, key=lambda item: item.get("date", ""), reverse=True)[:10]
+    latest = sorted(entries, key=lambda item: item.get("date", ""), reverse=True)[:8]
     high = [item for item in latest if item.get("priority") == "高"][:4]
     cards = [
         ("/guide/basics/", "はじめてのローカルLLM", "専門用語を避けながら、モデル・量子化・VRAMの基本を解説します。"),
@@ -161,6 +168,7 @@ def home_html(site: dict, entries: list[dict]) -> str:
         ("/guide/compare/", "モデル比較", "用途、規模、実行しやすさを横並びで比較します。"),
         ("/guide/download/", "モデルの選び方", "GGUFやQ4_K_Mなど、ダウンロード画面の見方を説明します。"),
         ("/guide/troubleshoot/", "トラブルシューティング", "ロード失敗、VRAM不足、速度低下などを症状別に確認します。"),
+        ("/guide/model-checklist/", "モデル選定チェックリスト", "目的、メモリ、量子化、互換性、ライセンスの順に候補を絞ります。"),
         ("/category/ai-industry-trends/", "新技術・業界動向", "大手AI開発元の主要発表と、Jevのような新しい技術潮流を追跡します。"),
     ]
     card_html = "".join(
@@ -173,12 +181,15 @@ def home_html(site: dict, entries: list[dict]) -> str:
         for item in high
     ) or "<p>現在、重要度「高」の新着記事はありません。</p>"
     return f'''<div class="article">
-<h1>{SITE_NAME}</h1>
+<section class="hero"><span class="eyebrow">LOCAL AI, PRACTICAL GUIDE</span>
+<h1>ローカルLLMを、<br>選べる・動かせる知識に。</h1>
 <p class="lead">{esc(site.get("description", ""))}</p>
-<div class="notice"><b>最終更新:</b> {esc(site.get("last_updated", ""))}<br>公式情報と一次情報を基に、常設ガイドと厳選した新着情報を掲載しています。</div>
-<h2>はじめての方へ</h2><div class="grid">{card_html}</div>
-<h2>注目記事</h2><div class="grid">{high_html}</div>
-<h2>最近の更新</h2>{list_html(latest)}
+<div class="hero-actions"><a class="button" href="/guide/basics/">基礎から始める</a><a class="button secondary" href="/guide/model-checklist/">モデルを選ぶ</a></div></section>
+<div class="trust-strip"><div class="trust-item"><b>一次情報を優先</b><span>公式発表・モデルカード・リポジトリを出発点にします。</span></div><div class="trust-item"><b>ローカル判断へ変換</b><span>容量・量子化・ランタイム・ライセンスの観点を加えます。</span></div><div class="trust-item"><b>検証範囲を明示</b><span>AI利用、概算値、実機未検証を記事内で区別します。</span></div></div>
+<div class="notice"><b>最終更新: {esc(site.get("last_updated", ""))}</b><br>公開基準を満たさない自動収集候補は一覧と検索エンジンから除外しています。<a href="/editorial-policy/">調査・編集方針を見る</a></div>
+<div class="section-head"><h2>目的から探す</h2><p>初めての導入からモデル比較、トラブル対応まで、作業の順序に沿って読めます。</p></div><div class="grid">{card_html}</div>
+<div class="section-head"><h2>注目記事</h2><p>新着のうち、ローカル利用者への影響が特に大きい情報です。</p></div><div class="grid">{high_html}</div>
+<div class="section-head"><h2>最近の更新</h2><p><a href="/articles/">すべての記事を見る →</a></p></div>{list_html(latest)}
 </div>'''
 
 
@@ -186,7 +197,7 @@ def content_index_html(static_pages: list[dict], entries: list[dict]) -> str:
     evergreen = []
     for page in static_pages:
         evergreen.append(
-            '<article class="content-row">'
+            f'<article class="content-row" data-search="{esc((page["title"] + " " + page["summary"]).lower())}">'
             f'<div><div class="meta"><span class="badge">{esc(static_kind(page["route"]))}</span></div>'
             f'<h3><a href="{route_to_path(page["route"])}">{esc(page["title"])}</a></h3>'
             f'<p>{esc(page["summary"])}</p></div></article>'
@@ -195,6 +206,7 @@ def content_index_html(static_pages: list[dict], entries: list[dict]) -> str:
 <h1>記事一覧</h1>
 <p class="lead">常設の解説記事と、一次情報を確認して公開基準を満たした新着記事をまとめています。</p>
 <div class="notice"><b>現在の掲載数</b><br>常設解説ページ: {len(static_pages)}件<br>公開中の新着記事: {len(entries)}件</div>
+<div class="filter-box"><label for="articleFilter"><b>記事を絞り込む</b></label><input id="articleFilter" type="search" placeholder="例: Qwen、量子化、VRAM"><span class="filter-status" id="filterStatus">全{len(static_pages) + len(entries)}件</span></div>
 <h2>常設解説記事</h2><div class="content-list">{"".join(evergreen)}</div>
 <h2>新着記事</h2>{list_html(sorted(entries, key=lambda item: item.get("date", ""), reverse=True))}
 </div>'''
@@ -268,22 +280,62 @@ def model_details(entry: dict) -> str:
 <h2>GGUFファイル</h2><div class="table-wrap"><table class="compare-table"><thead><tr><th>量子化</th><th>ファイル</th><th>容量</th></tr></thead><tbody>{files_html or '<tr><td colspan="3">情報不足</td></tr>'}</tbody></table></div>'''
 
 
-def article_html(entry: dict) -> str:
+def source_type(entry: dict) -> str:
+    source = str(entry.get("source", "")).lower()
+    url = str(entry.get("source_url", "")).lower()
+    if "hugging face" in source or "huggingface.co" in url:
+        return "公式モデルカード／配布ページ"
+    if "github" in source or "github.com" in url:
+        return "公式リポジトリ／リリース"
+    return "開発元の公式発表"
+
+
+def reference_list(entry: dict) -> list[dict]:
+    refs = entry.get("references")
+    if isinstance(refs, list) and refs:
+        return [ref for ref in refs if isinstance(ref, dict) and ref.get("url")]
+    return [{"label": f'{entry.get("source", "公式情報")}（一次情報）', "url": entry.get("source_url", "")}]
+
+
+def related_html(entry: dict, related: list[dict]) -> str:
+    if not related:
+        return ""
+    cards = "".join(
+        f'<div class="related-card"><span class="meta">{esc(item.get("date"))} · {esc(item.get("category"))}</span>'
+        f'<a href="/articles/{quote(str(item["id"]), safe="")}/">{esc(item.get("title"))}</a></div>'
+        for item in related
+    )
+    return f'<h2>関連記事</h2><div class="related-grid">{cards}</div>'
+
+
+def article_html(entry: dict, related: list[dict], published_categories: list[str]) -> str:
     tags = "".join(f'<span class="badge">{esc(tag)}</span>' for tag in entry.get("tags", [])) or "情報不足"
-    researched = " · 一次情報による詳細調査済み" if entry.get("model_meta") else ""
+    method = str(entry.get("summary_method", "編集部による一次情報の整理"))
+    ai_note = "AIによる要約補助を使用" if any(word in method.lower() for word in ("gemini", "ai")) else "編集ルールに基づく整理"
+    test_note = str(entry.get("verification_note") or "実機での速度・品質・互換性は未検証です。")
+    references = "".join(
+        f'<li><a target="_blank" rel="noopener noreferrer" href="{esc(ref.get("url"))}">{esc(ref.get("label") or ref.get("url"))}</a></li>'
+        for ref in reference_list(entry)
+    )
+    category = str(entry.get("category", ""))
+    category_url = f"/category/{category_slug(category)}/" if category in published_categories else "/articles/"
     return f'''<article class="article">
-<h1>{esc(entry.get("title"))}</h1>
-<div class="meta">掲載日: {esc(entry.get("date"))}{researched}</div>
-<aside class="infobox"><div class="title">{esc(entry.get("title"))}</div>
-<div class="row"><b>情報源</b><span>{esc(entry.get("source"))}</span></div>
-<div class="row"><b>カテゴリ</b><span>{esc(entry.get("category"))}</span></div>
-<div class="row"><b>重要度</b><span>{esc(entry.get("priority"))}</span></div></aside>
+<nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>›</span><a href="{category_url}">{esc(category)}</a><span>›</span><span>記事</span></nav>
+<header class="article-head"><span class="article-kicker">{esc(category)}</span><h1>{esc(entry.get("title"))}</h1>
 <p class="lead">{esc(entry.get("summary"))}</p>
+<div class="byline"><span>執筆・編集: <a href="/operator.html">{EDITOR_NAME}</a></span><span>公開日: {esc(entry.get("date"))}</span><a href="/editorial-policy/">調査・編集方針</a></div></header>
+<aside class="infobox"><div class="title">この記事の位置づけ</div>
+<div class="row"><b>情報源</b><span>{esc(entry.get("source"))}</span></div>
+<div class="row"><b>カテゴリ</b><span>{esc(category)}</span></div>
+<div class="row"><b>重要度</b><span>{esc(entry.get("priority"))}</span></div></aside>
+<div class="verification"><div class="verification-item"><b>根拠</b><span>{esc(source_type(entry))}</span></div><div class="verification-item"><b>作成方法</b><span>{esc(ai_note)}</span></div><div class="verification-item"><b>検証範囲</b><span>{esc(test_note)}</span></div></div>
+<div class="content-callout"><b>ローカル利用者への判断</b><br>{esc(entry.get("impact"))}</div>
 {model_details(entry)}
-<h2>ローカル利用者への影響</h2><p>{esc(entry.get("impact"))}</p>
-<h2>詳細</h2><p>{esc(entry.get("details"))}</p>
+<h2>発表・更新の内容</h2><p>{esc(entry.get("details"))}</p>
 <h2>タグ</h2><p>{tags}</p>
-<div class="sourcebox"><b>出典</b><br><a target="_blank" rel="noopener noreferrer" href="{esc(entry.get("source_url"))}">{esc(entry.get("source_url"))}</a></div>
+<div class="sourcebox"><b>参照した一次情報</b><ol class="source-list">{references}</ol></div>
+<p class="disclosure">この記事は一次情報を日本語で整理したものです。開発元が公表した性能値は独立検証済みとは限りません。導入・購入・ライセンス判断の前に、リンク先の最新版も確認してください。</p>
+{related_html(entry, related)}
 </article>'''
 
 
@@ -295,13 +347,37 @@ def navigation(categories: list[str]) -> str:
 <a href="/">メインページ</a><a href="/articles/">記事一覧</a><a href="/guide/basics/">はじめてのローカルLLM</a>
 <a href="/guide/models/">主要ローカルLLMモデル</a><a href="/guide/hardware/">自分のPCでどのモデルが動く？</a>
 <a href="/guide/glossary/">ローカルLLM用語集</a><a href="/guide/compare/">モデル比較</a>
-<h4>実践ガイド</h4><a href="/guide/start/">ローカルLLMの始め方</a><a href="/guide/download/">モデルをダウンロードするとき何を選べばいい？</a><a href="/guide/troubleshoot/">トラブルシューティング</a>
-<h4>サイト</h4><a href="/about/">このサイトについて</a><a href="/operator.html">運営者情報</a><a href="/contact.html">お問い合わせ</a><a href="/recent/">最近の更新</a>
+<h4>実践ガイド</h4><a href="/guide/start/">ローカルLLMの始め方</a><a href="/guide/model-checklist/">モデル選定チェックリスト</a><a href="/guide/download/">モデルをダウンロードするとき何を選べばいい？</a><a href="/guide/troubleshoot/">トラブルシューティング</a>
+<h4>サイト</h4><a href="/about/">このサイトについて</a><a href="/editorial-policy/">調査・編集方針</a><a href="/operator.html">運営者情報</a><a href="/contact.html">お問い合わせ</a><a href="/recent/">最近の更新</a>
 <h4>カテゴリ</h4>{category_links}</nav>'''
+
+
+def guide_attribution(fragment: str, updated: str) -> str:
+    """Add visible authorship to evergreen guides without duplicating source JS."""
+    byline = (
+        f'<div class="byline"><span>執筆・編集: <a href="/operator.html">{EDITOR_NAME}</a></span>'
+        f'<span>最終確認: {esc(updated)}</span><a href="/editorial-policy/">調査・編集方針</a></div>'
+    )
+    return re.sub(r"(</h1>)", r"\1" + byline, fragment, count=1, flags=re.I)
+
+
+def related_entries(entry: dict, published: list[dict], limit: int = 3) -> list[dict]:
+    candidates = [item for item in published if item.get("id") != entry.get("id")]
+    tags = set(entry.get("tags", []))
+    candidates.sort(
+        key=lambda item: (
+            item.get("category") == entry.get("category"),
+            len(tags.intersection(item.get("tags", []))),
+            item.get("date", ""),
+        ),
+        reverse=True,
+    )
+    return candidates[:limit]
 
 
 def layout(*, title: str, description: str, canonical: str, body: str, categories: list[str], schema: dict, noindex: bool = False, legacy_redirect: bool = False) -> str:
     robots = '<meta name="robots" content="noindex,follow">' if noindex else '<meta name="robots" content="index,follow,max-image-preview:large">'
+    ad_script = "" if noindex else '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5222146333207141" crossorigin="anonymous"></script>'
     redirect = """
 <script>
 (()=>{const go=()=>{const h=location.hash;if(!h.startsWith('#/'))return;let p=h.slice(1);if(p.startsWith('/article/'))p='/articles/'+p.slice(9);if(!p.endsWith('/'))p+='/';location.replace(p);};addEventListener('hashchange',go);go();})();
@@ -314,13 +390,13 @@ def layout(*, title: str, description: str, canonical: str, body: str, categorie
 <link rel="canonical" href="{esc(canonical)}"><link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="/feed.xml">
 <meta property="og:type" content="website"><meta property="og:site_name" content="{SITE_NAME}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(canonical)}">
 <link rel="icon" href="/assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/site-icon-32.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/assets/wiki.css"><link rel="stylesheet" href="/assets/research-status-v1032.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5222146333207141" crossorigin="anonymous"></script>
+{ad_script}
 <script type="application/ld+json">{schema_json}</script>{redirect}
 </head><body>
-<header class="top"><button id="menuBtn" aria-label="メニュー" aria-controls="side" aria-expanded="false">☰</button><a class="brand" href="/"><img class="site-logo" src="/assets/site-icon-64.png" alt=""><span>{SITE_NAME}</span></a><div class="search"><a href="/articles/">記事を探す</a></div></header>
-<div class="page"><aside id="side">{navigation(categories)}<section class="about"><b>編集方針</b><p>公式・一次情報を優先し、公開基準を満たした内容だけを一覧掲載します。</p></section></aside><main id="app">{clean_internal_links(body)}</main></div>
-<footer>{SITE_NAME} — <a href="/articles/">記事一覧</a> · <a href="/about/">このサイトについて</a> · <a href="/operator.html">運営者情報</a> · <a href="/contact.html">お問い合わせ</a> · <a href="/privacy.html">プライバシーポリシー</a></footer>
-<script>(()=>{{const button=document.getElementById('menuBtn');const side=document.getElementById('side');button?.addEventListener('click',()=>{{const open=side.classList.toggle('open');button.setAttribute('aria-expanded',String(open));}});side?.addEventListener('click',event=>{{if(event.target.closest('a')){{side.classList.remove('open');button?.setAttribute('aria-expanded','false');}}}});}})();</script>
+<a class="skip-link" href="#app">本文へ移動</a><header class="top"><button id="menuBtn" aria-label="メニューを開く" aria-controls="side" aria-expanded="false">☰</button><a class="brand" href="/"><img class="site-logo" src="/assets/site-icon-64.png" alt=""><span>{SITE_NAME}</span></a><div class="search"><a href="/articles/">記事を探す</a></div></header>
+<div class="page"><aside id="side">{navigation(categories)}<section class="about"><b>編集方針</b><p>公式・一次情報を優先し、公開基準を満たした内容だけを一覧掲載します。<br><a href="/editorial-policy/">基準を読む</a></p></section></aside><main id="app" tabindex="-1">{clean_internal_links(body)}</main></div>
+<footer>{SITE_NAME} — <a href="/articles/">記事一覧</a> · <a href="/editorial-policy/">調査・編集方針</a> · <a href="/operator.html">運営者情報</a> · <a href="/contact.html">お問い合わせ</a> · <a href="/privacy.html">プライバシーポリシー</a></footer>
+<script>(()=>{{const button=document.getElementById('menuBtn');const side=document.getElementById('side');const close=()=>{{side?.classList.remove('open');button?.setAttribute('aria-expanded','false');button?.setAttribute('aria-label','メニューを開く');}};button?.addEventListener('click',()=>{{const open=side.classList.toggle('open');button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');}});side?.addEventListener('click',event=>{{if(event.target.closest('a'))close();}});addEventListener('keydown',event=>{{if(event.key==='Escape')close();}});const filter=document.getElementById('articleFilter');const rows=[...document.querySelectorAll('[data-search]')];const status=document.getElementById('filterStatus');filter?.addEventListener('input',()=>{{const query=filter.value.trim().toLowerCase();let visible=0;rows.forEach(row=>{{const show=!query||row.dataset.search.includes(query);row.hidden=!show;if(show)visible++;}});if(status)status.textContent=query?`${{visible}}件表示`:`全${{rows.length}}件`;}});}})();</script>
 </body></html>'''
 
 
@@ -350,7 +426,7 @@ def build(output: Path) -> dict:
     for page in static_pages:
         route = route_to_path(page["route"])
         canonical = BASE_URL + route
-        write_page(output, route, layout(title=f'{page["title"]} - {SITE_NAME}', description=page["summary"], canonical=canonical, body=page["html"], categories=categories, schema={"@context": "https://schema.org", "@type": "Article", "headline": page["title"], "description": page["summary"], "url": canonical, "inLanguage": "ja", "publisher": {"@type": "Organization", "name": SITE_NAME}}))
+        write_page(output, route, layout(title=f'{page["title"]} - {SITE_NAME}', description=page["summary"], canonical=canonical, body=guide_attribution(page["html"], db["site"].get("last_updated", "")), categories=categories, schema={"@context": "https://schema.org", "@type": "Article", "headline": page["title"], "description": page["summary"], "url": canonical, "inLanguage": "ja", "author": {"@type": "Person", "name": EDITOR_NAME, "url": BASE_URL + "/operator.html"}, "publisher": {"@type": "Organization", "name": SITE_NAME}}))
         sitemap.append((canonical, db["site"].get("last_updated", "")))
 
     recent = sorted(published, key=lambda item: item.get("date", ""), reverse=True)
@@ -365,15 +441,16 @@ def build(output: Path) -> dict:
             if category == "新技術・業界動向"
             else f"{category}に関するローカルLLM記事の一覧です。"
         )
-        write_page(output, route, layout(title=f"{category}の記事 - {SITE_NAME}", description=description, canonical=BASE_URL + route, body=f'<div class="article"><h1>カテゴリ: {esc(category)}</h1>{list_html(items)}</div>', categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{category}の記事", "url": BASE_URL + route}))
+        category_body = f'<div class="article"><section class="category-hero"><span class="eyebrow">CATEGORY</span><h1>{esc(category)}</h1><p>{esc(description)}</p><span class="category-count">公開中 {len(items)}件</span></section>{list_html(items)}</div>'
+        write_page(output, route, layout(title=f"{category}の記事 - {SITE_NAME}", description=description, canonical=BASE_URL + route, body=category_body, categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{category}の記事", "url": BASE_URL + route}))
         sitemap.append((BASE_URL + route, db["site"].get("last_updated", "")))
 
     for entry in all_entries:
         route = f'/articles/{quote(str(entry["id"]), safe="")}/'
         canonical = BASE_URL + route
         publish = is_publishable(entry)
-        schema = {"@context": "https://schema.org", "@type": "Article", "headline": entry.get("title"), "description": entry.get("summary"), "datePublished": entry.get("date"), "dateModified": entry.get("last_updated", entry.get("date")), "mainEntityOfPage": canonical, "url": canonical, "inLanguage": "ja", "publisher": {"@type": "Organization", "name": SITE_NAME}}
-        write_page(output, route, layout(title=f'{entry.get("title")} - {SITE_NAME}', description=entry.get("summary", ""), canonical=canonical, body=article_html(entry), categories=categories, schema=schema, noindex=not publish))
+        schema = {"@context": "https://schema.org", "@type": "Article", "headline": entry.get("title"), "description": entry.get("summary"), "datePublished": entry.get("date"), "dateModified": entry.get("last_updated", entry.get("date")), "mainEntityOfPage": canonical, "url": canonical, "inLanguage": "ja", "author": {"@type": "Person", "name": EDITOR_NAME, "url": BASE_URL + "/operator.html"}, "publisher": {"@type": "Organization", "name": SITE_NAME}, "citation": [ref.get("url") for ref in reference_list(entry)]}
+        write_page(output, route, layout(title=f'{entry.get("title")} - {SITE_NAME}', description=entry.get("summary", ""), canonical=canonical, body=article_html(entry, related_entries(entry, published) if publish else [], categories), categories=categories, schema=schema, noindex=not publish))
         if publish:
             sitemap.append((canonical, entry.get("last_updated", entry.get("date", ""))))
 
