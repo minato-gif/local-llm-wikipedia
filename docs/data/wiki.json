@@ -415,9 +415,53 @@
     "https://huggingface.co/IsValorum/Nex-N2.5-mini-APEX-I-MiniPlus-V1-GGUF",
     "https://huggingface.co/mradermacher/guru-32B-i1-GGUF",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11039",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/b11037"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b11037",
+    "https://openai.com/index/astra-for-law/",
+    "https://openai.com/index/gpt-5-6/"
   ],
   "entries": [
+    {
+      "id": "2026-09-20-0d8b6a33ba16",
+      "date": "2026-09-18",
+      "title": "OpenAI、法律業務向け基盤「Astra for Law」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/astra-for-law/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、法務事務所やリーガルテック企業向けにカスタムワークフローや接続された法データソースを提供する「Astra for Law」を発表しました。最新かつ最も強力なGPT-6 Astraモデルを基盤とし、専門的な法的業務向けのツールやプライバシー制御を備えています。",
+      "impact": "法律事務所や法務関連のAPI利用者に対し、高度な機密保護とカスタムデータ連携を実現する強力なAI基盤を提供します。",
+      "details": "Astra for Lawは、最新のGPT-6 Astraモデルをベースに、法的分析や文書作成のための指示、高度な法務検索インデックスを統合した法律業務向けの基盤です。HarveyやLegoraといったAPI顧客が自社製品に組み込めるほか、RelativityやClioなど既存の専門ツールと接続する26のエコシステムプラグインを利用できます。さらに、機密性の高いクライアントワークに対応する独自のプライバシーおよびガバナンス制御も拡充されています。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-20-cd4e0f9a6110",
+      "date": "2026-09-16",
+      "title": "OpenAI、フラッグシップ「GPT-5.6」ファミリーを一般提供開始",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-5-6/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、新フラッグシップモデル「Sol」を含む「GPT-5.6」ファミリーの一般提供を開始しました。日常業務向けの「Terra」や高コスト効率の「Luna」も含まれ、コーディングや科学分野などで優れた性能をより低いコストで実現します。",
+      "impact": "より少ないトークンで高度なタスクを処理可能にし、AI開発・利用における性能対価格比を大きく向上させます。",
+      "details": "GPT-5.6ファミリーは、コーディングや知識労働、サイバーセキュリティ、科学などの分野で最先端の結果をもたらすフラッグシップモデルの「Sol」、日常業務向けの「Terra」、コスト効率に優れた「Luna」で構成されています。推論ごとの知性と効率性を高め、従来や競合のフロンティアモデルを上回る成果をより低コストで提供します。また、最も要求の厳しい作業を加速するための「ultra」オプションも導入されています。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-17-ternary-bonsai-2-27b",
       "date": "2026-09-17",
