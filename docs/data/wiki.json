@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-20"
+    "last_updated": "2026-09-21"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -417,9 +417,192 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11039",
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11037",
     "https://openai.com/index/astra-for-law/",
-    "https://openai.com/index/gpt-5-6/"
+    "https://openai.com/index/gpt-5-6/",
+    "https://huggingface.co/IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-09-21-149ed9c4b439",
+      "date": "2026-09-21",
+      "title": "Qwen3.8-35BベースのMoE推論特化型GGUFモデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Qwen3.8-35Bをベースとしたカスタム量子化モデル「Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF」がHugging Faceで公開された。256Kの大規模コンテキストと高速なローカル実行をターゲットにしている。",
+      "impact": "24GBクラスのVRAM環境において、システムRAMオフロードを活用しながらフル256Kコンテキストでの高速なローカル推論を可能にする点が高い実用性を持つ。",
+      "details": "本モデルはQwen3.8ベースの蒸留モデルを独自量子化（APEX-I-MiniPlus-V2.1）したもので、llama.cpp等のローカル環境での実行を想定している。システムRAMとVRAMを併用するワークステーション環境向けに最適化されており、一部の非検閲版としての側面も持つ。実際のローカル運用では、長コンテキスト利用時に十分なメモリ容量を確保する必要がある。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "quantized",
+        "quantization",
+        "apex",
+        "apex-quant",
+        "custom-quantization",
+        "unsloth-studio",
+        "moe"
+      ],
+      "model_meta": {
+        "model_id": "IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF",
+        "author": "IsValorum",
+        "license": "apache-2.0",
+        "base_model": "empero-ai/Qwen3.8-35B-A3B-Distill",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 3184,
+        "likes": 5,
+        "last_modified": "2026-09-21T00:56:18.000Z",
+        "quantizations": [
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 2604844832,
+            "files": [
+              "mmproj-Q8_0.gguf",
+              "mtp-Qwen3.8-35B-A3B-Distill-Q8_0.gguf"
+            ],
+            "size": "2.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 2604844832,
+            "files": [
+              "mmproj-Q8_0.gguf",
+              "mtp-Qwen3.8-35B-A3B-Distill-Q8_0.gguf"
+            ],
+            "size": "2.4 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 2.43,
+          "system_ram_min_gib": 5.0,
+          "system_ram_recommended_gib": 7.5,
+          "full_gpu_vram_rough_gib": 4.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 614194720,
+            "size": "585.7 MB"
+          },
+          {
+            "name": "mtp-Qwen3.8-35B-A3B-Distill-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 1990650112,
+            "size": "1.9 GB"
+          },
+          {
+            "name": "Qwen3.8-35B-A3B-Distill.APEX-I-MiniPlus-V2.1.gguf",
+            "quantization": "",
+            "size_bytes": 14751301344,
+            "size": "13.7 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 585.7 MB〜13.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF」が更新されています。確認時点の指標は downloads=3,184、likes=5 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは empero-ai/Qwen3.8-35B-A3B-Distill。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q8_0。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 585.7 MB〜13.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-20-0d8b6a33ba16",
       "date": "2026-09-18",
@@ -490,8 +673,14 @@
       "quality_status": "editorially_reviewed",
       "verification_note": "公式GGUFの配布と仕様を確認。速度・品質は実機未検証です。",
       "references": [
-        {"label": "PrismML — Bonsai 2 27B 発表", "url": "https://prismml.com/news/bonsai-2-27b"},
-        {"label": "Hugging Face — 公式GGUFモデルカード", "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf"}
+        {
+          "label": "PrismML — Bonsai 2 27B 発表",
+          "url": "https://prismml.com/news/bonsai-2-27b"
+        },
+        {
+          "label": "Hugging Face — 公式GGUFモデルカード",
+          "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf"
+        }
       ]
     },
     {
@@ -519,8 +708,14 @@
       "quality_status": "editorially_reviewed",
       "verification_note": "提供形態と設計思想を公式発表で確認。モデル出力は実機未検証です。",
       "references": [
-        {"label": "TypeSafe AI — System One ModelsとJevの発表", "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"},
-        {"label": "TypeSafe AI — 公式サイト", "url": "https://typesafe.ai/"}
+        {
+          "label": "TypeSafe AI — System One ModelsとJevの発表",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+        },
+        {
+          "label": "TypeSafe AI — 公式サイト",
+          "url": "https://typesafe.ai/"
+        }
       ]
     },
     {
@@ -548,8 +743,14 @@
       "quality_status": "editorially_reviewed",
       "verification_note": "製品発表と安全性概要を確認。クラウド提供であり、ローカル実行は未検証です。",
       "references": [
-        {"label": "OpenAI — GPT-6 Astra 発表", "url": "https://openai.com/index/gpt-6-astra/"},
-        {"label": "OpenAI — GPT-6 Astra 安全性概要", "url": "https://openai.com/index/safety-overview-gpt-6-astra/"}
+        {
+          "label": "OpenAI — GPT-6 Astra 発表",
+          "url": "https://openai.com/index/gpt-6-astra/"
+        },
+        {
+          "label": "OpenAI — GPT-6 Astra 安全性概要",
+          "url": "https://openai.com/index/safety-overview-gpt-6-astra/"
+        }
       ]
     },
     {
@@ -577,8 +778,14 @@
       "quality_status": "editorially_reviewed",
       "verification_note": "製品発表とシステムカード一覧を確認。API出力は実機未検証です。",
       "references": [
-        {"label": "Anthropic — Claude Fable 5.1 / Mythos 5.1 発表", "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"},
-        {"label": "Anthropic — モデルシステムカード一覧", "url": "https://www.anthropic.com/system-cards"}
+        {
+          "label": "Anthropic — Claude Fable 5.1 / Mythos 5.1 発表",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+        },
+        {
+          "label": "Anthropic — モデルシステムカード一覧",
+          "url": "https://www.anthropic.com/system-cards"
+        }
       ]
     },
     {
