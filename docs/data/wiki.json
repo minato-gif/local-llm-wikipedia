@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-21"
+    "last_updated": "2026-09-22"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -418,9 +418,271 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/b11037",
     "https://openai.com/index/astra-for-law/",
     "https://openai.com/index/gpt-5-6/",
-    "https://huggingface.co/IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF"
+    "https://huggingface.co/IsValorum/Qwen3.8-35B-A3B-Distill-MTP-APEX-I-MiniPlus-V2.1-GGUF",
+    "https://openai.com/index/introducing-gpt-5-5/",
+    "https://x.ai/news/grok-4-7",
+    "https://mistral.ai/news/mistral-x-mozilla",
+    "https://huggingface.co/distributedcognition/Ternary-Bonsai-2-27B-abliterated"
   ],
   "entries": [
+    {
+      "id": "2026-09-22-cec5e11c3910",
+      "date": "2026-09-16",
+      "title": "OpenAI、複雑なタスクやエージェント処理を強化した「GPT-5.5」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-5-5/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、コーディングやリサーチ、データ分析など複雑なタスクに向けた新モデル「GPT-5.5」を発表しました。前世代の速度を維持しつつ、エージェント的な処理能力と自己検証機能が大きく向上しています。",
+      "impact": "開発者向けのAPI等で提供が開始されており、多様なツールを横断して自律的に作業を遂行する実用的なエージェントAIの進化を示しています。",
+      "details": "GPT-5.5およびGPT-5.5 ProはAPI等を通じて提供されており、実世界でのトークン処理速度を維持しながら推論性能とエージェント的な動作が強化されています。ソフトウェアの操作や複数ステップにわたるタスクの自動実行に優れていますが、クローズドAPI専用のモデルであり、ローカル環境での直接実行やオープンウェイトとしての公開に関する言及はありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-22-0e73ed815575",
+      "date": "2026-09-21",
+      "title": "xAI、コーディングと知識作業を強化したフラグシップモデル「Grok 4.7」を発表",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/grok-4-7",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "xAIは、コーディングや長時間の推論タスクに特化した新モデル「Grok 4.7」を発表しました。より大型のベースモデルを採用し、自己検証能力とコンテキスト管理が改善されています。",
+      "impact": "同クラスの他社モデルと比較して優れた価格性能比を持ち、CursorBenchなどの開発者向けベンチマークでフロンティア級の性能を発揮します。",
+      "details": "Grok 4.7は長時間の強化学習を経て開発され、複雑なタスクや自己検証の精度が向上しています。Grok 4.6と同等の価格と速度で提供されますが、xAIのクラウドインフラ経由での利用を前提としたプロプライエタリなモデルであり、ローカルPCやオフライン環境での実行には対応していません。",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-22-7d794e9eb218",
+      "date": "2026-09-16",
+      "title": "Mistral AIとMozillaが提携、FirefoxのAIブラウジング機能にMistralモデルを統合",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/mistral-x-mozilla",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Mistral AIはMozillaとの提携を発表し、Firefoxのベータ版ブラウジング機能「Smart Window」にMistralのモデルが採用されました。地域に根ざした多言語・プライバシー重視のAI体験を提供します。",
+      "impact": "オープンウェイトを推進する欧州発のMistralの技術が、主要なブラウザのエコシステムに組み込まれることで、プライバシーに配慮したAI機能の普及が進みます。",
+      "details": "フランスや北米などのユーザーを対象に、Firefox Smart WindowのバックエンドとしてMistralのモデルが展開されます。ブラウザのタブや検索を支援するクラウド連携型の機能であり、ユーザーのローカル環境で直接モデルが動作する仕様やオープンウェイトの重み公開に関する発表ではありません。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-22-f01d25d4e254",
+      "date": "2026-09-22",
+      "title": "Hugging Face：Qwenベースの3値量子化モデル「Ternary-Bonsai-2-27B-abliterated」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/distributedcognition/Ternary-Bonsai-2-27B-abliterated",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Qwen3.8-27Bをベースにした3値量子化モデル「Ternary-Bonsai-2-27B」に対し、拒絶応答を無効化するアブリレーション処理を施したコミュニティモデルが公開されました。",
+      "impact": "高度に圧縮されたハイブリッドアテンション構造を持つモデルのオープンな研究利用や、セーフティガード無しの挙動検証を可能にします。",
+      "details": "ベースモデルであるprism-ml/Ternary-Bonsai-2-27B-ggufの量子化バリアントであり、GLP（Runtime Projective Steering）を用いて拒絶方向のベクトルが取り除かれています。安全機能のガードレールが意図的に外された研究用モデルであるため、実際のデプロイ時にはLlama Guard等の外部モデレーションの追加が推奨されます。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "abliteration",
+        "uncensored",
+        "ternary",
+        "bonsai",
+        "qwen3.8",
+        "license:apache-2.0",
+        "endpoints_compatible"
+      ],
+      "model_meta": {
+        "model_id": "distributedcognition/Ternary-Bonsai-2-27B-abliterated",
+        "author": "distributedcognition",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "gguf",
+        "downloads": 349,
+        "likes": 2,
+        "last_modified": "2026-09-22T00:13:46.000Z",
+        "quantizations": [
+          "TQ1_0",
+          "Q2_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "files": [
+              "gguf/Ternary-Bonsai-2-27B-abliterated-df32k-PQ2_0.gguf"
+            ],
+            "size": "6.7 GB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 11893297856,
+            "files": [
+              "gguf/Ternary-Bonsai-2-27B-abliterated-df32k-PTQ1_0.gguf",
+              "mirror/Ternary-Bonsai-2-27B-PTQ1_0.gguf"
+            ],
+            "size": "11.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "glp/Ternary-Bonsai-2-27B-GLP-gated-a1.0.gguf",
+            "quantization": "",
+            "size_bytes": 1232288,
+            "size": "1.2 MB"
+          },
+          {
+            "name": "glp/Ternary-Bonsai-2-27B-GLP-64-a0.80.gguf",
+            "quantization": "",
+            "size_bytes": 1314432,
+            "size": "1.3 MB"
+          },
+          {
+            "name": "glp/Ternary-Bonsai-2-27B-GLP-64-a1.0.gguf",
+            "quantization": "",
+            "size_bytes": 1314432,
+            "size": "1.3 MB"
+          },
+          {
+            "name": "gguf/Ternary-Bonsai-2-27B-abliterated-df32k-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "mirror/Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "gguf/Ternary-Bonsai-2-27B-abliterated-df32k-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "size": "6.7 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 1.2 MB〜6.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「distributedcognition/Ternary-Bonsai-2-27B-abliterated」が更新されています。確認時点の指標は downloads=349、likes=2 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は TQ1_0, Q2_0。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 1.2 MB〜6.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-21-149ed9c4b439",
       "date": "2026-09-21",
