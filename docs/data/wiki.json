@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-22"
+    "last_updated": "2026-09-23"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -422,9 +422,100 @@
     "https://openai.com/index/introducing-gpt-5-5/",
     "https://x.ai/news/grok-4-7",
     "https://mistral.ai/news/mistral-x-mozilla",
-    "https://huggingface.co/distributedcognition/Ternary-Bonsai-2-27B-abliterated"
+    "https://huggingface.co/distributedcognition/Ternary-Bonsai-2-27B-abliterated",
+    "https://openai.com/index/introducing-gpt-5-4/",
+    "https://www.anthropic.com/claude-opus-5-5",
+    "https://x.ai/news/grok-voice-transcribe-2",
+    "https://mistral.ai/news/mistral-x-mozilla/"
   ],
   "entries": [
+    {
+      "id": "2026-09-23-6f21e6d2e2c5",
+      "date": "2026-09-23",
+      "title": "OpenAI、高度な推論とエージェント機能を統合した「GPT-5.4」および「GPT-5.4 Pro」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-5-4/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、コーディングやコンピュータ操作、ツール検索などの性能を強化した最先端モデル「GPT-5.4」を発表した。ChatGPTの「GPT-5.4 Thinking」やAPI経由で利用可能であり、100万トークンのコンテキストに対応している。",
+      "impact": "プロフェッショナルな業務向けに設計されたフロンティアモデルであり、思考プロセスの途中調整や深層ウェブ検索の改善など実務での実用性が大きく向上しています。",
+      "details": "GPT-5.4はChatGPTやAPI、Codexを通じて提供され、推論やコーディング、エージェントワークフローの成果を統合しています。思考の事前プラン提示や長期コンテキストの維持能力が向上しており、複雑な実務タスクの効率化を実現しています。なお、本モデルはAPIおよび独自プラットフォーム経由の提供であり、ローカル環境で直接実行可能なオープンウェイトモデルではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-23-23be824e8e0f",
+      "date": "2026-09-22",
+      "title": "Anthropic、エージェント型コーディングに優れた新モデル「Claude Opus 5.5」を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/claude-opus-5-5",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、新しいClaude 5.5ファミリーの第一弾として「Claude Opus 5.5」を発表した。エージェント型コーディングや知識労働において最高峰の性能を持ちながら、前世代のOpus 5に比べて運用コストが40%削減されている。",
+      "impact": "複雑なコード移行やウェブアプリケーションの効率化タスクにおいて圧倒的な成功率を示しつつ、ランニングコストを大幅に抑えることに成功しています。",
+      "details": "Claude Opus 5.5は外部評価機関による安全性テストをクリアしてリリースされ、大規模なコードベースの移行や最適化作業で高い成果を発揮します。厳格な安全基準やセーフガードが組み込まれており、AnthropicのマネージドAPIおよびプラットフォームでの利用を前提としたクローズドな最先端モデルです。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-23-abc223234ef0",
+      "date": "2026-09-18",
+      "title": "xAI、音声認識精度を向上させた「Grok Voice Transcribe 2.0」を発表",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/grok-voice-transcribe-2",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "xAIは、ノイズの多い環境や多様なアクセントに対応する最新の音声認識モデル「Grok Voice Transcribe 2.0」を発表した。前世代と比較して2倍の精度を同等の価格で実現している。",
+      "impact": "実際のコールセンターや車両アシスタントなどの過酷な条件下で培われた音声基盤モデルを活用し、実用的な音声テキスト変換の精度を大きく向上させています。",
+      "details": "Grok Voice Transcribe 2.0は、劣悪な回線環境、混ざり合う声、ローカルな方言など、実世界の厳しい音声条件に対応できるよう設計されています。Tesla車両のGrokアシスタントやカスタマーサポート等で活用されている基盤技術に基づくものであり、API等を介したクラウドサービスとしての利用が想定されています。",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-23-1549bd7769f1",
+      "date": "2026-09-16",
+      "title": "Mistral AIとMozillaが提携、FirefoxのAIブラウジング機能にMistralモデルを統合",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/mistral-x-mozilla/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Mistral AIはMozillaとの提携を発表し、FirefoxのAIブラウジングアシスタント「Smart Window」にMistralのモデルが採用されることになった。フランスや北米を皮切りに順次展開される。",
+      "impact": "オープンな技術やプライバシーを重視する両社の協力により、各地域の言語や文化文脈に最適化されたAIブラウジング体験が提供されます。",
+      "details": "Firefox Smart Window（ベータ版）を通じて、複雑な検索の要約やタブ情報の整理などを行うAI機能のバックボーンとしてMistralのオープンウェイト・フロンティアモデルの技術が活用されます。ユーザーのプライバシーと選択肢を尊重しつつ、地域言語のニュアンスを理解するAIシステムをブラウザ上に直接もたらす取り組みです。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-22-cec5e11c3910",
       "date": "2026-09-16",
