@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-23"
+    "last_updated": "2026-09-24"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -426,9 +426,212 @@
     "https://openai.com/index/introducing-gpt-5-4/",
     "https://www.anthropic.com/claude-opus-5-5",
     "https://x.ai/news/grok-voice-transcribe-2",
-    "https://mistral.ai/news/mistral-x-mozilla/"
+    "https://mistral.ai/news/mistral-x-mozilla/",
+    "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+    "https://huggingface.co/BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF",
+    "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
   ],
   "entries": [
+    {
+      "id": "2026-09-24-be25d033132e",
+      "date": "2026-09-23",
+      "title": "OpenAI、フロンティア知能を拡張する「GPT-6 Sol」および「Luna」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、専門的な業務やプログラミング等で高い性能を持つ「GPT-6 Sol」および「Luna」を発表しました。インフラ効率の改善により推論コストを削減し、API価格を従来モデル比で50%引き下げて提供します。",
+      "impact": "API利用コストの劇的な引き下げにより、高度なAI機能を組み込んだアプリケーションの開発や運用負担が大幅に軽減されます。",
+      "details": "上位モデル「GPT-6 Astra」の知能とアライメントを引き継ぎつつ、コスト効率と速度を最適化したモデルです。専門業務、事実性、コーディング、コンピュータ利用などの面で優れた性能を発揮します。本発表はAPI経由の提供に関するものであり、オープンウェイトモデルではないためローカル環境での直接実行はできません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-24-c621797c2666",
+      "date": "2026-09-24",
+      "title": "Hugging Face：Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUFが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Prism-MLの三値量子化モデルをベースに、拒絶応答を無効化（アブレーション）したGGUF版モデルが公開されました。マルチトークン予測（MTP）ヘッドをオプションで追加し、推論の高速化を実現しています。",
+      "impact": "3値量子化モデルにおいて拒絶応答の解除と推論の高速化を両立させ、ローカル環境での柔軟かつ高速な検証を可能にします。",
+      "details": "モデルサイズは非常にコンパクトに抑えられており、ブロックのスケール変更や再量子化を行わずに三値ディジットの一部を書き換える手法が採られています。MTPヘッドを利用するには対応するllama.cppフォーク等の環境が必要となるため、導入時は仕様の確認が推奨されます。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "qwen3_5",
+        "ternary",
+        "2-bit",
+        "abliterated",
+        "uncensored",
+        "mtp",
+        "speculative-decoding"
+      ],
+      "model_meta": {
+        "model_id": "BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF",
+        "author": "BoldingBuilds",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 18991,
+        "likes": 19,
+        "last_modified": "2026-09-23T20:45:02.000Z",
+        "quantizations": [
+          "Q2_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 14863658624,
+            "files": [
+              "Ternary-Bonsai-2-27B-Abliterated-PQ2_0.gguf",
+              "Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP.gguf"
+            ],
+            "size": "13.8 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-Abliterated-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "size": "6.7 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7657489696,
+            "size": "7.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 6.7 GB〜7.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF」が更新されています。確認時点の指標は downloads=18,991、likes=19 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q2_0。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 6.7 GB〜7.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-24-2d52ed2f0b86",
+      "date": "2026-09-23",
+      "title": "Anthropicのライフサイエンス研究から新しい酵素システムを発見",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicの新設したライフサイエンス研究ラボにおいて、ClaudeエージェントがDNAのデータセットを自律的に探索し、CRISPRに類似した特徴を持つ未知の酵素システムを発見しました。",
+      "impact": "AIが単なる文章生成を超えて、基礎科学分野の未踏領域で新たな仮説や発見を生み出す実例を示しています。",
+      "details": "逆転写酵素をベースにしたこのシステムは、DNAの切断やコピーといったプログラム可能な特性を持つ可能性があるとされています。本成果はAnthropicの最先端モデルを用いたクラウド上の研究リサーチに基づくものであり、ローカルLLMとして直接実行できるものではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-23-6f21e6d2e2c5",
       "date": "2026-09-23",
