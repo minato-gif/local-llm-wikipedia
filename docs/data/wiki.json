@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-24"
+    "last_updated": "2026-09-25"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -429,9 +429,435 @@
     "https://mistral.ai/news/mistral-x-mozilla/",
     "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
     "https://huggingface.co/BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF",
-    "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
+    "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+    "https://huggingface.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
+    "https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2"
   ],
   "entries": [
+    {
+      "id": "2026-09-25-fe4461afe5b2",
+      "date": "2026-09-25",
+      "title": "LiquidAIベースの派生GGUFモデル「LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF」公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "LiquidAIのLFM2.5-2.6Bをベースにし、多様な推論・指示モードやTurbo Brillianceシステムを統合した派生GGUFモデルがHugging Faceに登場しました。IQ4_XSやQ3などの量子化版が提供されており、ローカル環境での実行検証が行われています。",
+      "impact": "軽量な2.6Bクラスのモデルに多数の独自モードや最適化を組み込むことで、リソースが限られたエッジ環境やローカル環境における柔軟なタスク処理の可能性を広げます。",
+      "details": "モデルID：DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF、ライセンスはApache-2.0です。ベースモデルはLiquidAI/LFM2.5-2.6Bで、IQ4_XSおよびQ3量子化が用意されています。メモリ推定値として、IQ4_XS基準でファイルサイズが約3.12GiB、最小システムRAMが6.0GiB（推奨8.5GiB）、VRAMが約5.0GiBと見積もられています。公式なアーキテクチャ詳細やコンテキスト長は明記されておらず、内部アップグレードや特殊な推論・指示モードの挙動はユーザー側の制御に依存するため、利用時はモデルカードの確認が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "liquid",
+        "lfm2.5",
+        "edge",
+        "12 reasoning modes",
+        "12 instruct modes",
+        "Turbo-Brilliance",
+        "NEO Imatrix"
+      ],
+      "model_meta": {
+        "model_id": "DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
+        "author": "DavidAU",
+        "license": "apache-2.0",
+        "base_model": "LiquidAI/LFM2.5-2.6B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "",
+        "downloads": 4,
+        "likes": 35,
+        "last_modified": "2026-09-25T01:14:58.000Z",
+        "quantizations": [
+          "IQ4_XS",
+          "Q3"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 3344930112,
+            "files": [
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-IQ4_XS.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-IQ4_XS.gguf"
+            ],
+            "size": "3.1 GB"
+          },
+          {
+            "quantization": "Q3",
+            "size_bytes": 10747931264,
+            "files": [
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-Q6_K.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-Q6_K.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-Q8_0.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-Q8_0.gguf"
+            ],
+            "size": "10.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 3344930112,
+            "files": [
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-IQ4_XS.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-IQ4_XS.gguf"
+            ],
+            "size": "3.1 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 3344930112,
+            "files": [
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-IQ4_XS.gguf",
+              "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-IQ4_XS.gguf"
+            ],
+            "size": "3.1 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 3.12,
+          "system_ram_min_gib": 6.0,
+          "system_ram_recommended_gib": 8.5,
+          "full_gpu_vram_rough_gib": 5.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 1517841056,
+            "size": "1.4 GB"
+          },
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 1827089056,
+            "size": "1.7 GB"
+          },
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-Q6_K.gguf",
+            "quantization": "Q3",
+            "size_bytes": 2221648544,
+            "size": "2.1 GB"
+          },
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-Q6_K.gguf",
+            "quantization": "Q3",
+            "size_bytes": 2530896544,
+            "size": "2.4 GB"
+          },
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-Q8_0.gguf",
+            "quantization": "Q3",
+            "size_bytes": 2874813088,
+            "size": "2.7 GB"
+          },
+          {
+            "name": "LFM2.5-2.6B-Q3.8-TBrilliance-NEO-MAX-Q8_0.gguf",
+            "quantization": "Q3",
+            "size_bytes": 3120573088,
+            "size": "2.9 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 1.4 GB〜2.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF」が更新されています。確認時点の指標は downloads=4、likes=35 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは LiquidAI/LFM2.5-2.6B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は IQ4_XS, Q3。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 1.4 GB〜2.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-25-fb416b1d0b7b",
+      "date": "2026-09-25",
+      "title": "Qwen3.8-27Bの3bit量子化モデル向けドラフトモデル「Qwen3.8-27B-DFlash2-ternary-bonsai2」公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Ternary-Bonsai-2-27Bなどの2bit/3bit量子化モデル向けに最適化された、DFlash2アーキテクチャ採用のドラフトモデルが公開されました。推測デコード（Speculative Decoding）によるローカル環境での高速化を目的としています。",
+      "impact": "大規模な27Bクラスのモデルを用いたローカルでの推論時に、推測デコードを活用して生成速度を向上させるための実用的な選択肢を提供します。",
+      "details": "モデルID：naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2、ライセンスはApache-2.0です。ベースモデルはz-lab/Qwen3.8-27B-DFlash2であり、プリズムMLの2bit量子化Qwen3.8-27Bモデルの隠れ状態や貪欲生成結果を用いてファインチューニングされています。コンテキスト長は262,144に対応し、推奨量子化はQ4_K_Mです。メモリ推定値としてファイルサイズが約1.06GiB、VRAM約2.5GiBと算出されており、MLXやllama.cpp環境での推測デコードのドラフトモデルとしての利用が想定されています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "mlx",
+        "safetensors",
+        "gguf",
+        "qwen3",
+        "speculative-decoding",
+        "dflash2",
+        "draft-model",
+        "ternary"
+      ],
+      "model_meta": {
+        "model_id": "naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2",
+        "author": "naklitechie",
+        "license": "apache-2.0",
+        "base_model": "z-lab/Qwen3.8-27B-DFlash2",
+        "architectures": [
+          "DFlash2DraftModel"
+        ],
+        "model_type": "qwen3",
+        "context_length": 262144,
+        "pipeline_tag": "text-generation",
+        "library_name": "mlx",
+        "downloads": 2940,
+        "likes": 1,
+        "last_modified": "2026-09-24T19:19:03.000Z",
+        "quantizations": [
+          "Q4_K_M"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 1143006912,
+            "files": [
+              "Qwen3.8-27B-DFlash2-r3-Q4_K_M.gguf"
+            ],
+            "size": "1.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 1143006912,
+            "files": [
+              "Qwen3.8-27B-DFlash2-r3-Q4_K_M.gguf"
+            ],
+            "size": "1.1 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 1143006912,
+            "files": [
+              "Qwen3.8-27B-DFlash2-r3-Q4_K_M.gguf"
+            ],
+            "size": "1.1 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 1143006912,
+            "files": [
+              "Qwen3.8-27B-DFlash2-r3-Q4_K_M.gguf"
+            ],
+            "size": "1.1 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 1.06,
+          "system_ram_min_gib": 3.5,
+          "system_ram_recommended_gib": 5.5,
+          "full_gpu_vram_rough_gib": 2.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "MLX",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "長文コンテキスト",
+            "rating": "高",
+            "basis": "config/APIから最大コンテキスト長 262,144 tokens を確認。実用上の推奨値はメモリ量で変わります。"
+          }
+        ],
+        "gguf_file_count": 1,
+        "gguf_files": [
+          {
+            "name": "Qwen3.8-27B-DFlash2-r3-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 1143006912,
+            "size": "1.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 1.1 GB〜1.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2」が更新されています。確認時点の指標は downloads=2,940、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは z-lab/Qwen3.8-27B-DFlash2。アーキテクチャは DFlash2DraftModel。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_K_M。GGUFファイルは 1 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 1.1 GB〜1.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-24-be25d033132e",
       "date": "2026-09-23",
