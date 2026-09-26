@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-25"
+    "last_updated": "2026-09-26"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -431,9 +431,53 @@
     "https://huggingface.co/BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-PQ2_0-MTP-GGUF",
     "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
     "https://huggingface.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
-    "https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2"
+    "https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2",
+    "https://openai.com/index/airbnb-gpt-6-astra/",
+    "https://www.anthropic.com/news/life-sciences-verification-program"
   ],
   "entries": [
+    {
+      "id": "2026-09-26-e649c844a082",
+      "date": "2026-09-24",
+      "title": "OpenAI、Airbnbとの提携拡大を発表し「GPT-6 Astra」などのフロンティアモデルへのアクセスを総合的提供",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/airbnb-gpt-6-astra/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、Airbnbとの提携を拡大し、同社のエンジニアリングおよび製品開発チームに対して「GPT-6 Astra」を含むフロンティアモデルへの幅広いアクセスを提供すると発表しました。Airbnbはバグ修正やシステム設計、コーディング以外の業務効率化にこれを活用しています。",
+      "impact": "大手開発元による最先端モデルの企業向け大規模導入事例であり、業務効率の大幅な向上が報告されています。",
+      "details": "AirbnbはこれまでのCodexやGPT-5.6系列に続き、最新の「GPT-6 Astra」をAPIやAmazon Bedrock経由で導入しました。非コーディング作業での効率改善などの成果が報告されていますが、本発表はAPIおよびクラウドサービス経由の利用に関するものであり、ローカル環境での直接実行に関する言及はありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-26-17793b3b779a",
+      "date": "2026-09-17",
+      "title": "Anthropic、ライフサイエンス分野向けの安全性検証プログラム「LSVP」ベータ版を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/life-sciences-verification-program",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、生命科学の専門家向けに、生物学関連の作業に対する安全対策を柔軟にした「ライフサイエンス検証プログラム（LSVP）」のベータ版を発表しました。研究資格などの審査を経た検証済みチームにモデルアクセスを付与します。",
+      "impact": "創薬や研究生物学など従来制限されていた分野でのAI活用を安全に促進する取り組みです。",
+      "details": "LSVPでは、Mythos、Opus、SonnetといったAnthropic製モデルを、創薬や臨床開発などのタスクで利用可能になります。学術機関やスタートアップなどが対象であり、厳格な資格審査とセキュリティ基準の確認が行われます。APIを通じた利用が前提であり、オープンウェイトモデルのローカル実行とは異なります。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-25-fe4461afe5b2",
       "date": "2026-09-25",
