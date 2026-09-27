@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-26"
+    "last_updated": "2026-09-27"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -433,9 +433,52 @@
     "https://huggingface.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
     "https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2",
     "https://openai.com/index/airbnb-gpt-6-astra/",
-    "https://www.anthropic.com/news/life-sciences-verification-program"
+    "https://www.anthropic.com/news/life-sciences-verification-program",
+    "https://openai.com/index/priorities-principles-third-party-assessments/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc0"
   ],
   "entries": [
+    {
+      "id": "2026-09-27-83d8f063adef",
+      "date": "2026-09-23",
+      "title": "OpenAI、フロンティアAIモデルの独立した第三者評価に関する優先順位と原則を公表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/priorities-principles-third-party-assessments/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、フロンティアAIモデルや安全性確保のための厳格かつ独立した第三者評価に関する優先順位と原則を公表しました。モデルのトレーニング、評価、デプロイの各段階において深いアクセスを提供し、独立した評価を支援する方針を示しています。",
+      "impact": "AIの安全性確保や説明責任を果たすため、第三者機関によるモデル評価の枠組みを強化する重要な動きです。ローカル実行を直接対象としたものではありませんが、業界全体の安全性検証プロセスに影響を与えます。",
+      "details": "OpenAIは、フロンティアAIの安全性評価において独立した第三者評価が果たす役割の重要性を強調しています。トレーニング技術、評価データ、デプロイプロセスへの深いアクセスを評価者に提供することで、仮説の検証や見落とされたリスクの特定を促すとしています。Preparedness Frameworkのプラクティスにも第三者評価を組み込んでおり、技術的セーフガードやチェーンオブソートへのアクセスを含めた包括的なアプローチを推進しています。本発表はクラウドベースの大規模モデルの安全性検証に関するものであり、オープンソースやローカル実行モデルの直接的な仕様変更を伴うものではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-27-de8e68c9d61d",
+      "date": "2026-09-25",
+      "title": "Ollama v0.40.0リリース候補公開：Apple Silicon上でMLXランタイムのデフォルト採用を開始",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaのv0.40.0リリース候補（rc0）が公開され、Apple Siliconデバイスにおいて対応するモデルアーキテクチャがデフォルトでMLXランタイム上で実行されるようになりました。これによりMac環境でのローカル推論の効率化が期待されます。",
+      "impact": "Apple Silicon（Mac環境）を利用するローカルLLMユーザーにとって、推論処理のバックエンドにMLXがデフォルト採用されることはパフォーマンスや互換性の面で大きな変更となります。",
+      "details": "本リリースでは、Apple Silicon環境における最適化として、対応するモデルアーキテクチャが自動的にMLXランタイムを利用して実行される仕様変更が行われました。例えば対応モデルをpullして実行する際、裏手でMLXによる処理が適用されます。プレリリース期間を通じて対応モデルの拡充とテストが進められており、Macユーザーのローカル実行体験に直接影響を与えるアップデートとなっています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-26-e649c844a082",
       "date": "2026-09-24",
