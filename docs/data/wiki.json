@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-28"
+    "last_updated": "2026-09-29"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -437,9 +437,794 @@
     "https://openai.com/index/priorities-principles-third-party-assessments/",
     "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc0",
     "https://huggingface.co/huihui-ai/GLM-5.3-Flash-abliterated-GGUF",
-    "https://huggingface.co/sudoingx/Ternary-Bonsai-2-27B-PTQ1_0-MTP-GGUF"
+    "https://huggingface.co/sudoingx/Ternary-Bonsai-2-27B-PTQ1_0-MTP-GGUF",
+    "https://www.anthropic.com/claude-sonnet-5-5",
+    "https://x.ai/news/team-bots",
+    "https://huggingface.co/mysanit/qwen3-tts-gguf",
+    "https://huggingface.co/SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF",
+    "https://openai.com/index/lenfest-ai-collaborative-expansion/",
+    "https://openai.com/index/two-years-of-openai-academy/"
   ],
   "entries": [
+    {
+      "id": "2026-09-29-cdcf64de9f96",
+      "date": "2026-09-28",
+      "title": "Introducing Claude Sonnet 5.5",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropic Newsroomから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Introducing Claude Sonnet 5.5, the second model in the Claude 5.5 family. It’s a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work. Sonnet 5.5 is a faster, lower-cost complement to Claude Opus 5.5. Where Opus 5.5 is built for complex work requiring careful judgment, Sonnet 5.5 is strongest at well-scoped everyday tasks, fixing bugs, and creating polished documents, slides, and spreadsheets. It’s also got a sharp eye for design. Claude Haiku 5.5, built for high-volume and cost-sensitive applications, will join the Claude 5.5 family in the coming weeks. Performance. Sonnet 5.5 scores 70.6% on Terminal-Bench 4.0, an agentic coding evaluation, compared to Sonnet 5’s 10.3%. It scores two points below Opus 5.5 on GDPval-AA, a test of real-world work across a variety of occupations. And it’s strong on long-horizon work and image understanding—it’s the…",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-09-29-6f8db8278bcf",
+      "date": "2026-09-28",
+      "title": "Team Bots: AI coworkers that learn from your team",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/team-bots",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "xAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Give a Grok Bot the files, apps, and expertise it needs, then share it so your whole team can work from the same context. Today we’re launching Team Bots, Grok Bots that work and learn alongside your team. Give one access to the files, apps, and expertise it needs, then share it so everyone can work from the same context. At SpaceXAI, Team Bots brief account teams each morning, coordinate engineering projects, and answer data questions across the company. Here’s how they work, how we use them, and how to build one for your own workflow. You build a Team Bot around a role or workflow your team shares. Everyone gets access to the same Bot and its expertise, while still being able to work with it individually. Every Team Bot brings together four things that help it do its job:",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-09-29-2ced34b312c0",
+      "date": "2026-09-29",
+      "title": "Hugging Face: mysanit/qwen3-tts-gguf",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/mysanit/qwen3-tts-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=mysanit/qwen3-tts-gguf license=apache-2.0 base_model=不明 architecture=不明 context_length=不明 downloads=1,607 likes=0 quantizations=Q8_0, F16, Q5_K, BF16 memory_estimate={\"basis_quantization\": \"Q8_0\", \"model_file_size_gib\": 0.7, \"system_ram_min_gib\": 3.0, \"system_ram_recommended_gib\": 5.0, \"full_gpu_vram_rough_gib\": 2.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 ---",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "onnx",
+        "gguf",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "model_meta": {
+        "model_id": "mysanit/qwen3-tts-gguf",
+        "author": "mysanit",
+        "license": "apache-2.0",
+        "base_model": "",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 1607,
+        "likes": 0,
+        "last_modified": "2026-09-29T02:31:48.000Z",
+        "quantizations": [
+          "Q8_0",
+          "F16",
+          "Q5_K",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 755621600,
+            "files": [
+              "model-base-small/qwen3_tts_predictor.q8_0.gguf",
+              "model-base/qwen3_tts_predictor.q8_0.gguf",
+              "model-custom-small/qwen3_tts_predictor.q8_0.gguf",
+              "model-custom/qwen3_tts_predictor.q8_0.gguf",
+              "model-design/qwen3_tts_predictor.q8_0.gguf"
+            ],
+            "size": "720.6 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 1603932928,
+            "files": [
+              "omnivoice/omnivoice-tokenizer-BF16.gguf",
+              "omnivoice/omnivoice-base-BF16.gguf"
+            ],
+            "size": "1.5 GB"
+          },
+          {
+            "quantization": "Q5_K",
+            "size_bytes": 3650062592,
+            "files": [
+              "model-base-small/qwen3_tts_talker.q5_k.gguf",
+              "model-custom-small/qwen3_tts_talker.q5_k.gguf",
+              "model-base/qwen3_tts_talker.q5_k.gguf",
+              "model-custom/qwen3_tts_talker.q5_k.gguf",
+              "model-design/qwen3_tts_talker.q5_k.gguf"
+            ],
+            "size": "3.4 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 11739588576,
+            "files": [
+              "model-base-small/qwen3_tts_predictor.f16.gguf",
+              "model-base/qwen3_tts_predictor.f16.gguf",
+              "model-custom-small/qwen3_tts_predictor.f16.gguf",
+              "model-custom/qwen3_tts_predictor.f16.gguf",
+              "model-design/qwen3_tts_predictor.f16.gguf",
+              "model-base-small/qwen3_tts_talker.f16.gguf",
+              "model-custom-small/qwen3_tts_talker.f16.gguf",
+              "model-base/qwen3_tts_talker.f16.gguf",
+              "model-custom/qwen3_tts_talker.f16.gguf",
+              "model-design/qwen3_tts_talker.f16.gguf"
+            ],
+            "size": "10.9 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 755621600,
+            "files": [
+              "model-base-small/qwen3_tts_predictor.q8_0.gguf",
+              "model-base/qwen3_tts_predictor.q8_0.gguf",
+              "model-custom-small/qwen3_tts_predictor.q8_0.gguf",
+              "model-custom/qwen3_tts_predictor.q8_0.gguf",
+              "model-design/qwen3_tts_predictor.q8_0.gguf"
+            ],
+            "size": "720.6 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 0.7,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "情報不足",
+            "basis": "対話用途を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 22,
+        "gguf_files": [
+          {
+            "name": "model-base-small/qwen3_tts_predictor.q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 151124320,
+            "size": "144.1 MB"
+          },
+          {
+            "name": "model-base/qwen3_tts_predictor.q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 151124320,
+            "size": "144.1 MB"
+          },
+          {
+            "name": "model-custom-small/qwen3_tts_predictor.q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 151124320,
+            "size": "144.1 MB"
+          },
+          {
+            "name": "model-custom/qwen3_tts_predictor.q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 151124320,
+            "size": "144.1 MB"
+          },
+          {
+            "name": "model-design/qwen3_tts_predictor.q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 151124320,
+            "size": "144.1 MB"
+          },
+          {
+            "name": "model-base-small/qwen3_tts_predictor.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 283834720,
+            "size": "270.7 MB"
+          },
+          {
+            "name": "model-base/qwen3_tts_predictor.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 283834720,
+            "size": "270.7 MB"
+          },
+          {
+            "name": "model-custom-small/qwen3_tts_predictor.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 283834720,
+            "size": "270.7 MB"
+          },
+          {
+            "name": "model-custom/qwen3_tts_predictor.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 283834720,
+            "size": "270.7 MB"
+          },
+          {
+            "name": "model-design/qwen3_tts_predictor.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 283834720,
+            "size": "270.7 MB"
+          },
+          {
+            "name": "model-base-small/qwen3_tts_talker.q5_k.gguf",
+            "quantization": "Q5_K",
+            "size_bytes": 315663616,
+            "size": "301.0 MB"
+          },
+          {
+            "name": "model-custom-small/qwen3_tts_talker.q5_k.gguf",
+            "quantization": "Q5_K",
+            "size_bytes": 315663616,
+            "size": "301.0 MB"
+          },
+          {
+            "name": "omnivoice/omnivoice-tokenizer-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 373308160,
+            "size": "356.0 MB"
+          },
+          {
+            "name": "model-base-small/qwen3_tts_talker.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 893732096,
+            "size": "852.3 MB"
+          },
+          {
+            "name": "model-custom-small/qwen3_tts_talker.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 893732096,
+            "size": "852.3 MB"
+          },
+          {
+            "name": "model-base/qwen3_tts_talker.q5_k.gguf",
+            "quantization": "Q5_K",
+            "size_bytes": 1006245120,
+            "size": "959.6 MB"
+          },
+          {
+            "name": "model-custom/qwen3_tts_talker.q5_k.gguf",
+            "quantization": "Q5_K",
+            "size_bytes": 1006245120,
+            "size": "959.6 MB"
+          },
+          {
+            "name": "model-design/qwen3_tts_talker.q5_k.gguf",
+            "quantization": "Q5_K",
+            "size_bytes": 1006245120,
+            "size": "959.6 MB"
+          },
+          {
+            "name": "omnivoice/omnivoice-base-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 1230624768,
+            "size": "1.1 GB"
+          },
+          {
+            "name": "model-base/qwen3_tts_talker.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 2844316928,
+            "size": "2.6 GB"
+          },
+          {
+            "name": "model-custom/qwen3_tts_talker.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 2844316928,
+            "size": "2.6 GB"
+          },
+          {
+            "name": "model-design/qwen3_tts_talker.f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 2844316928,
+            "size": "2.6 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 144.1 MB〜2.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「mysanit/qwen3-tts-gguf」が更新されています。確認時点の指標は downloads=1,607、likes=0 です。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q8_0, F16, Q5_K, BF16。GGUFファイルは 22 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 144.1 MB〜2.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-09-29-05f9e8496449",
+      "date": "2026-09-29",
+      "title": "Hugging Face: SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF license=不明 base_model=SpaceTimee/Suri-Qwen-3.8-27B-Uncensored architecture=不明 context_length=不明 downloads=1,645 likes=3 quantizations=Q2_K, Q3_K_S, Q3_K_M, Q3_K_L, Q4_0, Q4_K_S, Q4_K_M, Q5_0, Q5_K_S, Q5_K_M, Q6_K, Q8_0 recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 15.41, \"system_ram_min_gib\": 20.0, \"system_ram_recommended_gib\": 25.0, \"full_gpu_vram_rough_gib\": 19.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- language: - zh - en base_model: - SpaceTimee/Suri-Qwen-3.8-27B-Uncensored tags: - suri - qwen - 27B - uncensored - unaligned - text-generation-inference - qwen3.8 pipeline_tag: image-text-to-text library_name: transformers --- <h1 align=\"center\">Suri ⬡ Qwen</h1> <h3 align=\"center\">Uncensor Is All You Need</h3> </br> #…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "suri",
+        "qwen",
+        "27B",
+        "uncensored",
+        "unaligned",
+        "text-generation-inference"
+      ],
+      "model_meta": {
+        "model_id": "SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF",
+        "author": "SpaceTimee",
+        "license": "",
+        "base_model": "SpaceTimee/Suri-Qwen-3.8-27B-Uncensored",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "transformers",
+        "downloads": 1645,
+        "likes": 3,
+        "last_modified": "2026-09-29T02:22:27.000Z",
+        "quantizations": [
+          "Q2_K",
+          "Q3_K_S",
+          "Q3_K_M",
+          "Q3_K_L",
+          "Q4_0",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q5_0",
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 10711656256,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q2_k.gguf"
+            ],
+            "size": "10.0 GB"
+          },
+          {
+            "quantization": "Q3_K_S",
+            "size_bytes": 12073944896,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q3_k_s.gguf"
+            ],
+            "size": "11.2 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 13301434176,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q3_k_m.gguf"
+            ],
+            "size": "12.4 GB"
+          },
+          {
+            "quantization": "Q3_K_L",
+            "size_bytes": 14344767296,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q3_k_l.gguf"
+            ],
+            "size": "13.4 GB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 15476860736,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q4_0.gguf"
+            ],
+            "size": "14.4 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 15586305856,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q4_k_s.gguf"
+            ],
+            "size": "14.5 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547391296,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q4_k_m.gguf"
+            ],
+            "size": "15.4 GB"
+          },
+          {
+            "quantization": "Q5_0",
+            "size_bytes": 18679605056,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q5_0.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 18679605056,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q5_k_s.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231090496,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q5_k_m.gguf"
+            ],
+            "size": "17.9 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 22082520896,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q6_k.gguf"
+            ],
+            "size": "20.6 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 28595754816,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q8_0.gguf"
+            ],
+            "size": "26.6 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547391296,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q4_k_m.gguf"
+            ],
+            "size": "15.4 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231090496,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q5_k_m.gguf"
+            ],
+            "size": "17.9 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q3_K_M",
+            "size_bytes": 13301434176,
+            "files": [
+              "suri-qwen-3.8-27b-uncensored-q3_k_m.gguf"
+            ],
+            "size": "12.4 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 15.41,
+          "system_ram_min_gib": 20.0,
+          "system_ram_recommended_gib": 25.0,
+          "full_gpu_vram_rough_gib": 19.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "中",
+            "basis": "text-generation用途は確認できますが、対話最適化の程度はモデルカードで要確認です。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 12,
+        "gguf_files": [
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q2_k.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 10711656256,
+            "size": "10.0 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q3_k_s.gguf",
+            "quantization": "Q3_K_S",
+            "size_bytes": 12073944896,
+            "size": "11.2 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q3_k_m.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 13301434176,
+            "size": "12.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q3_k_l.gguf",
+            "quantization": "Q3_K_L",
+            "size_bytes": 14344767296,
+            "size": "13.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 15476860736,
+            "size": "14.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q4_k_s.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 15586305856,
+            "size": "14.5 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q4_k_m.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547391296,
+            "size": "15.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q5_0.gguf",
+            "quantization": "Q5_0",
+            "size_bytes": 18679605056,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q5_k_s.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 18679605056,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q5_k_m.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231090496,
+            "size": "17.9 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q6_k.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 22082520896,
+            "size": "20.6 GB"
+          },
+          {
+            "name": "suri-qwen-3.8-27b-uncensored-q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 28595754816,
+            "size": "26.6 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 10.0 GB〜26.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF」が更新されています。確認時点の指標は downloads=1,645、likes=3 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは SpaceTimee/Suri-Qwen-3.8-27B-Uncensored。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q2_K, Q3_K_S, Q3_K_M, Q3_K_L, Q4_0, Q4_K_S, Q4_K_M, Q5_0, Q5_K_S, Q5_K_M, Q6_K, Q8_0。GGUFファイルは 12 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 10.0 GB〜26.6 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-09-29-e8bb22733b26",
+      "date": "2026-09-29",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/lenfest-ai-collaborative-expansion/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Video courtesy of the Lenfest Institute for Journalism The following was issued as a joint announcement on Monday, September 28, 2026, from the Lenfest Institute for Journalism and OpenAI. The Lenfest Institute for Journalism today announced the next phase of the Lenfest AI Collaborative and Fellowship Program, building on what has become the largest AI fellowship program in American journalism. Since its launch in 2024 with AI engineering fellows in 11 major American news organizations, the program has demonstrated that embedded AI engineers can help local news organizations accelerate innovation, strengthen business sustainability, and responsibly adopt emerging technology. The program will expand with a new $5 million commitment from OpenAI, along with up to $5 million in software credits and engineering support. OpenAI has doubled its previous support of the program. This expansion…",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-09-29-c24f1904b2db",
+      "date": "2026-09-29",
+      "title": "Two years of OpenAI Academy",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/two-years-of-openai-academy/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Building on our work to help people develop practical AI skills, with plans to bring training to more communities. To ensure the benefits of AI are broadly shared, people need the skills and confidence to use it in their everyday lives. Since launching in September 2024, OpenAI Academy has helped people build those skills through practical training for tasks ranging from teaching and running a small business to developing software. Over the past two years, OpenAI Academy has hosted more than 250 events , and more than 4 million people have engaged with Academy content . That work has brought together educators, small business owners, developers, nonprofit leaders and community members to learn, practice, and share what works. For this next chapter, we’re expanding OpenAI Academy through a new trainer program that prepares people and organizations to teach Academy material in their commu…",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-09-28-faa1bda48283",
       "date": "2026-09-28",
