@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -443,9 +443,77 @@
     "https://huggingface.co/mysanit/qwen3-tts-gguf",
     "https://huggingface.co/SpaceTimee/Suri-Qwen-3.8-27B-Uncensored-GGUF",
     "https://openai.com/index/lenfest-ai-collaborative-expansion/",
-    "https://openai.com/index/two-years-of-openai-academy/"
+    "https://openai.com/index/two-years-of-openai-academy/",
+    "https://openai.com/index/devday-2026-recap/",
+    "https://openai.com/index/introducing-gpt-6-1-sol/",
+    "https://github.com/ollama/ollama/releases/tag/v0.35.0"
   ],
   "entries": [
+    {
+      "id": "2026-09-30-adcd762ba20e",
+      "date": "2026-09-29",
+      "title": "OpenAIが「DevDay 2026」を開催、GPT-6 Astraやエージェント機能を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/devday-2026-recap/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは「DevDay 2026」において、新モデル「GPT-6 Astra」やChatGPTの新機能、コード生成・開発者向けツールなど20以上の主要な発表を行いました。人間のユーザーとエージェントが協働する共通基盤としてChatGPTを公開し、開発者が独自のネイティブ体験を構築できるようにしています。",
+      "impact": "OpenAIエコシステム全体にわたる大規模な刷新であり、開発者が自社プラットフォーム上で自律型エージェントを展開するための新しい基盤が提供されました。",
+      "details": "本発表にはChatGPT、Codex、新モデル群に関する20以上のアップデートが含まれています。自律型エージェントが継続的な責任を引き受け、人間と協働する仕組みが強調されましたが、これらはクラウドベースのAPIおよびサービスとして提供されるものであり、ローカル環境で直接実行可能なオープンウェイトモデルではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-30-127ac45247b2",
+      "date": "2026-09-23",
+      "title": "OpenAI、エージェント向け高性能モデル「GPT-6.1 Sol」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、コーディングやコンピュータ操作、専門的業務において上位モデル「GPT-6 Astra」に近い知性を備えた新モデル「GPT-6.1 Sol」を発表しました。標準入力の5分の1の価格設定と、より安価なキャッシュ入力を提供し、コストパフォーマンスを追求しています。",
+      "impact": "高度な推論とエージェント処理をより低いコストで実行可能にすることで、実用的なAIアプリケーションの開発・運用コストの大幅な削減に寄与します。",
+      "details": "GPT-6.1 Solは、複雑なソフトウェアエンジニアリング評価であるDeepSWE v1.1において、GPT-6 Astraに匹敵する性能をより低いコストと推論リソースで発揮します。ただし、本モデルはOpenAIのクラウドAPI経由で提供されるクローズドな商用モデルであり、ローカルLLM環境でのオフライン実行や重みの直接ダウンロードはサポートされていません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-09-30-bb65236b96bc",
+      "date": "2026-09-29",
+      "title": "Ollama v0.35.0リリース、Jev APIベースの意思決定モデルをサポート",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.35.0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaがバージョン0.35.0をリリースしました。新たにTypeSafeのJev APIに基づく決定モデル（Decision models）をサポートし、テキストの代わりに選択肢、確率、スコアを返す機能が追加されています。",
+      "impact": "従来のテキスト生成だけでなく、チケットの分類やモデルのルーティングといった判断タスクをローカル環境で効率的に処理できるようになります。",
+      "details": "本アップデートでは`/v1/systemone`エンドポイントを通じて決定モデルを利用可能になり、Bespoke Labsの「Nimble」やTogether AIの「Tev1」などのモデルに対応しています。ローカル環境でテキスト生成以外の構造化された判断処理を組み込むための重要な機能拡張となっていますが、実行には対応するモデルのダウンロードと互換性のあるランタイム設定が必要です。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-29-cdcf64de9f96",
       "date": "2026-09-28",
