@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-09-30"
+    "last_updated": "2026-10-01"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -446,9 +446,256 @@
     "https://openai.com/index/two-years-of-openai-academy/",
     "https://openai.com/index/devday-2026-recap/",
     "https://openai.com/index/introducing-gpt-6-1-sol/",
-    "https://github.com/ollama/ollama/releases/tag/v0.35.0"
+    "https://github.com/ollama/ollama/releases/tag/v0.35.0",
+    "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite"
   ],
   "entries": [
+    {
+      "id": "2026-10-01-4f96337243b7",
+      "date": "2026-09-30",
+      "title": "HybridRMD、27Bパラメータの知識蒸留モデル「Ternary-Bonsai-2-27B-Heretic-Satellite」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "HybridRMDは、コンテキスト管理や対話に特化した27Bパラメータのモデル「Ternary-Bonsai-2-27B-Heretic-Satellite」を公開しました。Qwen3.5系をベースアーキテクチャとし、Layaモデルの知識蒸留によって作成されています。",
+      "impact": "大規模なコンテキスト処理や高度な対話タスクをローカル環境で実行したい開発者や研究者にとって、実用的な選択肢となります。",
+      "details": "本モデルはHugging Face上で公開され、Q4_K_Mなどの量子化版が利用可能です。システム要件として最低20GB、推奨25GBのRAMおよび約19GBのVRAMが想定されています。API専用ではなくローカルでの実行に対応していますが、ベースとなった教師モデルのライセンスや詳細な利用条件に注意する必要があります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "safetensors",
+        "gguf",
+        "qwen3_5_text",
+        "text-generation",
+        "qwen3_5",
+        "qwen3_8",
+        "context-management"
+      ],
+      "model_meta": {
+        "model_id": "HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite",
+        "author": "HybridRMD",
+        "license": "other",
+        "base_model": "",
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "model_type": "qwen3_5_text",
+        "context_length": 262144,
+        "pipeline_tag": "text-generation",
+        "library_name": "transformers",
+        "downloads": 4177,
+        "likes": 0,
+        "last_modified": "2026-09-30T01:03:48.000Z",
+        "quantizations": [
+          "Q2_K",
+          "Q4_K_M",
+          "Q8_0",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 10711665056,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q2_K.gguf"
+            ],
+            "size": "10.0 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400096,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q4_K_M.gguf"
+            ],
+            "size": "15.4 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 28595763616,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q8_0.gguf"
+            ],
+            "size": "26.6 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 53808282016,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-F16.gguf"
+            ],
+            "size": "50.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400096,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q4_K_M.gguf"
+            ],
+            "size": "15.4 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 28595763616,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q8_0.gguf"
+            ],
+            "size": "26.6 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400096,
+            "files": [
+              "Ternary-Bonsai-2-27B-Heretic-Satellite-Q4_K_M.gguf"
+            ],
+            "size": "15.4 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 15.41,
+          "system_ram_min_gib": 20.0,
+          "system_ram_recommended_gib": 25.0,
+          "full_gpu_vram_rough_gib": 19.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          },
+          {
+            "label": "長文コンテキスト",
+            "rating": "高",
+            "basis": "config/APIから最大コンテキスト長 262,144 tokens を確認。実用上の推奨値はメモリ量で変わります。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-Heretic-Satellite-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 10711665056,
+            "size": "10.0 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-Heretic-Satellite-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400096,
+            "size": "15.4 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-Heretic-Satellite-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 28595763616,
+            "size": "26.6 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-Heretic-Satellite-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 53808282016,
+            "size": "50.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 10.0 GB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite」が更新されています。確認時点の指標は downloads=4,177、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "アーキテクチャは Qwen3_5ForCausalLM。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q2_K, Q4_K_M, Q8_0, F16。GGUFファイルは 4 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 10.0 GB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-09-30-adcd762ba20e",
       "date": "2026-09-29",
