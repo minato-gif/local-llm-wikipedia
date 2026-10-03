@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-02"
+    "last_updated": "2026-10-03"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -447,9 +447,54 @@
     "https://openai.com/index/devday-2026-recap/",
     "https://openai.com/index/introducing-gpt-6-1-sol/",
     "https://github.com/ollama/ollama/releases/tag/v0.35.0",
-    "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite"
+    "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite",
+    "https://openai.com/index/introducing-dots/",
+    "https://mistral.ai/news/hallo-deutschland"
   ],
   "entries": [
+    {
+      "id": "2026-10-03-978bc619ec03",
+      "date": "2026-10-03",
+      "title": "OpenAI、自律型プロアクティブアシスタント「dots」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-dots/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、複雑なプロジェクトや日常業務を24時間体制で継続的にサポートする自律型アシスタント「dots」を発表しました。GPT-6 Astraを基盤とし、クラウド環境上で学習・動作しながらユーザーの目標達成を支援します。",
+      "impact": "クラウド上の仮想コンピュータと常時連携し、数千に及ぶ外部アプリやツールを駆使して自律的にタスクを遂行する次世代のAI活用体験を提供します。",
+      "details": "GPT-6 Astraを搭載したクラウドネイティブなAIアシスタントであり、ローカル環境で直接実行するモデルではありません。SlackやTeams、ChatGPT経由で音声やテキストを通じてユーザーと対話し、好みを学習しながらプロアクティブに業務を代行します。APIおよびクラウドサービスを前提とした機能であり、オープンウェイトのローカル実行とは無関係です。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-03-f4b9c2550c2c",
+      "date": "2026-09-29",
+      "title": "Mistral AI、ドイツ・ミュンヘンに産業用AIおよび物理AI研究拠点を新設",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/hallo-deutschland",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Mistral AIは、欧州最大の産業経済圏であるドイツのミュンヘンに新たな拠点を開設しました。自動車やエネルギー、製造業などの分野に向けたPhysics AIおよびIndustrial AIの研究・開発を推進します。",
+      "impact": "欧州の強力な産業データとAI技術を統合し、主権を重視したオープンなエコシステムおよび産業特化型ソリューションの展開を加速させます。",
+      "details": "ドイツの企業や公共機関向けに、同社のフルAIスタックや独自コンピュートインフラへのアクセスを提供し、長期的なパートナーシップを築く方針です。ローカルLLMの直接的なモデルリリースではありませんが、欧州における産業用・物理AIの応用研究において重要な動きとなります。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-01-4f96337243b7",
       "date": "2026-09-30",
