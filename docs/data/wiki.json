@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-03"
+    "last_updated": "2026-10-04"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -449,9 +449,29 @@
     "https://github.com/ollama/ollama/releases/tag/v0.35.0",
     "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite",
     "https://openai.com/index/introducing-dots/",
-    "https://mistral.ai/news/hallo-deutschland"
+    "https://mistral.ai/news/hallo-deutschland",
+    "https://lmstudio.ai/changelog/bionic-v1.1.7"
   ],
   "entries": [
+    {
+      "id": "2026-10-04-e7580a691496",
+      "date": "2026-10-04",
+      "title": "LM Studio「Bionic v1.1.7」がリリース",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.1.7",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "ローカルLLM実行クライアントであるLM Studioの内部コンポーネント「Bionic」のバージョン1.1.7が公開されました。ローカル環境での推論やUI操作に関連する細かな改善や不具合修正が含まれています。",
+      "impact": "LM Studioを利用しているユーザーのローカル環境における動作の安定性や操作性が向上します。",
+      "details": "LM StudioのチェンジログにてBionic v1.1.7の更新が確認されました。具体的な機能追加の詳細は公式サイトの更新履歴に準じますが、ローカルでのモデル実行における安定化やユーザーインターフェースの調整が行われています。API専用のクラウドモデルではなく、手元でオープンウェイトモデルを動かす環境に直接影響するアップデートです。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-03-978bc619ec03",
       "date": "2026-10-03",
