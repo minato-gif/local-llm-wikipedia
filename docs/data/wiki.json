@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-04"
+    "last_updated": "2026-10-05"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -450,9 +450,98 @@
     "https://huggingface.co/HybridRMD/Ternary-Bonsai-2-27B-Heretic-Satellite",
     "https://openai.com/index/introducing-dots/",
     "https://mistral.ai/news/hallo-deutschland",
-    "https://lmstudio.ai/changelog/bionic-v1.1.7"
+    "https://lmstudio.ai/changelog/bionic-v1.1.7",
+    "https://openai.com/index/practical-guide-building-gpt-6/",
+    "https://mistral.ai/news/hallo-deutschland/",
+    "https://www.anthropic.com/news/barclays-scales-claude",
+    "https://openai.com/index/albertsons-reimagining-retail/"
   ],
   "entries": [
+    {
+      "id": "2026-10-05-8f0caca27bbe",
+      "date": "2026-09-29",
+      "title": "OpenAIがGPT-6ファミリー向けの実践的ガイドを公開",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/practical-guide-building-gpt-6/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、最新のGPT-6モデルファミリーを活用して開発や運用を行うための実践的ガイドを公開しました。開発者がモデルの選択や推論負荷の調整、ツール連携、プロンプト改善を行うためのヒントがまとめられています。",
+      "impact": "最新のGPT-6モデル群におけるコストパフォーマンスの最適化や、本番環境を見据えたマルチステップワークフローの構築手法を示しています。",
+      "details": "GPT-6ファミリーの特徴やコスト効率、用途に応じたモデル選択の指針について解説しています。APIを介したクラウド利用を前提とした内容であり、オープンウェイトモデルやローカル環境での実行に関する直接的な記載はありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-05-3a2158bcdb2b",
+      "date": "2026-09-29",
+      "title": "Mistral AIがドイツ・ミュンヘンに新拠点を開設",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/hallo-deutschland/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Mistral AIは、ヨーロッパ最大の工業国であるドイツのミュンヘンに新たな拠点を設立しました。自動車や製造業などの産業データを活用し、物理AIや産業用AIの研究開発を加速させます。",
+      "impact": "欧州の産業界におけるAI主権の確立と、現地企業への適用に向けた専用AIソリューションの提供を強化する動きです。",
+      "details": "ミュンヘンハブでは物理AIおよび産業用AIに特化した専門研究チームが活動し、欧州の企業や公的機関向けに独自のAIスタックやインフラを提供します。ローカルLLMの直接的なアーキテクチャ変更はありませんが、商用エコシステムの動向に関連します。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-05-696cd00ae96c",
+      "date": "2026-10-02",
+      "title": "英バークレイズがAnthropicのClaude導入を全社規模で拡大",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "英国の大手銀行バークレイズは、Anthropicとの戦略的協力を拡大し、グローバルな業務全般へセキュアなClaudeの導入を進めると発表しました。ソフトウェア開発の加速やレガシーシステムの近代化を目指します。",
+      "impact": "厳格な規制が求められる金融業界におけるエンタープライズ向けAIの本格的な実運用と、開発効率化の事例となります。",
+      "details": "2026年末までに同行の開発者の50%、2027年には大部分でClaude Codeの採用を見込んでいます。APIおよびクラウド経由でのセキュアなエンタープライズ利用に関する発表であり、ローカルでのオフライン実行やオープンウェイトモデルの提供とは異なります。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-05-05d5eba12783",
+      "date": "2026-09-29",
+      "title": "米小売大手アルバートソンズがOpenAI APIとChatGPT Enterpriseの導入を拡大",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/albertsons-reimagining-retail/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "米国の食品スーパー大手アルバートソンズは、店舗運営や顧客体験の向上を目指し、OpenAIとの協力を拡大すると発表しました。ChatGPT EnterpriseやOpenAI APIを活用して業務効率化を図ります。",
+      "impact": "大規模な小売・流通業の現場における具体的なAI活用と、カスタマー向けデジタル体験の刷新を示す事例です。",
+      "details": "2,200店舗以上を展開する同社が、業務ワークフローの自動化や買い物客向けのレコメンデーション機能にOpenAIの技術を組み込んでいます。クローズドなAPIサービスを活用したエンタープライズ事例であり、ローカル実行環境とは無関係です。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-04-e7580a691496",
       "date": "2026-10-04",
