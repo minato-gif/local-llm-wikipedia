@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-05"
+    "last_updated": "2026-10-06"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -454,9 +454,35 @@
     "https://openai.com/index/practical-guide-building-gpt-6/",
     "https://mistral.ai/news/hallo-deutschland/",
     "https://www.anthropic.com/news/barclays-scales-claude",
-    "https://openai.com/index/albertsons-reimagining-retail/"
+    "https://openai.com/index/albertsons-reimagining-retail/",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0"
   ],
   "entries": [
+    {
+      "id": "2026-10-06-da98af9530f1",
+      "date": "2026-10-06",
+      "title": "llama.cpp v0.6.0リリース：拡張バッチAPIや新モデル・意思決定モデル対応を実装",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cpp v0.6.0がリリースされ、混合トークン/埋め込み入力用の新しい拡張バッチAPI「llama_batch_ext」の追加や、GLM-5.3-Flashなどの新モデルサポート、意思決定モデル向けのサーバーAPI実装が行われました。",
+      "impact": "ローカルLLMの推論性能や対応アーキテクチャが大きく拡張され、特に混合バッチ処理やMTP、最新のハイブリッドモデル・意思決定モデルをローカル環境で直接実行・検証できるようになります。",
+      "details": "本バージョンでは、`llama_process`を含む拡張バッチAPIが導入され、MTPやディープスタックモデル向けの「状態」埋め込み処理がサポートされました。また、320BのGLM-5.3-FlashやClef意思決定モデルへの対応、Metal/Vulkanにおけるフラッシュアテンションの最適化が含まれます。すべてローカルでの実行が可能ですが、大規模モデルの動作には適切なハードウェアリソースが必要です。",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Vulkan",
+        "Metal",
+        "量子化",
+        "Vision",
+        "Flash Attention"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-05-8f0caca27bbe",
       "date": "2026-09-29",
