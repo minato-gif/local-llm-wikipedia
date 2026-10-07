@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-06"
+    "last_updated": "2026-10-07"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -455,9 +455,78 @@
     "https://mistral.ai/news/hallo-deutschland/",
     "https://www.anthropic.com/news/barclays-scales-claude",
     "https://openai.com/index/albertsons-reimagining-retail/",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0",
+    "https://mistral.ai/news/mistral-large-4/",
+    "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "https://www.anthropic.com/news/cyber-verification-program"
   ],
   "entries": [
+    {
+      "id": "2026-10-07-96782b2429c8",
+      "date": "2026-10-06",
+      "title": "Mistral AI、オープンウェイトの最大規模モデル「Mistral Large 4」のパブリックプレビューを発表",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/mistral-large-4/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Mistral AIは、総パラメータ数1兆・アクティブパラメータ数490億を持つネイティブマルチモーダルモデル「Mistral Large 4」のプレビュー版を公開しました。コード生成やエージェント処理で優れた性能を示し、オープンウェイトモデルとして月末に重みの一般公開が予定されています。",
+      "impact": "オープンウェイトとして過去最大級の1兆パラメータ規模を持ち、米欧で開発されたオープンモデルを凌駕する性能をうたう重要リリースです。現時点ではMistral StudioでのAPIプレビュー提供となります。",
+      "details": "Mistral Large 4（通称「le Chonk」）は、コーディングやエージェントワークフロー、マルチモーダル理解において強力な性能を発揮する大規模モデルです。現時点ではAPIを通じたパブリックプレビュー段階であり、モデルの重み（ウェイト）の一般公開は同月末が予定されています。ローカル実行を見据えた重みのダウンロードはまだ不可能ですが、公開後にはオープンウェイトのフラッグシップとしてローカル環境での活用が期待されます。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "マルチモーダル"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-07-65b49d576028",
+      "date": "2026-10-06",
+      "title": "OpenAI、フロンティアモデルによる数学の未解決問題への取り組みとLean形式化の成果を公開",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI社内のフロンティアモデルが生み出した数学的な新結果や、コンピュータで検証可能な証明言語「Lean」を用いた形式化の成果をGitHubリポジトリで公開しました。数学界の諮問グループと連携し、科学的透明性を高める取り組みとして実施されています。",
+      "impact": "AIによる高度な推論能力と数学的証明の自動検証の進展を示すものであり、今後の推論特化型モデルのベンチマークや研究開発に大きな影響を与えます。",
+      "details": "本発表はAPIやローカルウェイトの直接的な公開ではなく、AIによる数学的発見と検証プロセスの共有に焦点を当てています。証明の形式化にはLean言語が採用されており、AIが生成した複雑な数学的推論の正確性をコンピュータ上で機械的に検証可能な形で提示しています。学術研究や将来の推論型AIの検証手法にとって重要なマイルストーンとなります。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Vision"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-07-ecf45a9e2812",
+      "date": "2026-10-07",
+      "title": "Anthropic、サイバーセキュリティ専門家向け「サイバー検証プログラム（CVP）」を拡充",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/cyber-verification-program",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicは、資格を持つセキュリティ専門家を対象に高度なサイバーセキュリティ機能と緩和されたブロック機能を提供する「Cyber Verification Program (CVP)」の拡充を発表しました。Claude Opus 5.5などの最高性能モデルへのアクセスが3つのティアで提供されます。",
+      "impact": "デュアルユース性の高いサイバーセキュリティ領域において、安全性を維持しつつも正当な防御者が強力なAIツールを利用できる仕組みを整える重要なポリシーおよびアクセス管理の更新です。",
+      "details": "本プログラムは特定の資格を持つセキュリティプロフェッショナルや組織を対象とした管理されたアクセス提供であり、一般公開されているモデルのセーフガードが緩和されるわけではありません。Claude Opus 5.5やSonnet 5.5などの先進モデルを対象に、厳格な審査のもとで脆弱性発見などの防御的作業を支援するものであり、オープンウェイトやローカル実行向けの変更ではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-06-da98af9530f1",
       "date": "2026-10-06",
