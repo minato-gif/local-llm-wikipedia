@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-07"
+    "last_updated": "2026-10-08"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -458,9 +458,653 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0",
     "https://mistral.ai/news/mistral-large-4/",
     "https://openai.com/index/sharing-ai-progress-in-mathematics/",
-    "https://www.anthropic.com/news/cyber-verification-program"
+    "https://www.anthropic.com/news/cyber-verification-program",
+    "https://www.anthropic.com/claude-haiku-5-5",
+    "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
+    "https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF",
+    "https://typesafe.ai/blog/jack-jill-jev-case-study"
   ],
   "entries": [
+    {
+      "id": "2026-10-08-ce36ab4f4b2a",
+      "date": "2026-10-07",
+      "title": "Anthropic、高速・低コストな小型モデル「Claude Haiku 5.5」を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、要約やサブエージェント、ブラウザ操作などの高負荷タスク向けに設計された最速・最小モデル「Claude Haiku 5.5」を発表した。前モデルと比較してコストが平均約75%削減されているほか、Sonnet 5.5のキャッシュ読み取り価格引き下げなども同時に行われている。",
+      "impact": "API利用におけるコストパフォーマンスが大幅に向上し、エージェントワークフローやリアルタイムのカスタマーサポートなどの処理速度が改善される。",
+      "details": "Claude Haiku 5.5は、データベースクエリや分類などの繰り返し作業や、大規模処理を低コストで行うために最適化された小型モデルです。Opus 5.5やSonnet 5.5のコーディング用サブエージェントとしても連携します。同時にSonnet 5.5のキャッシュ読み取り費用の半減やAPIクレジットの導入も発表されていますが、これらはAnthropicのAPIプラットフォームを前提とした機能であり、ローカル環境で直接実行できるオープンウェイトモデルではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-08-0ba88951be62",
+      "date": "2026-10-08",
+      "title": "Qwen3.8ベースの非検閲版GGUFモデル「Huihui-Qwen3.8-Flash-Next-abliterated-GGUF」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Qwen/Qwen3.8-Flash-Nextをベースに、アブリレーション処理（拒絶反応の除去）を施した非検閲版のGGUFモデルがHugging Faceで公開された。BF16から各種量子化フォーマット（IQ4_XSなど）に対応している。",
+      "impact": "ローカルLLM愛好家向けに、Qwen3.8系統の高効率なモデルを非検閲かつ量子化済みで利用可能にする選択肢を提供する。",
+      "details": "huihui-ai氏によって公開された本モデルは、元モデルの持つ推論・効率的思考能力を保持しつつ、出力時の拒絶反応を取り除くアブリレーションが行われています。推奨量子化であるIQ4_XSフォーマットの場合、モデルファイルサイズは約87.25 GiBとなっており、動作には十分なシステムRAMやVRAMの確保が必要です。ローカル環境でのllama.cpp等での実行に対応しています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "abliterated",
+        "uncensored",
+        "huihui",
+        "qwen3",
+        "unsloth",
+        "llama.cpp"
+      ],
+      "model_meta": {
+        "model_id": "huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
+        "author": "huihui-ai",
+        "license": "other",
+        "base_model": "Qwen/Qwen3.8-Flash-Next",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "transformers",
+        "downloads": 253858,
+        "likes": 149,
+        "last_modified": "2026-10-08T02:26:46.000Z",
+        "quantizations": [
+          "BF16",
+          "Q8_0",
+          "IQ4_XS",
+          "Q4_K_XL",
+          "IQ2_XS",
+          "IQ3_XXS"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "IQ2_XS",
+            "size_bytes": 68152167168,
+            "files": [
+              "swift-IQ2_XS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00002-of-00002.gguf",
+              "swift-IQ2_XS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf"
+            ],
+            "size": "63.5 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 75966073120,
+            "files": [
+              "swift-IQ3_XXS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf",
+              "swift-IQ3_XXS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf"
+            ],
+            "size": "70.7 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 93682584224,
+            "files": [
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf"
+            ],
+            "size": "87.2 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 188225033440,
+            "files": [
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00003-of-00006.gguf"
+            ],
+            "size": "175.3 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 222669310176,
+            "files": [
+              "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+              "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf",
+              "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+              "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf"
+            ],
+            "size": "207.4 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 356752559968,
+            "files": [
+              "BF16/Qwen3.8-Flash-Next-BF16-00001-of-00008.gguf",
+              "mmproj-model-bf16.gguf",
+              "mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+              "mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00002-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00008-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00005-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00007-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00004-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00006-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00003-of-00008.gguf"
+            ],
+            "size": "332.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 93682584224,
+            "files": [
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf"
+            ],
+            "size": "87.2 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 188225033440,
+            "files": [
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00003-of-00006.gguf"
+            ],
+            "size": "175.3 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 93682584224,
+            "files": [
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf",
+              "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf"
+            ],
+            "size": "87.2 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 87.25,
+          "system_ram_min_gib": 102.5,
+          "system_ram_recommended_gib": 122.0,
+          "full_gpu_vram_rough_gib": 101.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 32,
+        "gguf_files": [
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00001-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 10946368,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 10946624,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 10946624,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 10946624,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 10946752,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 682434944,
+            "size": "650.8 MB"
+          },
+          {
+            "name": "mmproj-model-bf16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 907542592,
+            "size": "865.5 MB"
+          },
+          {
+            "name": "mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 907543008,
+            "size": "865.5 MB"
+          },
+          {
+            "name": "mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 907543520,
+            "size": "865.5 MB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00002-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 10447201728,
+            "size": "9.7 GB"
+          },
+          {
+            "name": "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 12087983520,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 12087983680,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "swift-IQ2_XS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00002-of-00002.gguf",
+            "quantization": "IQ2_XS",
+            "size_bytes": 28363693824,
+            "size": "26.4 GB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 34015618848,
+            "size": "31.7 GB"
+          },
+          {
+            "name": "swift-IQ3_XXS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 36180282560,
+            "size": "33.7 GB"
+          },
+          {
+            "name": "swift-IQ3_XXS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 39785790560,
+            "size": "37.1 GB"
+          },
+          {
+            "name": "swift-IQ2_XS/Swift-Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+            "quantization": "IQ2_XS",
+            "size_bytes": 39788473344,
+            "size": "37.1 GB"
+          },
+          {
+            "name": "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 43836407744,
+            "size": "40.8 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00008-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 47426022080,
+            "size": "44.2 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00005-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 48367899104,
+            "size": "45.0 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00007-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 48367899104,
+            "size": "45.0 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00004-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 48394236704,
+            "size": "45.1 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00006-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 48615234016,
+            "size": "45.3 GB"
+          },
+          {
+            "name": "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 49376141504,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 49376141664,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 49446841248,
+            "size": "46.1 GB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 49668930432,
+            "size": "46.3 GB"
+          },
+          {
+            "name": "unsloth-UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 49835229856,
+            "size": "46.4 GB"
+          },
+          {
+            "name": "unsloth-UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 49859583136,
+            "size": "46.4 GB"
+          },
+          {
+            "name": "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 49859583296,
+            "size": "46.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 10.4 MB〜95.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF」が更新されています。確認時点の指標は downloads=253,858、likes=149 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-Flash-Next。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は BF16, Q8_0, IQ4_XS, Q4_K_XL, IQ2_XS, IQ3_XXS。GGUFファイルは 32 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 10.4 MB〜95.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-08-e4b03fec4c4f",
+      "date": "2026-10-08",
+      "title": "27Bパラメータで262kコンテキストをサポートする「Ternary-Bonsai-2-27B-262k-GGUF」が登場",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "PrismMLのTernary Bonsai 2 27Bをベースに、MTPドラフトヘッドを組み込んで長大なコンテキスト長に対応させたGGUF形式の量子化モデルが公開された。12GBのVRAMを搭載した単一のGPUでも効率的な動作を実現する。",
+      "impact": "中規模のハードウェア環境において、長文コンテキストや高度なエージェント・ツール呼び出しタスクを実行しやすくなる。",
+      "details": "本モデルは、1.58-bit ternary（PTQ1_0）量子化を採用しつつ、MTP（Multi-Token Prediction）ドラフトヘッドを復元することで、長文脈での効率的な推論を可能にしています。llama.cpp等のランタイムを介して、一般的なコンシューマー向けGPU環境でもローカル実行が検証されており、エージェントやアプリ向けのサーバー用途を想定しています。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "qwen3_5",
+        "ternary",
+        "ptq1_0",
+        "bonsai",
+        "mtp",
+        "speculative-decoding"
+      ],
+      "model_meta": {
+        "model_id": "CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF",
+        "author": "CaryPalmer",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 202,
+        "likes": 15,
+        "last_modified": "2026-10-08T01:51:28.000Z",
+        "quantizations": [
+          "TQ1_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 6397970272,
+            "files": [
+              "Ternary-Bonsai-2-27B-PTQ1_0-mtp-procreations.gguf"
+            ],
+            "size": "6.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 1,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-PTQ1_0-mtp-procreations.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 6397970272,
+            "size": "6.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 6.0 GB〜6.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF」が更新されています。確認時点の指標は downloads=202、likes=15 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は TQ1_0。GGUFファイルは 1 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 6.0 GB〜6.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-08-91c5edd74848",
+      "date": "2026-10-07",
+      "title": "TypeSafe AI、ソフトウェア内意思決定向けの新興モデル「Jev」の成果を発表",
+      "source": "TypeSafe AI Blog",
+      "source_url": "https://typesafe.ai/blog/jack-jill-jev-case-study",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "AIインフラを開発するTypeSafe AIは、自社の初期アクセスのシステム1モデル「Jev」に関するケーススタディを公開した。タスク完了速度の向上と大幅なコスト削減を実現している。",
+      "impact": "既存の汎用モデルから新しい設計の意思決定モデルへと置き換えることで、特定業務の自動化パイプラインにおけるコストと速度を大きく改善できる可能性を示す。",
+      "details": "求人・人材マッチングプラットフォームでの実証実験において、Jevは従来のモデルと同等の精度を維持しつつ、コストを大幅に削減し完了時間を短縮したと報告されています。ソフトウェア内で直接意思決定を行う機械ネイティブなインフラとして設計されていますが、現時点では限定された早期アクセス段階であり、オープンソースとして一般のローカル環境向けに公開されているものではありません。",
+      "tags": [
+        "TypeSafe AI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "新興技術",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-07-96782b2429c8",
       "date": "2026-10-06",
