@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-08"
+    "last_updated": "2026-10-09"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -462,9 +462,243 @@
     "https://www.anthropic.com/claude-haiku-5-5",
     "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
     "https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF",
-    "https://typesafe.ai/blog/jack-jill-jev-case-study"
+    "https://typesafe.ai/blog/jack-jill-jev-case-study",
+    "https://huggingface.co/nesoai/Ternary-Bonsai-2-27B-gguf"
   ],
   "entries": [
+    {
+      "id": "2026-10-09-4afd7d2b8bf9",
+      "date": "2026-10-08",
+      "title": "Hugging Face：nesoai/Ternary-Bonsai-2-27B-gguf",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/nesoai/Ternary-Bonsai-2-27B-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Qwen3.8-27Bをベースとした3値化（ternary）モデルのGGUF版が公開されました。llama.cppなどを通じてオンデバイスでの実行が可能です。",
+      "impact": "27Bクラスのモデルを3値量子化（TQ1_0等）により省メモリで動作させることができ、ローカル環境での推論性能とリソース効率の向上が期待されます。",
+      "details": "ベースモデルにQwen/Qwen3.8-27Bを採用し、Prism MLのBonsaiアーキテクチャに関連する3値（ternary）量子化を適用したGGUFモデルです。公開された量子化バリエーションにはQ8_0、BF16、TQ1_0、Q2_0、F16が含まれており、llama.cppやCUDA、Metalに対応しています。メモリ要件の概算として、モデルファイルサイズや必要システムRAMの目安が提示されていますが、実際の運用時はコンテキスト長やKVキャッシュに応じた追加メモリが必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama.cpp",
+        "gguf",
+        "ternary",
+        "2-bit",
+        "llama-cpp",
+        "cuda",
+        "metal",
+        "on-device"
+      ],
+      "model_meta": {
+        "model_id": "nesoai/Ternary-Bonsai-2-27B-gguf",
+        "author": "nesoai",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "llama.cpp",
+        "downloads": 927,
+        "likes": 0,
+        "last_modified": "2026-10-08T04:33:16.000Z",
+        "quantizations": [
+          "Q8_0",
+          "BF16",
+          "TQ1_0",
+          "Q2_0",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf"
+            ],
+            "size": "600.1 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 931145856,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-BF16.gguf"
+            ],
+            "size": "888.0 MB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "files": [
+              "Ternary-Bonsai-2-27B-PTQ1_0.gguf"
+            ],
+            "size": "5.5 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "files": [
+              "Ternary-Bonsai-2-27B-PQ2_0.gguf"
+            ],
+            "size": "6.7 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 53808408928,
+            "files": [
+              "Ternary-Bonsai-2-27B-F16.gguf"
+            ],
+            "size": "50.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf"
+            ],
+            "size": "600.1 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 0.59,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "MLX",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 5,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "size": "600.1 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 931145856,
+            "size": "888.0 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "size": "6.7 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 53808408928,
+            "size": "50.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 600.1 MB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「nesoai/Ternary-Bonsai-2-27B-gguf」が更新されています。確認時点の指標は downloads=927、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q8_0, BF16, TQ1_0, Q2_0, F16。GGUFファイルは 5 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 600.1 MB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-08-ce36ab4f4b2a",
       "date": "2026-10-07",
