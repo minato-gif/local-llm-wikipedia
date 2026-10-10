@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-09"
+    "last_updated": "2026-10-10"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -463,9 +463,77 @@
     "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-GGUF",
     "https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF",
     "https://typesafe.ai/blog/jack-jill-jev-case-study",
-    "https://huggingface.co/nesoai/Ternary-Bonsai-2-27B-gguf"
+    "https://huggingface.co/nesoai/Ternary-Bonsai-2-27B-gguf",
+    "https://www.anthropic.com/news/anthropic-cyber-mission",
+    "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.2"
   ],
   "entries": [
+    {
+      "id": "2026-10-10-89d61c87b91f",
+      "date": "2026-10-08",
+      "title": "Anthropic、防衛側を支援する長期的な取り組み「Cyber Mission」を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、重要インフラやオープンソースコミュニティの防衛側を支援する長期的な取り組み「Cyber Mission」の開始を発表しました。脆弱性の特定や修復に直面するセキュリティ担当者に対し、ツールや研究リソースを提供します。",
+      "impact": "高度化するサイバー攻撃に対抗するため、最先端AIを活用した脆弱性発見と防御支援の枠組みを構築する試みです。",
+      "details": "Project Glasswingの教訓を基に統合された新組織を通じて、サイバーセキュリティの現場を支援します。API経由等での利用を想定した取り組みであり、ローカル環境で直接実行可能なオープンウェイトモデルの公開ではありません。国家の重要インフラ防衛やOSSのセキュリティ向上に焦点を当てています。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-10-e9662150f3f0",
+      "date": "2026-10-07",
+      "title": "OpenAI、ChatGPT向けの新ビジュアル広告フォーマットと測定ツールを発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "OpenAIは、ChatGPT上で製品やサービスを視覚的に探索できる新しいビジュアル広告フォーマットを発表しました。広告主向けの測定ツールやアトリビューションパートナーシップも拡充されます。",
+      "impact": "月間12億人が利用する大規模なAIプラットフォームにおいて、広告事業を通じたマネタイズモデルが大きく拡充されます。",
+      "details": "ChatGPTのユーザー体験内に画像ベースの広告をテスト導入し、企業と消費者の接点を増やします。APIやクラウド経由のサービス提供に関するビジネスモデルの変更であり、ローカルLLMの動作やオープンソースモデルの実行環境には直接影響しません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-10-d2bc63eb6718",
+      "date": "2026-10-09",
+      "title": "Ollama v0.40.2リリース、バックグラウンドでのモデル自動アップグレード機能を導入",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.2",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaがv0.40.2をリリースしました。旧バージョンでダウンロードしたモデルを初回実行時にバックグラウンドで自動アップグレードし、パフォーマンスと互換性を向上させます。",
+      "impact": "llama.cppの更新に伴うモデルの互換性維持とパフォーマンス改善をユーザーが意識せずに行えるようになります。",
+      "details": "安全性のためダウングレード用の一時バックグラウンドコピーがディスクに残る仕様となっており、ストレージ容量に注意が必要です。また、ollama listでの重複表示の修正や、claudeコマンドでのフルコンテキスト長利用への対応が含まれています。ローカル環境での日常的な運用に直結する重要なアップデートです。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-09-4afd7d2b8bf9",
       "date": "2026-10-08",
