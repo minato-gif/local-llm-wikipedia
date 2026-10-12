@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-11"
+    "last_updated": "2026-10-12"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -469,9 +469,573 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.2",
     "https://huggingface.co/3hs4n/Ternary-Bonsai-2-27B-Uncensored-Heretic-v2-mlx-2bit",
     "https://huggingface.co/ManniX-ITA/Ternary-Bonsai-2-27B-MTP-GGUF",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.3-rc0"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.3-rc0",
+    "https://www.anthropic.com/news/genesis-mission-commitment",
+    "https://openai.com/index/gpt-6-for-everyone/",
+    "https://huggingface.co/DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF",
+    "https://huggingface.co/darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.3",
+    "https://lmstudio.ai/changelog/bionic-v1.1.8"
   ],
   "entries": [
+    {
+      "id": "2026-10-12-78cd6d022056",
+      "date": "2026-10-08",
+      "title": "Building on our commitment to American scientific discovery",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/genesis-mission-commitment",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropic Newsroomから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Anthropic is deepening its support for American scientific research by committing $150 million over three years to the Genesis Mission , a federal initiative to accelerate scientific and technological discovery through AI. The funding will go toward making Claude available to more than 15 agencies that are part of the mission, including NASA, the National Institutes of Health, and the National Science Foundation. We first announced our partnership with the US Department of Energy (DOE) and the Genesis Mission last December . Since then, we have worked with DOE to bring Claude to scientists across the national laboratories. Today, we announced this new commitment as part of the Science: A New Golden Age Summit hosted by the White House Office of Science and Technology Policy in Washington, DC. We share the administration’s view, laid out in “ Science: A New Golden Age ,” that AI can have…",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-12-f1ece481c8e7",
+      "date": "2026-10-07",
+      "title": "GPT-6 and Intelligent UI for everyone",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-6-for-everyone/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Last month we introduced the first GPT‑6 models for paid customers and today we're bringing that next generation of intelligence to more people with a new GPT‑6 model built for more than 1.2 billion people who use ChatGPT each week. GPT‑6 in ChatGPT introduces Intelligent UI, a new capability that allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual, make learning complex topics easier and that can quickly create a tool to solve a task right in the moment. A 7‑speed bicycle brings together a frame, handlebars, wheels and hand-operated brakes. Seven gears let the rider adjust pedaling effort as the drivetrain turns effort into motion. Upright bars guide the steering, gears vary the effort, and hand brakes control the pace. The frame carries the rider; the drivetrain turns effort into motion. Select a system to explore its role.",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-12-1fa3fadf2ea5",
+      "date": "2026-10-12",
+      "title": "Hugging Face: DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF license=apache-2.0 base_model=Qwen/Qwen3.8-27B architecture=不明 context_length=不明 downloads=0 likes=78 quantizations=F16, BF16, F32, IQ2_M, IQ3_M, IQ4_XS, IQ4_NL, Q6_K recommended_quantization=IQ4_XS memory_estimate={\"basis_quantization\": \"IQ4_XS\", \"model_file_size_gib\": 15.86, \"system_ram_min_gib\": 20.5, \"system_ram_recommended_gib\": 25.5, \"full_gpu_vram_rough_gib\": 19.5, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 language: - ar - zh - en - fr - de - hi - id - it - ja - ko - pl - pt - ru - es - th - vi pipeline_tag: image-text-to-text tags: - 27 reasoning modes - 27 instruct modes - 15 AI Constructs - 5 Super AI Constructs - Brainstorm AI Construct - Brainstorm Business AI Construct - Universal Teacher AI Construct - Agent AI C…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "27 reasoning modes",
+        "27 instruct modes",
+        "15 AI Constructs",
+        "5 Super AI Constructs",
+        "Brainstorm AI Construct",
+        "Universal Teacher AI Construct",
+        "Agent AI Construct"
+      ],
+      "model_meta": {
+        "model_id": "DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF",
+        "author": "DavidAU",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "",
+        "downloads": 0,
+        "likes": 78,
+        "last_modified": "2026-10-12T02:09:10.000Z",
+        "quantizations": [
+          "F16",
+          "BF16",
+          "F32",
+          "IQ2_M",
+          "IQ3_M",
+          "IQ4_XS",
+          "IQ4_NL",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 927607008,
+            "files": [
+              "mmproj-F16.gguf"
+            ],
+            "size": "884.6 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 931145952,
+            "files": [
+              "mmproj-BF16.gguf"
+            ],
+            "size": "888.0 MB"
+          },
+          {
+            "quantization": "F32",
+            "size_bytes": 1842940128,
+            "files": [
+              "mmproj-F32.gguf"
+            ],
+            "size": "1.7 GB"
+          },
+          {
+            "quantization": "IQ2_M",
+            "size_bytes": 12124842240,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ2_M.gguf"
+            ],
+            "size": "11.3 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 14532266240,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ3_M.gguf"
+            ],
+            "size": "13.5 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 17033898240,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ4_XS.gguf"
+            ],
+            "size": "15.9 GB"
+          },
+          {
+            "quantization": "IQ4_NL",
+            "size_bytes": 17753319680,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ4_NL.gguf"
+            ],
+            "size": "16.5 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 23582600512,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-Q6_K.gguf"
+            ],
+            "size": "22.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 17033898240,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ4_XS.gguf"
+            ],
+            "size": "15.9 GB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q6_K",
+            "size_bytes": 23582600512,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-Q6_K.gguf"
+            ],
+            "size": "22.0 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 14532266240,
+            "files": [
+              "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ3_M.gguf"
+            ],
+            "size": "13.5 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 15.86,
+          "system_ram_min_gib": 20.5,
+          "system_ram_recommended_gib": 25.5,
+          "full_gpu_vram_rough_gib": 19.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 8,
+        "gguf_files": [
+          {
+            "name": "mmproj-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 927607008,
+            "size": "884.6 MB"
+          },
+          {
+            "name": "mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 931145952,
+            "size": "888.0 MB"
+          },
+          {
+            "name": "mmproj-F32.gguf",
+            "quantization": "F32",
+            "size_bytes": 1842940128,
+            "size": "1.7 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ2_M.gguf",
+            "quantization": "IQ2_M",
+            "size_bytes": 12124842240,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 14532266240,
+            "size": "13.5 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 17033898240,
+            "size": "15.9 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-MTP-IQ4_NL.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 17753319680,
+            "size": "16.5 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Turbo-Brilliance-50X-RI-NEO-MAX-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 23582600512,
+            "size": "22.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 884.6 MB〜22.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF」が更新されています。確認時点の指標は downloads=0、likes=78 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は F16, BF16, F32, IQ2_M, IQ3_M, IQ4_XS, IQ4_NL, Q6_K。GGUFファイルは 8 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 884.6 MB〜22.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-12-3daddaf4082b",
+      "date": "2026-10-12",
+      "title": "Hugging Face: darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=darkmaniac7/TokForge-Bonsai-2-27B-GGUF license=apache-2.0 base_model=prism-ml/Ternary-Bonsai-2-27B-gguf architecture=不明 context_length=不明 downloads=550 likes=0 quantizations=TQ1_0, Q2_0 model_card=--- license: apache-2.0 language: - en pipeline_tag: text-generation library_name: llama.cpp base_model: prism-ml/Ternary-Bonsai-2-27B-gguf base_model_relation: quantized tags: - bonsai - ternary - gguf - 2-bit - prismml - android - mobile - mtp - on-device - vulkan - adreno - tokforge --- Published by [TokForge](https://tokforge.ai) for on-device inference. ## TokForge - **Website:** https://tokforge.ai - **Discord:** https://discord.gg/Acv3CBtfVm - **Google Play:** https://play.google.com/store/apps/details?id=dev.tokforge - **iOS TestFlight:** https://testflight.apple.com/join/jnufjzRr Runs on-device in the TokForge app. # TokForge-Bonsai-2-27B-GGUF Prism ML's **Bonsai 2 27B** tern…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama.cpp",
+        "gguf",
+        "bonsai",
+        "ternary",
+        "2-bit",
+        "prismml",
+        "android",
+        "mobile"
+      ],
+      "model_meta": {
+        "model_id": "darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
+        "author": "darkmaniac7",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "llama.cpp",
+        "downloads": 550,
+        "likes": 0,
+        "last_modified": "2026-10-12T01:54:07.000Z",
+        "quantizations": [
+          "TQ1_0",
+          "Q2_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "files": [
+              "Ternary-Bonsai-2-27B-PQ2_0.gguf"
+            ],
+            "size": "6.7 GB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 12344619968,
+            "files": [
+              "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+              "Ternary-Bonsai-2-27B-PTQ1_0-MTP.gguf"
+            ],
+            "size": "11.5 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "MLX",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PTQ1_0-MTP.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 6397971040,
+            "size": "6.0 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "size": "6.7 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 5.5 GB〜6.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「darkmaniac7/TokForge-Bonsai-2-27B-GGUF」が更新されています。確認時点の指標は downloads=550、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は TQ1_0, Q2_0。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 5.5 GB〜6.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-12-a2221ba5b1f7",
+      "date": "2026-10-11",
+      "title": "Ollama: v0.40.3",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.3",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ollama/ollamaでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## What's Changed * `ollama launch claude` no longer shows a warning about Claude connectors by @hoyyeva in https://github.com/ollama/ollama/pull/18878 * `ollama launch codex` no longer warns about service tiers by @hoyyeva in https://github.com/ollama/ollama/pull/18879 * Paused background model upgrade for embedding and other request performance, by @jmorganca in https://github.com/ollama/ollama/pull/18908 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.2...v0.40.3",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-12-83e5059f1e73",
+      "date": "2026-10-12",
+      "title": "LM Studio Changelog: Bionic 1.1.8",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.1.8",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "LM Studio ChangelogでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-10-11-4be2ba16ba46",
       "date": "2026-10-11",
