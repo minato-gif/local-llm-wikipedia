@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-12"
+    "last_updated": "2026-10-13"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -475,9 +475,30 @@
     "https://huggingface.co/DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF",
     "https://huggingface.co/darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.3",
-    "https://lmstudio.ai/changelog/bionic-v1.1.8"
+    "https://lmstudio.ai/changelog/bionic-v1.1.8",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0"
   ],
   "entries": [
+    {
+      "id": "2026-10-13-1f7005b361c4",
+      "date": "2026-10-13",
+      "title": "Ollama v0.40.4リリース：llama.cppの更新と推論ルートの最適化",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルランタイムのOllamaがv0.40.4へアップデートされました。バックエンドのllama.cppをb11521へ更新し、意思決定モデルやEmbeddingGemma 2への対応が行われています。また、推論ルートにおける検証済みマニフェストやロード済みモデルの再利用による効率化も含まれています。",
+      "impact": "バックエンドの追従により、新世代のモデルや埋め込みモデルのローカル実行における互換性とパフォーマンスが向上します。",
+      "details": "llama.cppのバージョン更新（b11521）に伴い、意思決定モデルおよびEmbeddingGemma 2のサポートが追加されました。加えて、サーバーの推論ルートにおける検証済みマニフェストやロード済みモデルの再利用機能が実装され、複数リクエスト時の処理効率が改善されています。Apple Silicon環境のMLXランタイムに関する修正や、UIモデルピッカーの機能改善も含まれており、ローカル環境での実用性が高まっています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-12-78cd6d022056",
       "date": "2026-10-08",
