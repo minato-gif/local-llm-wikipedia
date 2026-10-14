@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-13"
+    "last_updated": "2026-10-14"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -476,9 +476,505 @@
     "https://huggingface.co/darkmaniac7/TokForge-Bonsai-2-27B-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.3",
     "https://lmstudio.ai/changelog/bionic-v1.1.8",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0",
+    "https://x.ai/news/x-subscription",
+    "https://www.anthropic.com/news/2026-usage-policy-update",
+    "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF",
+    "https://huggingface.co/RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.4",
+    "https://lmstudio.ai/changelog/bionic-v1.1.6"
   ],
   "entries": [
+    {
+      "id": "2026-10-14-7fedfd5954e4",
+      "date": "2026-10-12",
+      "title": "Introducing The X Subscription",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/x-subscription",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "xAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Grok, Grok Bot, Cursor, and X Premium, all on one plan. Today we’re introducing The X Subscription, which brings together Grok, Grok Bot, Cursor, and X Premium in one plan. Over the next few days, we’ll make it available to everyone globally. For the first time, one AI subscription supports the full path from thinking and creating to building and sharing. Paid plans on The X Subscription include a generous pool of Grok model usage shared across Grok and Cursor. Each comparable new tier provides more usage-per-dollar than the plan it replaces. Your shared pool covers Grok models whether you use them in the Grok apps, the Grok tab on X, or Cursor. Each X Subscription plan includes at least twice as much coding usage with our models as the comparable Cursor plan. With the new plans, third-party models are still available in Cursor on Premium and above. Usage is billed separately at API lis…",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-14-a16315c37709",
+      "date": "2026-10-09",
+      "title": "2026 Usage Policy update",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropic Newsroomから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Each year, Anthropic updates its Usage Policy in response to the evolving capabilities of our models, and the feedback we’ve received from our customers. We're publishing a new version of the policy today. In this post, we summarize the changes we’ve made. Most of the updates in the latest version are intended to clarify existing rules. In the year since our last refresh, Claude has taken on longer, more independent work. This update provides new examples that show how our rules apply to Claude’s new capabilities. It draws on new patterns of misuse in influence operations, weapons development, and surveillance that we’ve observed in the past year (as we’ve documented in our latest threat intelligence report ). We’ve also made updates to clarify… The updated policy takes effect on November 12. The full Usage Policy and Supported Regions Policy can be found on their respective pages. As w…",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-14-a9770aca913f",
+      "date": "2026-10-14",
+      "title": "Hugging Face: AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF license=apache-2.0 base_model=prism-ml/Ternary-Bonsai-2-27B-gguf architecture=不明 context_length=不明 downloads=1,020 likes=9 quantizations=不明 model_card=--- base_model: prism-ml/Ternary-Bonsai-2-27B-gguf base_model_relation: adapter library_name: gguf license: apache-2.0 license_link: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf/blob/main/LICENSE pipeline_tag: text-generation tags: - gguf - llama.cpp - lora - abliteration - refusal-direction - ternary - bonsai - prismml - atomic-chat --- # How to Run Ternary Bonsai 2 27B Without Refusals Locally <p style=\"margin-top: 0; margin-bottom: 0;\"> <em>A 9.7 MB adapter, not a checkpoint. The 5.95 GB ternary pack stays byte-identical and the refusal direction is removed inside the compute graph, at a strength you set per request. The <a href=\"https://huggingface.co/datasets/…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "lora",
+        "abliteration",
+        "refusal-direction",
+        "ternary",
+        "bonsai",
+        "prismml"
+      ],
+      "model_meta": {
+        "model_id": "AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF",
+        "author": "AtomicChat",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 1020,
+        "likes": 9,
+        "last_modified": "2026-10-13T20:02:29.000Z",
+        "quantizations": [],
+        "quantization_options": [],
+        "quantization_recommendation": {},
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカード内にOllama関連記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "bonsai2-27b-uncensored-own42-layers15-63-lora.gguf",
+            "quantization": "",
+            "size_bytes": 6637696,
+            "size": "6.3 MB"
+          },
+          {
+            "name": "bonsai2-27b-uncensored-own38-lora.gguf",
+            "quantization": "",
+            "size_bytes": 9683168,
+            "size": "9.2 MB"
+          },
+          {
+            "name": "bonsai2-27b-uncensored-own42-lora.gguf",
+            "quantization": "",
+            "size_bytes": 9683168,
+            "size": "9.2 MB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 6.3 MB〜9.2 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF」が更新されています。確認時点の指標は downloads=1,020、likes=9 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。用途タグは text-generation。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 6.3 MB〜9.2 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-14-14752b6735d7",
+      "date": "2026-10-14",
+      "title": "Hugging Face: RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf license=mit base_model=RikkaBotan/NexteraBERT-Mezzoforte-220M-en architecture=不明 context_length=不明 downloads=164 likes=0 quantizations=Q4_0, Q4_K_S, Q4_K_M, Q5_K_M, Q6_K, Q8_0 recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 0.13, \"system_ram_min_gib\": 2.5, \"system_ram_recommended_gib\": 4.5, \"full_gpu_vram_rough_gib\": 1.5, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: mit language: - en base_model: RikkaBotan/NexteraBERT-Mezzoforte-220M-en base_model_relation: quantized library_name: gguf pipeline_tag: fill-mask tags: - nexterabert - encoder - gguf - quantized - fill-mask - long-context --- ![NexteraBERT Logo](assets/NexteraBERT_logo.png) # NexteraBERT-Mezzoforte-220M-en-gguf Quantized GGUF files of [RikkaBotan/Nexte…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "nexterabert",
+        "encoder",
+        "quantized",
+        "fill-mask",
+        "long-context",
+        "en",
+        "license:mit"
+      ],
+      "model_meta": {
+        "model_id": "RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf",
+        "author": "RikkaBotan",
+        "license": "mit",
+        "base_model": "RikkaBotan/NexteraBERT-Mezzoforte-220M-en",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "fill-mask",
+        "library_name": "gguf",
+        "downloads": 164,
+        "likes": 0,
+        "last_modified": "2026-10-14T01:31:12.000Z",
+        "quantizations": [
+          "Q4_0",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 123745984,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q4_0.gguf"
+            ],
+            "size": "118.0 MB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 123811520,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q4_K_S.gguf"
+            ],
+            "size": "118.1 MB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 143951552,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q4_K_M.gguf"
+            ],
+            "size": "137.3 MB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 160720576,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q5_K_M.gguf"
+            ],
+            "size": "153.3 MB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 178666688,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q6_K.gguf"
+            ],
+            "size": "170.4 MB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 230012608,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q8_0.gguf"
+            ],
+            "size": "219.4 MB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 143951552,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q4_K_M.gguf"
+            ],
+            "size": "137.3 MB",
+            "label": "バランス重視",
+            "reason": "容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 160720576,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q5_K_M.gguf"
+            ],
+            "size": "153.3 MB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 123811520,
+            "files": [
+              "nexterabert-mezzoforte-220m-en-Q4_K_S.gguf"
+            ],
+            "size": "118.1 MB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 0.13,
+          "system_ram_min_gib": 2.5,
+          "system_ram_recommended_gib": 4.5,
+          "full_gpu_vram_rough_gib": 1.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "情報不足",
+            "basis": "対話用途を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 123745984,
+            "size": "118.0 MB"
+          },
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 123811520,
+            "size": "118.1 MB"
+          },
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 143951552,
+            "size": "137.3 MB"
+          },
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 160720576,
+            "size": "153.3 MB"
+          },
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 178666688,
+            "size": "170.4 MB"
+          },
+          {
+            "name": "nexterabert-mezzoforte-220m-en-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 230012608,
+            "size": "219.4 MB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 118.0 MB〜219.4 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf」が更新されています。確認時点の指標は downloads=164、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは RikkaBotan/NexteraBERT-Mezzoforte-220M-en。用途タグは fill-mask。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は Q4_0, Q4_K_S, Q4_K_M, Q5_K_M, Q6_K, Q8_0。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 118.0 MB〜219.4 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-14-c9ea21f4178a",
+      "date": "2026-10-13",
+      "title": "Ollama: v0.40.4",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.4",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ollama/ollamaでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## What's Changed * llama: update llama.cpp to b11521 for decision models and EmbeddingGemma 2 by @jmorganca in https://github.com/ollama/ollama/pull/18917 * server: reuse verified manifests and loaded models in inference routes by @dhiltgen in https://github.com/ollama/ollama/pull/18947 * mlx: compact restored recurrent state after speculative rollback by @dhiltgen in https://github.com/ollama/ollama/pull/18955 * launch: include installed models in Codex /model picker by @ParthSareen in https://github.com/ollama/ollama/pull/18887 * MLX, MLX-C: version bump by @dhiltgen in https://github.com/ollama/ollama/pull/18956 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.3...v0.40.4",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-10-14-5dad54af4821",
+      "date": "2026-10-14",
+      "title": "LM Studio Changelog: Bionic 1.1.6",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.1.6",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "LM Studio ChangelogでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-10-13-1f7005b361c4",
       "date": "2026-10-13",
