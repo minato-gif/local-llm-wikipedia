@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-14"
+    "last_updated": "2026-10-15"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -482,9 +482,54 @@
     "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-27B-Uncensored-LoRA-GGUF",
     "https://huggingface.co/RikkaBotan/NexteraBERT-Mezzoforte-220M-en-gguf",
     "https://github.com/ollama/ollama/releases/tag/v0.40.4",
-    "https://lmstudio.ai/changelog/bionic-v1.1.6"
+    "https://lmstudio.ai/changelog/bionic-v1.1.6",
+    "https://x.ai/news/grok-voice-3",
+    "https://typesafe.ai/blog/jev-1-14"
   ],
   "entries": [
+    {
+      "id": "2026-10-15-25d2b6584cf4",
+      "date": "2026-10-14",
+      "title": "xAI、音声対話モデル「Grok Voice 3.0」を発表",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/grok-voice-3",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "xAIは、音声対話に特化した最先端モデル「Grok Voice 3.0」を発表しました。音声推論と低レイテンシを両立し、API経由で提供が開始されています。",
+      "impact": "Speech-to-Speechインデックスで上位に位置し、1秒未満のクラス最高水準のレイテンシと高いコストパフォーマンスを実現しています。",
+      "details": "Grok Voice 3.0は、音声の双方向処理や対話の自然さを競うベンチマークで高いスコアを記録した音声対話モデルです。顧客サポートなどの用途で活用されており、TeslaやSpaceXの音声応対にも導入されています。なお、本発表はAPIおよびクラウドサービス向けの提供に関するものであり、現時点でローカル環境での直接実行には対応していません。",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-15-1617b06cba25",
+      "date": "2026-10-14",
+      "title": "TypeSafe AI、ソフトウェア制御向けモデル「Jev 1.14.0」をリリース",
+      "source": "TypeSafe AI Blog",
+      "source_url": "https://typesafe.ai/blog/jev-1-14",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "TypeSafe AIは、ソフトウェア内での意思決定を目的としたシステム1モデル「Jev」のアップデート版「v1.14.0」を公開しました。実験的機能として画像入力や拡張コンテキストが追加されています。",
+      "impact": "信頼性とクリエイティビティのバランスを取るため、APIヘッダーの「危険ゾーン（danger zone）」フラグを通じて新機能が提供されます。",
+      "details": "Jev 1.14.0では、開発者向けの信頼性を重視しつつ、画像処理や新たなデータ型といった実験的機能が早期アクセスとして提供されています。API経由での利用が前提となるシステムであり、ローカルLLMとしてオープンウェイトで直接ダウンロードして動作させる用途向けではありません。",
+      "tags": [
+        "TypeSafe AI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "新興技術",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-14-7fedfd5954e4",
       "date": "2026-10-12",
