@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-15"
+    "last_updated": "2026-10-16"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -484,9 +484,100 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.4",
     "https://lmstudio.ai/changelog/bionic-v1.1.6",
     "https://x.ai/news/grok-voice-3",
-    "https://typesafe.ai/blog/jev-1-14"
+    "https://typesafe.ai/blog/jev-1-14",
+    "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+    "https://openai.com/index/introducing-the-rosalind-academic-plan/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.5",
+    "https://typesafe.ai/blog/series-ai"
   ],
   "entries": [
+    {
+      "id": "2026-10-16-f0c67f699c23",
+      "date": "2026-10-16",
+      "title": "Anthropic、フロンティアAIモデルの安全性評価で外部機関への従業員レベルのアクセス提供を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、モデルの安全性やリスク評価の透明性を高めるため、非営利組織のMETRをはじめとする外部評価チームに対し、自社モデルへの従業員レベルの深いアクセスを提供開始すると発表した。",
+      "impact": "大手AI開発元による安全性検証の外部監査体制の強化を示すものであり、フロンティアモデルの統制と説明責任のあり方に影響を与えます。",
+      "details": "Anthropicはホワイトハウスのスーパーインテリジェンスに関する合意を受け、METRなどの外部評価機関にモデルへの深いアクセスを付与し、リスク評価の公開を進めることを明らかにしました。SecureBioやAccentureとも協働し、Hugging Faceなどとも協議を行っています。これは同社の商用機密やセキュリティ上の制約を考慮しつつ、第三者による独立した検証を担保する取り組みであり、APIやクローズドな環境における安全対策のガバナンス強化を目的としています。ローカル実行可能なモデルの直接的なオープン化に関する発表ではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-16-d4bfdc4faff6",
+      "date": "2026-10-07",
+      "title": "OpenAI、生命科学研究向けモデル「GPT-Rosalind」の学術機関向けプランを発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-the-rosalind-academic-plan/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、創薬やゲノミクスなどの生命科学研究を支援するため、専用モデル「GPT-Rosalind」を対象とした学術ラボ向けのスポンサー付きプランを発表した。",
+      "impact": "先端的な科学研究に特化したAIモデルの利用環境をアカデミアに提供し、ライフサイエンス分野でのAI活用を加速する取り組みです。",
+      "details": "Rosalindアカデミックプランでは、適格な研究室に対して最大30のビジネススタンダードシートを最長12ヶ月間無料で提供し、フロンティア推論とRosalindワークベンチの統合環境へのアクセスを可能にします。本機能は医薬化学やゲノミクス、湿潤実験の補助などの特殊なツールオーケストレーションをサポートします。APIおよびクラウド経由での利用を前提とした提供であり、ローカル環境で直接実行できるオープンウェイトモデルのリリースではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-16-a639d40fe618",
+      "date": "2026-10-15",
+      "title": "Ollama v0.40.5リリース：NVIDIA Nemotron 3.5 Super等の対応とクラウド機能の拡充",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.5",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは最新バージョンv0.40.5を公開し、ビジョン・言語モデルのNVIDIA Nemotron 3.5 SuperおよびBoltへの対応や、クラウド経由の意思決定モデル利用機能などを追加した。",
+      "impact": "多様な大規模モデルやハイブリッドアーキテクチャをローカルランタイムで手軽に実行可能にし、開発者の検証環境の利便性を大きく向上させます。",
+      "details": "本リリースでは、120BのMamba-2/Transformerハイブリッド構成を持つNemotron 3.5 Superと、24GB VRAMのGPU向けに最適化された74BのBoltがサポートされました。また、ollama.comクラウド経由で意思決定モデル（clef:cloudなど）を利用できる機能が追加されたほか、OpenAI互換のレスポンス処理におけるツール呼び出しのエラー修正やllama.cppの更新が含まれています。ユーザーはローカル環境で最新のハイブリッドモデルの挙動を直接検証できます。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Vision",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-16-a15c3be7931d",
+      "date": "2026-10-09",
+      "title": "TypeSafe AI、新興システム1モデル「Jev」を擁してシリーズA資金調達を実施",
+      "source": "TypeSafe AI Blog",
+      "source_url": "https://typesafe.ai/blog/series-ai",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "自動化向けの機械ネイティブなインフラストラクチャ構築を手掛けるTypeSafe AIは、シリーズAの資金調達を実施し、初となるシステム1モデル「Jev」の初期アクセス提供を強化すると発表した。",
+      "impact": "新しいアーキテクチャや意思決定に特化した新興AIモデルの開発動向を示すものであり、今後のエージェント技術の発展に寄与します。",
+      "details": "TypeSafe AIはAndreessen HorowitzやSequoia Capitalなどから大規模な資金調達を行い、ソフトウェア内で直接意思決定を行うための機械ネイティブモデル「Jev」の開発と提供を加速させる方針です。現時点では早期アクセス段階であり、具体的なウェイトのオープンソース化やローカルランタイムへの直接的な対応状況については詳細が限定されていますが、将来的な自動化システムの基盤として注目される新興技術の一つです。",
+      "tags": [
+        "TypeSafe AI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "新興技術",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-15-25d2b6584cf4",
       "date": "2026-10-14",
