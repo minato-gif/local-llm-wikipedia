@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-16"
+    "last_updated": "2026-10-17"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -488,9 +488,529 @@
     "https://www.anthropic.com/news/an-update-on-independent-evaluators",
     "https://openai.com/index/introducing-the-rosalind-academic-plan/",
     "https://github.com/ollama/ollama/releases/tag/v0.40.5",
-    "https://typesafe.ai/blog/series-ai"
+    "https://typesafe.ai/blog/series-ai",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.6",
+    "https://huggingface.co/h2oai/h2o-lightning-4b-gguf",
+    "https://huggingface.co/Myric/Laguna-XS-2.1-APEX-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-10-17-17ab43baec14",
+      "date": "2026-10-17",
+      "title": "Ollama v0.40.6がリリース、q2_0テンソルとファイルタイプを追加",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.6",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaがバージョン0.40.6を公開しました。Windows環境における孤立したランナープロセスの防止や、GGUFのq2_0テンソルおよびファイルタイプの追加が行われています。",
+      "impact": "Ollamaを利用した超低ビット量子化モデルのサポート拡充や、Windows環境での安定性向上が期待されます。",
+      "details": "本バージョンでは、GGUFフォーマットにおけるq2_0テンソルおよびファイルタイプのサポートが追加されました。また、Windows環境でランナーが孤立してしまう問題の修正が含まれています。ローカルでの実行において、より多様な量子化形式の扱いや安定したプロセス管理が可能になります。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-17-20c0305d12b2",
+      "date": "2026-10-17",
+      "title": "H2O Lightning 4B GGUFが公開、決定モデルのローカル推論に対応",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/h2oai/h2o-lightning-4b-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "H2O Lightning 4BのGGUF版がHugging Faceに公開されました。決定モデルとしての機能やllama.cppの拡張機能を利用した推論に対応しています。",
+      "impact": "軽量な決定モデル（decision-model）をローカル環境で検証・実行したい開発者にとって有用な選択肢となります。",
+      "details": "本モデルは確率付きの型付き決定（typed decisions）を出力するアーキテクチャを採用しています。利用にはllama.cpp側の対応PR（#30361など）が必要な場合があり、通常のテキスト生成とは異なるシステム要件やランタイム設定を確認した上で導入する必要があります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama-cpp",
+        "gguf",
+        "jev",
+        "typed-decisions",
+        "decision-model",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "model_meta": {
+        "model_id": "h2oai/h2o-lightning-4b-gguf",
+        "author": "h2oai",
+        "license": "apache-2.0",
+        "base_model": "h2oai/h2o-lightning-4b",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "llama-cpp",
+        "downloads": 2787,
+        "likes": 14,
+        "last_modified": "2026-10-17T00:39:10.000Z",
+        "quantizations": [
+          "F16",
+          "IQ1",
+          "IQ2",
+          "IQ3",
+          "Q4",
+          "Q5",
+          "Q8_0",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 672423360,
+            "files": [
+              "mmproj-lightning-f16.gguf"
+            ],
+            "size": "641.3 MB"
+          },
+          {
+            "quantization": "IQ1",
+            "size_bytes": 1426418848,
+            "files": [
+              "h2o-lightning-4b-stock-experimental-IQ1M.gguf"
+            ],
+            "size": "1.3 GB"
+          },
+          {
+            "quantization": "IQ2",
+            "size_bytes": 1538393248,
+            "files": [
+              "h2o-lightning-4b-stock-experimental-IQ2XXS.gguf"
+            ],
+            "size": "1.4 GB"
+          },
+          {
+            "quantization": "IQ3",
+            "size_bytes": 4064628672,
+            "files": [
+              "h2o-lightning-4b-stock-experimental-IQ3XXS.gguf",
+              "h2o-lightning-4b-stock-experimental-mixed-IQ3XXS.gguf"
+            ],
+            "size": "3.8 GB"
+          },
+          {
+            "quantization": "Q4",
+            "size_bytes": 6167535936,
+            "files": [
+              "h2o-lightning-4b-stock-experimental-Q4KM.gguf",
+              "h2o-lightning-4b-stock-experimental-Q4KM-BF16embed.gguf"
+            ],
+            "size": "5.7 GB"
+          },
+          {
+            "quantization": "Q5",
+            "size_bytes": 6899900736,
+            "files": [
+              "h2o-lightning-4b-stock-experimental-Q5KM.gguf",
+              "h2o-lightning-4b-stock-experimental-Q5KM-BF16embed.gguf"
+            ],
+            "size": "6.4 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 8964810784,
+            "files": [
+              "h2o-lightning-4b-stock-Q8_0.gguf",
+              "h2o-lightning-4b-Q8_0.gguf"
+            ],
+            "size": "8.3 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 16848791296,
+            "files": [
+              "h2o-lightning-4b-stock-BF16.gguf",
+              "h2o-lightning-4b-BF16.gguf"
+            ],
+            "size": "15.7 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 8964810784,
+            "files": [
+              "h2o-lightning-4b-stock-Q8_0.gguf",
+              "h2o-lightning-4b-Q8_0.gguf"
+            ],
+            "size": "8.3 GB",
+            "label": "品質重視",
+            "reason": "比較的情報保持量の多い候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 8.35,
+          "system_ram_min_gib": 12.0,
+          "system_ram_recommended_gib": 15.5,
+          "full_gpu_vram_rough_gib": 11.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 13,
+        "gguf_files": [
+          {
+            "name": "mmproj-lightning-f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 672423360,
+            "size": "641.3 MB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-IQ1M.gguf",
+            "quantization": "IQ1",
+            "size_bytes": 1426418848,
+            "size": "1.3 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-IQ2XXS.gguf",
+            "quantization": "IQ2",
+            "size_bytes": 1538393248,
+            "size": "1.4 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-IQ3XXS.gguf",
+            "quantization": "IQ3",
+            "size_bytes": 1904493536,
+            "size": "1.8 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-mixed-IQ3XXS.gguf",
+            "quantization": "IQ3",
+            "size_bytes": 2160135136,
+            "size": "2.0 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-Q4KM.gguf",
+            "quantization": "Q4",
+            "size_bytes": 2708804768,
+            "size": "2.5 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-Q5KM.gguf",
+            "quantization": "Q5",
+            "size_bytes": 3074987168,
+            "size": "2.9 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-Q4KM-BF16embed.gguf",
+            "quantization": "Q4",
+            "size_bytes": 3458731168,
+            "size": "3.2 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-experimental-Q5KM-BF16embed.gguf",
+            "quantization": "Q5",
+            "size_bytes": 3824913568,
+            "size": "3.6 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 4482403488,
+            "size": "4.2 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 4482407296,
+            "size": "4.2 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-stock-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 8424393600,
+            "size": "7.8 GB"
+          },
+          {
+            "name": "h2o-lightning-4b-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 8424397696,
+            "size": "7.8 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 641.3 MB〜7.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「h2oai/h2o-lightning-4b-gguf」が更新されています。確認時点の指標は downloads=2,787、likes=14 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは h2oai/h2o-lightning-4b。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は F16, IQ1, IQ2, IQ3, Q4, Q5, Q8_0, BF16。GGUFファイルは 13 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 641.3 MB〜7.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-17-40b3d3e2a7f7",
+      "date": "2026-10-17",
+      "title": "Laguna-XS-2.1 APEX GGUFモデルが公開、MoEモデルの量子化に対応",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Myric/Laguna-XS-2.1-APEX-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "大規模なMoE構造を持つLaguna-XS-2.1のAPEXおよび標準GGUF量子化モデルが公開されました。動的・バンド認識型のビット割り当てによる効率的な量子化が行われています。",
+      "impact": "多層MoEモデルをローカル環境で効率的に実行するための量子化手法とファイル構成の選択肢が広がります。",
+      "details": "プールサイドの「Laguna-XS-2.1」をベースにした、40層・256ルーテッドエキスパート構成のMoEモデルのGGUF版です。注意機構のゲート係数をF32で保持する等の調整が施されたv2ファイルが提供されており、実行には十分なVRAMとシステムRAMの確保が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "moe",
+        "apex",
+        "quantized",
+        "imatrix",
+        "llama.cpp",
+        "laguna",
+        "text-generation"
+      ],
+      "model_meta": {
+        "model_id": "Myric/Laguna-XS-2.1-APEX-GGUF",
+        "author": "Myric",
+        "license": "apache-2.0",
+        "base_model": "poolside/Laguna-XS-2.1",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 828,
+        "likes": 0,
+        "last_modified": "2026-10-17T00:34:17.000Z",
+        "quantizations": [
+          "IQ3_XXS"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 25923510400,
+            "files": [
+              "Laguna-XS-2.1-IQ3_XXS.gguf",
+              "Laguna-XS-2.1-IQ3_XXS-v2.gguf"
+            ],
+            "size": "24.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内にllama.cpp関連記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 6,
+        "gguf_files": [
+          {
+            "name": "Laguna-XS-2.1-APEX-dynamic.gguf",
+            "quantization": "",
+            "size_bytes": 12082492832,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "Laguna-XS-2.1-APEX-dynamic-v2.gguf",
+            "quantization": "",
+            "size_bytes": 12098286816,
+            "size": "11.3 GB"
+          },
+          {
+            "name": "Laguna-XS-2.1-IQ3_XXS.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 12952865696,
+            "size": "12.1 GB"
+          },
+          {
+            "name": "Laguna-XS-2.1-IQ3_XXS-v2.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 12970644704,
+            "size": "12.1 GB"
+          },
+          {
+            "name": "Laguna-XS-2.1-APEX-i-quality.gguf",
+            "quantization": "",
+            "size_bytes": 19176995712,
+            "size": "17.9 GB"
+          },
+          {
+            "name": "Laguna-XS-2.1-APEX-i-quality-v2.gguf",
+            "quantization": "",
+            "size_bytes": 19192624352,
+            "size": "17.9 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 11.3 GB〜17.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Myric/Laguna-XS-2.1-APEX-GGUF」が更新されています。確認時点の指標は downloads=828、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは poolside/Laguna-XS-2.1。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から判別できた量子化は IQ3_XXS。GGUFファイルは 6 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 11.3 GB〜17.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-16-f0c67f699c23",
       "date": "2026-10-16",
