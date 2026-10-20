@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-19"
+    "last_updated": "2026-10-20"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -497,9 +497,75 @@
     "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-v2-GGUF",
     "https://huggingface.co/rasyosef/gemma-4-E2B-it-dspark-GGUF",
     "https://www.anthropic.com/news/singapore-office-opening",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
+    "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+    "https://openai.com/index/low-resource-programming-languages/",
+    "https://www.anthropic.com/news/public-benefit-fund"
   ],
   "entries": [
+    {
+      "id": "2026-10-20-a1d847376f7b",
+      "date": "2026-10-14",
+      "title": "Google DeepMind、軽量なオンデバイスGemmaモデルを活用した詐欺検出機能を発表",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMindとGovTech Singaporeは、プライベートチャットにおける会話型詐欺をオンデバイスで検知する仕組みを発表しました。クラウドへのデータ送信を一切行わず、軽量なGemmaモデルを活用して詐欺の兆候をインターセプトします。",
+      "impact": "クラウドへのデータ流出を伴わない完全なオンデバイス処理により、プライバシーを保護しつつリアルタイムで詐欺対策を行う実用的なモバイルAIのユースケースを示しています。",
+      "details": "本発表では、Google DeepMindとシンガポールのGovTechが共同で、軽量なGemmaモデルをモバイルデバイス上で動作させ、プライベートチャットでの詐欺を検出する取り組みが紹介されています。クラウドへのデータ egress（データ流出）がゼロである点が最大の特徴であり、ローカルでの高速かつプライベートな推論処理の応用例となります。API専用のクラウドサービスではなく、端末側でローカル実行されるオープンウェイトモデルの活用事例として注目されます。",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-20-b91330a8e3fd",
+      "date": "2026-10-16",
+      "title": "OpenAI、COBOLやFortranなど低リソースプログラミング言語のコーディング支援を強化",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/low-resource-programming-languages/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "OpenAIは、COBOLやFortran、Visual Basicなどの低リソースプログラミング言語におけるモデルのコーディングおよびソフトウェア移行能力の向上を発表しました。専用の評価ベンチマークを開発し、社会インフラを支えるレガシーコードの維持・近代化を支援します。",
+      "impact": "ドキュメントが少ないレガシー言語に対するコード生成やマイグレーション精度が向上し、金融やインフラ分野での実用的なソフトウェア開発支援が強化されます。",
+      "details": "COBOLやFortranのようにトレーニングデータが少ない低リソースプログラミング言語において、モデルの性能改善が行われました。公開された「MultiLangBench」やCOBOLマイグレーション評価を通じて、バグ修正や言語移行時の挙動維持を検証しています。なお、本機能はOpenAIのクラウドAPI等を介した提供であり、オープンウェイトモデルやローカル環境での直接実行を対象としたものではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-20-27d11482d015",
+      "date": "2026-10-19",
+      "title": "Anthropic、企業成長に応じて株式拠出を増やす「公共利益基金」を設立",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/public-benefit-fund",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicは、企業の成長に合わせて拠出株式の割合が増加する「Anthropic Public Benefit Fund」の設立を発表しました。AIの安全性研究やバイオ医学研究への投資に加え、労働市場への影響など社会的課題への対応を強化します。",
+      "impact": "大手AI開発元によるガバナンス体制や社会的責務のあり方を示すものであり、AI安全性の追求や利益還元スキームの新たなモデルケースとなります。",
+      "details": "Anthropicは、公益法人（PBC）としてのミッションをさらに推進するため、株式の一部をAnthropic Public Benefit Fundへ拠出することを決定しました。初期の5%に加え、企業価値の向上に応じて取締役会の裁量で追加拠出が行われる仕組みです。AI安全性の研究や非営利団体への支援、労働市場の不安定化といった社会的課題への対処を目的としていますが、ローカルLLMの直接的なモデル公開やソフトウェアのアップデートに関する発表ではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-19-fd7bec8f461e",
       "date": "2026-10-16",
