@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-20"
+    "last_updated": "2026-10-21"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -500,9 +500,54 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
     "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
     "https://openai.com/index/low-resource-programming-languages/",
-    "https://www.anthropic.com/news/public-benefit-fund"
+    "https://www.anthropic.com/news/public-benefit-fund",
+    "https://www.anthropic.com/news/distillation-defenses",
+    "https://mistral.ai/news/voxtral-3/"
   ],
   "entries": [
+    {
+      "id": "2026-10-21-d5672350cbbe",
+      "date": "2026-10-12",
+      "title": "Anthropic、モデルの蒸留攻撃に対する防御策を強化しデータを90%以上削減",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/distillation-defenses",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、最先端モデルの能力を不正に模倣する蒸留攻撃の効率を大幅に低減する手法を開発しました。初期の検証では、蒸留目的で収集されるデータを90%から99%削減することに成功したとしています。",
+      "impact": "オープンウェイトや小規模モデルの動向に直接影響するものではありませんが、大手AI開発元におけるAPI保護や不正抽出対策の強化方針を示す重要な動向です。",
+      "details": "不正な蒸留攻撃は、承認なしにフロンティアモデルの能力を抽出・複製する工業規模のキャンペーンであり、不十分な安全対策のままモデルが複製されるリスクが懸念されています。本発表はAPIやクラウド利用に関するセキュリティ・運用方針に関するものであり、ローカル環境でのオープンウェイトモデルの実行や直接的なオープンソース開発に影響を与えるものではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-21-b89800cf5b91",
+      "date": "2026-10-20",
+      "title": "Mistral AI、50言語以上に対応する音声エージェントSDK「Voxtral 3」を発表",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Mistral AIは、50以上の言語でリアルタイムな対話が可能な音声エージェントSDKおよび音声モデル「Voxtral 3」を発表しました。正確な文字起こし、感情適応型音声合成、高度なツール統合を特徴としています。",
+      "impact": "音声対話アプリケーションの開発において、API利用だけでなくセルフデプロイ（自己展開）の選択肢が提供される点がローカル・オンプレミス運用の観点で注目されます。",
+      "details": "Voxtral 3は、MistralによるEUホスト型APIだけでなく、セルフデプロイ（自己展開）にも対応しており、データ主権を確保しつつ低遅延な音声対話システムを構築可能です。コンタクトセンターやバーチャルアシスタント向けに設計されていますが、具体的なモデルのオープンウェイト公開状況やローカル実行の詳細なハードウェア要件については引き続き公式ドキュメントを確認する必要があります。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-20-a1d847376f7b",
       "date": "2026-10-14",
