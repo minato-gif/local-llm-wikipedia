@@ -96,11 +96,11 @@ def quant_recommendation(options):
     balanced=choose_quant(options,["Q4_K_M","Q4_K_S","IQ4_XS","Q5_K_M","Q4_0"])
     quality=choose_quant(options,["Q5_K_M","Q6_K","Q8_0","Q5_K_S","Q4_K_M"])
     lowmem=choose_quant(options,["IQ3_M","Q3_K_M","Q3_K_S","IQ4_XS","Q4_K_S","Q4_K_M"])
-    out={"method":"ファイル名と容量に基づく一般的なGGUF選択目安。品質や速度はモデルごとに異なります。"}
+    out={"method":"ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。"}
     if balanced:
-        out["balanced"]={**balanced,"label":"バランス重視","reason":"容量・品質のバランスを取りやすい候補として選定。実際の品質はモデルごとに異なります。"}
+        out["balanced"]={**balanced,"label":"バランス重視","reason":"容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"}
     if quality:
-        out["quality"]={**quality,"label":"品質重視","reason":"比較的情報保持量の多い候補。必要メモリは増えます。"}
+        out["quality"]={**quality,"label":"品質重視","reason":"比較的多くの情報を保持する候補。必要メモリは増えます。"}
     if lowmem:
         out["low_memory"]={**lowmem,"label":"省メモリ重視","reason":"比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"}
     return out
@@ -116,7 +116,7 @@ def memory_estimate(rec):
         "system_ram_min_gib":round_half(gib*1.15+2),
         "system_ram_recommended_gib":round_half(gib*1.35+4),
         "full_gpu_vram_rough_gib":round_half(gib*1.15+1),
-        "note":"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイム実装で必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        "note":"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
     }
 
 def runtime_support(readme, tags, has_gguf):
@@ -124,21 +124,21 @@ def runtime_support(readme, tags, has_gguf):
     out=[]
     def add(name,status,basis): out.append({"name":name,"status":status,"basis":basis})
     if "llama.cpp" in text or "llama-cpp" in text:
-        add("llama.cpp","明示あり","モデルカードまたはタグ内にllama.cpp関連記載があります。")
+        add("llama.cpp","明示あり","モデルカードまたはタグにllama.cppに関する記載があります。")
     elif has_gguf:
-        add("llama.cpp","有力候補","GGUF形式のため候補になりますが、このアーキテクチャへの対応バージョン確認が必要です。")
+        add("llama.cpp","有力候補","GGUF形式のため候補になりますが、このアーキテクチャに対応するバージョンを確認する必要があります。")
     if "lm studio" in text or "lmstudio" in text:
-        add("LM Studio","明示あり","モデルカード内にLM Studio関連記載があります。")
+        add("LM Studio","明示あり","モデルカードにLM Studioに関する記載があります。")
     elif has_gguf:
         add("LM Studio","互換候補","GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。")
     if "ollama" in text:
-        add("Ollama","明示あり","モデルカード内にOllama関連記載があります。")
+        add("Ollama","明示あり","モデルカードにOllamaに関する記載があります。")
     elif has_gguf:
-        add("Ollama","インポート候補","GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートの対応確認が必要です。")
+        add("Ollama","インポート候補","GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。")
     if "koboldcpp" in text or "kobold cpp" in text:
-        add("KoboldCpp","明示あり","モデルカード内にKoboldCpp関連記載があります。")
+        add("KoboldCpp","明示あり","モデルカードにKoboldCppに関する記載があります。")
     elif has_gguf:
-        add("KoboldCpp","互換候補","GGUF系ランタイムですが、アーキテクチャ対応状況の確認が必要です。")
+        add("KoboldCpp","互換候補","GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。")
     for name,needles in [("vLLM",["vllm"]),("MLX",["mlx"]),("Transformers",["transformers"]),("SGLang",["sglang"])]:
         if any(n in text for n in needles):
             add(name,"明示あり","モデルカードまたはタグ内に関連記載があります。")
@@ -151,7 +151,7 @@ def use_case_eval(mid, readme, tags, pipeline, context):
     if any(x in text for x in ["conversational","chat","instruct","assistant"]):
         add("チャット","高","モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。")
     elif "text-generation" in text:
-        add("チャット","中","text-generation用途は確認できますが、対話最適化の程度はモデルカードで要確認です。")
+        add("チャット","中","text-generation用途は確認できますが、対話最適化の程度はモデルカードで確認が必要です。")
     else:
         add("チャット","情報不足","対話用途を裏付ける明確な情報を取得できませんでした。")
     if any(x in text for x in ["coder","coding","codegen","code generation","programming"]):
@@ -165,7 +165,7 @@ def use_case_eval(mid, readme, tags, pipeline, context):
     if "japanese" in text or "日本語" in text:
         add("日本語","高","日本語対応を示す記載があります。")
     elif "multilingual" in text:
-        add("日本語","中","多言語対応の記載はありますが、日本語品質は個別確認が必要です。")
+        add("日本語","中","多言語対応の記載はありますが、日本語の品質は個別に確認する必要があります。")
     else:
         add("日本語","情報不足","日本語対応を直接裏付ける情報を取得できませんでした。")
     if any(x in text for x in ["tool calling","tool-calling","function calling","function-calling","agent"]):
@@ -246,7 +246,7 @@ def enrich(entry):
     if meta["architectures"]: bits.append("アーキテクチャは "+", ".join(meta["architectures"]))
     if meta["pipeline_tag"]: bits.append("用途タグは "+meta["pipeline_tag"])
     if bits: sections.append({"title":"モデルの特徴","text":"。".join(bits)+"。"})
-    if qs: sections.append({"title":"量子化・ファイル構成","text":f"ファイル名から判別できた量子化は {', '.join(qs)}。GGUFファイルは {len(files)} 件確認できました。"})
+    if qs: sections.append({"title":"量子化・ファイル構成","text":f"ファイル名から確認できた量子化方式は {', '.join(qs)}。GGUFファイルは {len(files)} 件確認できました。"})
     sections.append({"title":"どんなPCなら使えそう？","text":hardware})
     if runtime: sections.append({"title":"LM Studio / llama.cppで使える？","text":runtime})
     warnings=[]

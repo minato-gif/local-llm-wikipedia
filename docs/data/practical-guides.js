@@ -55,7 +55,7 @@ window.STATIC_PAGES.push({
     <h2>7. 慣れてきたら</h2>
     <div class="grid">
       <div class="card"><h3>モデルを比較する</h3><p><a href="#/guide/compare">モデル比較</a>から、自分の用途に合うモデルを探します。</p></div>
-      <div class="card"><h3>大きいモデルを試す</h3><p>Q4→Q5や、より大きなモデルへ少しずつ広げます。</p></div>
+      <div class="card"><h3>大きいモデルを試す</h3><p>Q4からQ5への変更や、より大きなモデルを少しずつ試します。</p></div>
       <div class="card"><h3>APIで他アプリと連携</h3><p>LM StudioはローカルAPIサーバーやOpenAI互換エンドポイントも提供しています。</p></div>
     </div>
 
@@ -177,7 +177,7 @@ window.STATIC_PAGES.push({
       <li>Q5/Q8ならQ4など、より軽い量子化を試す。</li>
       <li>コンテキスト長を128Kなどから8K・4Kへ下げる。</li>
       <li>他のモデルをアンロードし、VRAMを使うゲームや画像生成ソフトを閉じる。</li>
-      <li>GPU offloadを減らし、一部をRAM/CPU側へ逃がす。</li>
+      <li>GPU offloadを減らし、一部をRAM/CPU側で処理する。</li>
       <li>それでも無理なら一段小さいモデルへ変更する。</li>
     </ol>
     <p>LM Studio CLIでは <code>lms load --estimate-only &lt;model&gt;</code> でロード前にメモリ見積もりができます。見積もりはコンテキスト長やGPU offloadなども考慮します。</p>
@@ -217,7 +217,7 @@ window.STATIC_PAGES.push({
       <li>GGUF、MLX、safetensorsを取り違えていないか確認。</li>
       <li>新しいモデルの場合、LM Studio / llama.cppランタイムを更新。</li>
       <li>手動配置した場合はモデルディレクトリやimport方法を確認。</li>
-      <li>ダウンロードが途中で壊れていないか再確認。</li>
+      <li>ダウンロードの途中でファイルが使えなくなっていないか再確認。</li>
     </ul>
 
     <h2>LM Studio自体が起動しない</h2>

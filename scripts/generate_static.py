@@ -185,7 +185,7 @@ def home_html(site: dict, entries: list[dict]) -> str:
 <h1>ローカルLLMを、<br>選べる・動かせる知識に。</h1>
 <p class="lead">{esc(site.get("description", ""))}</p>
 <div class="hero-actions"><a class="button" href="/guide/basics/">基礎から始める</a><a class="button secondary" href="/guide/model-checklist/">モデルを選ぶ</a></div></section>
-<div class="trust-strip"><div class="trust-item"><b>一次情報を優先</b><span>公式発表・モデルカード・リポジトリを出発点にします。</span></div><div class="trust-item"><b>ローカル判断へ変換</b><span>容量・量子化・ランタイム・ライセンスの観点を加えます。</span></div><div class="trust-item"><b>検証範囲を明示</b><span>AI利用、概算値、実機未検証を記事内で区別します。</span></div></div>
+<div class="trust-strip"><div class="trust-item"><b>一次情報を優先</b><span>公式発表・モデルカード・リポジトリを出発点にします。</span></div><div class="trust-item"><b>ローカル利用への影響を整理</b><span>容量・量子化・ランタイム・ライセンスの観点を加えます。</span></div><div class="trust-item"><b>検証範囲を明示</b><span>AI利用、概算値、実機未検証を記事内で区別します。</span></div></div>
 <div class="notice"><b>最終更新: {esc(site.get("last_updated", ""))}</b><br>公開基準を満たさない自動収集候補は一覧と検索エンジンから除外しています。<a href="/editorial-policy/">調査・編集方針を見る</a></div>
 <div class="section-head"><h2>目的から探す</h2><p>初めての導入からモデル比較、トラブル対応まで、作業の順序に沿って読めます。</p></div><div class="grid">{card_html}</div>
 <div class="section-head"><h2>注目記事</h2><p>新着のうち、ローカル利用者への影響が特に大きい情報です。</p></div><div class="grid">{high_html}</div>
@@ -250,11 +250,11 @@ def model_details(entry: dict) -> str:
         quant_rows.append((label, value))
     memory = meta.get("memory_estimate", {})
     memory_rows = [
-        ("基準量子化", memory.get("basis_quantization", "情報不足")),
+        ("計算の基準となる量子化", memory.get("basis_quantization", "情報不足")),
         ("モデルファイル容量", f'{memory["model_file_size_gib"]} GiB' if memory.get("model_file_size_gib") is not None else "概算不能"),
         ("最低RAM目安", f'{memory["system_ram_min_gib"]} GiB' if memory.get("system_ram_min_gib") is not None else "概算不能"),
         ("推奨RAM目安", f'{memory["system_ram_recommended_gib"]} GiB' if memory.get("system_ram_recommended_gib") is not None else "概算不能"),
-        ("フルGPUオフロード時VRAM目安", f'{memory["full_gpu_vram_rough_gib"]} GiB' if memory.get("full_gpu_vram_rough_gib") is not None else "概算不能"),
+        ("全量GPUオフロード時のVRAM目安", f'{memory["full_gpu_vram_rough_gib"]} GiB' if memory.get("full_gpu_vram_rough_gib") is not None else "概算不能"),
     ]
     runtime = meta.get("runtime_support", [])
     runtime_html = "".join(
@@ -312,7 +312,7 @@ def article_html(entry: dict, related: list[dict], published_categories: list[st
     tags = "".join(f'<span class="badge">{esc(tag)}</span>' for tag in entry.get("tags", [])) or "情報不足"
     method = str(entry.get("summary_method", "編集部による一次情報の整理"))
     ai_note = "AIによる要約補助を使用" if any(word in method.lower() for word in ("gemini", "ai")) else "編集ルールに基づく整理"
-    test_note = str(entry.get("verification_note") or "実機での速度・品質・互換性は未検証です。")
+    test_note = str(entry.get("verification_note") or "速度・品質・互換性は実機では検証していません。")
     references = "".join(
         f'<li><a target="_blank" rel="noopener noreferrer" href="{esc(ref.get("url"))}">{esc(ref.get("label") or ref.get("url"))}</a></li>'
         for ref in reference_list(entry)
@@ -329,7 +329,7 @@ def article_html(entry: dict, related: list[dict], published_categories: list[st
 <div class="row"><b>カテゴリ</b><span>{esc(category)}</span></div>
 <div class="row"><b>重要度</b><span>{esc(entry.get("priority"))}</span></div></aside>
 <div class="verification"><div class="verification-item"><b>根拠</b><span>{esc(source_type(entry))}</span></div><div class="verification-item"><b>作成方法</b><span>{esc(ai_note)}</span></div><div class="verification-item"><b>検証範囲</b><span>{esc(test_note)}</span></div></div>
-<div class="content-callout"><b>ローカル利用者への判断</b><br>{esc(entry.get("impact"))}</div>
+<div class="content-callout"><b>ローカル利用者の判断材料</b><br>{esc(entry.get("impact"))}</div>
 {model_details(entry)}
 <h2>発表・更新の内容</h2><p>{esc(entry.get("details"))}</p>
 <h2>タグ</h2><p>{tags}</p>

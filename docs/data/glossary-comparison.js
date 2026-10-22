@@ -42,7 +42,7 @@ window.STATIC_PAGES.push({
       <div class="term"><h3>Expert / エキスパート</h3><p>MoEモデル内部にある複数の専門ネットワークです。毎回すべてを使うのではなく、必要なExpertが選択されます。</p></div>
       <div class="term"><h3>Active Parameters / アクティブパラメータ</h3><p>MoEモデルが1トークンを処理するとき実際に使うパラメータ規模です。ただし、モデルの全重みを保存・ロードするためのメモリは別途必要です。</p></div>
       <div class="term"><h3>マルチモーダル</h3><p>文章だけでなく、画像、音声、動画など複数種類の情報を扱えるモデルや仕組みです。</p></div>
-      <div class="term"><h3>MTP <span class="alias">Multi-Token Prediction</span></h3><p>次の1トークンだけではなく、複数の将来トークンを予測する仕組みです。推論高速化やSpeculative Decodingと組み合わせられる場合があります。</p></div>
+      <div class="term"><h3>MTP <span class="alias">Multi-Token Prediction</span></h3><p>次の1トークンだけでなく、その先の複数のトークンを予測する仕組みです。推論の高速化やSpeculative Decodingと組み合わせられる場合があります。</p></div>
       <div class="term"><h3>Embedding / 埋め込み</h3><p>文章などを数値ベクトルへ変換したものです。意味の近さを比較できるため、文書検索やRAGでよく使われます。</p></div>
     </section>
 
@@ -50,7 +50,7 @@ window.STATIC_PAGES.push({
       <h2>モデルファイル・量子化</h2>
       <div class="term"><h3>GGUF</h3><p>llama.cpp系で広く使われているモデルファイル形式です。量子化済みモデルの配布で非常によく見かけます。</p></div>
       <div class="term"><h3>safetensors</h3><p>Hugging Faceなどで広く使われるモデル重みの保存形式です。元モデルやGPUサーバー向け配布でよく使われます。</p></div>
-      <div class="term"><h3>量子化 <span class="alias">Quantization</span></h3><p>モデルの数値を低い精度で保存・計算し、ファイル容量と必要メモリを減らす技術です。ローカルLLMを家庭用PCで動かすうえで特に重要です。</p></div>
+      <div class="term"><h3>量子化 <span class="alias">Quantization</span></h3><p>モデルの数値を低い精度で保存・計算し、ファイル容量と必要なメモリを減らす技術です。ローカルLLMを家庭用PCで動かすうえで特に重要です。</p></div>
       <div class="term"><h3>Q4 / Q5 / Q6 / Q8</h3><p>GGUFでよく見る量子化の大まかな精度区分です。数字が小さいほど軽くなりやすく、数字が大きいほど容量は増えますが品質を保ちやすくなります。迷ったらQ4〜Q5が定番です。</p></div>
       <div class="term"><h3>INT4 / INT8</h3><p>4bit整数、8bit整数などを使う量子化表現です。INT4は特に大きくメモリを削減できます。</p></div>
       <div class="term"><h3>FP16 / BF16</h3><p>16bit浮動小数点形式です。量子化版より大きい一方、学習済みモデルの高い精度を保ちやすく、GPUサーバーや高VRAM環境でよく使われます。</p></div>
@@ -61,7 +61,7 @@ window.STATIC_PAGES.push({
     <section id="runtime-terms" class="glossary-section">
       <h2>推論・ハードウェア</h2>
       <div class="term"><h3>推論 <span class="alias">Inference</span></h3><p>学習済みモデルを使って実際に回答を生成する処理です。モデルをPCでチャットに使うのも推論です。</p></div>
-      <div class="term"><h3>推論ランタイム</h3><p>モデルを実際にCPU/GPUで動かすソフトウェア部分です。llama.cppなどが代表例です。</p></div>
+      <div class="term"><h3>推論ランタイム</h3><p>モデルを実際にCPU/GPUで動かすソフトウェアです。llama.cppなどが代表例です。</p></div>
       <div class="term"><h3>llama.cpp</h3><p>CPUやさまざまなGPUでLLMを実行できる代表的なオープンソース推論エンジンです。GGUF形式の中心的なランタイムです。</p></div>
       <div class="term"><h3>LM Studio</h3><p>モデル検索、ダウンロード、チャット、設定、ローカルAPIサーバーなどをGUIで扱えるアプリです。初心者がローカルLLMを始める方法の一つです。</p></div>
       <div class="term"><h3>Ollama</h3><p>ローカルモデルを簡単なコマンドで取得・実行し、APIとして利用できる環境です。開発ツールとの連携でもよく使われます。</p></div>
@@ -91,7 +91,7 @@ window.STATIC_PAGES.push({
       <div class="term"><h3>Tool Calling / Function Calling</h3><p>LLMが「この関数・ツールを使うべき」と判断し、外部プログラムへ構造化された指示を出す機能です。</p></div>
       <div class="term"><h3>Agent / エージェント</h3><p>LLMが目標に向けて計画し、必要に応じて検索、コード実行、ファイル操作などのツールを使いながら複数ステップで作業する仕組みです。</p></div>
       <div class="term"><h3>RAG <span class="alias">Retrieval-Augmented Generation</span></h3><p>回答前に外部文書を検索し、その情報をLLMへ渡して回答させる方法です。社内文書や個人資料を扱う用途でよく使われます。</p></div>
-      <div class="term"><h3>Fine-tuning / ファインチューニング</h3><p>既存モデルを追加データで再学習し、特定分野や出力傾向へ適応させることです。</p></div>
+      <div class="term"><h3>Fine-tuning / ファインチューニング</h3><p>既存モデルを追加データで再学習し、特定の分野や出力傾向に適応させることです。</p></div>
       <div class="term"><h3>LoRA</h3><p>モデル本体すべてを再学習せず、小さな追加パラメータだけを学習する効率的なファインチューニング手法です。</p></div>
     </section>
 

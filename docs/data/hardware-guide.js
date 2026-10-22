@@ -67,7 +67,7 @@ window.STATIC_PAGES.push({
     <h2>RAMはどのくらい必要？</h2>
     <div class="grid">
       <div class="card"><h3>RAM 16GB</h3><p>小型モデル中心。OSやブラウザも使うため余裕は少なめです。</p></div>
-      <div class="card"><h3>RAM 32GB</h3><p>ローカルLLM入門〜16GB GPU構成との組み合わせで扱いやすい容量。</p></div>
+      <div class="card"><h3>RAM 32GB</h3><p>ローカルLLMの入門用から、16GB GPU構成との組み合わせまで扱いやすい容量。</p></div>
       <div class="card"><h3>RAM 64GB</h3><p>24〜32GB GPUで大型モデルを部分オフロードしたり、複数モデルを扱う場合に便利。</p></div>
       <div class="card"><h3>RAM 128GB以上</h3><p>GPUに収まらない大型モデルやCPU推論、巨大GGUFを試す上級者向け。</p></div>
     </div>
@@ -91,11 +91,11 @@ window.STATIC_PAGES.push({
 
     <h2>公式・参考情報</h2>
     <div class="sourcebox">
-      <a target="_blank" rel="noopener" href="https://developers.googleblog.com/gemma-4-12b-the-developer-guide/">Google — Gemma 4 12B Developer Guide</a><br>
-      <a target="_blank" rel="noopener" href="https://openai.com/index/introducing-gpt-oss/">OpenAI — Introducing gpt-oss</a><br>
-      <a target="_blank" rel="noopener" href="https://lmstudio.ai/docs/cli/local-models/load">LM Studio — lms load / memory estimation</a><br>
-      <a target="_blank" rel="noopener" href="https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF">ggml-org — Qwen3.8-27B GGUF</a><br>
-      <a target="_blank" rel="noopener" href="https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/">NVIDIA — Nemotron 3.5 Lightning</a>
+      <a target="_blank" rel="noopener" href="https://developers.googleblog.com/gemma-4-12b-the-developer-guide/">Google: Gemma 4 12B Developer Guide</a><br>
+      <a target="_blank" rel="noopener" href="https://openai.com/index/introducing-gpt-oss/">OpenAI: Introducing gpt-oss</a><br>
+      <a target="_blank" rel="noopener" href="https://lmstudio.ai/docs/cli/local-models/load">LM Studio: lms load / memory estimation</a><br>
+      <a target="_blank" rel="noopener" href="https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF">ggml-org: Qwen3.8-27B GGUF</a><br>
+      <a target="_blank" rel="noopener" href="https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/">NVIDIA: Nemotron 3.5 Lightning</a>
     </div>
 
     <h2>次に読む</h2>

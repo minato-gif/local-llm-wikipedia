@@ -114,7 +114,7 @@ window.STATIC_PAGES = [
     </div>
 
     <h2>NVIDIA Nemotron 3.5 Lightning</h2>
-    <p><b>Nemotron 3.5 Lightning 30B A3B</b>は、30B総パラメータのうち約3Bを動かすMoE系モデルです。長時間動き続けるエージェントや、特定作業を高速にこなすサブエージェントを強く意識しています。</p>
+    <p><b>Nemotron 3.5 Lightning 30B A3B</b>は、30B総パラメータのうち約3Bを動かすMoE系モデルです。長時間動き続けるエージェントや、特定作業を高速にこなすサブエージェントを特に重視しています。</p>
     <p>NVIDIAはGGUF Q4_K_MならRTX 5090上でllama.cppを使った単一GPU実行を案内しており、最新の高性能PCで試しやすい大型モデルの一つです。</p>
     <div class="sourcebox"><b>公式情報</b><br>
       <a target="_blank" rel="noopener" href="https://developer.nvidia.com/topics/ai/nemotron">NVIDIA Nemotron</a>
@@ -142,7 +142,7 @@ window.STATIC_PAGES = [
     </div>
 
     <h2>MiniMax M2.1</h2>
-    <p><b>MiniMax M2.1</b>はコーディング、ツール利用、指示追従、長い手順をこなすエージェント用途を強く意識した229B級モデルです。重みが公開され、SGLang、vLLM、Transformers、KTransformersなどでのローカル配備ガイドも用意されています。</p>
+    <p><b>MiniMax M2.1</b>はコーディング、ツール利用、指示追従、長い手順をこなすエージェント用途を特に重視した229B級モデルです。重みが公開され、SGLang、vLLM、Transformers、KTransformersなどでのローカル配備ガイドも用意されています。</p>
     <p>量子化版も存在しますが、モデル自体が非常に大きいため、主に高性能ワークステーション向けです。</p>
     <div class="sourcebox"><b>公式情報</b><br>
       <a target="_blank" rel="noopener" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.1">MiniMax M2.1 Official Model Card</a>
