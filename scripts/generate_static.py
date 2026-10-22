@@ -85,6 +85,7 @@ def category_slug(category: str) -> str:
         "フロントエンド": "frontends",
         "フロントエンド・ランタイム": "frontends-runtimes",
         "運用": "operations",
+        "ハーネス": "harnesses",
     }
     return known.get(category, "category-" + hashlib.sha1(category.encode("utf-8")).hexdigest()[:10])
 
@@ -95,7 +96,7 @@ def clean_internal_links(fragment: str) -> str:
     def replace(match: re.Match[str]) -> str:
         return f'href="{route_to_path(match.group(1))}"'
 
-    return re.sub(r'href="(#[^"]+)"', replace, fragment)
+    return re.sub(r'href="(#/[^"]*)"', replace, fragment)
 
 
 def article_text_length(entry: dict) -> int:
@@ -170,6 +171,7 @@ def home_html(site: dict, entries: list[dict]) -> str:
         ("/guide/troubleshoot/", "トラブルシューティング", "ロード失敗、VRAM不足、速度低下などを症状別に確認します。"),
         ("/guide/model-checklist/", "モデル選定チェックリスト", "目的、メモリ、量子化、互換性、ライセンスの順に候補を絞ります。"),
         ("/category/ai-industry-trends/", "新技術・業界動向", "大手AI開発元の主要発表と、Jevのような新しい技術潮流を追跡します。"),
+        ("/guide/harnesses/", "ハーネスの選び方", "Strataなど6アプリの役割、ローカル接続、作業権限を比較します。"),
     ]
     card_html = "".join(
         f'<div class="card"><h3><a href="{url}">{esc(title)}</a></h3><p>{esc(text)}</p></div>'
@@ -221,11 +223,6 @@ def model_details(entry: dict) -> str:
     meta = entry.get("model_meta")
     if not isinstance(meta, dict):
         return ""
-    sections = "".join(
-        f'<h2>{esc(section.get("title"))}</h2><p>{esc(section.get("text"))}</p>'
-        for section in entry.get("article_sections", [])
-        if section.get("title") and section.get("text")
-    )
     specs = table(
         [
             ("モデルID", meta.get("model_id")),
@@ -271,7 +268,7 @@ def model_details(entry: dict) -> str:
         f'<tr><td>{esc(item.get("quantization", "情報不足"))}</td><td>{esc(item.get("name"))}</td><td>{esc(item.get("size", "情報不足"))}</td></tr>'
         for item in files
     )
-    return f'''{sections}
+    return f'''
 <h2>主な仕様</h2>{specs}
 <h2>推奨量子化</h2><p class="compare-note">一般的なGGUF選択の目安であり、モデル固有の品質保証ではありません。</p>{table(quant_rows)}
 <h2>必要メモリ目安</h2><p class="compare-note">モデルファイル容量を基準にした概算です。コンテキスト長などで必要量は変わります。</p>{table(memory_rows)}
@@ -280,7 +277,30 @@ def model_details(entry: dict) -> str:
 <h2>GGUFファイル</h2><div class="table-wrap"><table class="compare-table"><thead><tr><th>量子化</th><th>ファイル</th><th>容量</th></tr></thead><tbody>{files_html or '<tr><td colspan="3">情報不足</td></tr>'}</tbody></table></div>'''
 
 
+def article_sections(entry: dict) -> str:
+    return "".join(
+        f'<h2>{esc(section.get("title"))}</h2><p>{esc(section.get("text"))}</p>'
+        for section in entry.get("article_sections", [])
+        if isinstance(section, dict) and section.get("title") and section.get("text")
+    )
+
+
+def app_details(entry: dict) -> str:
+    meta = entry.get("app_meta")
+    if not isinstance(meta, dict):
+        return ""
+    return "<h2>アプリの位置づけ</h2>" + table([
+        ("形態・役割", meta.get("role")),
+        ("ローカルモデルとの接続", meta.get("local_connection")),
+        ("権限設定で確認すること", meta.get("permissions")),
+        ("通信・料金で確認すること", meta.get("network")),
+        ("公式資料の確認日", entry.get("last_updated", entry.get("date"))),
+    ])
+
+
 def source_type(entry: dict) -> str:
+    if entry.get("app_meta"):
+        return "開発元の公式ドキュメント／リポジトリ"
     source = str(entry.get("source", "")).lower()
     url = str(entry.get("source_url", "")).lower()
     if "hugging face" in source or "huggingface.co" in url:
@@ -330,8 +350,10 @@ def article_html(entry: dict, related: list[dict], published_categories: list[st
 <div class="row"><b>重要度</b><span>{esc(entry.get("priority"))}</span></div></aside>
 <div class="verification"><div class="verification-item"><b>根拠</b><span>{esc(source_type(entry))}</span></div><div class="verification-item"><b>作成方法</b><span>{esc(ai_note)}</span></div><div class="verification-item"><b>検証範囲</b><span>{esc(test_note)}</span></div></div>
 <div class="content-callout"><b>ローカル利用者の判断材料</b><br>{esc(entry.get("impact"))}</div>
+{app_details(entry)}
+{article_sections(entry)}
 {model_details(entry)}
-<h2>発表・更新の内容</h2><p>{esc(entry.get("details"))}</p>
+<h2>{"導入前の確認事項" if entry.get("app_meta") else "発表・更新の内容"}</h2><p>{esc(entry.get("details"))}</p>
 <h2>タグ</h2><p>{tags}</p>
 <div class="sourcebox"><b>参照した一次情報</b><ol class="source-list">{references}</ol></div>
 <p class="disclosure">この記事は一次情報を日本語で整理したものです。開発元が公表した性能値は独立検証済みとは限りません。導入・購入・ライセンス判断の前に、リンク先の最新版も確認してください。</p>
@@ -347,7 +369,7 @@ def navigation(categories: list[str]) -> str:
 <a href="/">メインページ</a><a href="/articles/">記事一覧</a><a href="/guide/basics/">はじめてのローカルLLM</a>
 <a href="/guide/models/">主要ローカルLLMモデル</a><a href="/guide/hardware/">自分のPCでどのモデルが動く？</a>
 <a href="/guide/glossary/">ローカルLLM用語集</a><a href="/guide/compare/">モデル比較</a>
-<h4>実践ガイド</h4><a href="/guide/start/">ローカルLLMの始め方</a><a href="/guide/model-checklist/">モデル選定チェックリスト</a><a href="/guide/download/">モデルをダウンロードするとき何を選べばいい？</a><a href="/guide/troubleshoot/">トラブルシューティング</a>
+<h4>実践ガイド</h4><a href="/guide/start/">ローカルLLMの始め方</a><a href="/guide/model-checklist/">モデル選定チェックリスト</a><a href="/guide/download/">モデルをダウンロードするとき何を選べばいい？</a><a href="/guide/troubleshoot/">トラブルシューティング</a><a href="/guide/harnesses/">ハーネスの選び方</a>
 <h4>サイト</h4><a href="/about/">このサイトについて</a><a href="/editorial-policy/">調査・編集方針</a><a href="/operator.html">運営者情報</a><a href="/contact.html">お問い合わせ</a><a href="/recent/">最近の更新</a>
 <h4>カテゴリ</h4>{category_links}</nav>'''
 
@@ -439,9 +461,12 @@ def build(output: Path) -> dict:
         description = (
             "大手AI開発元の主要発表と、新しいモデル設計・推論方式などの業界動向をまとめています。"
             if category == "新技術・業界動向"
+            else "モデルの応答をファイル編集・コマンド実行などの作業につなげるアプリを紹介します。推論サーバーとの違い、ローカル接続、権限設定を確認できます。"
+            if category == "ハーネス"
             else f"{category}に関するローカルLLM記事の一覧です。"
         )
-        category_body = f'<div class="article"><section class="category-hero"><span class="eyebrow">CATEGORY</span><h1>{esc(category)}</h1><p>{esc(description)}</p><span class="category-count">公開中 {len(items)}件</span></section>{list_html(items)}</div>'
+        guide_link = '<div class="content-callout"><b>まず違いを知りたい方へ</b><br><a href="/guide/harnesses/">ハーネスとは？ Strataなど6アプリの比較・選び方</a></div>' if category == "ハーネス" else ""
+        category_body = f'<div class="article"><section class="category-hero"><span class="eyebrow">CATEGORY</span><h1>{esc(category)}</h1><p>{esc(description)}</p><span class="category-count">公開中 {len(items)}件</span></section>{guide_link}{list_html(items)}</div>'
         write_page(output, route, layout(title=f"{category}の記事 - {SITE_NAME}", description=description, canonical=BASE_URL + route, body=category_body, categories=categories, schema={"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{category}の記事", "url": BASE_URL + route}))
         sitemap.append((BASE_URL + route, db["site"].get("last_updated", "")))
 

@@ -7,7 +7,7 @@
   const NOT_CONFIRMED="一次情報から確認できませんでした";
   const CANNOT_ESTIMATE="概算不能";
 
-  const isModelArticle=e=>e && (e.category==="モデル" || e.model_meta || e.article_sections);
+  const isModelArticle=e=>e && (e.category==="モデル" || e.model_meta);
 
   const specRows=(m={})=>{
     const rows=[];

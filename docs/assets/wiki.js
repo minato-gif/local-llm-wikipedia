@@ -122,6 +122,9 @@ function article(e){
     <div class="row"><b>重要度</b><span>${esc(e.priority)}</span></div>
    </aside>
    <p class="lead">${esc(e.summary)}</p>
+   ${e.app_meta?`<h2>アプリの位置づけ</h2><div class="table-wrap"><table class="compare-table"><tbody>${[["形態・役割",e.app_meta.role],["ローカルモデルとの接続",e.app_meta.local_connection],["権限設定",e.app_meta.permissions],["通信・料金",e.app_meta.network]].map(([label,value])=>`<tr><th>${esc(label)}</th><td>${esc(value)}</td></tr>`).join('')}</tbody></table></div>`:''}
+   ${(e.article_sections||[]).filter(s=>s&&s.title&&s.text).map(s=>`<h2>${esc(s.title)}</h2><p>${esc(s.text)}</p>`).join('')}
+   ${e.verification_note?`<p class="compare-note">検証範囲: ${esc(e.verification_note)}</p>`:''}
    <h2>ローカル利用者への影響</h2><p>${esc(e.impact)}</p>
    <h2>詳細</h2><p>${esc(e.details)}</p>
    <h2>タグ</h2><p>${(e.tags||[]).map(t=>`<span class="badge">${esc(t)}</span>`).join('')}</p>
