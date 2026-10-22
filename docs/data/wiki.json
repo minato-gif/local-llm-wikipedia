@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-21"
+    "last_updated": "2026-10-22"
   },
   "seen_urls": [
     "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
@@ -502,9 +502,56 @@
     "https://openai.com/index/low-resource-programming-languages/",
     "https://www.anthropic.com/news/public-benefit-fund",
     "https://www.anthropic.com/news/distillation-defenses",
-    "https://mistral.ai/news/voxtral-3/"
+    "https://mistral.ai/news/voxtral-3/",
+    "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.8"
   ],
   "entries": [
+    {
+      "id": "2026-10-22-dd2e50c9e154",
+      "date": "2026-10-21",
+      "title": "Mistral AI、NVIDIAと提携し産業エンジニアリング向けAIワークフローを発表",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Mistral AIはNVIDIAとの提携を発表し、NVIDIAのアクセラレーテッド・コンピューティングを活用した次世代の産業用AIエンジニアリングワークフローを開発する。Mistral Large 4などのモデルとNVIDIAの物理モデリングツールを統合し、シミュレーションの高速化やクローズド・ループ型設計を実現する。",
+      "impact": "物理シミュレーションやAIエージェントの評価基準となる公開ベンチマークやオープンデータセットが提供される予定であり、産業分野でのAI活用や評価の標準化に貢献する。",
+      "details": "本発表はNVIDIAのCUDA-XライブラリやWarpを活用した物理モデリングパイプラインとの統合が中心であり、ローカル環境ですぐに実行可能なオープンウェイトモデルの直接的なリリースではない。産業・研究チーム向けの公開ベンチマークやオープンデータセットの整備が計画されている点が特徴である。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "CUDA",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-22-c1bdd1974136",
+      "date": "2026-10-22",
+      "title": "Ollama v0.40.8リリース：コーディング特化のMixture-of-Expertsモデル「Flint」に対応",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.8",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは最新バージョンv0.40.8を公開し、リポジトリ全体を対象としたコーディングエージェント向けモデル「Flint」のサポートを追加した。マルチターンのツール利用や262Kトークンの長大なコンテキストウィンドウをローカル環境で利用可能にする。",
+      "impact": "Apache 2.0ライセンスの40BパラメータMixture-of-Experts（アクティブ約2.5B）であるFlintをOllama経由で手軽に実行できるようになり、開発者のローカルコーディング支援環境が強化される。",
+      "details": "Flintはコード理解やバグ追跡、機能実装などを得意とするモデル。現時点のOllama v0.40.8における公式サポートはmacOSが対象となっており、その他のGPU環境でのサポートは今後のリリースで順次有効化される予定である。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-21-d5672350cbbe",
       "date": "2026-10-12",
