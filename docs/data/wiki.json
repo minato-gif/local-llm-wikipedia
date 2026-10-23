@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-22"
+    "last_updated": "2026-10-23"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -510,9 +510,32 @@
     "https://www.anthropic.com/news/distillation-defenses",
     "https://mistral.ai/news/voxtral-3/",
     "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.8"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.8",
+    "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
   ],
   "entries": [
+    {
+      "id": "2026-10-23-3d9431351568",
+      "date": "2026-10-22",
+      "title": "Anthropic、AIエージェント向けオープン標準「Agent Skills」をAgentic AI Foundationへ寄贈",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、AIエージェントに専門知識やワークフローを教えるオープン標準「Agent Skills」をLinux Foundation傘下のAgentic AI Foundation（AAIF）へ寄贈すると発表しました。本標準はClaude Codeの開発過程で生まれたもので、すでにChatGPTやCursorなどの主要プラットフォームで統合されています。同社は、コミュニティ主導でベンダーニュートラルな管理体制へ移行し、開発のオープン性を維持する方針です。",
+      "impact": "主要なAIエージェント開発環境やコードエディタ間でのプロシージャルな知識共有が容易になり、エージェントの実業務への適用範囲が広がります。",
+      "details": "Agent Skillsは、タスクやドメイン特有の手順を記述するSKILL.mdファイルとスクリプトや参照資料のフォルダ構造を定義する仕組みです。October 2025の公開以降、数千のスキルがGitHub上で公開されるなど広く採用されてきました。本発表はLinux Foundation傘下のAAIFへの寄贈によるものであり、Model Context Protocol（MCP）に続く取り組みとなります。クローズドなローカル実行の独自実装ではなく、各種プラットフォーム間でのエージェント連携標準として機能するものであり、今後のオープンな普及が期待されます。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-22-strata-harness",
       "date": "2026-10-22",
@@ -525,7 +548,12 @@
       "summary": "Strataは、ローカルモデルを動かす推論エンジンと、チャットからファイル編集やコマンド実行を行うエージェントを備えたアプリです。外部のエージェントへAPIを提供する使い方もできます。単なるハーネスではなく、モデル実行側と作業管理側をまとめて用意したい人向けの選択肢です。",
       "impact": "推論サーバーと作業用アプリを別々に構成する手間を減らせる可能性があります。一方、モデルを読み込めることと、編集・テストを正しく完遂できることは別です。当サイトでは、内蔵エージェントを使う場合はハーネスとして、他アプリへモデルだけを提供する場合は推論基盤として区別します。",
       "details": "導入前に、公式の対応GPU・OS・モデル別メモリ条件を確認してください。一般的なハーネスのように任意のモデルを同じ条件で扱えるとは限りません。最初は作業用に複製したフォルダで小さな修正を頼み、変更内容とテスト結果を自分で確認する使い方を勧めます。公式資料では第三者によるセキュリティ監査は未実施とされています。承認画面があることを、端末全体から隔離された安全性の保証と受け取らないでください。",
-      "tags": ["Strata", "ハーネス", "ローカル推論", "作業権限"],
+      "tags": [
+        "Strata",
+        "ハーネス",
+        "ローカル推論",
+        "作業権限"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -537,13 +565,28 @@
         "network": "セットアップ・更新・Webツール・外部モデルは通信を伴う。接続する外部アプリは別途確認"
       },
       "article_sections": [
-        {"title": "内蔵エージェントとAPI提供は別の役割", "text": "内蔵エージェントはDeepSeek Harnessを利用し、モデルの応答をファイル操作やツール実行につなげます。外部のOpenCodeなどから接続するときは、作業ループや権限管理を主に外部アプリが担当します。同じStrataを使っても、どちらが作業を管理しているかを確認しましょう。"},
-        {"title": "最初に確認したい権限と通信", "text": "公式資料ではManualが標準で、変更操作は承認を求めます。Planは変更を拒否し、Bypassは確認なしの実行を許可します。ただしManualは隔離環境ではありません。ローカルモデルの利用中でも、Web検索や追加ツール、外部サービスに送る情報は別に確認が必要です。"}
+        {
+          "title": "内蔵エージェントとAPI提供は別の役割",
+          "text": "内蔵エージェントはDeepSeek Harnessを利用し、モデルの応答をファイル操作やツール実行につなげます。外部のOpenCodeなどから接続するときは、作業ループや権限管理を主に外部アプリが担当します。同じStrataを使っても、どちらが作業を管理しているかを確認しましょう。"
+        },
+        {
+          "title": "最初に確認したい権限と通信",
+          "text": "公式資料ではManualが標準で、変更操作は承認を求めます。Planは変更を拒否し、Bypassは確認なしの実行を許可します。ただしManualは隔離環境ではありません。ローカルモデルの利用中でも、Web検索や追加ツール、外部サービスに送る情報は別に確認が必要です。"
+        }
       ],
       "references": [
-        {"label": "Strata公式README：導入・モデル・外部アプリ接続", "url": "https://github.com/Niko1221/Strata"},
-        {"label": "Strata SAFETY：通信先・内蔵ハーネス・権限モード", "url": "https://github.com/Niko1221/Strata/blob/main/docs/SAFETY.md"},
-        {"label": "Strata公式サイト", "url": "https://www.stratat.com/en"}
+        {
+          "label": "Strata公式README：導入・モデル・外部アプリ接続",
+          "url": "https://github.com/Niko1221/Strata"
+        },
+        {
+          "label": "Strata SAFETY：通信先・内蔵ハーネス・権限モード",
+          "url": "https://github.com/Niko1221/Strata/blob/main/docs/SAFETY.md"
+        },
+        {
+          "label": "Strata公式サイト",
+          "url": "https://www.stratat.com/en"
+        }
       ]
     },
     {
@@ -558,7 +601,12 @@
       "summary": "LM Studio Bionicは、コードや文書・ファイルを扱う作業エージェントです。開発元はagentic harnessと説明しており、従来のLM Studioとは別アプリです。モデルのダウンロードやチャットが主目的のLM Studio本体と区別し、作業を任せるアプリとして比較する必要があります。",
       "impact": "Strataと同じく、画面からモデルと作業を選びたい人の比較候補になります。ただし、Bionicを使うだけで処理がすべてローカルになるわけではありません。セッションでLocal・Remote・Cloudのどれを選んだかによって推論先が変わるため、機密ファイルを扱う前に確認してください。",
       "details": "ローカル実行では、ダウンロード済みモデルが端末のメモリに収まり、作業に必要なツール呼び出しなどに対応している必要があります。クラウド利用はインターネット接続、課金設定済みアカウント、利用可能なクレジットを要します。公式の保存方針の説明は、外部に一切送信しないという意味ではありません。文書整理だけを頼む場合も、対象フォルダを必要最小限に絞り、出力と元ファイルの差分を確認しましょう。",
-      "tags": ["Bionic", "LM Studio", "ハーネス", "文書作業"],
+      "tags": [
+        "Bionic",
+        "LM Studio",
+        "ハーネス",
+        "文書作業"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -570,13 +618,28 @@
         "network": "Cloudは外部で推論しクレジットを消費。Localでも追加ツールの通信は別途確認"
       },
       "article_sections": [
-        {"title": "コード作業を始める流れ", "text": "公式手順ではProjectを作り、Allow codingを有効にして作業フォルダを選びます。検索、編集、シェルの各ツールを使える構成です。最初に現状を説明させ、変更範囲に合意してから修正とテストを依頼し、最後にGitの差分を確認する流れが示されています。"},
-        {"title": "Strataと比べるときの軸", "text": "当サイトでは、モデルを動かす基盤も一緒に用意したいか、コードだけでなく文書作業を主に任せたいかで比べることを提案します。画面の使いやすさや作業完了率に優劣を付けられる実測はありません。同じモデルと同じ小さな課題で試すと、アプリ側の違いを見分けやすくなります。"}
+        {
+          "title": "コード作業を始める流れ",
+          "text": "公式手順ではProjectを作り、Allow codingを有効にして作業フォルダを選びます。検索、編集、シェルの各ツールを使える構成です。最初に現状を説明させ、変更範囲に合意してから修正とテストを依頼し、最後にGitの差分を確認する流れが示されています。"
+        },
+        {
+          "title": "Strataと比べるときの軸",
+          "text": "当サイトでは、モデルを動かす基盤も一緒に用意したいか、コードだけでなく文書作業を主に任せたいかで比べることを提案します。画面の使いやすさや作業完了率に優劣を付けられる実測はありません。同じモデルと同じ小さな課題で試すと、アプリ側の違いを見分けやすくなります。"
+        }
       ],
       "references": [
-        {"label": "Bionic公式概要：ハーネスとしての役割とLM Studioとの違い", "url": "https://lmstudio.ai/docs/bionic"},
-        {"label": "Bionic：コード作業・フォルダ設定・差分確認", "url": "https://lmstudio.ai/docs/bionic/agent/code-project"},
-        {"label": "Bionic：Local・Remote・Cloudモデルの違い", "url": "https://lmstudio.ai/docs/bionic/models"}
+        {
+          "label": "Bionic公式概要：ハーネスとしての役割とLM Studioとの違い",
+          "url": "https://lmstudio.ai/docs/bionic"
+        },
+        {
+          "label": "Bionic：コード作業・フォルダ設定・差分確認",
+          "url": "https://lmstudio.ai/docs/bionic/agent/code-project"
+        },
+        {
+          "label": "Bionic：Local・Remote・Cloudモデルの違い",
+          "url": "https://lmstudio.ai/docs/bionic/models"
+        }
       ]
     },
     {
@@ -591,7 +654,12 @@
       "summary": "OpenCodeは、ターミナル画面やデスクトップアプリ、IDE拡張から利用するコーディングエージェントです。モデル実行を外部の推論サーバーに任せ、ファイルの読取り・編集やコマンド実行を管理するハーネスとして使えます。LM Studio、Ollama、llama.cppなどへの接続が公式に案内されています。",
       "impact": "Strataをモデルの実行側にし、OpenCodeを作業側にする構成も考えられます。推論基盤と操作画面を独立して選べる点が比較軸です。ただしAPIの形式が合っていても、モデルのツール呼び出しや文脈の扱いが作業に適しているかは別に確かめる必要があります。接続できたことだけで実用性を判断しないでください。",
       "details": "公式サイトにはOpenCode 1と2のドキュメントがあり、同じコマンド名を使っていても設定の項目名が異なります。古い設定例をそのまま流用せず、インストールした版の資料を選びましょう。本記事の権限の説明は主に通常の公式ドキュメント側を参照しています。ローカル推論を使う場合も、クラウドのプロバイダーを選んでいないか、Web取得やMCPのツールが外部へ送る情報は何かを確認する必要があります。",
-      "tags": ["OpenCode", "ハーネス", "Ollama", "LM Studio"],
+      "tags": [
+        "OpenCode",
+        "ハーネス",
+        "Ollama",
+        "LM Studio"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -603,15 +671,36 @@
         "network": "推論先とWeb・MCP等の通信先を分けて確認。クラウド利用は提供元の料金が適用"
       },
       "article_sections": [
-        {"title": "ローカルモデルとのつなぎ方", "text": "公式のプロバイダー資料には、LM StudioのOpenAI互換APIをbaseURLに設定し、モデルIDを登録する例があります。Strata側のREADMEにもOpenCodeへの接続案内があります。サーバーが返すモデル名、APIのベースURL、ツール呼び出し対応をそろえることが確認の出発点です。"},
-        {"title": "権限は導入直後に見直す", "text": "参照した権限資料では多くの操作が標準でallowとされています。最初は編集・シェル実行をaskにし、作業の差分を確認できる状態を勧めます。Planモードで方針を検討することと、OSの隔離環境で実行することは別です。設定例は利用中の版の公式資料から選んでください。"}
+        {
+          "title": "ローカルモデルとのつなぎ方",
+          "text": "公式のプロバイダー資料には、LM StudioのOpenAI互換APIをbaseURLに設定し、モデルIDを登録する例があります。Strata側のREADMEにもOpenCodeへの接続案内があります。サーバーが返すモデル名、APIのベースURL、ツール呼び出し対応をそろえることが確認の出発点です。"
+        },
+        {
+          "title": "権限は導入直後に見直す",
+          "text": "参照した権限資料では多くの操作が標準でallowとされています。最初は編集・シェル実行をaskにし、作業の差分を確認できる状態を勧めます。Planモードで方針を検討することと、OSの隔離環境で実行することは別です。設定例は利用中の版の公式資料から選んでください。"
+        }
       ],
       "references": [
-        {"label": "OpenCode公式概要：形態・Plan・版の注意事項", "url": "https://opencode.ai/docs/"},
-        {"label": "OpenCode：ローカルモデル・プロバイダー設定", "url": "https://opencode.ai/docs/providers/"},
-        {"label": "OpenCode：操作権限と既定値", "url": "https://opencode.ai/docs/permissions/"},
-        {"label": "OpenCode 2：異なる権限設定形式", "url": "https://dev.opencode.ai/v2/docs/permissions/"},
-        {"label": "Strata：外部アプリへの接続", "url": "https://github.com/Niko1221/Strata#connect-your-other-apps"}
+        {
+          "label": "OpenCode公式概要：形態・Plan・版の注意事項",
+          "url": "https://opencode.ai/docs/"
+        },
+        {
+          "label": "OpenCode：ローカルモデル・プロバイダー設定",
+          "url": "https://opencode.ai/docs/providers/"
+        },
+        {
+          "label": "OpenCode：操作権限と既定値",
+          "url": "https://opencode.ai/docs/permissions/"
+        },
+        {
+          "label": "OpenCode 2：異なる権限設定形式",
+          "url": "https://dev.opencode.ai/v2/docs/permissions/"
+        },
+        {
+          "label": "Strata：外部アプリへの接続",
+          "url": "https://github.com/Niko1221/Strata#connect-your-other-apps"
+        }
       ]
     },
     {
@@ -626,7 +715,12 @@
       "summary": "Clineは、ファイルの読取り、コード編集、コマンド実行を行う作業エージェントです。IDEだけでなくデスクトップやターミナル向けの形態も案内されています。PlanとActを切り替え、モデルからの応答を実際の作業につなぐため、当サイトではハーネスに分類します。ローカルモデルの利用手順も公式に用意されています。",
       "impact": "すでにOllamaやLM Studioを使っていて、次にファイル編集やテスト実行を任せたい場合の候補です。モデルの管理基盤を残したまま作業側を追加できます。ただし、ローカルモデルは容量だけで選べません。指示を守る力やツール利用、長い履歴への対応によって、やり直しの回数や作業の安定性が変わります。",
       "details": "公式のローカル利用ガイドでは、推論サーバーを先に起動し、Cline側で対応するプロバイダーとモデルを選ぶ手順が示されています。Use Compact Promptの有効化も案内されています。まずは小さな修正で、計画、承認、変更、テストの流れが成立するかを確かめましょう。自動承認を広く有効にすると、人が止められる機会が減ります。クラウドの設定や追加ツールを併用する場合は、ローカル推論とは別に送信先を確認してください。",
-      "tags": ["Cline", "ハーネス", "Plan and Act", "ローカルモデル"],
+      "tags": [
+        "Cline",
+        "ハーネス",
+        "Plan and Act",
+        "ローカルモデル"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -638,13 +732,28 @@
         "network": "選んだモデルと追加ツールによる。アプリの利用とクラウド推論の料金を分けて確認"
       },
       "article_sections": [
-        {"title": "計画と作業実行を分ける", "text": "Planで変更方針を検討し、Actで作業を進める流れを取れます。公式サイトは差分、チェックポイント、変更を戻す機能も紹介しています。これらは確認を助ける機能であり、バックアップやテストを不要にするものではありません。対象ファイルと完了条件を先に伝えると確認しやすくなります。"},
-        {"title": "ローカル接続の確認順", "text": "まずサーバー単体でモデルが応答するかを確認し、次にClineで同じモデルを選びます。接続先がlocalhostでも、サーバー側でクラウドモデルを動かしていれば端末内推論とはいえません。APIのURLだけでなく、実際に推論するモデルの配置先を確認してください。"}
+        {
+          "title": "計画と作業実行を分ける",
+          "text": "Planで変更方針を検討し、Actで作業を進める流れを取れます。公式サイトは差分、チェックポイント、変更を戻す機能も紹介しています。これらは確認を助ける機能であり、バックアップやテストを不要にするものではありません。対象ファイルと完了条件を先に伝えると確認しやすくなります。"
+        },
+        {
+          "title": "ローカル接続の確認順",
+          "text": "まずサーバー単体でモデルが応答するかを確認し、次にClineで同じモデルを選びます。接続先がlocalhostでも、サーバー側でクラウドモデルを動かしていれば端末内推論とはいえません。APIのURLだけでなく、実際に推論するモデルの配置先を確認してください。"
+        }
       ],
       "references": [
-        {"label": "Cline公式概要：作業エージェントの機能", "url": "https://docs.cline.bot/cline-overview"},
-        {"label": "Cline：ローカルモデル接続の手順", "url": "https://docs.cline.bot/running-models-locally/overview"},
-        {"label": "Cline公式サイト：Plan・Act・差分・承認", "url": "https://cline.bot/"}
+        {
+          "label": "Cline公式概要：作業エージェントの機能",
+          "url": "https://docs.cline.bot/cline-overview"
+        },
+        {
+          "label": "Cline：ローカルモデル接続の手順",
+          "url": "https://docs.cline.bot/running-models-locally/overview"
+        },
+        {
+          "label": "Cline公式サイト：Plan・Act・差分・承認",
+          "url": "https://cline.bot/"
+        }
       ]
     },
     {
@@ -659,7 +768,12 @@
       "summary": "Aiderは、ターミナルで対話しながらコードを変更するAIペアプログラマーです。対象ファイルを会話に追加し、関連コードを参照しながら編集します。広範な自律作業を前面に出すアプリとは操作感が異なりますが、モデル・編集・差分確認の流れを管理するコーディングハーネスとして比較できます。",
       "impact": "大きな作業を丸ごと任せるより、変更対象を意識しながら少しずつ修正したい人の候補です。Ollamaのローカルモデルにも接続できます。ただし、モデルが編集形式を守れるか、必要な文脈が入力に収まるかは実用性に影響します。大規模モデルを選ぶことだけで解決する問題ではありません。",
       "details": "公式の利用例では、編集したいファイルを起動時か/addで追加します。関係のないファイルを大量に入れると、モデルが扱う情報が増えるため、必要な範囲に絞ることが案内されています。Gitで変更を記録・確認する使い方が中心ですが、自動コミットや取り消しを隔離機能と同一視しないでください。作業前に未保存の変更を保護し、修正後は差分とテストを確認する必要があります。ローカル接続時も補助機能や別モデルの設定を見直しましょう。",
-      "tags": ["Aider", "ハーネス", "Git", "Ollama"],
+      "tags": [
+        "Aider",
+        "ハーネス",
+        "Git",
+        "Ollama"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -671,12 +785,24 @@
         "network": "モデルの接続先、補助モデル、追加機能の通信設定を個別に確認"
       },
       "article_sections": [
-        {"title": "変更範囲を把握しやすい進め方", "text": "まず直したいファイルを指定し、ひとつの変更を依頼して差分を読む、という流れを取れます。公式にはGit連携や/undoの説明があります。当サイトでは、修正の範囲と履歴を自分で把握したい場合の比較候補と考えます。自律性の強さで単純な順位を付けるのではなく、作業スタイルで選びましょう。"},
-        {"title": "Ollama接続では文脈長も確認する", "text": "公式手順にはOLLAMA_API_BASEの設定とollama_chat/でのモデル指定が掲載されています。コードや履歴を長く渡す場合は、サーバー側のコンテキスト設定も確認が必要です。短いチャットが成功しても、複数ファイルの修正が安定するとは限らないため、小さな課題から試してください。"}
+        {
+          "title": "変更範囲を把握しやすい進め方",
+          "text": "まず直したいファイルを指定し、ひとつの変更を依頼して差分を読む、という流れを取れます。公式にはGit連携や/undoの説明があります。当サイトでは、修正の範囲と履歴を自分で把握したい場合の比較候補と考えます。自律性の強さで単純な順位を付けるのではなく、作業スタイルで選びましょう。"
+        },
+        {
+          "title": "Ollama接続では文脈長も確認する",
+          "text": "公式手順にはOLLAMA_API_BASEの設定とollama_chat/でのモデル指定が掲載されています。コードや履歴を長く渡す場合は、サーバー側のコンテキスト設定も確認が必要です。短いチャットが成功しても、複数ファイルの修正が安定するとは限らないため、小さな課題から試してください。"
+        }
       ],
       "references": [
-        {"label": "Aider：対象ファイル・編集・Gitによる確認", "url": "https://aider.chat/docs/usage.html"},
-        {"label": "Aider：Ollamaとの接続・コンテキスト設定", "url": "https://aider.chat/docs/llms/ollama.html"}
+        {
+          "label": "Aider：対象ファイル・編集・Gitによる確認",
+          "url": "https://aider.chat/docs/usage.html"
+        },
+        {
+          "label": "Aider：Ollamaとの接続・コンテキスト設定",
+          "url": "https://aider.chat/docs/llms/ollama.html"
+        }
       ]
     },
     {
@@ -691,7 +817,12 @@
       "summary": "Gooseは、モデルと拡張ツールを組み合わせ、編集・実行・テストなどを進めるオープンソースの作業エージェントです。デスクトップとCLIから利用でき、OllamaやLM Studioのローカルモデルにも対応します。モデルを動かすエンジンそのものではなく、作業の進め方を管理するハーネス側のアプリです。",
       "impact": "モデル実行環境を変えずに、ファイル操作や追加の業務ツールを組み合わせたい場合の比較候補です。ただし、追加できるツールの数より、何を実行させるかを絞ることが重要です。ローカルモデルを選んでも、接続した外部サービスのツールには通信が発生し得るため、利用範囲を分けて考えてください。",
       "details": "公式資料にはCompletely Autonomous、Manual Approval、Smart Approval、Chat Onlyの各モードがあり、既定は自律モードと記されています。導入直後に承認設定を確認し、初回はManual Approvalで作業用コピーを使うことを勧めます。ツール単位の許可・確認・禁止も設定できますが、読み書きやリスクの分類は完全な安全性を保証するものではありません。使わない拡張は無効にし、モデルのツール呼び出しと実際の操作結果を確認しましょう。",
-      "tags": ["Goose", "ハーネス", "拡張ツール", "承認設定"],
+      "tags": [
+        "Goose",
+        "ハーネス",
+        "拡張ツール",
+        "承認設定"
+      ],
       "curated": true,
       "quality_status": "editorially_reviewed",
       "summary_method": "AIによる調査補助・一次情報との照合",
@@ -703,14 +834,32 @@
         "network": "モデル接続先と各拡張の接続先で決まる。ローカル推論だけで全通信は止まらない"
       },
       "article_sections": [
-        {"title": "モデルとツールを別々に選ぶ", "text": "公式のプロバイダー一覧にはOllamaとLM Studioがあり、クラウド向けの接続先とは分けられています。モデルをローカルで動かす準備を済ませてからGoose側を設定します。Developer拡張には編集・シェルなどのツールがあるため、必要な機能だけを有効にする構成から始めましょう。"},
-        {"title": "承認モードとツール単位の制限を確認する", "text": "全体のモードと、各ツールのAlways Allow・Ask Before・Never Allowを分けて設定できます。Smart Approvalの低リスク判定を、自分の確認やOSの隔離の代わりにしないでください。初期状態のまま重要フォルダを渡さず、モードと拡張を確認してから小さな作業を試すことを提案します。"}
+        {
+          "title": "モデルとツールを別々に選ぶ",
+          "text": "公式のプロバイダー一覧にはOllamaとLM Studioがあり、クラウド向けの接続先とは分けられています。モデルをローカルで動かす準備を済ませてからGoose側を設定します。Developer拡張には編集・シェルなどのツールがあるため、必要な機能だけを有効にする構成から始めましょう。"
+        },
+        {
+          "title": "承認モードとツール単位の制限を確認する",
+          "text": "全体のモードと、各ツールのAlways Allow・Ask Before・Never Allowを分けて設定できます。Smart Approvalの低リスク判定を、自分の確認やOSの隔離の代わりにしないでください。初期状態のまま重要フォルダを渡さず、モードと拡張を確認してから小さな作業を試すことを提案します。"
+        }
       ],
       "references": [
-        {"label": "Goose公式リポジトリ：アプリの概要", "url": "https://github.com/aaif-goose/goose"},
-        {"label": "Goose：プロバイダー・ローカルモデル設定", "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/getting-started/providers.md"},
-        {"label": "Goose：承認モードと既定値", "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/managing-tools/goose-permissions.md"},
-        {"label": "Goose：ツール単位の権限制御", "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/managing-tools/tool-permissions.md"}
+        {
+          "label": "Goose公式リポジトリ：アプリの概要",
+          "url": "https://github.com/aaif-goose/goose"
+        },
+        {
+          "label": "Goose：プロバイダー・ローカルモデル設定",
+          "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/getting-started/providers.md"
+        },
+        {
+          "label": "Goose：承認モードと既定値",
+          "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/managing-tools/goose-permissions.md"
+        },
+        {
+          "label": "Goose：ツール単位の権限制御",
+          "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/managing-tools/tool-permissions.md"
+        }
       ]
     },
     {
