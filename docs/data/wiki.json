@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-23"
+    "last_updated": "2026-10-24"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -511,9 +511,214 @@
     "https://mistral.ai/news/voxtral-3/",
     "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/",
     "https://github.com/ollama/ollama/releases/tag/v0.40.8",
-    "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+    "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+    "https://huggingface.co/Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.11-rc0",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.10"
   ],
   "entries": [
+    {
+      "id": "2026-10-24-b1749fc4bf5b",
+      "date": "2026-10-24",
+      "title": "三値ウェイトモデル「Ternary-Bonsai-2-27B」の改良版GGUFが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Prism MLの三値モデル「Ternary-Bonsai-2-27B」をベースに、拒否反応を解除した上で1.75ビット形式へ再パッキングしたGGUF版が公開されました。MTPヘッドの4ビット量子化を組み合わせることで、サイズ削減と高速化を実現しています。",
+      "impact": "27Bパラメータ規模のモデルを16GBのVRAMを搭載した環境でローカル実行しやすくなり、処理速度とパープレキシティの向上が期待できます。",
+      "details": "モデルの重みをすべて-1、0、+1の三値に制限することで省メモリ化を図った「Ternary-Bonsai-2-27B」の派生版です。Hikari07jp氏によるアブリレーション（拒否反応の除去）済みモデルをベースに、Prismの1.75ビット形式（PTQ1_0）で再パッキングし、MTPドラフトヘッドを4ビットで再量子化しています。これにより従来の2.125ビットパッキング版と比較してサイズが16.9%縮小し、速度が約22%向上しています。Apache-2.0ライセンスで提供され、llama.cpp等の対応環境でのローカル運用が可能です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama-cpp",
+        "gguf",
+        "qwen",
+        "llama.cpp",
+        "ternary",
+        "abliterated",
+        "uncensored",
+        "bonsai"
+      ],
+      "model_meta": {
+        "model_id": "Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF",
+        "author": "Cheurteen",
+        "license": "apache-2.0",
+        "base_model": "Hikari07jp/Ternary-Bonsai-2-27B-Abliterated-GGUF",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "llama-cpp",
+        "downloads": 377,
+        "likes": 1,
+        "last_modified": "2026-10-23T16:44:58.000Z",
+        "quantizations": [
+          "TQ1_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 12132281984,
+            "files": [
+              "Ternary-Bonsai-2-27B-Abliterated-PTQ1_0.gguf",
+              "Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0.gguf"
+            ],
+            "size": "11.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-Abliterated-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 6185633056,
+            "size": "5.8 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 5.5 GB〜5.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF」が更新されています。確認時点の指標は downloads=377、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Hikari07jp/Ternary-Bonsai-2-27B-Abliterated-GGUF。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は TQ1_0。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 5.5 GB〜5.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-24-9b785acfa940",
+      "date": "2026-10-24",
+      "title": "Ollama v0.40.11-rc0リリース、llama.cppの更新と機能修正を実施",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.11-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ローカルLLMランタイムのOllamaは、開発版となるv0.40.11-rc0を公開しました。内蔵するllama.cppのバージョンアップに加え、Qwen3 Coderにおける関数呼び出しタグの保持や、音声機能向けカタログの追加などが行われています。",
+      "impact": "主要なオープンウェイトモデルの互換性が高まり、コード生成時の関数処理や音声関連機能の安定したローカル実行をサポートします。",
+      "details": "今回のリリースでは、llama.cppのバージョンがb11845へと更新されました。主な変更点として、qwen3coderモデルにおけるパラメータ内のリテラル関数終了タグの維持や、OpenCode向けの割り当てコンテキストの適用、vllm-d3における空の状態の許可が含まれています。また、Phononモデル向けの音声カタログやシンボル・リンクの処理が追加されました。RC版のため予期せぬ不具合が含まれる可能性があり、本番環境での利用には注意が必要です。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-24-1cbe3c3687cd",
+      "date": "2026-10-24",
+      "title": "Ollama v0.40.10リリース、NVIDIA Nemotron 3.5 Bolt E4Bに対応",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.10",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollama v0.40.10がリリースされ、NVIDIAの小規模ビジョン言語モデル「Nemotron 3.5 Bolt E4B」のサポートが追加されました。128Kトークンのコンテキスト長や推測デコード用のDFlashドラフトに対応しています。",
+      "impact": "NVIDIAの新しい軽量ビジョン言語モデルをOllamaから直接ローカル環境へ手軽にダウンロードし、高速な画像理解や対話に利用できるようになります。",
+      "details": "新しくサポートされた「Nemotron 3.5 Bolt E4B」は、Gemma 4をベースにしたNVIDIAのビジョン言語モデルであり、高速なローカル対話、画像理解、ツール利用を目的として設計されています。最大128Kトークンの長大なコンテキストウインドウをサポートし、推測デコードによる高速化機能も備えています。コマンドラインから「ollama run nemotron-3.5-bolt:e4b」を実行することで、対応環境であればローカルでの推論をすぐに試すことができます。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Vision",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-23-3d9431351568",
       "date": "2026-10-22",
