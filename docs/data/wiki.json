@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-24"
+    "last_updated": "2026-10-25"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -514,9 +514,31 @@
     "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
     "https://huggingface.co/Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.11-rc0",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.10"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.10",
+    "https://www.anthropic.com/news/product"
   ],
   "entries": [
+    {
+      "id": "2026-10-25-d616189814eb",
+      "date": "2026-10-22",
+      "title": "Anthropic、AIエージェントのオープン標準「Agent Skills」をAgentic AI Foundationへ寄贈",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/product",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicは、AIエージェントに専門知識やワークフローを提供するオープン標準「Agent Skills」をAgentic AI Foundationへ寄贈したと発表しました。ChatGPTやCursorなど70以上のプラットフォームですでに統合されています。",
+      "impact": "多様なAIプラットフォーム間でエージェントの専門知識やワークフローの共有が容易になり、開発エコシステムの相互運用性が向上します。",
+      "details": "Agent Skillsは2025年12月に公開されたオープン標準であり、ChatGPTやGitHub Copilotなど70以上のエージェントプラットフォームで採用されています。今回の寄贈に加え、同社はAIと仕事に関する実データを探求できる「Anthropic Economic Index」コネクタの提供や、米国K-12の認定教育者向けのプレミアム機能無償化なども発表しています。ローカルLLM環境での直接的なモデル重みの変更はありませんが、エージェント開発の標準化に影響を与えます。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-24-b1749fc4bf5b",
       "date": "2026-10-24",
