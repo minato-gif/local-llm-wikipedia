@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-26"
+    "last_updated": "2026-10-27"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -515,9 +515,484 @@
     "https://huggingface.co/Cheurteen/Ternary-Bonsai-2-27B-Abliterated-PTQ1_0-MTP-Q4_0-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.11-rc0",
     "https://github.com/ollama/ollama/releases/tag/v0.40.10",
-    "https://www.anthropic.com/news/product"
+    "https://www.anthropic.com/news/product",
+    "https://openai.com/index/introducing-gpt-6-1-terra/",
+    "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
+    "https://huggingface.co/kaitchup/Qwen3.8-27B-SLQ-GGUF",
+    "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU"
   ],
   "entries": [
+    {
+      "id": "2026-10-27-94ab2cdd5866",
+      "date": "2026-10-26",
+      "title": "OpenAI、ビジュアル推論とコンピュータ操作に特化した「GPT-6.1 Terra」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、詳細なビジュアル推論と高度なコンピュータ操作機能を組み合わせた効率的なモデル「GPT-6.1 Terra」を発表しました。前世代モデルと比較して標準API価格が50%引き下げられており、実務的な自動化タスクに対応します。",
+      "impact": "API価格の半減により、請求書処理などの大量の業務データ処理を自動化する開発者のコスト負担が軽減されます。",
+      "details": "GPT-6.1 Terraは、視覚的推論やPC操作能力と自然な文章生成を両立させたモデルです。3Dモデルの作成や動画のコマ単位のログ作成といった専門的タスクを評価するベンチマーク「Agents' Last Exam」で測定されています。標準API価格は旧モデルから50%安く設定されており、ChatGPT WorkやCodexでも利用可能です。なお、本モデルはAPIおよびマネージドサービス提供であり、ローカル環境での直接実行には対応していません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-27-070f59f8634d",
+      "date": "2026-10-21",
+      "title": "CodeRabbit、コードセキュリティ解析の中核モデルとして「GPT-6.1 Sol」を採用",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "CodeRabbitは、複雑なコードベース全体にわたるセキュリティリスクの調査を行うセキュリティエージェントの主幹モデルとして、OpenAIの「GPT-6.1 Sol」を採用したと発表しました。プルリクエストのレビューや依存関係の解析を支援します。",
+      "impact": "複数ファイルや共有ライブラリにまたがる複雑な脆弱性をAIが横断的に検出し、開発者のコードレビューを効率化します。",
+      "details": "CodeRabbitのセキュリティエージェントは、単一のコード変更にとどまらず、共有ライブラリや依存関係への影響を横断的に調査するためにGPT-6.1 Solを利用しています。Deep ScanやCodeRabbit Secureといった機能を通じて、リポジトリ間の脆弱性の波及を分析します。本発表はクラウドベースのサービス連携に関するものであり、オープンウェイトモデルの公開やローカルでの動作に関するものではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-27-ff19750e2410",
+      "date": "2026-10-27",
+      "title": "Qwen/Qwen3.8-27Bのカスタム量子化GGUF版「kaitchup/Qwen3.8-27B-SLQ-GGUF」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/kaitchup/Qwen3.8-27B-SLQ-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Hugging Face上で、Qwen3.8-27Bをカスタム手法で量子化したGGUFフォーマットモデル「kaitchup/Qwen3.8-27B-SLQ-GGUF」が公開されました。Q5_K_MやQ6_Kなどの量子化バリアントが提供されています。",
+      "impact": "ローカル環境でQwen3.8-27Bを効率的に実行するための選択肢が拡がり、llama.cpp等での検証が可能になります。",
+      "details": "本モデルはApache-2.0ライセンスの下で公開されたQwen/Qwen3.8-27Bの量子化派生版です。推奨量子化であるQ5_K_Mの場合、ファイルサイズは約19.28 GiBで、実行にはシステムRAMが最小24.5 GiB（推奨30.5 GiB）、VRAMは約23.5 GiBの概算容量が必要となります。実際のメモリ消費量はコンテキスト長やKVキャッシュの構成によって変動します。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "qwen3_5",
+        "slq",
+        "mixed-precision",
+        "llama.cpp",
+        "quantization",
+        "text-generation",
+        "arxiv:2605.02404"
+      ],
+      "model_meta": {
+        "model_id": "kaitchup/Qwen3.8-27B-SLQ-GGUF",
+        "author": "kaitchup",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 0,
+        "likes": 3,
+        "last_modified": "2026-10-27T00:40:25.000Z",
+        "quantizations": [
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 18875775840,
+            "files": [
+              "Qwen3.8-27B-SLQ-EAR98-Q5_K_S.gguf"
+            ],
+            "size": "17.6 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 20703206240,
+            "files": [
+              "Qwen3.8-27B-SLQ-EAR98.5-Q5_K_M.gguf"
+            ],
+            "size": "19.3 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 23697279840,
+            "files": [
+              "Qwen3.8-27B-SLQ-EAR99-Q6_K.gguf"
+            ],
+            "size": "22.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 20703206240,
+            "files": [
+              "Qwen3.8-27B-SLQ-EAR98.5-Q5_K_M.gguf"
+            ],
+            "size": "19.3 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 20703206240,
+            "files": [
+              "Qwen3.8-27B-SLQ-EAR98.5-Q5_K_M.gguf"
+            ],
+            "size": "19.3 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q5_K_M",
+          "model_file_size_gib": 19.28,
+          "system_ram_min_gib": 24.5,
+          "system_ram_recommended_gib": 30.5,
+          "full_gpu_vram_rough_gib": 23.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "Qwen3.8-27B-SLQ-EAR98-Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 18875775840,
+            "size": "17.6 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-SLQ-EAR98.5-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 20703206240,
+            "size": "19.3 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-SLQ-EAR99-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 23697279840,
+            "size": "22.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 17.6 GB〜22.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「kaitchup/Qwen3.8-27B-SLQ-GGUF」が更新されています。確認時点の指標は downloads=0、likes=3 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q5_K_S, Q5_K_M, Q6_K。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 17.6 GB〜22.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-27-c026b0a2eee8",
+      "date": "2026-10-26",
+      "title": "Ternary-Bonsai-2-27BのGoogle Colab向け軽量量子化GGUF版が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Hugging Faceにて、Ternary-Bonsai-2-27BをGoogle ColabなどのGPU環境ですぐに実行できるように構築されたGGUFモデル「IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU」が公開されました。",
+      "impact": "極めて軽量な量子化バリアントにより、リソースの限られた環境でも高速な推論検証を手軽に試せるようになります。",
+      "details": "本リポジトリには、PTQ1_0などの量子化バリアントと、Google Colab環境向けの事前コンパイル済みllama.cppバイナリが含まれています。デフォルトのPTQ1_0バリアントは約5.95 GBと軽量で、最小3.0 GiBのシステムRAMから動作検証が可能です。ライセンスやベースモデルの詳細なアーキテクチャ情報は明記されていません。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "endpoints_compatible",
+        "region:us",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU",
+        "author": "IamPradeep",
+        "license": "",
+        "base_model": "",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 449,
+        "likes": 0,
+        "last_modified": "2026-10-25T16:32:15.000Z",
+        "quantizations": [
+          "Q8_0",
+          "BF16",
+          "TQ1_0",
+          "Q2_0",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf"
+            ],
+            "size": "600.1 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 931145856,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-BF16.gguf"
+            ],
+            "size": "888.0 MB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "files": [
+              "Ternary-Bonsai-2-27B-PTQ1_0.gguf"
+            ],
+            "size": "5.5 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "files": [
+              "Ternary-Bonsai-2-27B-PQ2_0.gguf"
+            ],
+            "size": "6.7 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 53808408928,
+            "files": [
+              "Ternary-Bonsai-2-27B-F16.gguf"
+            ],
+            "size": "50.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "files": [
+              "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf"
+            ],
+            "size": "600.1 MB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 0.59,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 5,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 629246976,
+            "size": "600.1 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 931145856,
+            "size": "888.0 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 5946648928,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 7206168928,
+            "size": "6.7 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-27B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 53808408928,
+            "size": "50.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 600.1 MB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU」が更新されています。確認時点の指標は downloads=449、likes=0 です。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, BF16, TQ1_0, Q2_0, F16。GGUFファイルは 5 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 600.1 MB〜50.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-25-d616189814eb",
       "date": "2026-10-22",
