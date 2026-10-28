@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-27"
+    "last_updated": "2026-10-28"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -519,9 +519,32 @@
     "https://openai.com/index/introducing-gpt-6-1-terra/",
     "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
     "https://huggingface.co/kaitchup/Qwen3.8-27B-SLQ-GGUF",
-    "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU"
+    "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.12"
   ],
   "entries": [
+    {
+      "id": "2026-10-28-e3d78ea9d189",
+      "date": "2026-10-27",
+      "title": "Ollama v0.40.12リリース：Liquid AIのLFM3モデルとd1意思決定モデルをサポート",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.12",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは、Liquid AIの新しいトライハイブリッドアーキテクチャを採用した小型モデル「LFM3」シリーズおよび「d1」意思決定モデルのサポートを追加しました。Appleシリコン搭載ハードウェアにおけるGemma 4やFlintなどのプロセッシング高速化も含まれています。",
+      "impact": "ローカル環境でLiquid AIのLFM3（テキスト、ビジョン、音声、オムニ）やd1 2Bモデルを手軽に実行できるようになり、エージェントやツール呼び出しの選択肢が広がります。",
+      "details": "Ollama v0.40.12では、テキスト向けのlfm3（1.7B、256Kコンテキスト）、lfm3-vl、lfm3-audio、lfm3-omni、および2Bサイズのd1シリーズが新たに追加されました。現時点ではApple製ハードウェアでの実行をサポートしており、LinuxおよびWindows向けのサポートは順次追加される予定です。また、Appleシリコン上でのGemma 4などのプロンプト処理の高速化や、DFlash2を対象とした推論最適化なども含まれています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-27-94ab2cdd5866",
       "date": "2026-10-26",
