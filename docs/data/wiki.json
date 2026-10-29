@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-28"
+    "last_updated": "2026-10-29"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -520,9 +520,234 @@
     "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
     "https://huggingface.co/kaitchup/Qwen3.8-27B-SLQ-GGUF",
     "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-27B-GGUF-Colab-Prebuilt-GPU",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.12"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.12",
+    "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+    "https://www.anthropic.com/news/announcements",
+    "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.13-rc1",
+    "https://x.ai/news/partnernetworkannouncement"
   ],
   "entries": [
+    {
+      "id": "2026-10-29-02481470c266",
+      "date": "2026-10-28",
+      "title": "Anthropic、科学研究向けAIプログラム「AI for Science」を拡大し、20の財団や研究機関と提携",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、科学分野の研究を加速させる「AI for Science」プログラムの拡大を発表した。世界中の20の科学系財団や研究機関、研究グループと提携し、Claudeの無償クレジットを提供する。",
+      "impact": "生物学、医学、物理学、化学などの高影響な科学プロジェクトに対し、Claudeを活用した仮説生成やデータ解析の機会を広げる取り組みである。",
+      "details": "本プログラムは科学研究の迅速化を目的として2025年5月に開始され、今回の拡大により20の主要な研究機関や財団が新たに参加する。研究者らはClaudeを用いて実験デザインや複雑なデータの迅速な分析を行っている。なお、本発表はAPIやクラウドを介した利用を前提としたものであり、ローカル環境での直接実行に関する言及はない。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-29-74a90513b3d6",
+      "date": "2026-10-28",
+      "title": "Anthropicが新規株式公開（IPO）に向けたS-1フォームを提出、創薬分野での研究提携も発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/announcements",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、米証券取引委員会（SEC）へクラスA普通株式の新規株式公開（IPO）に関する登録申請書（Form S-1）を提出した。同時に、新薬開発を加速させるため複数の医薬品開発組織との研究提携も明らかにしている。",
+      "impact": "同社のビジネス規模拡大や今後のAIモデル開発方針に影響を与える重要な企業動向であり、業界全体や商用エコシステムに波及する可能性がある。",
+      "details": "発表ではIPO申請のほか、Claudeを活用した創薬プロセスの迅速化に向け、新たに6つの医薬品開発組織と深層研究提携を結んだことが報告されている。APIやクラウドサービスを通じて提供される商用プラットフォームに関する企業ニュースであり、オープンソースモデルやローカル実行環境の直接的な変更を伴うものではない。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-29-6885c32156a8",
+      "date": "2026-10-28",
+      "title": "AtomicChat、三値量子化ベースモデル向け「Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "AtomicChatは、三値量子化を採用した「Ternary-Bonsai-2-9B」のGGUFモデルに対応する、非検閲化LoRAアダプター「Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF」をHugging Faceで公開した。",
+      "impact": "llama.cppなどのローカル環境において、ベースとなる三値量子化パックのバイナリを変更せずに計算グラフ内で拒絶反応を調整・解除することが可能になる。",
+      "details": "ライセンスはApache-2.0である。公開されたアダプターのサイズは約3.2 MBであり、約2.0 GBの三値量子化ベースモデルパックと組み合わせて利用する。リクエストごとに拒絶方向の強度を設定できる仕組みを備えており、ローカルでのカスタマイズ実行に対応している。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "lora",
+        "uncensored",
+        "abliteration",
+        "refusal-direction",
+        "ternary",
+        "bonsai"
+      ],
+      "model_meta": {
+        "model_id": "AtomicChat/Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF",
+        "author": "AtomicChat",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 908,
+        "likes": 6,
+        "last_modified": "2026-10-28T08:52:20.000Z",
+        "quantizations": [],
+        "quantization_options": [],
+        "quantization_recommendation": {},
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカードにOllamaに関する記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 1,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-9B-Uncensored-LoRA.gguf",
+            "quantization": "",
+            "size_bytes": 3155424,
+            "size": "3.0 MB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 3.0 MB〜3.0 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「AtomicChat/Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF」が更新されています。確認時点の指標は downloads=908、likes=6 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-9B-gguf。用途タグは text-generation。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 3.0 MB〜3.0 MB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-29-d2abddfa9130",
+      "date": "2026-10-29",
+      "title": "Ollama v0.40.13リリース候補版が公開、LFM3 GGUFの修正とllama.cppの更新を実施",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.13-rc1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは、LFM3 GGUFの修正や音声関連の機能改善、さらに内蔵するllama.cppのバージョンをb11963へと引き上げた「v0.40.13-rc1」をGitHubで公開した。",
+      "impact": "ローカル環境における特定のGGUFモデルの互換性向上や、llama.cppの最新機能を取り込んだ安定的な実行環境を提供する。",
+      "details": "本リリース候補版では、LFM3 GGUFに関連するバグ修正に加え、llama-serverにおける音声処理機能の統合が含まれている。llama.cppのバージョンバンプ（b11963）に伴い、最新の量子化モデルやランタイムの挙動改善が期待されるが、実運用環境への導入前には検証が推奨される。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-10-29-63fccc975325",
+      "date": "2026-10-22",
+      "title": "xAI、Grokを活用した企業向けパートナープログラム「SpaceX Super Intelligence Partner Network」を発表",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/partnernetworkannouncement",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "xAIは、Grokを用いた製品やソリューション、サービスを開発する企業向けの公式パートナープログラム「SpaceX Super Intelligence Partner Network」の立ち上げを発表した。",
+      "impact": "Grokを活用したビジネスソリューションの展開を加速させ、早期アクセス段階には130社以上が参加するなど、商用エコシステムの拡大を図る。",
+      "details": "本パートナーネットワークは、トレーニングやツール、サポートを提供するプログラムであり、前方展開エンジニア（FDE）の認定プログラムを通じて能力を構築する「Transformation Partners」と、Grokと並行して製品採用を進める「Marketplace Partners」の2種類のパートナーで構成される。APIおよびクラウド経由での利用を前提とした商用展開の発表であり、ローカル実行に関する記述はない。",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-28-e3d78ea9d189",
       "date": "2026-10-27",
