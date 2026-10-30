@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-10-29"
+    "last_updated": "2026-10-30"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -525,9 +525,32 @@
     "https://www.anthropic.com/news/announcements",
     "https://huggingface.co/AtomicChat/Ternary-Bonsai-2-9B-Uncensored-LoRA-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.13-rc1",
-    "https://x.ai/news/partnernetworkannouncement"
+    "https://x.ai/news/partnernetworkannouncement",
+    "https://mistral.ai/news/mistral-large-4-oss/"
   ],
   "entries": [
+    {
+      "id": "2026-10-30-c16cbcdc274e",
+      "date": "2026-10-29",
+      "title": "Mistral AI、1兆パラメータのオープンウェイト・マルチモーダルモデル「Mistral Large 4」を公開",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Mistral AIは、1兆パラメータを持つネイティブ・マルチモーダルモデル「Mistral Large 4（Le Chonk）」のウェイトを公開した。コーディングや防御的セキュリティのベンチマークでオープンウェイトモデルとして最高水準を達成し、コストと性能のバランスを調整できる3つの推論モードを備える。",
+      "impact": "欧州でトレーニングされた大規模なオープンウェイトモデルとして、主権AIの構築やカスタマイズ可能なセルフホスト展開の選択肢を大きく広げる重要なリリースです。",
+      "details": "Mistral Large 4（Le Chonk）は、1兆パラメータ規模を持つフラグシップのマルチモーダルモデルです。開発者やパートナーからのフィードバックを反映しつつ強化学習のスケーリングを続けた結果、コーディングやサイバーセキュリティの領域で大幅な性能向上が確認されています。また、コスト効率とパフォーマンスを最適化するための複数の推論モードをサポートしており、自社環境でのカスタム展開やセルフホスト運用を重視するユーザーに向けた強力な選択肢となります。",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "マルチモーダル"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-10-29-02481470c266",
       "date": "2026-10-28",
