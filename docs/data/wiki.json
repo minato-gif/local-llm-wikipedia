@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-01"
+    "last_updated": "2026-11-02"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -529,9 +529,479 @@
     "https://mistral.ai/news/mistral-large-4-oss/",
     "https://huggingface.co/FINAL-Bench/POCKET-26B-GGUF",
     "https://huggingface.co/FINAL-Bench/POCKET-Darwin-180B-GGUF",
-    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124"
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124",
+    "https://huggingface.co/axteam/gemma-4-E4B-it-GGUF",
+    "https://huggingface.co/axteam/gemma-4-31B-GGUF",
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.1"
   ],
   "entries": [
+    {
+      "id": "2026-11-02-93f66662463c",
+      "date": "2026-11-02",
+      "title": "axteam、Google Gemma 4のGGUF版モデル「gemma-4-E4B-it-GGUF」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/axteam/gemma-4-E4B-it-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "axteamは、Googleの新しいマルチモーダルモデル「gemma-4-E4B-it」をllama.cppやOllama、LM Studioで実行可能なGGUF形式に変換し、Hugging Faceにて公開しました。Q4_K_MやQ8_0、BF16などの量子化版が提供されており、チャットテンプレートも内蔵されています。",
+      "impact": "Googleの最新モデルであるGemma 4をローカル環境で直接試すことが可能になります。Q4_K_M版のファイルサイズは4.97GBで、最低8GBのシステムRAMと約7GBのVRAMを想定した動作が可能です。",
+      "details": "model_idはaxteam/gemma-4-E4B-it-GGUFで、ライセンスはApache-2.0です。ベースモデルはgoogle/gemma-4-E4B-itであり、画像とテキストを処理するimage-text-to-textのパイプラインに対応しています。推奨量子化であるQ4_K_Mのほか、無量子化のBF16版（15.1GB）も選択できます。ローカルでの実行にあたっては、コンテキスト長やKVキャッシュ、GPUオフロード率によって必要なメモリ量が変動するため注意が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "gemma",
+        "gemma4",
+        "llama.cpp",
+        "quantized",
+        "image-text-to-text",
+        "license:apache-2.0",
+        "endpoints_compatible"
+      ],
+      "model_meta": {
+        "model_id": "axteam/gemma-4-E4B-it-GGUF",
+        "author": "axteam",
+        "license": "apache-2.0",
+        "base_model": "google/gemma-4-E4B-it",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "",
+        "downloads": 1220,
+        "likes": 3,
+        "last_modified": "2026-11-02T01:54:43.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q8_0",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5335292352,
+            "files": [
+              "gemma-4-E4B-it-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "5.0 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 8031242688,
+            "files": [
+              "gemma-4-E4B-it-GGUF-Q8_0.gguf"
+            ],
+            "size": "7.5 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 15053097408,
+            "files": [
+              "gemma-4-E4B-it-GGUF-BF16.gguf"
+            ],
+            "size": "14.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5335292352,
+            "files": [
+              "gemma-4-E4B-it-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "5.0 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 8031242688,
+            "files": [
+              "gemma-4-E4B-it-GGUF-Q8_0.gguf"
+            ],
+            "size": "7.5 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5335292352,
+            "files": [
+              "gemma-4-E4B-it-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "5.0 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 4.97,
+          "system_ram_min_gib": 8.0,
+          "system_ram_recommended_gib": 11.0,
+          "full_gpu_vram_rough_gib": 7.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカードにLM Studioに関する記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカードにOllamaに関する記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "gemma-4-E4B-it-GGUF-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 5335292352,
+            "size": "5.0 GB"
+          },
+          {
+            "name": "gemma-4-E4B-it-GGUF-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 8031242688,
+            "size": "7.5 GB"
+          },
+          {
+            "name": "gemma-4-E4B-it-GGUF-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 15053097408,
+            "size": "14.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 5.0 GB〜14.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「axteam/gemma-4-E4B-it-GGUF」が更新されています。確認時点の指標は downloads=1,220、likes=3 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは google/gemma-4-E4B-it。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_K_M, Q8_0, BF16。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 5.0 GB〜14.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-02-ed941cd4a03f",
+      "date": "2026-11-02",
+      "title": "axteam、大規模なGoogle Gemma 4ベースモデル「gemma-4-31B-GGUF」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/axteam/gemma-4-31B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "axteamは、Googleの31Bパラメータを持つ事前学習済みベースモデル「google/gemma-4-31B」をGGUF形式に変換し、Hugging Faceで公開しました。チャットテンプレートを含まないプレーンテキスト補完用のモデルとして提供されています。",
+      "impact": "大規模なGemma 4ベースモデルをllama.cppなどのローカル環境で運用できるようになります。Q4_K_M版ではファイルサイズが17.4GBで、最低22.5GBのシステムRAMと約21.5GBのVRAMが推奨されます。",
+      "details": "model_idはaxteam/gemma-4-31B-GGUF、ライセンスはApache-2.0です。提供されている量子化形式はQ4_K_M、Q8_0、および16bitのBF16（61.4GB）です。チャット用のファインチューニングが施されていないプレーンな事前学習モデルであるため、用途に応じたプロンプト設計や追加調整が必要となります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "gemma",
+        "gemma4",
+        "llama.cpp",
+        "quantized",
+        "image-text-to-text",
+        "base_model:google/gemma-4-31B",
+        "license:apache-2.0"
+      ],
+      "model_meta": {
+        "model_id": "axteam/gemma-4-31B-GGUF",
+        "author": "axteam",
+        "license": "apache-2.0",
+        "base_model": "google/gemma-4-31B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "",
+        "downloads": 1193,
+        "likes": 2,
+        "last_modified": "2026-11-02T01:54:42.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q8_0",
+          "BF16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 18687045216,
+            "files": [
+              "gemma-4-31B-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 32635657824,
+            "files": [
+              "gemma-4-31B-GGUF-Q8_0.gguf"
+            ],
+            "size": "30.4 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 61413170784,
+            "files": [
+              "gemma-4-31B-GGUF-BF16.gguf"
+            ],
+            "size": "57.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 18687045216,
+            "files": [
+              "gemma-4-31B-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "17.4 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 32635657824,
+            "files": [
+              "gemma-4-31B-GGUF-Q8_0.gguf"
+            ],
+            "size": "30.4 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 18687045216,
+            "files": [
+              "gemma-4-31B-GGUF-Q4_K_M.gguf"
+            ],
+            "size": "17.4 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 17.4,
+          "system_ram_min_gib": 22.5,
+          "system_ram_recommended_gib": 27.5,
+          "full_gpu_vram_rough_gib": 21.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカードにLM Studioに関する記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカードにOllamaに関する記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "gemma-4-31B-GGUF-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 18687045216,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "gemma-4-31B-GGUF-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 32635657824,
+            "size": "30.4 GB"
+          },
+          {
+            "name": "gemma-4-31B-GGUF-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 61413170784,
+            "size": "57.2 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 17.4 GB〜57.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「axteam/gemma-4-31B-GGUF」が更新されています。確認時点の指標は downloads=1,193、likes=2 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは google/gemma-4-31B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_K_M, Q8_0, BF16。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 17.4 GB〜57.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-02-b162c6de7b53",
+      "date": "2026-10-31",
+      "title": "KoboldCpp v1.124.1リリース、audio.cpp統合による音楽生成と音声合成機能の強化を実施",
+      "source": "GitHub Releases / LostRuins/koboldcpp",
+      "source_url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "KoboldCppの最新バージョン「v1.124.1」が公開され、audio.cppの機能が統合されました。これにより、YuE2による音楽生成機能や、BreezeTTS 2、Qwen3-TTSなどの音声合成機能が利用可能になっています。",
+      "impact": "LLMのテキスト処理だけでなく、ローカル環境での高度な音楽生成や音声クローンを含む音声合成をKoboldCppの統合環境から直接実行できるようになります。",
+      "details": "音楽生成ではYuE2モデルがサポートされ、歌詞生成用の小規模LLMを同梱したテンプレート（YuE2-Small-LLMなど）が推奨されています。音声合成ではBreezeTTS 2やQwen3-TTSなどが追加され、音声クローンや各種指示に従った音声出力が利用可能です。利用するモデルの規模やGPU環境に合わせたテンプレート選択が推奨されています。",
+      "tags": [
+        "KoboldCpp",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-01-04a4b917ce59",
       "date": "2026-11-01",
