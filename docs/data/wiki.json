@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-02"
+    "last_updated": "2026-11-03"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -532,9 +532,571 @@
     "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124",
     "https://huggingface.co/axteam/gemma-4-E4B-it-GGUF",
     "https://huggingface.co/axteam/gemma-4-31B-GGUF",
-    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.1"
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.1",
+    "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-gguf",
+    "https://huggingface.co/prism-ml/Ternary-Bonsai-1.7B-gguf",
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.2"
   ],
   "entries": [
+    {
+      "id": "2026-11-03-b1363748a818",
+      "date": "2026-11-03",
+      "title": "OpenBMB、OCRおよび文書解析特化の「MiniCPM-OCR-1.0-gguf」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "OpenBMBは、OCRおよび文書解析に特化したマルチモーダルモデル「MiniCPM-OCR-1.0-gguf」をHugging Faceにて公開した。Apache 2.0ライセンスの下で提供され、llama.cppなどのランタイムを利用してローカル環境での実行が可能となっている。",
+      "impact": "多様な量子化フォーマットが用意されており、手元のハードウェア環境に応じた柔軟な運用と文書解析タスクのオフライン処理が実現します。",
+      "details": "モデルはベースモデルであるMiniCPM-V-4.6を元にしており、Q4_K_MやQ8_0を含む幅広い量子化ファイルが公開されています。推奨されるQ4_K_M量子化版ではファイルサイズが約0.49 GiBとなっており、最低3 GiB、推奨5 GiBのシステムRAMに加え、約2 GiBのVRAMを見込む必要があります。なお、実際のメモリ消費量は入力するコンテキスト長やKVキャッシュのサイズに左右されます。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "minicpm-ocr",
+        "gguf",
+        "ocr",
+        "document-parsing",
+        "llama.cpp",
+        "multimodal",
+        "quantized",
+        "image-text-to-text"
+      ],
+      "model_meta": {
+        "model_id": "openbmb/MiniCPM-OCR-1.0-gguf",
+        "author": "openbmb",
+        "license": "apache-2.0",
+        "base_model": "openbmb/MiniCPM-V-4.6",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "minicpm-ocr",
+        "downloads": 27650,
+        "likes": 130,
+        "last_modified": "2026-11-03T03:48:25.000Z",
+        "quantizations": [
+          "Q4_0",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q4_1",
+          "Q5_0",
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q5_1",
+          "Q6_K",
+          "Q8_0",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 501262208,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_0.gguf"
+            ],
+            "size": "478.0 MB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 505063296,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_K_S.gguf"
+            ],
+            "size": "481.7 MB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 529106816,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_K_M.gguf"
+            ],
+            "size": "504.6 MB"
+          },
+          {
+            "quantization": "Q4_1",
+            "size_bytes": 532363136,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_1.gguf"
+            ],
+            "size": "507.7 MB"
+          },
+          {
+            "quantization": "Q5_0",
+            "size_bytes": 563464064,
+            "files": [
+              "MiniCPM-OCR-1_0-Q5_0.gguf"
+            ],
+            "size": "537.4 MB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 563464064,
+            "files": [
+              "MiniCPM-OCR-1_0-Q5_K_S.gguf"
+            ],
+            "size": "537.4 MB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 577808256,
+            "files": [
+              "MiniCPM-OCR-1_0-Q5_K_M.gguf"
+            ],
+            "size": "551.0 MB"
+          },
+          {
+            "quantization": "Q5_1",
+            "size_bytes": 594564992,
+            "files": [
+              "MiniCPM-OCR-1_0-Q5_1.gguf"
+            ],
+            "size": "567.0 MB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 629553536,
+            "files": [
+              "MiniCPM-OCR-1_0-Q6_K.gguf"
+            ],
+            "size": "600.4 MB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 811598432,
+            "files": [
+              "MiniCPM-OCR-1_0-Q8_0.gguf"
+            ],
+            "size": "774.0 MB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 2417305888,
+            "files": [
+              "mmproj-model-f16-4x.gguf",
+              "MiniCPM-OCR-1_0-F16.gguf"
+            ],
+            "size": "2.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 529106816,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_K_M.gguf"
+            ],
+            "size": "504.6 MB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 577808256,
+            "files": [
+              "MiniCPM-OCR-1_0-Q5_K_M.gguf"
+            ],
+            "size": "551.0 MB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_S",
+            "size_bytes": 505063296,
+            "files": [
+              "MiniCPM-OCR-1_0-Q4_K_S.gguf"
+            ],
+            "size": "481.7 MB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 0.49,
+          "system_ram_min_gib": 3.0,
+          "system_ram_recommended_gib": 5.0,
+          "full_gpu_vram_rough_gib": 2.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 12,
+        "gguf_files": [
+          {
+            "name": "MiniCPM-OCR-1_0-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 501262208,
+            "size": "478.0 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 505063296,
+            "size": "481.7 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 529106816,
+            "size": "504.6 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "size_bytes": 532363136,
+            "size": "507.7 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "size_bytes": 563464064,
+            "size": "537.4 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 563464064,
+            "size": "537.4 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 577808256,
+            "size": "551.0 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "size_bytes": 594564992,
+            "size": "567.0 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 629553536,
+            "size": "600.4 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 811598432,
+            "size": "774.0 MB"
+          },
+          {
+            "name": "mmproj-model-f16-4x.gguf",
+            "quantization": "F16",
+            "size_bytes": 901017536,
+            "size": "859.3 MB"
+          },
+          {
+            "name": "MiniCPM-OCR-1_0-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 1516288352,
+            "size": "1.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 478.0 MB〜1.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「openbmb/MiniCPM-OCR-1.0-gguf」が更新されています。確認時点の指標は downloads=27,650、likes=130 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは openbmb/MiniCPM-V-4.6。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_0, Q4_K_S, Q4_K_M, Q4_1, Q5_0, Q5_K_S, Q5_K_M, Q5_1, Q6_K, Q8_0, F16。GGUFファイルは 12 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 478.0 MB〜1.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-03-aecb85e13325",
+      "date": "2026-11-03",
+      "title": "Prism ML、1.58ビットの3値量子化を採用した「Ternary-Bonsai-1.7B-gguf」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-1.7B-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Prism MLは、1.58ビットの3値量子化モデル「Ternary-Bonsai-1.7B-gguf」をHugging Faceにて公開した。llama.cpp向けのQ2_0フォーマットを採用しており、デバイス上での効率的なテキスト生成を目的としている。",
+      "impact": "極限まで軽量化された量子化手法により、メモリリソースが限られたオンデバイス環境でのLLM実行効率が大幅に向上します。",
+      "details": "本モデルはApache 2.0ライセンスで提供され、ベースモデルのアンパック版から変換された1.7Bパラメータの3値（Ternary）モデルです。llama.cppのQ2_0およびQ2_0_G64フォーマットに対応しており、軽量なハードウェアでの動作を想定した設計となっていますが、詳細なアーキテクチャや推奨コンテキスト長については今後の検証が必要です。API専用ではなくローカル実行を前提としたモデルです。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "ternary",
+        "1.58-bit",
+        "llama-cpp",
+        "q2_0",
+        "on-device",
+        "prismml",
+        "bonsai"
+      ],
+      "model_meta": {
+        "model_id": "prism-ml/Ternary-Bonsai-1.7B-gguf",
+        "author": "prism-ml",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-1.7B-unpacked",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 6164,
+        "likes": 50,
+        "last_modified": "2026-11-02T22:18:22.000Z",
+        "quantizations": [
+          "Q2_0",
+          "Q2_0_G64",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_0_G64",
+            "size_bytes": 490163968,
+            "files": [
+              "Ternary-Bonsai-1.7B-Q2_0_g64.gguf"
+            ],
+            "size": "467.5 MB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 926580928,
+            "files": [
+              "Ternary-Bonsai-1.7B-PQ2_0.gguf",
+              "Ternary-Bonsai-1.7B-Q2_0.gguf"
+            ],
+            "size": "883.7 MB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 3446249408,
+            "files": [
+              "Ternary-Bonsai-1.7B-F16.gguf"
+            ],
+            "size": "3.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-1.7B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 463290464,
+            "size": "441.8 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-1.7B-Q2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 463290464,
+            "size": "441.8 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-1.7B-Q2_0_g64.gguf",
+            "quantization": "Q2_0_G64",
+            "size_bytes": 490163968,
+            "size": "467.5 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-1.7B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 3446249408,
+            "size": "3.2 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 441.8 MB〜3.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「prism-ml/Ternary-Bonsai-1.7B-gguf」が更新されています。確認時点の指標は downloads=6,164、likes=50 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-1.7B-unpacked。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q2_0, Q2_0_G64, F16。GGUFファイルは 4 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 441.8 MB〜3.2 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-03-9f6765dd3ff1",
+      "date": "2026-10-31",
+      "title": "KoboldCpp v1.124.2リリース、audio.cpp統合による音楽・音声生成機能の強化",
+      "source": "GitHub Releases / LostRuins/koboldcpp",
+      "source_url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.2",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "KoboldCppは、最新バージョンとなる「koboldcpp-1.124.2」をリリースした。audio.cppプロジェクトから音声・音楽生成モデルのサブセットを統合し、内蔵のMusic GenおよびTTS Gen機能を大幅に拡張している。",
+      "impact": "ローカル環境でのLLM推論に加え、高品質な音声合成や音楽生成機能を一つのフロントエンドから統一的に利用できるようになります。",
+      "details": "今回のアップデートでは、YuE2音楽生成モデルがサポートされ、歌詞生成用のLLMサイズに応じた複数のテンプレート（ノーLLM、小型4B LLM、大型LLM）が用意されています。また、音声合成（TTS）機能として、BreezeTTS 2やQwen3-TTSといったモデルが音声クローン機能とともに移植されました。これにより、テキスト生成の枠を超えたマルチモーダルなローカル体験が提供されます。",
+      "tags": [
+        "KoboldCpp",
+        "GitHub Release",
+        "GGUF"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-02-93f66662463c",
       "date": "2026-11-02",
