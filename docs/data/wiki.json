@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-03"
+    "last_updated": "2026-11-04"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -535,9 +535,308 @@
     "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.1",
     "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-gguf",
     "https://huggingface.co/prism-ml/Ternary-Bonsai-1.7B-gguf",
-    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.2"
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124.2",
+    "https://www.anthropic.com/news/expanding-partnership-gsa",
+    "https://www.anthropic.com/news/s1-sec",
+    "https://huggingface.co/aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.14"
   ],
   "entries": [
+    {
+      "id": "2026-11-04-ae8e371414b6",
+      "date": "2026-10-27",
+      "title": "Anthropic、米政府調達機関（GSA）との提携を拡大しClaudeの割引提供を開始",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは米連邦・州・地方政府機関向けにClaude Enterprise、Claude for Government、Claude APIの40%割引を提供する新たな合意を発表しました。約500の政府組織で利用が拡大しており、専用の導入支援プログラムも開始されます。",
+      "impact": "公共セクターにおけるClaudeの導入と活用が加速する見込みであり、政府調達の制約に対応したコスト効率の高いAI利用環境が整備されます。",
+      "details": "本提携は、予算が限られ調達サイクルの長い政府組織の業務を支援するものです。割引は直販および今後数ヶ月以内のクラウドプロバイダー経由の購入にも適用されます。なお、本発表はAPIおよびクラウドサービスに関するものであり、オープンウェイトモデルのローカル実行環境に関する変更ではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-04-13feb31babe1",
+      "date": "2026-10-26",
+      "title": "Anthropic、米国証券取引委員会（SEC）へ新規株式公開（IPO）に向けたS-1を提出",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/s1-sec",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは米国証券取引委員会（SEC）に対し、クラスA普通株式の新規株式公開（IPO）に関するForm S-1登録届出書を提出しました。株式はナスダック・グローバル・セレクト・マーケットに銘柄コード「ANT」で上場する予定です。",
+      "impact": "大手AI開発元による公開市場への参入となり、今後の研究開発体制や市場での資金調達動向に影響を与える可能性があります。",
+      "details": "提供される株式数や価格範囲はまだ決定されておらず、登録届出書は提出済みであるものの効力は発生していません。効力発生前の株式の販売や購入の勧誘は認められておらず、本発表はクラウドおよびAPIベースのモデル提供におけるローカル実行への直接的な技術的変更を含むものではありません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-04-cc427aae17cd",
+      "date": "2026-11-04",
+      "title": "Hugging Face：Apertus-SEA-LION-v4-8B-ITのGGUF量子化モデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "東南アジア地域向けに最適化された80億パラメータの指示チューニングモデル「Apertus-SEA-LION-v4-8B-IT」のGGUF量子化版が公開されました。Q4_K_Mなどの量子化形式が利用可能です。",
+      "impact": "東南アジア言語に対応した言語モデルをローカル環境で効率的に実行できるようになり、対応ハードウェアの選択肢が広がります。",
+      "details": "ベースモデルはswiss-ai/Apertus-8B-Instruct-2509であり、ライセンスはMITです。推奨量子化であるQ4_K_Mの場合、モデルファイルサイズは約4.71 GiBであり、動作には最低7.5 GiB、推奨10.5 GiBのシステムRAMが必要となります。コンテキスト長やKVキャッシュの長さに応じて追加のメモリが必要になります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "text-generation",
+        "en",
+        "vi",
+        "id",
+        "th",
+        "fil",
+        "ta"
+      ],
+      "model_meta": {
+        "model_id": "aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF",
+        "author": "aisingapore",
+        "license": "mit",
+        "base_model": "swiss-ai/Apertus-8B-Instruct-2509",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "",
+        "downloads": 3770,
+        "likes": 1,
+        "last_modified": "2026-11-04T01:22:05.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q6_K",
+          "Q8_0",
+          "F16"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5057884448,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q4_K_M.gguf"
+            ],
+            "size": "4.7 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 6615019808,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q6_K.gguf"
+            ],
+            "size": "6.2 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 8565371168,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q8_0.gguf"
+            ],
+            "size": "8.0 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 16115118368,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-F16.gguf"
+            ],
+            "size": "15.0 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5057884448,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q4_K_M.gguf"
+            ],
+            "size": "4.7 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q6_K",
+            "size_bytes": 6615019808,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q6_K.gguf"
+            ],
+            "size": "6.2 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5057884448,
+            "files": [
+              "Apertus-SEA-LION-v4-8B-IT-Q4_K_M.gguf"
+            ],
+            "size": "4.7 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 4.71,
+          "system_ram_min_gib": 7.5,
+          "system_ram_recommended_gib": 10.5,
+          "full_gpu_vram_rough_gib": 6.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "中",
+            "basis": "多言語対応の記載はありますが、日本語の品質は個別に確認する必要があります。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "Apertus-SEA-LION-v4-8B-IT-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 5057884448,
+            "size": "4.7 GB"
+          },
+          {
+            "name": "Apertus-SEA-LION-v4-8B-IT-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 6615019808,
+            "size": "6.2 GB"
+          },
+          {
+            "name": "Apertus-SEA-LION-v4-8B-IT-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 8565371168,
+            "size": "8.0 GB"
+          },
+          {
+            "name": "Apertus-SEA-LION-v4-8B-IT-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 16115118368,
+            "size": "15.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 4.7 GB〜15.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF」が更新されています。確認時点の指標は downloads=3,770、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは swiss-ai/Apertus-8B-Instruct-2509。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_K_M, Q6_K, Q8_0, F16。GGUFファイルは 4 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 4.7 GB〜15.0 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-04-ea0f997a9504",
+      "date": "2026-11-03",
+      "title": "Ollama v0.40.14がリリース、Claude Code向けの出力トークン制限適用などを改善",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.14",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaの最新バージョンv0.40.14が公開され、Claude Code利用時の出力トークン制限の適用や、OpenAI互換エンドポイントにおけるサンプラーデフォルト値の維持などの修正が行われました。",
+      "impact": "外部ツール連携時のトークン上限の不整合や、サンプラー設定の上書きに関する挙動が改善され、ローカルおよびクラウドモデルの運用安定性が向上します。",
+      "details": "本バージョンでは、cloudモデルが128kのデフォルトキャップに制限されないよう修正されたほか、/api/chatにおける圧縮されたウェブ検索レスポンスの正しいデコード、MLXでの大規模語彙に対する高速なtop-kサンプリングが実装されています。また、ChatGPTの接続切断時のリトライ処理やルーティング検証も追加されました。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-03-b1363748a818",
       "date": "2026-11-03",
