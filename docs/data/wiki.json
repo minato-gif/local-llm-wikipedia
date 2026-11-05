@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-04"
+    "last_updated": "2026-11-05"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -539,9 +539,528 @@
     "https://www.anthropic.com/news/expanding-partnership-gsa",
     "https://www.anthropic.com/news/s1-sec",
     "https://huggingface.co/aisingapore/Apertus-SEA-LION-v4-8B-IT-GGUF",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.14"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.14",
+    "https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf",
+    "https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.15-rc0"
   ],
   "entries": [
+    {
+      "id": "2026-11-05-0f8098bd779a",
+      "date": "2026-11-05",
+      "title": "Prism ML、3値量子化を採用した9Bビジョン言語モデル「Ternary-Bonsai-2-9B-gguf」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Prism MLは、Qwen3.5-9Bをベースにした3値重み付けの9Bクラスビジョン言語モデル「Ternary-Bonsai-2-9B-gguf」を公開しました。llama.cppに対応しており、CUDA、Metal、CPUでのローカル実行が可能です。",
+      "impact": "言語モデル部のサイズがFP16の約17.9GBから約2.42GBへと大幅に削減されており、限られたVRAM環境でのオンデバイス動作を実用的にします。",
+      "details": "本モデルはApache-2.0ライセンスで公開されています。量子化フォーマットとしてQ8_0、BF16、TQ1_0、Q2_0などが用意されており、システムRAMは最低4.5GB、推奨7.0GB、VRAMは約3.5GBの概算要件となっています。コンテキスト長やKVキャッシュ、ランタイムの実装によって必要なメモリ量は変動します。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama.cpp",
+        "gguf",
+        "ternary",
+        "2-bit",
+        "llama-cpp",
+        "cuda",
+        "metal",
+        "on-device"
+      ],
+      "model_meta": {
+        "model_id": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+        "author": "prism-ml",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.5-9B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "llama.cpp",
+        "downloads": 823482,
+        "likes": 148,
+        "last_modified": "2026-11-04T22:31:42.000Z",
+        "quantizations": [
+          "Q8_0",
+          "BF16",
+          "TQ1_0",
+          "Q2_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 921704864,
+            "files": [
+              "Ternary-Bonsai-2-9B-mmproj-BF16.gguf"
+            ],
+            "size": "879.0 MB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 1997486976,
+            "files": [
+              "Ternary-Bonsai-2-9B-PTQ1_0.gguf"
+            ],
+            "size": "1.9 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 2198463520,
+            "files": [
+              "Ternary-Bonsai-2-9B-mmproj-Q8_0.gguf",
+              "Ternary-Bonsai-2-9B-DFlash2-Q8_0.gguf"
+            ],
+            "size": "2.0 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 7648902688,
+            "files": [
+              "Ternary-Bonsai-2-9B-PQ2_0.gguf",
+              "Ternary-Bonsai-2-9B-Q2_0.gguf",
+              "Ternary-Bonsai-2-9B-PQ2_0-MTP-Q8_0.gguf"
+            ],
+            "size": "7.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 2198463520,
+            "files": [
+              "Ternary-Bonsai-2-9B-mmproj-Q8_0.gguf",
+              "Ternary-Bonsai-2-9B-DFlash2-Q8_0.gguf"
+            ],
+            "size": "2.0 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 2.05,
+          "system_ram_min_gib": 4.5,
+          "system_ram_recommended_gib": 7.0,
+          "full_gpu_vram_rough_gib": 3.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 7,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-9B-mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 624229664,
+            "size": "595.3 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 921704864,
+            "size": "879.0 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-DFlash2-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 1574233856,
+            "size": "1.5 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 1997486976,
+            "size": "1.9 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 2416851840,
+            "size": "2.3 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-Q2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 2556640128,
+            "size": "2.4 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-9B-PQ2_0-MTP-Q8_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 2675410720,
+            "size": "2.5 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 595.3 MB〜2.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「prism-ml/Ternary-Bonsai-2-9B-gguf」が更新されています。確認時点の指標は downloads=823,482、likes=148 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.5-9B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, BF16, TQ1_0, Q2_0。GGUFファイルは 7 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 595.3 MB〜2.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-05-2a5e575f68a9",
+      "date": "2026-11-05",
+      "title": "Prism ML、軽量な4Bビジョン言語モデル「Ternary-Bonsai-2-4B-gguf」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Prism MLは、Qwen3.5-4Bをベースにした3値量子化適用の4Bクラスビジョン言語モデル「Ternary-Bonsai-2-4B-gguf」を公開しました。llama.cppを利用し、CUDA、Metal、CPU環境でローカル実行できます。",
+      "impact": "FP16での約8.4GBから約1.15GBへサイズが大幅に圧縮されており、低スペックなデバイスでのマルチモーダル推論が容易になります。",
+      "details": "ライセンスはApache-2.0です。量子化形式はQ8_0、BF16、TQ1_0、Q2_0をサポートし、システムRAMは最低2.5GB、推奨4.5GB、VRAMは約1.5GBの概算要件となっています。詳細なアーキテクチャやコンテキスト長は明記されておらず、実際の運用時はコンテキストやKVキャッシュに応じた追加メモリが必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "llama.cpp",
+        "gguf",
+        "ternary",
+        "2-bit",
+        "llama-cpp",
+        "cuda",
+        "metal",
+        "on-device"
+      ],
+      "model_meta": {
+        "model_id": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+        "author": "prism-ml",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.5-4B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "llama.cpp",
+        "downloads": 100554,
+        "likes": 36,
+        "last_modified": "2026-11-04T22:31:39.000Z",
+        "quantizations": [
+          "Q8_0",
+          "BF16",
+          "TQ1_0",
+          "Q2_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 366894624,
+            "files": [
+              "Ternary-Bonsai-2-4B-mmproj-Q8_0.gguf"
+            ],
+            "size": "349.9 MB"
+          },
+          {
+            "quantization": "TQ1_0",
+            "size_bytes": 949549920,
+            "files": [
+              "Ternary-Bonsai-2-4B-PTQ1_0.gguf"
+            ],
+            "size": "905.6 MB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 2250847392,
+            "files": [
+              "Ternary-Bonsai-2-4B-mmproj-BF16.gguf",
+              "Ternary-Bonsai-2-4B-DFlash2-BF16.gguf"
+            ],
+            "size": "2.1 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 3633210816,
+            "files": [
+              "Ternary-Bonsai-2-4B-PQ2_0.gguf",
+              "Ternary-Bonsai-2-4B-Q2_0.gguf",
+              "Ternary-Bonsai-2-4B-PQ2_0-MTP-Q8_0.gguf"
+            ],
+            "size": "3.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 366894624,
+            "files": [
+              "Ternary-Bonsai-2-4B-mmproj-Q8_0.gguf"
+            ],
+            "size": "349.9 MB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 0.34,
+          "system_ram_min_gib": 2.5,
+          "system_ram_recommended_gib": 4.5,
+          "full_gpu_vram_rough_gib": 1.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 7,
+        "gguf_files": [
+          {
+            "name": "Ternary-Bonsai-2-4B-mmproj-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 366894624,
+            "size": "349.9 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 675569184,
+            "size": "644.3 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-PTQ1_0.gguf",
+            "quantization": "TQ1_0",
+            "size_bytes": 949549920,
+            "size": "905.6 MB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-PQ2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 1146465120,
+            "size": "1.1 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-Q2_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 1212103520,
+            "size": "1.1 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-PQ2_0-MTP-Q8_0.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 1274642176,
+            "size": "1.2 GB"
+          },
+          {
+            "name": "Ternary-Bonsai-2-4B-DFlash2-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 1575278208,
+            "size": "1.5 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 349.9 MB〜1.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「prism-ml/Ternary-Bonsai-2-4B-gguf」が更新されています。確認時点の指標は downloads=100,554、likes=36 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.5-4B。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, BF16, TQ1_0, Q2_0。GGUFファイルは 7 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 349.9 MB〜1.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-05-8d2bf1d71ec2",
+      "date": "2026-11-04",
+      "title": "llama.cpp v0.9.0がリリース、OCP FP8 E4M3量子化や複数アーキテクチャに対応",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cppはv0.9.0をリリースし、OCP FP8 E4M3量子化のサポートや、マルチシーエンス推論向けユニファイドKVキャッシュを効率化する新しい演算子を追加しました。さらに、Clover、Limite、Mistral Large 4などの新しいモデルアーキテクチャに対応しています。",
+      "impact": "各種バックエンドのパフォーマンス向上やGemma 4のプレフィル最適化が含まれており、ローカル環境での推論効率と対応モデルの幅が大きく広がります。",
+      "details": "ggmlがv0.29.0に更新され、NCCLベースのマルチノードテンソル並列処理やCPU、CUDA、Metal、Vulkanなどの各バックエンドでの最適化が施されました。バッチ処理用のテンソルコピーAPIの刷新や、音声生成・文字起こし機能の拡張も行われています。",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "CUDA",
+        "Vulkan",
+        "Metal",
+        "量子化",
+        "Flash Attention"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-05-59d5917a6aa8",
+      "date": "2026-11-04",
+      "title": "Ollama v0.40.15プレリリース版が公開、MiMo V2.6モデルに対応",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.15-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "中",
+      "summary": "Ollamaはv0.40.15-rc0を公開し、新しくMiMo V2.6モデルのサポートを追加しました。また、Linux環境におけるMLX関連の変更として、バンドルされたCUDAライブラリをインプロセスでロードする修正が行われています。",
+      "impact": "最新モデルの追加によりローカル環境で利用できる選択肢が広がり、Linux環境でのCUDAライブラリの読み込み挙動が改善されています。",
+      "details": "現時点ではプレリリース版（rc0）として公開されており、今後の安定版リリースに向けて詳細な不具合修正や機能調整が行われる予定です。ローカルランタイムとしての基本的な互換性やモデル管理機能に影響を与えます。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "CUDA"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-04-ae8e371414b6",
       "date": "2026-10-27",
