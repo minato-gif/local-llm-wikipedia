@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-05"
+    "last_updated": "2026-11-06"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -543,9 +543,774 @@
     "https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf",
     "https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf",
     "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.15-rc0"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.15-rc0",
+    "https://mistral.ai/news/build-with-studio/",
+    "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+    "https://huggingface.co/abliterant/Qwen3.8-27B-RANA-abliterated-GGUF",
+    "https://huggingface.co/btbtyler09/shrew-ocr-preview-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.15",
+    "https://x.ai/news/data-bot"
   ],
   "entries": [
+    {
+      "id": "2026-11-06-75602b8b6c50",
+      "date": "2026-11-05",
+      "title": "Build Enterprise Agents, Workflows & Apps in Mistral Studio",
+      "source": "Mistral News",
+      "source_url": "https://mistral.ai/news/build-with-studio/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Mistral Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Mistral Large 4 (Le Chonk) enhances enterprise AI with advanced coding, cybersecurity, and document reasoning, while Mistral Studio provides a flexible platform for deploying agents, workflows, and apps across cloud, VPC, or on-premises environments. New features like managed agents, workflows, and enterprise context streamline business processes, enabling faster development and deployment of AI solutions. Customers like ABANCA and BNP Paribas already use Studio to automate tasks, improve… Mistral Large 4 (Le Chonk) pushes the frontier of what enterprises can build with open models. It does great for coding , delivers advanced defensive cybersecurity capabilities , and brings powerful reasoning to complex documents and business tasks . Mistral Studio is our enterprise AI platform for putting that intelligence to work in your business. It lets your teams activate models quickly through a…",
+      "tags": [
+        "Mistral AI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-06-56b816cfe152",
+      "date": "2026-11-04",
+      "title": "Agentic Cheminformatics with Google Antigravity",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMind Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-06-4c4cf03f1064",
+      "date": "2026-11-06",
+      "title": "Hugging Face: abliterant/Qwen3.8-27B-RANA-abliterated-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/abliterant/Qwen3.8-27B-RANA-abliterated-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=abliterant/Qwen3.8-27B-RANA-abliterated-GGUF license=apache-2.0 base_model=abliterant/Qwen3.8-27B-RANA-abliterated architecture=不明 context_length=不明 downloads=41,757 likes=2 quantizations=F16, BF16, Q8_0, IQ2_M, Q2_K, IQ3_XXS, IQ3_M, Q3_K_M, Q3_K_L, IQ4_XS, Q4_0, Q4_K_S, IQ4_NL, Q4_K_M, Q5_K_S, Q5_K_M, Q6_K recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 15.41, \"system_ram_min_gib\": 20.0, \"system_ram_recommended_gib\": 25.0, \"full_gpu_vram_rough_gib\": 19.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 base_model: abliterant/Qwen3.8-27B-RANA-abliterated base_model_relation: quantized library_name: gguf pipeline_tag: image-text-to-text tags: - abliterant - gguf - llama.cpp - imatrix - abliteration - abliterated - uncensored - qwen3.8 - refusal-direc…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "abliterant",
+        "llama.cpp",
+        "imatrix",
+        "abliteration",
+        "abliterated",
+        "uncensored",
+        "qwen3.8"
+      ],
+      "model_meta": {
+        "model_id": "abliterant/Qwen3.8-27B-RANA-abliterated-GGUF",
+        "author": "abliterant",
+        "license": "apache-2.0",
+        "base_model": "abliterant/Qwen3.8-27B-RANA-abliterated",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 41757,
+        "likes": 2,
+        "last_modified": "2026-11-06T03:05:08.000Z",
+        "quantizations": [
+          "F16",
+          "BF16",
+          "Q8_0",
+          "IQ2_M",
+          "Q2_K",
+          "IQ3_XXS",
+          "IQ3_M",
+          "Q3_K_M",
+          "Q3_K_L",
+          "IQ4_XS",
+          "Q4_0",
+          "Q4_K_S",
+          "IQ4_NL",
+          "Q4_K_M",
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 927607328,
+            "files": [
+              "mmproj-Qwen3.8-27B-RANA-abliterated-F16.gguf"
+            ],
+            "size": "884.6 MB"
+          },
+          {
+            "quantization": "IQ2_M",
+            "size_bytes": 10004593792,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ2_M.gguf"
+            ],
+            "size": "9.3 GB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 10711665792,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q2_K.gguf"
+            ],
+            "size": "10.0 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 11186371712,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ3_XXS.gguf"
+            ],
+            "size": "10.4 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 12580875392,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ3_M.gguf"
+            ],
+            "size": "11.7 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 13301443712,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q3_K_M.gguf"
+            ],
+            "size": "12.4 GB"
+          },
+          {
+            "quantization": "Q3_K_L",
+            "size_bytes": 14344776832,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q3_K_L.gguf"
+            ],
+            "size": "13.4 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 15082507392,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ4_XS.gguf"
+            ],
+            "size": "14.0 GB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 15521434752,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q4_0.gguf"
+            ],
+            "size": "14.5 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 15586315392,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q4_K_S.gguf"
+            ],
+            "size": "14.5 GB"
+          },
+          {
+            "quantization": "IQ4_NL",
+            "size_bytes": 15801928832,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ4_NL.gguf"
+            ],
+            "size": "14.7 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400832,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q4_K_M.gguf"
+            ],
+            "size": "15.4 GB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 18679614592,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q5_K_S.gguf"
+            ],
+            "size": "17.4 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231100032,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q5_K_M.gguf"
+            ],
+            "size": "17.9 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 22082530432,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q6_K.gguf"
+            ],
+            "size": "20.6 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 31759771584,
+            "files": [
+              "mtp-Qwen3.8-27B-RANA-abliterated-Q8_0.gguf",
+              "Qwen3.8-27B-RANA-abliterated-Q8_0.gguf"
+            ],
+            "size": "29.6 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 60685439392,
+            "files": [
+              "mmproj-Qwen3.8-27B-RANA-abliterated-BF16.gguf",
+              "mtp-Qwen3.8-27B-RANA-abliterated-BF16.gguf",
+              "Qwen3.8-27B-RANA-abliterated-BF16/Qwen3.8-27B-RANA-abliterated-BF16-00002-of-00002.gguf",
+              "Qwen3.8-27B-RANA-abliterated-BF16/Qwen3.8-27B-RANA-abliterated-BF16-00001-of-00002.gguf"
+            ],
+            "size": "56.5 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400832,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q4_K_M.gguf"
+            ],
+            "size": "15.4 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231100032,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-Q5_K_M.gguf"
+            ],
+            "size": "17.9 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 12580875392,
+            "files": [
+              "Qwen3.8-27B-RANA-abliterated-IQ3_M.gguf"
+            ],
+            "size": "11.7 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 15.41,
+          "system_ram_min_gib": 20.0,
+          "system_ram_recommended_gib": 25.0,
+          "full_gpu_vram_rough_gib": 19.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          },
+          {
+            "name": "MLX",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          },
+          {
+            "name": "SGLang",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 22,
+        "gguf_files": [
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-imatrix.gguf",
+            "quantization": "",
+            "size_bytes": 13642656,
+            "size": "13.0 MB"
+          },
+          {
+            "name": "mmproj-Qwen3.8-27B-RANA-abliterated-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 927607328,
+            "size": "884.6 MB"
+          },
+          {
+            "name": "mmproj-Qwen3.8-27B-RANA-abliterated-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 931146272,
+            "size": "888.0 MB"
+          },
+          {
+            "name": "mtp-Qwen3.8-27B-RANA-abliterated-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 3164007232,
+            "size": "2.9 GB"
+          },
+          {
+            "name": "mtp-Qwen3.8-27B-RANA-abliterated-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 5946010432,
+            "size": "5.5 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-BF16/Qwen3.8-27B-RANA-abliterated-BF16-00002-of-00002.gguf",
+            "quantization": "BF16",
+            "size_bytes": 8831013728,
+            "size": "8.2 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-IQ2_M.gguf",
+            "quantization": "IQ2_M",
+            "size_bytes": 10004593792,
+            "size": "9.3 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 10711665792,
+            "size": "10.0 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-IQ3_XXS.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 11186371712,
+            "size": "10.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 12580875392,
+            "size": "11.7 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 13301443712,
+            "size": "12.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q3_K_L.gguf",
+            "quantization": "Q3_K_L",
+            "size_bytes": 14344776832,
+            "size": "13.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 15082507392,
+            "size": "14.0 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 15521434752,
+            "size": "14.5 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 15586315392,
+            "size": "14.5 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-IQ4_NL.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 15801928832,
+            "size": "14.7 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 16547400832,
+            "size": "15.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 18679614592,
+            "size": "17.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 19231100032,
+            "size": "17.9 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 22082530432,
+            "size": "20.6 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 28595764352,
+            "size": "26.6 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-RANA-abliterated-BF16/Qwen3.8-27B-RANA-abliterated-BF16-00001-of-00002.gguf",
+            "quantization": "BF16",
+            "size_bytes": 44977268960,
+            "size": "41.9 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 13.0 MB〜41.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「abliterant/Qwen3.8-27B-RANA-abliterated-GGUF」が更新されています。確認時点の指標は downloads=41,757、likes=2 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは abliterant/Qwen3.8-27B-RANA-abliterated。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は F16, BF16, Q8_0, IQ2_M, Q2_K, IQ3_XXS, IQ3_M, Q3_K_M, Q3_K_L, IQ4_XS, Q4_0, Q4_K_S, IQ4_NL, Q4_K_M, Q5_K_S, Q5_K_M, Q6_K。GGUFファイルは 22 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 13.0 MB〜41.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-06-adbc0401e5bd",
+      "date": "2026-11-06",
+      "title": "Hugging Face: btbtyler09/shrew-ocr-preview-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/btbtyler09/shrew-ocr-preview-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=btbtyler09/shrew-ocr-preview-GGUF license=apache-2.0 base_model=btbtyler09/shrew-ocr-preview architecture=不明 context_length=不明 downloads=154 likes=0 quantizations=F16, Q8_0 memory_estimate={\"basis_quantization\": \"Q8_0\", \"model_file_size_gib\": 3.37, \"system_ram_min_gib\": 6.0, \"system_ram_recommended_gib\": 9.0, \"full_gpu_vram_rough_gib\": 5.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 base_model: btbtyler09/shrew-ocr-preview base_model_relation: quantized tags: - gguf - llama.cpp - document-intelligence - structured-extraction - vision-language - ocr - rag language: - en pipeline_tag: image-text-to-text --- # shrew-ocr-preview-GGUF GGUF conversions of [shrew-ocr-preview](https://huggingface.co/btbtyler09/shrew-ocr-preview) for llama.cpp, v0.4.1 (llama.cpp b10453, native Granite4Vision): page image in,…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "document-intelligence",
+        "structured-extraction",
+        "vision-language",
+        "ocr",
+        "rag",
+        "image-text-to-text"
+      ],
+      "model_meta": {
+        "model_id": "btbtyler09/shrew-ocr-preview-GGUF",
+        "author": "btbtyler09",
+        "license": "apache-2.0",
+        "base_model": "btbtyler09/shrew-ocr-preview",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "",
+        "downloads": 154,
+        "likes": 0,
+        "last_modified": "2026-11-06T02:12:24.000Z",
+        "quantizations": [
+          "F16",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 3619700064,
+            "files": [
+              "shrew-ocr-preview-Q8_0.gguf"
+            ],
+            "size": "3.4 GB"
+          },
+          {
+            "quantization": "F16",
+            "size_bytes": 7972014752,
+            "files": [
+              "shrew-ocr-preview-mmproj-f16.gguf",
+              "shrew-ocr-preview-f16.gguf"
+            ],
+            "size": "7.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 3619700064,
+            "files": [
+              "shrew-ocr-preview-Q8_0.gguf"
+            ],
+            "size": "3.4 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q8_0",
+          "model_file_size_gib": 3.37,
+          "system_ram_min_gib": 6.0,
+          "system_ram_recommended_gib": 9.0,
+          "full_gpu_vram_rough_gib": 5.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "vLLM",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "shrew-ocr-preview-mmproj-f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 1162347488,
+            "size": "1.1 GB"
+          },
+          {
+            "name": "shrew-ocr-preview-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 3619700064,
+            "size": "3.4 GB"
+          },
+          {
+            "name": "shrew-ocr-preview-f16.gguf",
+            "quantization": "F16",
+            "size_bytes": 6809667264,
+            "size": "6.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 1.1 GB〜6.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「btbtyler09/shrew-ocr-preview-GGUF」が更新されています。確認時点の指標は downloads=154、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは btbtyler09/shrew-ocr-preview。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は F16, Q8_0。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 1.1 GB〜6.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-06-c64b2a6dbf75",
+      "date": "2026-11-04",
+      "title": "Ollama: v0.40.15",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.15",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ollama/ollamaでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## MiMo V2.6 Xiaomi MiMo's [mimo-v2.6](https://ollama.com/library/mimo-v2.6), a 9B model built for code and agent workflows, is now supported in Ollama. ```sh ollama run mimo-v2.6 ``` ## AutoTrust decision models [AutoTrust](https://ollama.com/library/autotrust-jev) decision models read text and return choices, yes or no probabilities, and ratings for the questions you supply. The family includes 9b, 35b, and 27b-vl sizes — the 35b and 27b-vl sizes can also read images. ```sh ollama run autotrust-jev \"A customer says their card was charged twice.\" --ask \"Is this a billing issue?\" ``` Note: autotrust-jev is supported on Apple silicon in this release. ## What's Changed - ollama launch now supports Kimi Code CLI — the successor to kimi-cli — and offers to migrate existing kimi-cli setups - ollama launch now fills in Pi's model list automatically so models can be picked inside Pi, and Claud…",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "GGUF",
+        "Vision",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-06-d0c08a133cec",
+      "date": "2026-11-02",
+      "title": "Giving every team a data scientist with Grok Bot",
+      "source": "xAI News",
+      "source_url": "https://x.ai/news/data-bot",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "xAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Data Bot is a Team Bot in Grok Bot that the data science team teaches, so every team can query the warehouse, run analyses, and get answers the way a data scientist would. At SpaceXSI, our data science team works across the company, helping teams answer difficult questions and finding new ways to incorporate data into our products. Over time, we've developed an intuition for our data, including how to interpret it and where its limitations lie. But our small team cannot answer every question that arises in a fast-growing company. People come to us throughout the day with questions that may be straightforward but still require our expertise to answer accurately. This can easily make us a bottleneck. A few months back, we started exploring how AI agents could change that relationship. We wanted to give everyone a data scientist, available around the clock, that could draw on our collectiv…",
+      "tags": [
+        "xAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-11-05-0f8098bd779a",
       "date": "2026-11-05",
