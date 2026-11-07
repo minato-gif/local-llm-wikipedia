@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-06"
+    "last_updated": "2026-11-07"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -549,9 +549,584 @@
     "https://huggingface.co/abliterant/Qwen3.8-27B-RANA-abliterated-GGUF",
     "https://huggingface.co/btbtyler09/shrew-ocr-preview-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.15",
-    "https://x.ai/news/data-bot"
+    "https://x.ai/news/data-bot",
+    "https://typesafe.ai/blog/dont-call-it-a-decision-model",
+    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-11-07-2f0d08a52b4b",
+      "date": "2026-11-03",
+      "title": "TypeSafe AI、Jevモデルの呼称と「システム1」としての位置づけを解説",
+      "source": "TypeSafe AI Blog",
+      "source_url": "https://typesafe.ai/blog/dont-call-it-a-decision-model",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "TypeSafe AIは、ソフトウェア内で判断を下すために開発した初のエリーリーアクセスモデル「Jev」について、業界で広まる「意思決定モデル」ではなく「システム1モデル」と呼ぶ理由を説明しました。ダニエル・カーネマンの提唱する、素早く直感的な「システム1」の概念にならい、高速で焦点を絞った判断を行うモデルであるとしています。",
+      "impact": "ソフトウェア自動化における新しいカテゴリのモデルとして注目を集めていますが、コードが決定を下すのに対してJevは判断を行うという役割の違いを明確にしています。",
+      "details": "Jevはソフトウェア内での迅速な判断を目的として設計されたSystem Oneモデルであり、APIや早期アクセスを通じて利用可能です。完全な意思決定を単一のプロンプトに委ねるのではなく、高速で直感的な判断を担うコンポーネントとして位置づけられています。クローズドウェイトの傾向やローカル環境での直接実行に関する詳細なシステム要件はこの記事内では言及されていません。",
+      "tags": [
+        "TypeSafe AI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "新興技術",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-07-b3d95477e824",
+      "date": "2026-11-07",
+      "title": "Unsloth、Qwen3.8-Flash-NextのGGUF量子化モデルを公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Unslothは、Qwen3.8-Flash-NextモデルのGGUF形式による量子化版をHugging Faceに公開しました。独自の手法であるUnsloth Dynamic v3.1を採用し、高い精度と優れた量子化性能を実現しています。",
+      "impact": "多様な量子化オプションが提供されており、ローカル環境での推論や検証の選択肢が広がります。",
+      "details": "ベースモデルはQwen/Qwen3.8-Flash-Nextであり、画像テキスト処理のパイプラインに対応しています。量子化形式にはBF16や各種IQ、Qシリーズが含まれており、推奨されるQ4_K_M量子化の場合、モデルファイルサイズは約4.37GB、実行には最低約7.5GB、推奨約10GBのシステムRAMが必要です。コンテキスト長やKVキャッシュの容量によって必要なメモリ量は変動します。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "unsloth",
+        "Qwen",
+        "image-text-to-text",
+        "license:other",
+        "endpoints_compatible",
+        "region:us",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "unsloth/Qwen3.8-Flash-Next-GGUF",
+        "author": "unsloth",
+        "license": "other",
+        "base_model": "Qwen/Qwen3.8-Flash-Next",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "",
+        "downloads": 1309045,
+        "likes": 1465,
+        "last_modified": "2026-11-07T02:01:54.000Z",
+        "quantizations": [
+          "BF16",
+          "IQ1_M",
+          "IQ1_S",
+          "IQ2_XS",
+          "IQ3_XXS",
+          "IQ4_XS",
+          "Q2_0",
+          "Q2_K_XL",
+          "Q3_K_XL",
+          "Q4_K_XL",
+          "Q5_K_XL",
+          "Q8_0",
+          "Q6_K_XL",
+          "F16",
+          "Q4_K_M"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 904004000,
+            "files": [
+              "mmproj-F16.gguf"
+            ],
+            "size": "862.1 MB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 4693356736,
+            "files": [
+              "MTP/mtp-Qwen3.8-Flash-Next-shared-Q4_K_M.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-Q4_K_M.gguf"
+            ],
+            "size": "4.4 GB"
+          },
+          {
+            "quantization": "IQ1_S",
+            "size_bytes": 66379180698,
+            "files": [
+              "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00001-of-00003.gguf",
+              "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00003-of-00003.gguf",
+              "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00002-of-00003.gguf"
+            ],
+            "size": "61.8 GB"
+          },
+          {
+            "quantization": "IQ1_M",
+            "size_bytes": 68007094938,
+            "files": [
+              "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00001-of-00003.gguf",
+              "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00003-of-00003.gguf",
+              "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00002-of-00003.gguf"
+            ],
+            "size": "63.3 GB"
+          },
+          {
+            "quantization": "Q2_0",
+            "size_bytes": 70549891738,
+            "files": [
+              "UD-Q2_0/Qwen3.8-Flash-Next-UD-Q2_0-00001-of-00003.gguf",
+              "UD-Q2_0/Qwen3.8-Flash-Next-UD-Q2_0-00003-of-00003.gguf",
+              "UD-Q2_0/Qwen3.8-Flash-Next-UD-Q2_0-00002-of-00003.gguf"
+            ],
+            "size": "65.7 GB"
+          },
+          {
+            "quantization": "IQ2_XS",
+            "size_bytes": 75832093338,
+            "files": [
+              "UD-IQ2_XS/Qwen3.8-Flash-Next-UD-IQ2_XS-00001-of-00003.gguf",
+              "UD-IQ2_XS/Qwen3.8-Flash-Next-UD-IQ2_XS-00003-of-00003.gguf",
+              "UD-IQ2_XS/Qwen3.8-Flash-Next-UD-IQ2_XS-00002-of-00003.gguf"
+            ],
+            "size": "70.6 GB"
+          },
+          {
+            "quantization": "Q2_K_XL",
+            "size_bytes": 79580752666,
+            "files": [
+              "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00001-of-00004.gguf",
+              "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00003-of-00004.gguf",
+              "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00004-of-00004.gguf",
+              "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00002-of-00004.gguf"
+            ],
+            "size": "74.1 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 83626438426,
+            "files": [
+              "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00001-of-00004.gguf",
+              "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00003-of-00004.gguf",
+              "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00004-of-00004.gguf",
+              "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00002-of-00004.gguf"
+            ],
+            "size": "77.9 GB"
+          },
+          {
+            "quantization": "Q3_K_XL",
+            "size_bytes": 89464948506,
+            "files": [
+              "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00004.gguf",
+              "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00003-of-00004.gguf",
+              "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00004-of-00004.gguf",
+              "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00002-of-00004.gguf"
+            ],
+            "size": "83.3 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 93672359738,
+            "files": [
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00004-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00004.gguf"
+            ],
+            "size": "87.2 GB"
+          },
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 111334654778,
+            "files": [
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+              "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf"
+            ],
+            "size": "103.7 GB"
+          },
+          {
+            "quantization": "Q5_K_XL",
+            "size_bytes": 158286406650,
+            "files": [
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00001-of-00006.gguf",
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00002-of-00006.gguf",
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00006-of-00006.gguf",
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00005-of-00006.gguf",
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00004-of-00006.gguf",
+              "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00003-of-00006.gguf"
+            ],
+            "size": "147.4 GB"
+          },
+          {
+            "quantization": "Q6_K_XL",
+            "size_bytes": 169165382688,
+            "files": [
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00001-of-00006.gguf",
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00002-of-00006.gguf",
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00006-of-00006.gguf",
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00005-of-00006.gguf",
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00004-of-00006.gguf",
+              "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00003-of-00006.gguf"
+            ],
+            "size": "157.5 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 199286459744,
+            "files": [
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+              "mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00003-of-00006.gguf"
+            ],
+            "size": "185.6 GB"
+          },
+          {
+            "quantization": "BF16",
+            "size_bytes": 367936197216,
+            "files": [
+              "BF16/Qwen3.8-Flash-Next-BF16-00001-of-00008.gguf",
+              "mmproj-BF16.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-shared-BF16.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-BF16.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00002-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00008-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00005-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00007-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00004-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00006-of-00008.gguf",
+              "BF16/Qwen3.8-Flash-Next-BF16-00003-of-00008.gguf"
+            ],
+            "size": "342.7 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 4693356736,
+            "files": [
+              "MTP/mtp-Qwen3.8-Flash-Next-shared-Q4_K_M.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-Q4_K_M.gguf"
+            ],
+            "size": "4.4 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 199286459744,
+            "files": [
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf",
+              "MTP/mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+              "mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+              "Q8_0/Qwen3.8-Flash-Next-Q8_0-00003-of-00006.gguf"
+            ],
+            "size": "185.6 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 93672359738,
+            "files": [
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00004-of-00004.gguf",
+              "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00004.gguf"
+            ],
+            "size": "87.2 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 4.37,
+          "system_ram_min_gib": 7.5,
+          "system_ram_recommended_gib": 10.0,
+          "full_gpu_vram_rough_gib": 6.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 67,
+        "gguf_files": [
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00001-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 10946368,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00001-of-00003.gguf",
+            "quantization": "IQ1_M",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00001-of-00003.gguf",
+            "quantization": "IQ1_S",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-IQ2_XS/Qwen3.8-Flash-Next-UD-IQ2_XS-00001-of-00003.gguf",
+            "quantization": "IQ2_XS",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00001-of-00004.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00004.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q2_0/Qwen3.8-Flash-Next-UD-Q2_0-00001-of-00003.gguf",
+            "quantization": "Q2_0",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00001-of-00004.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00001-of-00006.gguf",
+            "quantization": "Q5_K_XL",
+            "size_bytes": 10946618,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 10946624,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00001-of-00006.gguf",
+            "quantization": "Q6_K_XL",
+            "size_bytes": 10946624,
+            "size": "10.4 MB"
+          },
+          {
+            "name": "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 682434912,
+            "size": "650.8 MB"
+          },
+          {
+            "name": "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00002-of-00006.gguf",
+            "quantization": "Q5_K_XL",
+            "size_bytes": 682434912,
+            "size": "650.8 MB"
+          },
+          {
+            "name": "UD-Q6_K_XL/Qwen3.8-Flash-Next-UD-Q6_K_XL-00002-of-00006.gguf",
+            "quantization": "Q6_K_XL",
+            "size_bytes": 682434912,
+            "size": "650.8 MB"
+          },
+          {
+            "name": "mmproj-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 904004000,
+            "size": "862.1 MB"
+          },
+          {
+            "name": "mmproj-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 907542944,
+            "size": "865.5 MB"
+          },
+          {
+            "name": "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00003-of-00004.gguf",
+            "quantization": "Q2_K_XL",
+            "size_bytes": 1037181344,
+            "size": "989.1 MB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-shared-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 1907151936,
+            "size": "1.8 GB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 2786204800,
+            "size": "2.6 GB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 2786568256,
+            "size": "2.6 GB"
+          },
+          {
+            "name": "UD-Q5_K_XL/Qwen3.8-Flash-Next-UD-Q5_K_XL-00006-of-00006.gguf",
+            "quantization": "Q5_K_XL",
+            "size_bytes": 3320101792,
+            "size": "3.1 GB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 4137429120,
+            "size": "3.9 GB"
+          },
+          {
+            "name": "mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 4137429120,
+            "size": "3.9 GB"
+          },
+          {
+            "name": "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00003-of-00004.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 4869325888,
+            "size": "4.5 GB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-shared-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 5227963456,
+            "size": "4.9 GB"
+          },
+          {
+            "name": "MTP/mtp-Qwen3.8-Flash-Next-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 7770760320,
+            "size": "7.2 GB"
+          },
+          {
+            "name": "BF16/Qwen3.8-Flash-Next-BF16-00002-of-00008.gguf",
+            "quantization": "BF16",
+            "size_bytes": 10447201664,
+            "size": "9.7 GB"
+          },
+          {
+            "name": "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00003-of-00004.gguf",
+            "quantization": "Q3_K_XL",
+            "size_bytes": 10911746208,
+            "size": "10.2 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 10.4 MB〜95.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「unsloth/Qwen3.8-Flash-Next-GGUF」が更新されています。確認時点の指標は downloads=1,309,045、likes=1,465 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-Flash-Next。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は BF16, IQ1_M, IQ1_S, IQ2_XS, IQ3_XXS, IQ4_XS, Q2_0, Q2_K_XL, Q3_K_XL, Q4_K_XL, Q5_K_XL, Q8_0, Q6_K_XL, F16, Q4_K_M。GGUFファイルは 67 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 10.4 MB〜95.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-06-75602b8b6c50",
       "date": "2026-11-05",
