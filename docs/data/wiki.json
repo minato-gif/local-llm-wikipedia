@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-09"
+    "last_updated": "2026-11-10"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -551,9 +551,54 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.15",
     "https://x.ai/news/data-bot",
     "https://typesafe.ai/blog/dont-call-it-a-decision-model",
-    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.16"
   ],
   "entries": [
+    {
+      "id": "2026-11-10-dc0d02943268",
+      "date": "2026-11-09",
+      "title": "Anthropicが「Claude Fable 5.2」および「Claude Mythos 5.2」を発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropicは、コーディングや科学分野などの高難度な技術的課題に対応する新モデル「Claude Fable 5.2」および「Claude Mythos 5.2」を発表しました。前バージョン比で最大30%高速な出力を生成し、安全性や生物学的・サイバーセキュリティのセーフガードを強化しています。",
+      "impact": "コーディングや推論、視覚性能が向上し、事前テストでは複雑なソフトウェア移行や物理学の未解決問題の解決などに貢献しました。Fable 5.2は全ユーザーに提供され、Mythos 5.2は検証プログラムを通じて組織に限定提供されます。",
+      "details": "Claude Fable 5.2とClaude Mythos 5.2は共通の基盤モデルを使用しており、Fableは汎用向けに厳格なセーフガードを備えています。Mythosの利用にはライフサイエンスやサイバー検証プログラムへの申請が必要です。本発表はAPIやWebサービスを前提としたものであり、ローカル環境での直接実行には対応していません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表",
+        "Vision"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-10-6dab37966d50",
+      "date": "2026-11-10",
+      "title": "Ollama v0.40.16がリリース、Qwen3.8 Flash Nextのメモリ最適化などを実装",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは、最新のアップデートとなる「v0.40.16」を公開しました。Apple Silicon環境におけるQwen3.8 Flash Nextのメモリ使用量削減や、llama.cppの更新、CUDA 13.5のサポートなどが含まれています。",
+      "impact": "Apple Silicon環境でQwen3.8 Flash Nextのメモリ消費量が約27 GiB削減され、ローカル環境での実行効率が向上しました。また、エージェント型コーディング向けの65Bモデル「Ripple Preview」が新たに利用可能になっています。",
+      "details": "今回の更新では、Apple Siliconでのメモリ最適化のほか、Windows on ARM向けCUDA 13.5のサポートや、`ollama launch claude`によるClaude Codeのルーティング改善、APIレスポンスの修正が行われました。内蔵のllama.cppも最新版に更新されており、対応ハードウェア環境での安定性と互換性が改善されています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "CUDA"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-07-2f0d08a52b4b",
       "date": "2026-11-03",
