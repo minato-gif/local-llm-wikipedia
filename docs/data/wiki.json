@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-10"
+    "last_updated": "2026-11-11"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -553,9 +553,76 @@
     "https://typesafe.ai/blog/dont-call-it-a-decision-model",
     "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
     "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-    "https://github.com/ollama/ollama/releases/tag/v0.40.16"
+    "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+    "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
+    "https://deepmind.google/blog/introducing-alphaproof-code/"
   ],
   "entries": [
+    {
+      "id": "2026-11-11-9e1d0e56df15",
+      "date": "2026-11-11",
+      "title": "Google DeepMind、実世界の物理知能を強化する「Gemini Robotics 2.5」を発表",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMindは、実世界環境における器用さ、信頼性、安全性を高める最先端のビジョン・言語・行動モデル「Gemini Robotics 2.5」を発表しました。",
+      "impact": "現実世界の物理的インタラクションを伴うタスクにおいて、ロボットの制御精度や安全性を大きく向上させる基盤技術となります。",
+      "details": "Gemini Robotics 2.5は、視覚・言語・行動を統合した同社で最も高性能なモデルとして位置づけられています。実環境でのロボットの器用さや信頼性、安全性の向上に寄与する設計がなされていますが、現時点ではAPIやローカル環境での直接的なオープンソース公開に関する詳細な情報は提示されていません。",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表",
+        "Vision"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-11-881159707206",
+      "date": "2026-11-11",
+      "title": "ローカルランタイム「Ollama v0.40.17 (rc0)」が公開、VulkanやMLXの改善を実装",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaは、ChatGPT CLIの復元機能や、Vulkan統合GPU向けmmapの採用、MLXの同時実行サポートなどを追加したバージョン0.40.17のプレビュー版を公開しました。",
+      "impact": "多様なハードウェア環境におけるメモリ効率の向上や、ローカル推時の同時処理性能の改善に直接寄与します。",
+      "details": "本リリースでは、Vulkan統合GPUでのmmap使用によるメモリ最適化や、Apple Silicon向けMLXでの同時生成サポートが導入されています。また、llama.cppのバージョン更新やOpenCode設定向け思考メタデータの適用なども含まれており、ローカルでの実行環境や操作性が向上しています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Vulkan"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-11-cd60d4f615cc",
+      "date": "2026-11-10",
+      "title": "Google DeepMind、AlphaProof CodeエージェントによるSignalプロトコルの形式検証を実施",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMindは、AlphaProof Codeエージェントを活用し、Signalの暗号学的保護機能に対する機械チェック済みの証明をLean言語で3百万行以上記述したと発表しました。",
+      "impact": "AIを活用した高度な形式検証によって、複雑な暗号プロトコルの安全性や信頼性を機械的に証明する新たな可能性を示します。",
+      "details": "AlphaProof Codeエージェントを用いた本取り組みでは、Signalの中核となる暗号学的保護を機械命令レベルまで検証することに成功しています。Lean言語を用いた3百万行を超える大規模な証明記述を実現しており、AIによる厳密な論理検証技術の適用範囲を大きく広げる成果となっています。",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-10-dc0d02943268",
       "date": "2026-11-09",
