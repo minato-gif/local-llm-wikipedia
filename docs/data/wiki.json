@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-11"
+    "last_updated": "2026-11-12"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -556,9 +556,32 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.16",
     "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
     "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
-    "https://deepmind.google/blog/introducing-alphaproof-code/"
+    "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
   ],
   "entries": [
+    {
+      "id": "2026-11-12-a63ccbf1a62d",
+      "date": "2026-11-12",
+      "title": "Google DeepMind、細胞のDNA読み取りメカニズムを解明する次世代モデル「AlphaGenome 2」を発表",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMindは、単一細胞生物学とヒト遺伝学を架橋する次世代DNA配列モデル「AlphaGenome 2」を発表した。本モデルは、DNA配列とその変異が特定のヒト細胞タイプに与える影響を予測し、疾患の細胞レベルでの要因解明を支援する。",
+      "impact": "数百万の細胞における遺伝子発現や微妙なDNA変異の影響を予測することで、ヒトの形質や疾患の主要な駆動要因の特定に貢献します。",
+      "details": "AlphaGenome 2は、心筋細胞や免疫細胞などの特定の細胞状態や種類ごとに、DNA配列や変異がどのように遺伝子のオン・オフや発現に影響するかを予測する次世代のDNA配列モデルです。前身のAlphaGenomeを拡張し、細胞生物学とヒト遺伝学の橋渡しを行います。なお、本モデルはAPIや研究向けの発表であり、ローカルでの直接的なモデルファイル公開やオフライン実行に関する情報は含まれていません。",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-11-9e1d0e56df15",
       "date": "2026-11-11",
