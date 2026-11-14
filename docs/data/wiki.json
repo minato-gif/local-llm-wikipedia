@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-13"
+    "last_updated": "2026-11-14"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -557,9 +557,33 @@
     "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
     "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
     "https://deepmind.google/blog/introducing-alphaproof-code/",
-    "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
+    "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
   ],
   "entries": [
+    {
+      "id": "2026-11-14-4a5d61ed6c49",
+      "date": "2026-11-13",
+      "title": "llama.cpp v1.0.0が公開、非推奨APIの削除やNextN/speculative APIの昇格を実施",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+      "category": "推論ランタイム",
+      "priority": "高",
+      "summary": "llama.cppは、非推奨となった公開APIを多数削除し、NextN/speculative APIを標準のllama.hへ昇格させたv1.0.0を公開した。OCP FP8 KVキャッシュやホストメモリを活用するMoEエキスパートキャッシュ、新規のテキスト・ビジョン・音声アーキテクチャのサポートなどを追加している。",
+      "impact": "破壊的変更として多数の非推奨関数や`llama_set_warmup`等が削除され、NextN関連APIが統合された。また、MoEモデルのメモリ効率化や新規モデルアーキテクチャへの対応、llama-serverのセキュリティ強化とWeb UIの刷新が含まれる。",
+      "details": "主な変更点として、llama.hからの35個の非推奨関数の削除、NextN/speculative APIのllama.hへの昇格、OCP FP8 KVキャッシュおよび設定可能なCPUシェアを持つホストメモリMoEエキスパートキャッシュの追加が行われた。対応アーキテクチャにはKimi-K3.1-Pro、Ripple、xing4_0などのテキストモデルに加え、drama-3 TTS、MageVL-Cowork、Kimi-K3.1のビジョン機能が追加されている。さらに、SSRFやCORS対策といったllama-serverのセキュリティ強化や、チャットグループ機能を備えたWeb UIの刷新も実施されている。ローカル環境での大規模モデル運用や推論効率の向上に大きく影響するメジャーバージョンアップとなっている。",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "Vision",
+        "Tool Calling",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-12-a63ccbf1a62d",
       "date": "2026-11-12",
