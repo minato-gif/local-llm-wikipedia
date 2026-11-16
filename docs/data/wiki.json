@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-15"
+    "last_updated": "2026-11-16"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -558,9 +558,73 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
     "https://deepmind.google/blog/introducing-alphaproof-code/",
     "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+    "https://lmstudio.ai/changelog/bionic-v1.2.0",
+    "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-vulkan",
+    "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-rocm72"
   ],
   "entries": [
+    {
+      "id": "2026-11-16-b63805376ad7",
+      "date": "2026-11-16",
+      "title": "LM Studio が Bionic v1.2.0 を公開",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.2.0",
+      "category": "フロントエンド",
+      "priority": "中",
+      "summary": "ローカルLLM向けフロントエンドアプリのLM Studioが、新バージョン「Bionic v1.2.0」をリリースしました。本アップデートに関する詳細な変更点や新機能については、公式の変更履歴ページにて確認できます。",
+      "impact": "LM Studioのユーザーインターフェースやローカルモデルの管理・実行環境における利便性や安定性が向上します。",
+      "details": "LM Studioの最新バージョンであるBionic v1.2.0が公開されました。具体的な機能追加やバグ修正の詳細は公式ページに依存しますが、ローカル環境でのモデル実行体験に影響を与える可能性があります。API専用モデルではなく、ローカルでLLMを運用するユーザー向けのデスクトップクライアントの更新となります。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-16-a71695e71cf7",
+      "date": "2026-11-15",
+      "title": "llama-cpp-python: v0.3.37-vulkan がリリース",
+      "source": "GitHub Releases / abetlen/llama-cpp-python",
+      "source_url": "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-vulkan",
+      "category": "Python",
+      "priority": "中",
+      "summary": "Pythonからllama.cppを利用するためのライブラリ「llama-cpp-python」のVulkan対応版リリース「v0.3.37-vulkan」が公開されました。Vulkanバックエンドを用いたクロスプラットフォームなGPU高速化環境を提供します。",
+      "impact": "対応するGPUハードウェア上で、Pythonスクリプトからllama.cppを通した効率的なモデル推論を実行できるようになります。",
+      "details": "llama-cpp-pythonのv0.3.37-vulkanタグがGitHub上で公開されました。Vulkanバックエンドを利用することで、NVIDIA製以外のGPU環境や多様なハードウェア環境でのローカル推論の高速化が期待できます。具体的な変更点や導入手順は公式リリースページを参照してください。",
+      "tags": [
+        "llama-cpp-python",
+        "GitHub Release",
+        "Vulkan"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "GPU高速化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-16-085efa5cc980",
+      "date": "2026-11-15",
+      "title": "llama-cpp-python: v0.3.37-rocm72 がリリース",
+      "source": "GitHub Releases / abetlen/llama-cpp-python",
+      "source_url": "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-rocm72",
+      "category": "Python",
+      "priority": "中",
+      "summary": "Pythonバインディングライブラリ「llama-cpp-python」のROCm対応版リリースである「v0.3.37-rocm72」が公開されました。AMD製GPU環境でのローカル実行をサポートします。",
+      "impact": "AMD製GPUを使用する環境において、ROCmを介したllama.cppによる高速なモデル推論をPythonから行えるようになります。",
+      "details": "llama-cpp-pythonのv0.3.37-rocm72タグがGitHub上で公開されました。AMDのROCm環境に対応しており、対応GPUを持つローカル環境での推論性能や互換性の改善が含まれています。詳細はGitHubのリリースノートを確認してください。",
+      "tags": [
+        "llama-cpp-python",
+        "GitHub Release",
+        "ROCm"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "GPU高速化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-14-4a5d61ed6c49",
       "date": "2026-11-13",
