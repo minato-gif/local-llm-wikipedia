@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-16"
+    "last_updated": "2026-11-17"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -561,9 +561,655 @@
     "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
     "https://lmstudio.ai/changelog/bionic-v1.2.0",
     "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-vulkan",
-    "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-rocm72"
+    "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-rocm72",
+    "https://www.anthropic.com/news/roadshow-launch",
+    "https://huggingface.co/latentport/latentport-4-27b-research-preview-GGUF",
+    "https://huggingface.co/mradermacher/LightChatAssistant-2x7B-GGUF",
+    "https://lmstudio.ai/changelog/bionic-v1.2.1",
+    "https://lmstudio.ai/changelog/bionic-v1.1.10",
+    "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-hip-radeon"
   ],
   "entries": [
+    {
+      "id": "2026-11-17-dd6378c9a636",
+      "date": "2026-11-10",
+      "title": "Anthropic launches roadshow for proposed initial public offering",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/roadshow-launch",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Anthropic Newsroomから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock. The proposed offering consists of 825,000,000 shares of Class A common stock. Of these, 801,351,354 shares are being offered by Anthropic and 23,648,646 shares are being offered by certain existing stockholders. Anthropic will not receive any proceeds from the sale of shares by the selling stockholders. Anthropic also expects to grant the underwriters a 30-day option to purchase up to an additional 123,750,000 shares of its Class A common stock. The initial public offering price is expected to be between $70.00 and $78.00 per share. Anthropic has applied to list its Class A common stock on the Nasdaq Global Select Market under the symbol “ANT.” The proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus may be obtained from: Goldman…",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-17-1b36cbd39dd8",
+      "date": "2026-11-17",
+      "title": "Hugging Face: latentport/latentport-4-27b-research-preview-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/latentport/latentport-4-27b-research-preview-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=latentport/latentport-4-27b-research-preview-GGUF license=apache-2.0 base_model=Qwen/Qwen3.5-4B, Qwen/Qwen3.8-27B architecture=不明 context_length=不明 downloads=285 likes=1 quantizations=F32, Q4_K_M recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 18.18, \"system_ram_min_gib\": 23.0, \"system_ram_recommended_gib\": 29.0, \"full_gpu_vram_rough_gib\": 22.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 base_model: - Qwen/Qwen3.5-4B - Qwen/Qwen3.8-27B language: - en tags: - latentport - gguf - hybrid-composite - state-transfer - research-preview --- > Superseded by [LPBridge-Qwen3.5-4b-Qwen3.8-27b](https://huggingface.co/latentport/LPBridge-Qwen3.5-4b-Qwen3.8-27b). LatentPort 0.3 uses the new bridge by default. # LatentPort-4+27B **Small-model prefill. Large-m…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "latentport",
+        "hybrid-composite",
+        "state-transfer",
+        "research-preview",
+        "en",
+        "base_model:Qwen/Qwen3.5-4B",
+        "license:apache-2.0"
+      ],
+      "model_meta": {
+        "model_id": "latentport/latentport-4-27b-research-preview-GGUF",
+        "author": "latentport",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.5-4B, Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 285,
+        "likes": 1,
+        "last_modified": "2026-11-17T04:05:38.000Z",
+        "quantizations": [
+          "F32",
+          "Q4_K_M"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F32",
+            "size_bytes": 2578356288,
+            "files": [
+              "latentport-4-27b-bridge.F32.gguf"
+            ],
+            "size": "2.4 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19519518944,
+            "files": [
+              "models/Qwen3.5-4B-Q4_K_M.gguf",
+              "models/Qwen3.8-27B-MTP-Q4_K_M.gguf"
+            ],
+            "size": "18.2 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19519518944,
+            "files": [
+              "models/Qwen3.5-4B-Q4_K_M.gguf",
+              "models/Qwen3.8-27B-MTP-Q4_K_M.gguf"
+            ],
+            "size": "18.2 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19519518944,
+            "files": [
+              "models/Qwen3.5-4B-Q4_K_M.gguf",
+              "models/Qwen3.8-27B-MTP-Q4_K_M.gguf"
+            ],
+            "size": "18.2 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 19519518944,
+            "files": [
+              "models/Qwen3.5-4B-Q4_K_M.gguf",
+              "models/Qwen3.8-27B-MTP-Q4_K_M.gguf"
+            ],
+            "size": "18.2 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 18.18,
+          "system_ram_min_gib": 23.0,
+          "system_ram_recommended_gib": 29.0,
+          "full_gpu_vram_rough_gib": 22.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 3,
+        "gguf_files": [
+          {
+            "name": "latentport-4-27b-bridge.F32.gguf",
+            "quantization": "F32",
+            "size_bytes": 2578356288,
+            "size": "2.4 GB"
+          },
+          {
+            "name": "models/Qwen3.5-4B-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 2708804448,
+            "size": "2.5 GB"
+          },
+          {
+            "name": "models/Qwen3.8-27B-MTP-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 16810714496,
+            "size": "15.7 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 2.4 GB〜15.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「latentport/latentport-4-27b-research-preview-GGUF」が更新されています。確認時点の指標は downloads=285、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.5-4B, Qwen/Qwen3.8-27B。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は F32, Q4_K_M。GGUFファイルは 3 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 2.4 GB〜15.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-17-2bc483cfc987",
+      "date": "2026-11-17",
+      "title": "Hugging Face: mradermacher/LightChatAssistant-2x7B-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/mradermacher/LightChatAssistant-2x7B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=mradermacher/LightChatAssistant-2x7B-GGUF license=不明 base_model=Sdff-Ltba/LightChatAssistant-2x7B architecture=不明 context_length=不明 downloads=125 likes=1 quantizations=Q2_K, Q3_K_S, Q3_K_M, Q3_K_L, IQ4_XS, Q4_K_S, Q4_K_M, Q5_K_S, Q5_K_M, Q6_K, Q8_0 recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 7.25, \"system_ram_min_gib\": 10.5, \"system_ram_recommended_gib\": 14.0, \"full_gpu_vram_rough_gib\": 9.5, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- base_model: Sdff-Ltba/LightChatAssistant-2x7B language: - ja library_name: transformers mradermacher: readme_rev: 1 quantized_by: mradermacher tags: - mistral - mixtral - merge - moe - not-for-all-audiences - nsfw --- ## About <!-- ### quantize_version: 2 --> <!-- ### output_tensor_quantised: 1 --> <!-- ### convert_type: hf --> <!…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "transformers",
+        "gguf",
+        "mistral",
+        "mixtral",
+        "merge",
+        "moe",
+        "not-for-all-audiences",
+        "nsfw"
+      ],
+      "model_meta": {
+        "model_id": "mradermacher/LightChatAssistant-2x7B-GGUF",
+        "author": "mradermacher",
+        "license": "",
+        "base_model": "Sdff-Ltba/LightChatAssistant-2x7B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "transformers",
+        "downloads": 125,
+        "likes": 1,
+        "last_modified": "2026-11-17T04:58:41.000Z",
+        "quantizations": [
+          "Q2_K",
+          "Q3_K_S",
+          "Q3_K_M",
+          "Q3_K_L",
+          "IQ4_XS",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q5_K_S",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 4760824256,
+            "files": [
+              "LightChatAssistant-2x7B.Q2_K.gguf"
+            ],
+            "size": "4.4 GB"
+          },
+          {
+            "quantization": "Q3_K_S",
+            "size_bytes": 5587831232,
+            "files": [
+              "LightChatAssistant-2x7B.Q3_K_S.gguf"
+            ],
+            "size": "5.2 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 6206491072,
+            "files": [
+              "LightChatAssistant-2x7B.Q3_K_M.gguf"
+            ],
+            "size": "5.8 GB"
+          },
+          {
+            "quantization": "Q3_K_L",
+            "size_bytes": 6729730496,
+            "files": [
+              "LightChatAssistant-2x7B.Q3_K_L.gguf"
+            ],
+            "size": "6.3 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 6976874944,
+            "files": [
+              "LightChatAssistant-2x7B.IQ4_XS.gguf"
+            ],
+            "size": "6.5 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 7341681088,
+            "files": [
+              "LightChatAssistant-2x7B.Q4_K_S.gguf"
+            ],
+            "size": "6.8 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 7782607296,
+            "files": [
+              "LightChatAssistant-2x7B.Q4_K_M.gguf"
+            ],
+            "size": "7.2 GB"
+          },
+          {
+            "quantization": "Q5_K_S",
+            "size_bytes": 8874305984,
+            "files": [
+              "LightChatAssistant-2x7B.Q5_K_S.gguf"
+            ],
+            "size": "8.3 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 9132779968,
+            "files": [
+              "LightChatAssistant-2x7B.Q5_K_M.gguf"
+            ],
+            "size": "8.5 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 10567338432,
+            "files": [
+              "LightChatAssistant-2x7B.Q6_K.gguf"
+            ],
+            "size": "9.8 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 13686376896,
+            "files": [
+              "LightChatAssistant-2x7B.Q8_0.gguf"
+            ],
+            "size": "12.7 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 7782607296,
+            "files": [
+              "LightChatAssistant-2x7B.Q4_K_M.gguf"
+            ],
+            "size": "7.2 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 9132779968,
+            "files": [
+              "LightChatAssistant-2x7B.Q5_K_M.gguf"
+            ],
+            "size": "8.5 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q3_K_M",
+            "size_bytes": 6206491072,
+            "files": [
+              "LightChatAssistant-2x7B.Q3_K_M.gguf"
+            ],
+            "size": "5.8 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 7.25,
+          "system_ram_min_gib": 10.5,
+          "system_ram_recommended_gib": 14.0,
+          "full_gpu_vram_rough_gib": 9.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "有力候補",
+            "basis": "GGUF形式のため候補になりますが、このアーキテクチャに対応するバージョンを確認する必要があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 11,
+        "gguf_files": [
+          {
+            "name": "LightChatAssistant-2x7B.Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 4760824256,
+            "size": "4.4 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q3_K_S.gguf",
+            "quantization": "Q3_K_S",
+            "size_bytes": 5587831232,
+            "size": "5.2 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 6206491072,
+            "size": "5.8 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q3_K_L.gguf",
+            "quantization": "Q3_K_L",
+            "size_bytes": 6729730496,
+            "size": "6.3 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 6976874944,
+            "size": "6.5 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 7341681088,
+            "size": "6.8 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 7782607296,
+            "size": "7.2 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q5_K_S.gguf",
+            "quantization": "Q5_K_S",
+            "size_bytes": 8874305984,
+            "size": "8.3 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 9132779968,
+            "size": "8.5 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 10567338432,
+            "size": "9.8 GB"
+          },
+          {
+            "name": "LightChatAssistant-2x7B.Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 13686376896,
+            "size": "12.7 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 4.4 GB〜12.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「mradermacher/LightChatAssistant-2x7B-GGUF」が更新されています。確認時点の指標は downloads=125、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Sdff-Ltba/LightChatAssistant-2x7B。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q2_K, Q3_K_S, Q3_K_M, Q3_K_L, IQ4_XS, Q4_K_S, Q4_K_M, Q5_K_S, Q5_K_M, Q6_K, Q8_0。GGUFファイルは 11 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 4.4 GB〜12.7 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-17-f1abc2d6f67b",
+      "date": "2026-11-17",
+      "title": "LM Studio Changelog: Bionic 1.2.1",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.2.1",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "LM Studio ChangelogでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-17-47854ea5cf52",
+      "date": "2026-11-17",
+      "title": "LM Studio Changelog: Bionic 1.1.10",
+      "source": "LM Studio Changelog",
+      "source_url": "https://lmstudio.ai/changelog/bionic-v1.1.10",
+      "category": "フロントエンド",
+      "priority": "高",
+      "summary": "LM Studio ChangelogでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "LM Studio Changelog"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-17-b2b8a9d38b36",
+      "date": "2026-11-15",
+      "title": "llama-cpp-python: v0.3.37-hip-radeon",
+      "source": "GitHub Releases / abetlen/llama-cpp-python",
+      "source_url": "https://github.com/abetlen/llama-cpp-python/releases/tag/v0.3.37-hip-radeon",
+      "category": "Python",
+      "priority": "中",
+      "summary": "abetlen/llama-cpp-pythonでローカルLLM利用者に影響する重要な更新が公開されました。実用面で確認する価値がある内容として選定しています。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式リリースページを参照してください。",
+      "tags": [
+        "llama-cpp-python",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "その他",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-11-16-b63805376ad7",
       "date": "2026-11-16",
