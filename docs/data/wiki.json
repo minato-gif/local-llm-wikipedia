@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-18"
+    "last_updated": "2026-11-19"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -571,9 +571,471 @@
     "https://x.ai/news/grok-bot-1-0",
     "https://x.ai/news/grok-bot-accounting",
     "https://huggingface.co/mradermacher/gemma-4-26b-a4b-heretic-i1-GGUF",
-    "https://lmstudio.ai/changelog/bionic-v1.1.9"
+    "https://lmstudio.ai/changelog/bionic-v1.1.9",
+    "https://huggingface.co/Xylolabs/Qwen3.8-27B-GGUF",
+    "https://huggingface.co/drofn/SenseNova-Loop-9B-8GB-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-11-19-7afaa5764129",
+      "date": "2026-11-19",
+      "title": "Qwen3.8-27BのGGUF量子化モデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Xylolabs/Qwen3.8-27B-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Xylolabsは、Qwen/Qwen3.8-27Bをベースにした量子化モデル「Qwen3.8-27B-GGUF」をHugging Faceに公開しました。IQ4_XSやQ8_0など多様な量子化フォーマットが用意されており、ローカル環境での実行に対応しています。",
+      "impact": "27Bパラメータ規模のQwen最新モデルを手元で動かす選択肢が増え、llama.cpp等を利用したローカルでの推論検証が容易になります。",
+      "details": "ライセンスはApache-2.0です。公開されたGGUFにはIQ4_XS、Q5_K_M、Q8_0などが含まれており、推奨量子化はIQ4_XSとなっています。モデルファイルのサイズは28.62GiBで、実行にはシステムRAMやフルGPUオフロード時に34〜43GiB程度のメモリが見込まれます。コンテキスト長やKVキャッシュの消費量により必要なリソースは変動するため注意が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama-cpp",
+        "quantized",
+        "qwen38",
+        "text-generation",
+        "en",
+        "ko",
+        "arxiv:2505.09388"
+      ],
+      "model_meta": {
+        "model_id": "Xylolabs/Qwen3.8-27B-GGUF",
+        "author": "Xylolabs",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 1875,
+        "likes": 1,
+        "last_modified": "2026-11-19T03:34:01.000Z",
+        "quantizations": [
+          "Q8_0",
+          "F16",
+          "Q2_K",
+          "IQ3_M",
+          "Q3_K_M",
+          "IQ4_XS",
+          "Q5_K_M",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 927607008,
+            "files": [
+              "mmproj-Qwen3.8-27B-F16.gguf"
+            ],
+            "size": "884.6 MB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 10864592704,
+            "files": [
+              "Qwen3.8-27B-Q2_K.gguf"
+            ],
+            "size": "10.1 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 12768331584,
+            "files": [
+              "Qwen3.8-27B-IQ3_M.gguf"
+            ],
+            "size": "11.9 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 13500737344,
+            "files": [
+              "Qwen3.8-27B-Q3_K_M.gguf"
+            ],
+            "size": "12.6 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19535701824,
+            "files": [
+              "Qwen3.8-27B-Q5_K_M.gguf"
+            ],
+            "size": "18.2 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 22431000384,
+            "files": [
+              "Qwen3.8-27B-Q6_K.gguf"
+            ],
+            "size": "20.9 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 29676331936,
+            "files": [
+              "mmproj-Qwen3.8-27B-Q8_0.gguf",
+              "Qwen3.8-27B-Q8_0.gguf"
+            ],
+            "size": "27.6 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 30729489824,
+            "files": [
+              "Qwen3.8-27B-IQ4_XS-imat.gguf",
+              "Qwen3.8-27B-IQ4_XS.gguf"
+            ],
+            "size": "28.6 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 30729489824,
+            "files": [
+              "Qwen3.8-27B-IQ4_XS-imat.gguf",
+              "Qwen3.8-27B-IQ4_XS.gguf"
+            ],
+            "size": "28.6 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 19535701824,
+            "files": [
+              "Qwen3.8-27B-Q5_K_M.gguf"
+            ],
+            "size": "18.2 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 12768331584,
+            "files": [
+              "Qwen3.8-27B-IQ3_M.gguf"
+            ],
+            "size": "11.9 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 28.62,
+          "system_ram_min_gib": 35.0,
+          "system_ram_recommended_gib": 43.0,
+          "full_gpu_vram_rough_gib": 34.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 10,
+        "gguf_files": [
+          {
+            "name": "mmproj-Qwen3.8-27B-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 629247072,
+            "size": "600.1 MB"
+          },
+          {
+            "name": "mmproj-Qwen3.8-27B-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 927607008,
+            "size": "884.6 MB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 10864592704,
+            "size": "10.1 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 12768331584,
+            "size": "11.9 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 13500737344,
+            "size": "12.6 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-IQ4_XS-imat.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 15309039424,
+            "size": "14.3 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 15420450400,
+            "size": "14.4 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 19535701824,
+            "size": "18.2 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 22431000384,
+            "size": "20.9 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 29047084864,
+            "size": "27.1 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 600.1 MB〜27.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Xylolabs/Qwen3.8-27B-GGUF」が更新されています。確認時点の指標は downloads=1,875、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, F16, Q2_K, IQ3_M, Q3_K_M, IQ4_XS, Q5_K_M, Q6_K。GGUFファイルは 10 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 600.1 MB〜27.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-19-0f33e9d0bd0c",
+      "date": "2026-11-19",
+      "title": "8GB VRAM向けに最適化されたSenseNova-Loop-9BのGGUFモデルが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/drofn/SenseNova-Loop-9B-8GB-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "drofnは、8GBのVRAMを搭載したGPUでの長コンテキスト推論をターゲットにした「SenseNova-Loop-9B-8GB-GGUF」をHugging Faceに公開しました。テンソルグループごとにビット配分を調整した混合精度量子化が採用されています。",
+      "impact": "VRAMが限られたローカル環境において、パッチ適用済みのllama.cpp等を使用することで、より長いコンテキストでの効率的な推論が検証可能になります。",
+      "details": "ベースモデルはsensenova/SenseNova-Loop-9Bであり、ライセンスはApache-2.0です。テンソルごとの感度測定に基づいた混合精度量子化により、標準的なQ4_K_M量子化と比較してファイルサイズを抑えつつ、8GBカード上でより長いコンテキストの処理を目指した設計となっています。利用にはパッチ適用済みのllama.cppランタイムが必要となる場合があります。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "quantized",
+        "llama.cpp",
+        "sensenova-loop",
+        "looped-transformer",
+        "8gb-vram",
+        "imatrix",
+        "text-generation"
+      ],
+      "model_meta": {
+        "model_id": "drofn/SenseNova-Loop-9B-8GB-GGUF",
+        "author": "drofn",
+        "license": "apache-2.0",
+        "base_model": "sensenova/SenseNova-Loop-9B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "",
+        "downloads": 1471,
+        "likes": 1,
+        "last_modified": "2026-11-19T03:25:49.000Z",
+        "quantizations": [],
+        "quantization_options": [],
+        "quantization_recommendation": {},
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカードにLM Studioに関する記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカードにOllamaに関する記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "imatrix/SenseNova-Loop-9B.imatrix.gguf",
+            "quantization": "",
+            "size_bytes": 10307904,
+            "size": "9.8 MB"
+          },
+          {
+            "name": "SenseNova-Loop-9B-8GB-128K.gguf",
+            "quantization": "",
+            "size_bytes": 4977736128,
+            "size": "4.6 GB"
+          },
+          {
+            "name": "SenseNova-Loop-9B-8GB-100K.gguf",
+            "quantization": "",
+            "size_bytes": 5550588352,
+            "size": "5.2 GB"
+          },
+          {
+            "name": "SenseNova-Loop-9B-8GB-32K-HQ.gguf",
+            "quantization": "",
+            "size_bytes": 7032785344,
+            "size": "6.5 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 9.8 MB〜6.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「drofn/SenseNova-Loop-9B-8GB-GGUF」が更新されています。確認時点の指標は downloads=1,471、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは sensenova/SenseNova-Loop-9B。用途タグは text-generation。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 9.8 MB〜6.5 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-18-1543d9e3f001",
       "date": "2026-11-11",
