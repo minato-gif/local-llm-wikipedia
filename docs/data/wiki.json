@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-19"
+    "last_updated": "2026-11-20"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -573,9 +573,213 @@
     "https://huggingface.co/mradermacher/gemma-4-26b-a4b-heretic-i1-GGUF",
     "https://lmstudio.ai/changelog/bionic-v1.1.9",
     "https://huggingface.co/Xylolabs/Qwen3.8-27B-GGUF",
-    "https://huggingface.co/drofn/SenseNova-Loop-9B-8GB-GGUF"
+    "https://huggingface.co/drofn/SenseNova-Loop-9B-8GB-GGUF",
+    "https://huggingface.co/chienhsinlin/helioslm-hdl-e4b-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-11-20-b58cdcc7e3dd",
+      "date": "2026-11-20",
+      "title": "Bitstar Inc.、Verilog/SystemVerilog特化型GGUFモデル「HeliosLM HDL E4B」を公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/chienhsinlin/helioslm-hdl-e4b-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "Bitstar Inc.は、Google Gemma 4 E4B-itをベースにしたハードウェア記述言語特化型モデル「HeliosLM HDL E4B」のGGUF版を公開しました。llama.cppやLM Studioなどの互換ランタイムを利用して、ローカル環境で直接実行できます。",
+      "impact": "ハードウェア記述言語（Verilog/SystemVerilog）のコード生成や支援をローカル環境で行いたい開発者にとって、リソース要件の現実的な選択肢となります。",
+      "details": "本モデルはApache-2.0ライセンスで提供されており、Q4_K_MやQ8_0などの量子化ファイルが利用可能です。Q4_K_M量子化モデルのファイルサイズは約4.94 GiBであり、実行には最低8 GBのシステムRAMや約7.0 GiBのVRAM（概算）が推奨されます。コンテキスト長やKVキャッシュの仕様、ベースモデルの詳細な学習データについては元のモデルカードを参照してください。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "gemma4",
+        "verilog",
+        "systemverilog",
+        "hdl",
+        "llama.cpp",
+        "text-generation",
+        "license:apache-2.0"
+      ],
+      "model_meta": {
+        "model_id": "chienhsinlin/helioslm-hdl-e4b-GGUF",
+        "author": "chienhsinlin",
+        "license": "apache-2.0",
+        "base_model": "chienhsinlin/helioslm-hdl-e4b",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 363,
+        "likes": 0,
+        "last_modified": "2026-11-20T03:50:39.000Z",
+        "quantizations": [
+          "Q4_K_M",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5302269088,
+            "files": [
+              "helioslm-hdl-e4b-Q4_K_M.gguf"
+            ],
+            "size": "4.9 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 7972721824,
+            "files": [
+              "helioslm-hdl-e4b-Q8_0.gguf"
+            ],
+            "size": "7.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5302269088,
+            "files": [
+              "helioslm-hdl-e4b-Q4_K_M.gguf"
+            ],
+            "size": "4.9 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 7972721824,
+            "files": [
+              "helioslm-hdl-e4b-Q8_0.gguf"
+            ],
+            "size": "7.4 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5302269088,
+            "files": [
+              "helioslm-hdl-e4b-Q4_K_M.gguf"
+            ],
+            "size": "4.9 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 4.94,
+          "system_ram_min_gib": 8.0,
+          "system_ram_recommended_gib": 11.0,
+          "full_gpu_vram_rough_gib": 7.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "明示あり",
+            "basis": "モデルカードにLM Studioに関する記載があります。"
+          },
+          {
+            "name": "Ollama",
+            "status": "明示あり",
+            "basis": "モデルカードにOllamaに関する記載があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 2,
+        "gguf_files": [
+          {
+            "name": "helioslm-hdl-e4b-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 5302269088,
+            "size": "4.9 GB"
+          },
+          {
+            "name": "helioslm-hdl-e4b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 7972721824,
+            "size": "7.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 4.9 GB〜7.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「chienhsinlin/helioslm-hdl-e4b-GGUF」が更新されています。確認時点の指標は downloads=363、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは chienhsinlin/helioslm-hdl-e4b。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_K_M, Q8_0。GGUFファイルは 2 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 4.9 GB〜7.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-19-7afaa5764129",
       "date": "2026-11-19",
