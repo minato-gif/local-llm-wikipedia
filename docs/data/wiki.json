@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-20"
+    "last_updated": "2026-11-21"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -574,9 +574,76 @@
     "https://lmstudio.ai/changelog/bionic-v1.1.9",
     "https://huggingface.co/Xylolabs/Qwen3.8-27B-GGUF",
     "https://huggingface.co/drofn/SenseNova-Loop-9B-8GB-GGUF",
-    "https://huggingface.co/chienhsinlin/helioslm-hdl-e4b-GGUF"
+    "https://huggingface.co/chienhsinlin/helioslm-hdl-e4b-GGUF",
+    "https://openai.com/index/research-acceleration-jagged-frontier/",
+    "https://openai.com/index/introducing-medchembench/",
+    "https://www.anthropic.com/news/ipo-close"
   ],
   "entries": [
+    {
+      "id": "2026-11-21-8e2975176306",
+      "date": "2026-11-20",
+      "title": "OpenAI、AIによる研究の加速と再帰的自己改良の現状に関する報告を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、コーディングエージェントがAIの研究開発サイクルをどのように加速させているかについての内部測定結果を公表した。研究領域ごとの性能向上の不均一性や、人間の研究への関与のあり方について定量・定性的な分析を行っている。",
+      "impact": "AIシステム自体が将来の開発を加速させる「再帰的自己改良（RSI）」の指標を追跡・公開することの重要性を示し、今後のAI開発のガバナンスや安全性評価に影響を与える。",
+      "details": "本報告は、Septemberのブログ記事に続くもので、AIが研究ドメインにおいてどの程度寄与しているか、また人間がどのようにプロセスに関与し続けているかを評価している。OpenAIはフロンティアポリシーの枠組みに基づき、AIラボがRSIの指標を公開すべきだと主張している。API専用の内部測定に基づく報告であり、ローカル実行可能なオープンウェイトモデルの公開ではない。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "量子化"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-21-148ee75522cb",
+      "date": "2026-11-18",
+      "title": "OpenAI、医薬化学研究の推論能力を評価するベンチマーク「MedChemBench」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-medchembench/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "OpenAIは、AIモデルが分子構造の解釈、実験結果の推論、化合物の選択をどの程度正確に行えるかを評価する新しいベンチマーク「MedChemBench」を公開した。創薬初期段階における複雑なトレードオフの推論能力を測定する。",
+      "impact": "科学分野や専門性の高い医薬化学におけるAIの推論・問題解決能力を測るための新たな基準を提供する。",
+      "details": "MedChemBenchは、公開された研究論文から抽出された99の問題を用いて、分子構造の変化と実験データの関連付けや特性予測の能力をテストする。医薬化学におけるトレードオフを考慮した設計になっており、高推論設定の「GPT-6.2 Astra ea」などで評価されている。APIを通じた利用を前提としており、ローカル環境で直接動作するものではない。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-21-726baeee0bd7",
+      "date": "2026-11-20",
+      "title": "Anthropic、新規株式公開（IPO）の完了と主要テクノロジー企業からのプライベートプレースメントを発表",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/ipo-close",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicは、クラスA普通株式の新規株式公開（IPO）および、主要パートナー企業を対象とした総額約26億ドルの並行プライベートプレースメントの完了を発表した。株式はNasdaq Global Select Marketでティッカーシンボル「ANT」として取引が開始されている。",
+      "impact": "大手AI開発元企業の財務基盤と業界における資本提携の枠組みに大きな変化をもたらす。",
+      "details": "公開価格は1株あたり83.00ドルで、総計1,127,000,000株のクラスA普通株式を発行した。また、AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMCといった主要テクノロジー企業が並行してクラスN普通株式の非公開購入を行った。企業の資金調達および経営体制に関する発表であり、直接的なモデルのオープンソース化やローカルLLMの機能追加に関するものではない。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-20-b58cdcc7e3dd",
       "date": "2026-11-20",
