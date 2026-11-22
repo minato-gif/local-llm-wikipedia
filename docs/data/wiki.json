@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-21"
+    "last_updated": "2026-11-22"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -577,9 +577,888 @@
     "https://huggingface.co/chienhsinlin/helioslm-hdl-e4b-GGUF",
     "https://openai.com/index/research-acceleration-jagged-frontier/",
     "https://openai.com/index/introducing-medchembench/",
-    "https://www.anthropic.com/news/ipo-close"
+    "https://www.anthropic.com/news/ipo-close",
+    "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+    "https://huggingface.co/Xylolabs/Hy4-flash-GGUF",
+    "https://huggingface.co/Xylolabs/clairic-flash-GGUF",
+    "https://www.anthropic.com/news/anthropic-prices-initial-public-offering"
   ],
   "entries": [
+    {
+      "id": "2026-11-22-5cfd91ff2556",
+      "date": "2026-11-17",
+      "title": "OpenAI、新型フロンティアモデル「GPT-6.2 Astra」および「GPT-6.2 Sol」を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、複雑な専門作業向けの「GPT-6.2 Astra」と日常業務向けの「GPT-6.2 Sol」を発表しました。両モデルは、ChatGPT Work、Codex、APIを通じて、より少ない出力トークンで高度な成果物と効率的な処理を提供します。",
+      "impact": "複雑なプロフェッショナル作業や科学研究における品質基準を引き上げ、コストパフォーマンスを大幅に改善する大規模言語モデルのアップデートです。",
+      "details": "GPT-6.2 Astraはスプレッドシートやドキュメント作成、クリーンなコード生成などで優れた性能を発揮し、長期的な専門ワークフローを評価するベンチマークで高いスコアを記録しています。APIやクラウド経由での提供が主であり、ローカル環境で直接実行可能なオープンウェイトモデルではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-22-566102a58243",
+      "date": "2026-11-18",
+      "title": "OpenAI、Codexを活用した自動パフォーマンス改善システム「Performance Factory」を解説",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "OpenAIは、ChatGPTの高速性を維持するために開発した自動化システム「Performance Factory」の仕組みを公開しました。Codexを活用したワークフローにより、パフォーマンス低下の検出から修正案の提示までを自動で行います。",
+      "impact": "大規模なエージェント開発環境において、パフォーマンス維持のプロセスを自動化するためのインフラストラクチャに関する実践的な知見を提供します。",
+      "details": "回帰テストのアラート発生時にCodexエージェントが問題の調査と修正案の作成を行い、エンジニアがレビューする仕組みをとっています。同社のクラウド基盤における開発効率化の取り組みであり、直接的なモデルウェイトの公開やローカル実行用ツールではありません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-22-2abc6ec21a7a",
+      "date": "2026-11-22",
+      "title": "Hugging Face：Xylolabs/Hy4-flash-GGUFが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Xylolabs/Hy4-flash-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "TencentのHy4-flashをベースとしたGGUF形式の量子化モデル「Xylolabs/Hy4-flash-GGUF」がHugging Face上で更新されました。複数の量子化バリエーションが提供されています。",
+      "impact": "マルチモーダル対応の基礎モデルをローカル環境のllama.cppなどで実行したいユーザーにとって、量子化済みモデルの選択肢が増えます。",
+      "details": "ベースモデルはtencent/Hy4-flashであり、ライセンスはother（tencent-hy-license）となっています。ファイルサイズが約281GBと非常に大きく、システムメモリやVRAMの要件が高いため、利用時はハードウェア環境の確認が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama-cpp",
+        "quantized",
+        "hy4-flash",
+        "moe",
+        "multimodal",
+        "image-text-to-text",
+        "en"
+      ],
+      "model_meta": {
+        "model_id": "Xylolabs/Hy4-flash-GGUF",
+        "author": "Xylolabs",
+        "license": "other",
+        "base_model": "tencent/Hy4-flash",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 11327,
+        "likes": 6,
+        "last_modified": "2026-11-22T02:53:51.000Z",
+        "quantizations": [
+          "Q8_0",
+          "BF16",
+          "IQ2_XXS",
+          "IQ2_M",
+          "IQ3_M",
+          "IQ3_XXS",
+          "IQ4_XS",
+          "IQ4_NL",
+          "Q4_K_M",
+          "Q4_K_S",
+          "Q5_K_M",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 1044397792,
+            "files": [
+              "mmproj-Hy4-flash-BF16.gguf"
+            ],
+            "size": "996.0 MB"
+          },
+          {
+            "quantization": "IQ2_XXS",
+            "size_bytes": 83069931872,
+            "files": [
+              "Hy4-flash-IQ2_XXS-IQ2_S-EMXFP4-00002-of-00002.gguf",
+              "Hy4-flash-IQ2_XXS-IQ2_S-EMXFP4-00001-of-00002.gguf"
+            ],
+            "size": "77.4 GB"
+          },
+          {
+            "quantization": "IQ2_M",
+            "size_bytes": 91901346688,
+            "files": [
+              "Hy4-flash-IQ2_M-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-IQ2_M-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "85.6 GB"
+          },
+          {
+            "quantization": "IQ3_XXS",
+            "size_bytes": 100526932864,
+            "files": [
+              "Hy4-flash-IQ3_XXS-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-IQ3_XXS-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "93.6 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 108133303168,
+            "files": [
+              "Hy4-flash-IQ3_M-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-IQ3_M-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "100.7 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 122581631872,
+            "files": [
+              "Hy4-flash-IQ4_XS-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-IQ4_XS-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "114.2 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 155548975648,
+            "files": [
+              "Hy4-flash-Q4_K_S-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_S-00001-of-00002.gguf"
+            ],
+            "size": "144.9 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 176726016544,
+            "files": [
+              "Hy4-flash-Q5_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q5_K_M-00001-of-00002.gguf"
+            ],
+            "size": "164.6 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 193250525728,
+            "files": [
+              "Hy4-flash-Q6_K-00002-of-00002.gguf",
+              "Hy4-flash-Q6_K-00001-of-00002.gguf"
+            ],
+            "size": "180.0 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 229643747200,
+            "files": [
+              "mmproj-Hy4-flash-Q8_0.gguf",
+              "Hy4-flash-Q8_0-00002-of-00002.gguf",
+              "Hy4-flash-Q8_0-00001-of-00002.gguf"
+            ],
+            "size": "213.9 GB"
+          },
+          {
+            "quantization": "IQ4_NL",
+            "size_bytes": 247673554688,
+            "files": [
+              "Hy4-flash-Q3_K_M-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-Q3_K_M-EIQ4_NL-00001-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "230.7 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 302546882144,
+            "files": [
+              "Hy4-flash-Q4_K_M-EQ5_0-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-EQ5_0-00001-of-00002.gguf"
+            ],
+            "size": "281.8 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 302546882144,
+            "files": [
+              "Hy4-flash-Q4_K_M-EQ5_0-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-EQ5_0-00001-of-00002.gguf"
+            ],
+            "size": "281.8 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 176726016544,
+            "files": [
+              "Hy4-flash-Q5_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q5_K_M-00001-of-00002.gguf"
+            ],
+            "size": "164.6 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 108133303168,
+            "files": [
+              "Hy4-flash-IQ3_M-EIQ4_NL-00002-of-00002.gguf",
+              "Hy4-flash-IQ3_M-EIQ4_NL-00001-of-00002.gguf"
+            ],
+            "size": "100.7 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 281.77,
+          "system_ram_min_gib": 326.5,
+          "system_ram_recommended_gib": 384.5,
+          "full_gpu_vram_rough_gib": 325.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 31,
+        "gguf_files": [
+          {
+            "name": "mmproj-Hy4-flash-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 784523840,
+            "size": "748.2 MB"
+          },
+          {
+            "name": "Hy4-flash.imatrix.gguf",
+            "quantization": "",
+            "size_bytes": 809740768,
+            "size": "772.2 MB"
+          },
+          {
+            "name": "mmproj-Hy4-flash-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 1044397792,
+            "size": "996.0 MB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_XXS-IQ2_S-EMXFP4-00002-of-00002.gguf",
+            "quantization": "IQ2_XXS",
+            "size_bytes": 33660327424,
+            "size": "31.3 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_M-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ2_M",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ3_M-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ3_XXS-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ4_XS-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-Q3_K_M-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-EIQ4_NL-00002-of-00002.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 35640346656,
+            "size": "33.2 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-EQ5_0-00002-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 43560423648,
+            "size": "40.6 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_XXS-IQ2_S-EMXFP4-00001-of-00002.gguf",
+            "quantization": "IQ2_XXS",
+            "size_bytes": 49409604448,
+            "size": "46.0 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_M-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ2_M",
+            "size_bytes": 56261000032,
+            "size": "52.4 GB"
+          },
+          {
+            "name": "Hy4-flash-NVFP4-00002-of-00002.gguf",
+            "quantization": "",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_S-00002-of-00002.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q5_K_M-00002-of-00002.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q6_K-00002-of-00002.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q8_0-00002-of-00002.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ3_XXS-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ3_XXS",
+            "size_bytes": 64886586208,
+            "size": "60.4 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ3_M-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 72492956512,
+            "size": "67.5 GB"
+          },
+          {
+            "name": "Hy4-flash-Q3_K_M-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 78579940192,
+            "size": "73.2 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ4_XS-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 86941285216,
+            "size": "81.0 GB"
+          },
+          {
+            "name": "Hy4-flash-NVFP4-00001-of-00002.gguf",
+            "quantization": "",
+            "size_bytes": 91584379520,
+            "size": "85.3 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_S-00001-of-00002.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 92188359520,
+            "size": "85.9 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-00001-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 97812921184,
+            "size": "91.1 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-EIQ4_NL-00001-of-00002.gguf",
+            "quantization": "IQ4_NL",
+            "size_bytes": 97812921184,
+            "size": "91.1 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-EQ5_0-00001-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 97812921184,
+            "size": "91.1 GB"
+          },
+          {
+            "name": "Hy4-flash-Q5_K_M-00001-of-00002.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 113365400416,
+            "size": "105.6 GB"
+          },
+          {
+            "name": "Hy4-flash-Q6_K-00001-of-00002.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 129889909600,
+            "size": "121.0 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 748.2 MB〜154.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Xylolabs/Hy4-flash-GGUF」が更新されています。確認時点の指標は downloads=11,327、likes=6 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは tencent/Hy4-flash。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, BF16, IQ2_XXS, IQ2_M, IQ3_M, IQ3_XXS, IQ4_XS, IQ4_NL, Q4_K_M, Q4_K_S, Q5_K_M, Q6_K。GGUFファイルは 31 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 748.2 MB〜154.1 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-22-dbef926de6d3",
+      "date": "2026-11-22",
+      "title": "Hugging Face：Xylolabs/clairic-flash-GGUFが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Xylolabs/clairic-flash-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "Cloudflareのclairic-flashをベースとしたGGUF形式の量子化モデル「Xylolabs/clairic-flash-GGUF」がHugging Face上で更新されました。Apache-2.0ライセンスで利用可能です。",
+      "impact": "情報抽出や構造化出力、マルチモーダル用途で利用されるclairic-flashをローカル環境で軽量に実行するための量子化モデルを提供します。",
+      "details": "ベースモデルはCloudflare/clairic-flashで、Q4_K_Mなどの量子化版が含まれています。モデルファイルサイズは約5.3GB、推奨システムメモリは11.5GB以上と比較的扱いやすい規模ですが、実行環境やコンテキスト長に応じたRAM・VRAMの確保が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama-cpp",
+        "quantized",
+        "clairic",
+        "qwen3_5",
+        "multimodal",
+        "structured-output",
+        "information-extraction"
+      ],
+      "model_meta": {
+        "model_id": "Xylolabs/clairic-flash-GGUF",
+        "author": "Xylolabs",
+        "license": "apache-2.0",
+        "base_model": "Cloudflare/clairic-flash",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 2309,
+        "likes": 0,
+        "last_modified": "2026-11-22T02:47:08.000Z",
+        "quantizations": [
+          "BF16",
+          "Q2_K",
+          "IQ3_M",
+          "Q3_K_M",
+          "IQ4_XS",
+          "Q4_K_S",
+          "Q4_K_M",
+          "Q5_K_M",
+          "Q6_K",
+          "Q8_0"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 921704960,
+            "files": [
+              "mmproj-clairic-flash-BF16.gguf"
+            ],
+            "size": "879.0 MB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 3932134048,
+            "files": [
+              "clairic-flash-Q2_K.gguf"
+            ],
+            "size": "3.7 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 4478737056,
+            "files": [
+              "clairic-flash-IQ3_M.gguf"
+            ],
+            "size": "4.2 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 4691073696,
+            "files": [
+              "clairic-flash-Q3_K_M.gguf"
+            ],
+            "size": "4.4 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 5268593312,
+            "files": [
+              "clairic-flash-IQ4_XS.gguf"
+            ],
+            "size": "4.9 GB"
+          },
+          {
+            "quantization": "Q4_K_S",
+            "size_bytes": 5366962848,
+            "files": [
+              "clairic-flash-Q4_K_S.gguf"
+            ],
+            "size": "5.0 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5689940640,
+            "files": [
+              "clairic-flash-Q4_K_M.gguf"
+            ],
+            "size": "5.3 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 6502963872,
+            "files": [
+              "clairic-flash-Q5_K_M.gguf"
+            ],
+            "size": "6.1 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 7366679200,
+            "files": [
+              "clairic-flash-Q6_K.gguf"
+            ],
+            "size": "6.9 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 9533397664,
+            "files": [
+              "clairic-flash-Q8_0.gguf"
+            ],
+            "size": "8.9 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 5689940640,
+            "files": [
+              "clairic-flash-Q4_K_M.gguf"
+            ],
+            "size": "5.3 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 6502963872,
+            "files": [
+              "clairic-flash-Q5_K_M.gguf"
+            ],
+            "size": "6.1 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 4478737056,
+            "files": [
+              "clairic-flash-IQ3_M.gguf"
+            ],
+            "size": "4.2 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 5.3,
+          "system_ram_min_gib": 8.5,
+          "system_ram_recommended_gib": 11.5,
+          "full_gpu_vram_rough_gib": 7.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 11,
+        "gguf_files": [
+          {
+            "name": "clairic-flash.imatrix.gguf",
+            "quantization": "",
+            "size_bytes": 8752640,
+            "size": "8.3 MB"
+          },
+          {
+            "name": "mmproj-clairic-flash-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 921704960,
+            "size": "879.0 MB"
+          },
+          {
+            "name": "clairic-flash-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 3932134048,
+            "size": "3.7 GB"
+          },
+          {
+            "name": "clairic-flash-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 4478737056,
+            "size": "4.2 GB"
+          },
+          {
+            "name": "clairic-flash-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 4691073696,
+            "size": "4.4 GB"
+          },
+          {
+            "name": "clairic-flash-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 5268593312,
+            "size": "4.9 GB"
+          },
+          {
+            "name": "clairic-flash-Q4_K_S.gguf",
+            "quantization": "Q4_K_S",
+            "size_bytes": 5366962848,
+            "size": "5.0 GB"
+          },
+          {
+            "name": "clairic-flash-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 5689940640,
+            "size": "5.3 GB"
+          },
+          {
+            "name": "clairic-flash-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 6502963872,
+            "size": "6.1 GB"
+          },
+          {
+            "name": "clairic-flash-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 7366679200,
+            "size": "6.9 GB"
+          },
+          {
+            "name": "clairic-flash-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 9533397664,
+            "size": "8.9 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 8.3 MB〜8.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Xylolabs/clairic-flash-GGUF」が更新されています。確認時点の指標は downloads=2,309、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Cloudflare/clairic-flash。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は BF16, Q2_K, IQ3_M, Q3_K_M, IQ4_XS, Q4_K_S, Q4_K_M, Q5_K_M, Q6_K, Q8_0。GGUFファイルは 11 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 8.3 MB〜8.9 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-22-4f08287c3e13",
+      "date": "2026-11-18",
+      "title": "Anthropic、新規株式公開（IPO）の価格を決定",
+      "source": "Anthropic Newsroom",
+      "source_url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Anthropicは、クラスA普通株式の新規株式公開における発行価格を1株あたり83.00ドルに設定したと発表しました。株式はNasdaq Global Select Marketでの取引開始が予定されています。",
+      "impact": "主要なAI開発企業による上場であり、業界全体の資金調達やビジネス動向に大きな影響を与えるニュースです。",
+      "details": "総額や発行株式数、アンダーライターによる追加購入オプションの設定などが含まれています。企業としての財務や市場動向に関する発表であり、具体的なモデルの仕様変更やローカルLLMの技術的なアップデートは含まれません。",
+      "tags": [
+        "Anthropic",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-21-8e2975176306",
       "date": "2026-11-20",
