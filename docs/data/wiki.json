@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-22"
+    "last_updated": "2026-11-23"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -582,9 +582,303 @@
     "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
     "https://huggingface.co/Xylolabs/Hy4-flash-GGUF",
     "https://huggingface.co/Xylolabs/clairic-flash-GGUF",
-    "https://www.anthropic.com/news/anthropic-prices-initial-public-offering"
+    "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+    "https://github.com/LostRuins/koboldcpp/releases/tag/v1.125.1",
+    "https://huggingface.co/AngelSlim/Hy4-flash-GGUF"
   ],
   "entries": [
+    {
+      "id": "2026-11-23-ac0436bdaac7",
+      "date": "2026-11-22",
+      "title": "KoboldCpp v1.125.1がリリース、新規テキスト生成モデルや音声モデルに対応",
+      "source": "GitHub Releases / LostRuins/koboldcpp",
+      "source_url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.125.1",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "KoboldCppのバージョン1.125.1が公開され、Inkling 2 MiniやXing 4.0などの新しいテキスト生成モデルへの対応が追加されました。さらに、アップストリームのllama.cppにおけるTTSモデルやQwen3ASR、SenseVoice文字起こし機能が新たにサポートされています。",
+      "impact": "ローカルLLM環境における対応モデルの選択肢が広がり、音声合成（TTS）や音声認識といったマルチモーダル機能の利用が容易になります。",
+      "details": "本バージョンでは、Inkling 2 MiniやXing 4.0 29BA4Bなどの最新モデルのサポートが追加されました。CUDAでの一部オフロード時に出力が破損する既知の問題に対する回避策として、--no-op-offload引数の使用が推奨されています。また、KokoroなどのTTSモデルや、音声認識用のQwen3ASRおよびSenseVoiceの読み込みに対応しており、ローカルでの音声処理機能の検証が可能になります。",
+      "tags": [
+        "KoboldCpp",
+        "GitHub Release",
+        "GGUF",
+        "CUDA",
+        "量子化"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "量子化",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-23-843d1d1a69ad",
+      "date": "2026-11-23",
+      "title": "テンセントのHy4-flashに対応した量子化モデル「AngelSlim/Hy4-flash-GGUF」が公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/AngelSlim/Hy4-flash-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "テンセントの「Hy4-flash」をベースとした量子化済みモデル「AngelSlim/Hy4-flash-GGUF」がHugging Faceで公開されました。BF16やQ4_K_Mなど複数の量子化フォーマットが提供されています。",
+      "impact": "大規模なモデルを効率的に運用するための量子化バリエーションが提供され、ローカル環境での実行検証やメモリ要件の検討が可能になります。",
+      "details": "公開されたモデルファイルでは、Q4_K_M量子化におけるファイルサイズが約156.79GiBとなっており、動作には182.5GiB以上のシステムRAM、および181.5GiB程度のVRAMが推奨されています。必要メモリ容量はコンテキスト長やKVキャッシュの構成によって変動するため、実行環境に応じたリソースの確認が必要です。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "zh",
+        "en",
+        "arxiv:2602.21233",
+        "base_model:tencent/Hy4-flash",
+        "endpoints_compatible",
+        "region:us",
+        "conversational"
+      ],
+      "model_meta": {
+        "model_id": "AngelSlim/Hy4-flash-GGUF",
+        "author": "AngelSlim",
+        "license": "",
+        "base_model": "tencent/Hy4-flash",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "",
+        "library_name": "",
+        "downloads": 109018,
+        "likes": 207,
+        "last_modified": "2026-11-23T03:35:08.000Z",
+        "quantizations": [
+          "BF16",
+          "IQ2_AH",
+          "Q3_K",
+          "Q4_K_M"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 1044397440,
+            "files": [
+              "mmproj-Hy4-flash-bf16.gguf"
+            ],
+            "size": "996.0 MB"
+          },
+          {
+            "quantization": "IQ2_AH",
+            "size_bytes": 134996272896,
+            "files": [
+              "Hy4-flash-IQ2_AH-00002-of-00002.gguf",
+              "Hy4-flash-IQ2_AH-00001-of-00002.gguf"
+            ],
+            "size": "125.7 GB"
+          },
+          {
+            "quantization": "Q3_K",
+            "size_bytes": 155371005632,
+            "files": [
+              "Hy4-flash-Q3_K-00002-of-00002.gguf",
+              "Hy4-flash-Q3_K-00001-of-00002.gguf"
+            ],
+            "size": "144.7 GB"
+          },
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 168347133632,
+            "files": [
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf"
+            ],
+            "size": "156.8 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 168347133632,
+            "files": [
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf"
+            ],
+            "size": "156.8 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 168347133632,
+            "files": [
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf"
+            ],
+            "size": "156.8 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 168347133632,
+            "files": [
+              "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+              "Hy4-flash-Q4_K_M-00001-of-00002.gguf"
+            ],
+            "size": "156.8 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 156.79,
+          "system_ram_min_gib": 182.5,
+          "system_ram_recommended_gib": 216.0,
+          "full_gpu_vram_rough_gib": 181.5,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 9,
+        "gguf_files": [
+          {
+            "name": "mmproj-Hy4-flash-bf16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 1044397440,
+            "size": "996.0 MB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_AH-00002-of-00002.gguf",
+            "quantization": "IQ2_AH",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q3_K-00002-of-00002.gguf",
+            "quantization": "Q3_K",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-00002-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 63360616128,
+            "size": "59.0 GB"
+          },
+          {
+            "name": "Hy4-flash-IQ2_AH-00001-of-00002.gguf",
+            "quantization": "IQ2_AH",
+            "size_bytes": 71635656768,
+            "size": "66.7 GB"
+          },
+          {
+            "name": "Hy4-flash-Q3_K-00001-of-00002.gguf",
+            "quantization": "Q3_K",
+            "size_bytes": 92010389504,
+            "size": "85.7 GB"
+          },
+          {
+            "name": "Hy4-flash-Q4_K_M-00001-of-00002.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 104986517504,
+            "size": "97.8 GB"
+          },
+          {
+            "name": "Hy4-flash-SPARK-4Bit-Fast.gguf",
+            "quantization": "",
+            "size_bytes": 159611554144,
+            "size": "148.6 GB"
+          },
+          {
+            "name": "Hy4-flash-SPARK-4Bit.gguf",
+            "quantization": "",
+            "size_bytes": 162509777248,
+            "size": "151.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 996.0 MB〜151.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「AngelSlim/Hy4-flash-GGUF」が更新されています。確認時点の指標は downloads=109,018、likes=207 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは tencent/Hy4-flash。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は BF16, IQ2_AH, Q3_K, Q4_K_M。GGUFファイルは 9 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 996.0 MB〜151.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "ライセンス情報をAPIから確定できませんでした。コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-22-5cfd91ff2556",
       "date": "2026-11-17",
