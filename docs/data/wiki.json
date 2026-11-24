@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-23"
+    "last_updated": "2026-11-24"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -584,9 +584,437 @@
     "https://huggingface.co/Xylolabs/clairic-flash-GGUF",
     "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
     "https://github.com/LostRuins/koboldcpp/releases/tag/v1.125.1",
-    "https://huggingface.co/AngelSlim/Hy4-flash-GGUF"
+    "https://huggingface.co/AngelSlim/Hy4-flash-GGUF",
+    "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+    "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.18-rc0",
+    "https://huggingface.co/kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF",
+    "https://huggingface.co/WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090",
+    "https://openai.com/index/perplexity-and-intelligence/"
   ],
   "entries": [
+    {
+      "id": "2026-11-24-3841ff4b1eac",
+      "date": "2026-11-24",
+      "title": "Finding faster quantum algorithms with agents and formal verification",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "Google DeepMind Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "How using agent teams and formal verification can improve quantum algorithms for modelling fusion energy, chemistry and enzymes.",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表",
+        "量子化"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-24-592649ea5a64",
+      "date": "2026-11-17",
+      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "The collaboration will make Le Figaro’s journalism discoverable in ChatGPT using summaries and excerpts, including links to underlying stories. Le Groupe Figaro and OpenAI announced a strategic partnership ⁠ (opens in a new window) today to help more people discover and engage with Le Figaro’s journalism. The partnership covers current reporting and archive content from Le Figaro and associated publications, spanning news, business, culture and lifestyle. These articles will be discoverable using summaries and excerpts, including links to underlying stories. Le Figaro will retain full editorial independence and control over its journalism. The partnership builds on OpenAI’s work with news organisations around the world to improve the discovery of reliable information, create responsible applications of AI for publishers, and develop new ways for audiences to engage with original reporti…",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-24-10c56dfeaef4",
+      "date": "2026-11-24",
+      "title": "Ollama: v0.40.18",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.18-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ollama/ollamaでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## What's Changed * mlx: fuse Inkling residual mixing on Metal by @dhiltgen in https://github.com/ollama/ollama/pull/19808 * mlxrunner: share tensor helpers and model setup across architectures by @jaingaurav in https://github.com/ollama/ollama/pull/19805 * llama.cpp: version bump b12651 + remove jetpack5 support by @pdevine in https://github.com/ollama/ollama/pull/19865 * inkling2: faster Metal decode, prefill and draft rounds by @dhiltgen in https://github.com/ollama/ollama/pull/19843 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.17...v0.40.18-rc0",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Metal"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-24-4e18fe13865a",
+      "date": "2026-11-24",
+      "title": "Hugging Face: kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF license=apache-2.0 base_model=Qwen/Qwen3.8-27B architecture=不明 context_length=不明 downloads=223 likes=5 quantizations=BF16, Q4_0, Q8_0, Q8_0_ROCMFPX_AGENT recommended_quantization=Q4_0 memory_estimate={\"basis_quantization\": \"Q4_0\", \"model_file_size_gib\": 1.56, \"system_ram_min_gib\": 4.0, \"system_ram_recommended_gib\": 6.5, \"full_gpu_vram_rough_gib\": 3.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 base_model: Qwen/Qwen3.8-27B base_model_relation: quantized tags: [gguf, llama.cpp, rocm, gfx1151, strix-halo, amd, ryzen-ai-max-395, ai-max-395, rocmfpx, moe, tool-calling, agent] language: [en] pipeline_tag: text-generation --- > ### ⚠️ STOCK `llama.cpp` WILL NOT LOAD THIS MODEL > `Q8_0_ROCMFPX_AGENT` is a **ROCmFPX** quant type — it exists only in > [`charlie…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama.cpp",
+        "rocm",
+        "gfx1151",
+        "strix-halo",
+        "amd",
+        "ryzen-ai-max-395",
+        "ai-max-395"
+      ],
+      "model_meta": {
+        "model_id": "kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF",
+        "author": "kingjones777",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "",
+        "downloads": 223,
+        "likes": 5,
+        "last_modified": "2026-11-24T06:46:02.000Z",
+        "quantizations": [
+          "BF16",
+          "Q4_0",
+          "Q8_0",
+          "Q8_0_ROCMFPX_AGENT"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "BF16",
+            "size_bytes": 931145888,
+            "files": [
+              "mmproj-Qwen3.8-27B-BF16.gguf"
+            ],
+            "size": "888.0 MB"
+          },
+          {
+            "quantization": "Q4_0",
+            "size_bytes": 1680271648,
+            "files": [
+              "mtp-Qwen3.8-27B-Q4_0.gguf"
+            ],
+            "size": "1.6 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 3164006688,
+            "files": [
+              "mtp-Qwen3.8-27B-Q8_0.gguf"
+            ],
+            "size": "2.9 GB"
+          },
+          {
+            "quantization": "Q8_0_ROCMFPX_AGENT",
+            "size_bytes": 28214425952,
+            "files": [
+              "Qwen3.8-27B-Q8_0_ROCMFPX_AGENT.gguf"
+            ],
+            "size": "26.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_0",
+            "size_bytes": 1680271648,
+            "files": [
+              "mtp-Qwen3.8-27B-Q4_0.gguf"
+            ],
+            "size": "1.6 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q8_0",
+            "size_bytes": 3164006688,
+            "files": [
+              "mtp-Qwen3.8-27B-Q8_0.gguf"
+            ],
+            "size": "2.9 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_0",
+          "model_file_size_gib": 1.56,
+          "system_ram_min_gib": 4.0,
+          "system_ram_recommended_gib": 6.5,
+          "full_gpu_vram_rough_gib": 3.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "高",
+            "basis": "Tool/Function CallingまたはAgent系の記載があります。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "mmproj-Qwen3.8-27B-BF16.gguf",
+            "quantization": "BF16",
+            "size_bytes": 931145888,
+            "size": "888.0 MB"
+          },
+          {
+            "name": "mtp-Qwen3.8-27B-Q4_0.gguf",
+            "quantization": "Q4_0",
+            "size_bytes": 1680271648,
+            "size": "1.6 GB"
+          },
+          {
+            "name": "mtp-Qwen3.8-27B-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 3164006688,
+            "size": "2.9 GB"
+          },
+          {
+            "name": "Qwen3.8-27B-Q8_0_ROCMFPX_AGENT.gguf",
+            "quantization": "Q8_0_ROCMFPX_AGENT",
+            "size_bytes": 28214425952,
+            "size": "26.3 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 888.0 MB〜26.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF」が更新されています。確認時点の指標は downloads=223、likes=5 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は BF16, Q4_0, Q8_0, Q8_0_ROCMFPX_AGENT。GGUFファイルは 4 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 888.0 MB〜26.3 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-24-80f8127b9780",
+      "date": "2026-11-23",
+      "title": "Hugging Face: WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090 license=apache-2.0 base_model=prism-ml/Ternary-Bonsai-2-27B-gguf architecture=不明 context_length=不明 downloads=1,603 likes=1 quantizations=不明 model_card=--- library_name: ninfer pipeline_tag: image-text-to-text inference: false license: apache-2.0 base_model: prism-ml/Ternary-Bonsai-2-27B-gguf base_model_relation: quantized tags: - ninfer - qwen3.8 - ternary - bonsai - multimodal - conversational - cuda - rtx-3090 --- # Ternary Bonsai 2 27B for NInfer on the RTX 3090 > **Maintained at [ashalliants/ninfer-3090](https://github.com/ashalliants/ninfer-3090)**: the engine, converter and release builds these artifacts are made and tested with. Releases, issues and updates live there, and a star helps others find it. ![Ternary Bonsai 2 27B on one RTX 3090: half the weights, nearly twice the speed](assets/bonsai2-27b-speed.svg) This model card is…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "ninfer",
+        "qwen3.8",
+        "ternary",
+        "bonsai",
+        "multimodal",
+        "conversational",
+        "cuda",
+        "rtx-3090"
+      ],
+      "model_meta": {
+        "model_id": "WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090",
+        "author": "WarlaxZ",
+        "license": "apache-2.0",
+        "base_model": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "ninfer",
+        "downloads": 1603,
+        "likes": 1,
+        "last_modified": "2026-11-23T14:08:43.000Z",
+        "quantizations": [],
+        "quantization_options": [],
+        "quantization_recommendation": {},
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "Transformers",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグ内に関連記載があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 0,
+        "gguf_files": [],
+        "hardware_hint": "GGUF容量をAPIから確認できませんでした。対象ファイルの容量とランタイム側のメモリ見積もりを確認してください。",
+        "runtime_hint": ""
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090」が更新されています。確認時点の指標は downloads=1,603、likes=1 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは prism-ml/Ternary-Bonsai-2-27B-gguf。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "GGUF容量をAPIから確認できませんでした。対象ファイルの容量とランタイム側のメモリ見積もりを確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-24-e11f2baf816d",
+      "date": "2026-11-20",
+      "title": "Perplexity and Intelligence",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/perplexity-and-intelligence/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAI Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "By Jakub Pachocki, Chief Scientist at OpenAI From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently ⁠ (opens in a new window) , predictor) on a very large corpus of data. 1 I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at Ope…",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Context"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-11-23-ac0436bdaac7",
       "date": "2026-11-22",
