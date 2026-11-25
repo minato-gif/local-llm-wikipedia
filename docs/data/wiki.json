@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-24"
+    "last_updated": "2026-11-25"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -590,9 +590,206 @@
     "https://github.com/ollama/ollama/releases/tag/v0.40.18-rc0",
     "https://huggingface.co/kingjones777/Qwen3.8-27B-ROCmFPX-Q8_0-AGENT-GGUF",
     "https://huggingface.co/WarlaxZ/Ternary-Bonsai-2-27B-NInfer-3090",
-    "https://openai.com/index/perplexity-and-intelligence/"
+    "https://openai.com/index/perplexity-and-intelligence/",
+    "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+    "https://huggingface.co/groxaxo/Qwen3.8-27B-pi-adapted-Unsloth-layout-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.18"
   ],
   "entries": [
+    {
+      "id": "2026-11-25-43f9128aef7c",
+      "date": "2026-11-24",
+      "title": "OpenAI、GPT-6モデルによる固有のタンパク質設計能力を発表",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+      "category": "新技術・業界動向",
+      "priority": "高",
+      "summary": "OpenAIは、専門の生物学モデルに依存せず、推論とコードのみで新しいタンパク質の構造や配列を設計できる「GPT-6」ファミリーを発表しました。実験では、5つのターゲットに対して結合の証拠が確認されています。",
+      "impact": "数学、物理学、化学、生物学の知識を統合した高度な推論能力により、専門特化型モデルを使わない汎用的な生体分子設計への道を開くものです。",
+      "details": "GPT-6ファミリーは、専門の生物学モデルを呼び出すことなく、推論とコード生成によって新規タンパク質の形状や化学的配列の構築が可能であることを示しました。内部の実験モデルは多くのタスクで専門モデルと同等以上を発揮し、Onavaとの実験では5つの標的に対する結合が確認されました。なお、本発表はクラウドベースのAPIモデルに関するものであり、現時点でローカル実行可能なモデルウェイトの公開は含まれていません。",
+      "tags": [
+        "OpenAI",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-25-46307ada03ad",
+      "date": "2026-11-25",
+      "title": "Qwen3.8-27Bのpiアダプター適用済みUnslothレイアウトGGUFが公開",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/groxaxo/Qwen3.8-27B-pi-adapted-Unsloth-layout-GGUF",
+      "category": "モデル",
+      "priority": "中",
+      "summary": "groxaxo氏により、Qwen3.8-27Bのpiアダプター適用モデルをUnslothのテンソルレイアウトで独自に量子化したGGUFファイルが公開されました。公式リリースではありませんが、単一GPUでの動作確認が行われています。",
+      "impact": "最新のQwen3.8ベースモデルにおいて、Unslothの量子化レイアウトや重要度マトリクスを利用したローカル実行の選択肢を拡充します。",
+      "details": "本モデルはUnslothのUD-Q4_K_XLの参照に基づき、正確なテンソル名や次元、精度割り当てを行って独自に量子化されたGGUFです。公式のUnslothによるリリースや支援を受けたものではありません。単一GPUでのランタイムスモークテストおよびネイティブMTP、ツールコール、投機的デコーディングの読み込み確認はパスしていますが、ベンチマーク精度や実用上の完全な互換性は未確定部分を含みます。",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "qwen3.8",
+        "pi",
+        "mtp",
+        "independent-quantization",
+        "imatrix",
+        "text-generation",
+        "base_model:Qwen/Qwen3.8-27B"
+      ],
+      "model_meta": {
+        "model_id": "groxaxo/Qwen3.8-27B-pi-adapted-Unsloth-layout-GGUF",
+        "author": "groxaxo",
+        "license": "apache-2.0",
+        "base_model": "Qwen/Qwen3.8-27B, harness-hub/Qwen3.8-27B-pi-adapted",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 228,
+        "likes": 0,
+        "last_modified": "2026-11-25T05:15:52.000Z",
+        "quantizations": [
+          "Q4_K_XL"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_XL",
+            "size_bytes": 17659406112,
+            "files": [
+              "Qwen3.8-27B-pi-adapted-UD-Q4_K_XL.gguf"
+            ],
+            "size": "16.4 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。"
+        },
+        "memory_estimate": {},
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "高",
+            "basis": "コード生成・Coder系の記載があります。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 1,
+        "gguf_files": [
+          {
+            "name": "Qwen3.8-27B-pi-adapted-UD-Q4_K_XL.gguf",
+            "quantization": "Q4_K_XL",
+            "size_bytes": 17659406112,
+            "size": "16.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 16.4 GB〜16.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「groxaxo/Qwen3.8-27B-pi-adapted-Unsloth-layout-GGUF」が更新されています。確認時点の指標は downloads=228、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは Qwen/Qwen3.8-27B, harness-hub/Qwen3.8-27B-pi-adapted。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q4_K_XL。GGUFファイルは 1 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 16.4 GB〜16.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
+    {
+      "id": "2026-11-25-e0c376fa2b99",
+      "date": "2026-11-24",
+      "title": "Ollama v0.40.18がリリース、llama.cppの更新とMetal処理を改善",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.18",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaの最新版v0.40.18がリリースされ、内部のllama.cppのバージョンアップ（b12651）や、Apple Silicon（Metal）環境におけるMLX関連の処理改善、Inklingモデルの高速化が実施されました。",
+      "impact": "ローカル環境での推論性能向上や、最新のモデル構造・量子化形式への追従が図られ、Macユーザーを中心に実行効率の改善が期待されます。",
+      "details": "本バージョンではllama.cppがb12651へバージョンアップされたほか、Jetpack 5のサポートが削除されています。また、Metal環境におけるInkling残差ミキシングの統合や、Inkling2でのデコード・プリフィル・ドラフト処理の高速化が行われました。Apple Siliconや対応ハードウェアでのローカル実行における処理効率に直接影響するアップデートです。",
+      "tags": [
+        "Ollama",
+        "GitHub Release",
+        "Metal"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-24-3841ff4b1eac",
       "date": "2026-11-24",
