@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-26"
+    "last_updated": "2026-11-27"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -599,9 +599,625 @@
     "https://huggingface.co/ji-farthing/Inkling-2-Mini-ik-llama-GGUF",
     "https://huggingface.co/IamPradeep/Ternary-Bonsai-2-9B-GGUF-Colab-Prebuilt-GPU",
     "https://lmstudio.ai/changelog/bionic-v1.2.3",
-    "https://lmstudio.ai/changelog/bionic-v1.2.2"
+    "https://lmstudio.ai/changelog/bionic-v1.2.2",
+    "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+    "https://huggingface.co/Xylolabs/phi-4-GGUF",
+    "https://huggingface.co/Xylolabs/gemma-4-31B-it-GGUF",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.19-rc0",
+    "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0"
   ],
   "entries": [
+    {
+      "id": "2026-11-27-af3521287a7b",
+      "date": "2026-11-26",
+      "title": "Identifying Molecules with Mass Spec Skills for Antigravity",
+      "source": "Google DeepMind News",
+      "source_url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+      "category": "新技術・業界動向",
+      "priority": "中",
+      "summary": "Google DeepMind Newsから、AIモデル・研究・製品戦略に関する重要な公式発表が公開されました。機能だけでなく、提供形態や安全性、開発者への影響を確認する価値があります。",
+      "impact": "直接ローカル実行できる発表とは限りません。提供形態、公開ウェイトの有無、API利用条件、ローカルLLM分野への波及を公式情報から区別して確認してください。",
+      "details": "Mass Spec Skills for Google Antigravity pairs Geminiâs chemical reasoning with established mass spectrometry tools to interpret tandem mass spectra at scale.",
+      "tags": [
+        "Google DeepMind",
+        "AI業界動向",
+        "公式発表",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "大手AI開発元",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-27-f20248fd2b4b",
+      "date": "2026-11-27",
+      "title": "Hugging Face: Xylolabs/phi-4-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Xylolabs/phi-4-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=Xylolabs/phi-4-GGUF license=mit base_model=microsoft/phi-4 architecture=不明 context_length=不明 downloads=1,146 likes=0 quantizations=IQ4_XS, Q4_K_M, Q5_K_M recommended_quantization=Q4_K_M memory_estimate={\"basis_quantization\": \"Q4_K_M\", \"model_file_size_gib\": 8.44, \"system_ram_min_gib\": 12.0, \"system_ram_recommended_gib\": 15.5, \"full_gpu_vram_rough_gib\": 11.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: mit base_model: - microsoft/phi-4 base_model_relation: quantized library_name: gguf pipeline_tag: text-generation language: - en - ko tags: - gguf - llama-cpp - quantized - phi4 --- <div align=\"center\"> <img class=\"block dark:hidden mx-auto\" src=\"https://raw.githubusercontent.com/XylolabsInc/tensix-bfp-gptq/main/assets/xylolabs-lockup.svg\" alt=\"Xylolabs\" width=\"256\" height=\"40\"> <img class=\"hidden dark:block mx-au…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama-cpp",
+        "quantized",
+        "phi4",
+        "text-generation",
+        "en",
+        "ko",
+        "base_model:microsoft/phi-4"
+      ],
+      "model_meta": {
+        "model_id": "Xylolabs/phi-4-GGUF",
+        "author": "Xylolabs",
+        "license": "mit",
+        "base_model": "microsoft/phi-4",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "text-generation",
+        "library_name": "gguf",
+        "downloads": 1146,
+        "likes": 0,
+        "last_modified": "2026-11-27T04:50:28.000Z",
+        "quantizations": [
+          "IQ4_XS",
+          "Q4_K_M",
+          "Q5_K_M"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "Q4_K_M",
+            "size_bytes": 9059258592,
+            "files": [
+              "phi-4-Q4_K_M.gguf"
+            ],
+            "size": "8.4 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 10499739872,
+            "files": [
+              "phi-4-Q5_K_M.gguf"
+            ],
+            "size": "9.8 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 16445956768,
+            "files": [
+              "phi-4-IQ4_XS-imat.gguf",
+              "phi-4-IQ4_XS.gguf"
+            ],
+            "size": "15.3 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "Q4_K_M",
+            "size_bytes": 9059258592,
+            "files": [
+              "phi-4-Q4_K_M.gguf"
+            ],
+            "size": "8.4 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 10499739872,
+            "files": [
+              "phi-4-Q5_K_M.gguf"
+            ],
+            "size": "9.8 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 16445956768,
+            "files": [
+              "phi-4-IQ4_XS-imat.gguf",
+              "phi-4-IQ4_XS.gguf"
+            ],
+            "size": "15.3 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "Q4_K_M",
+          "model_file_size_gib": 8.44,
+          "system_ram_min_gib": 12.0,
+          "system_ram_recommended_gib": 15.5,
+          "full_gpu_vram_rough_gib": 11.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "情報不足",
+            "basis": "推論特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "情報不足",
+            "basis": "画像入力対応を裏付ける明確な情報を取得できませんでした。"
+          }
+        ],
+        "gguf_file_count": 4,
+        "gguf_files": [
+          {
+            "name": "phi-4-IQ4_XS-imat.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 8187138496,
+            "size": "7.6 GB"
+          },
+          {
+            "name": "phi-4-IQ4_XS.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 8258818272,
+            "size": "7.7 GB"
+          },
+          {
+            "name": "phi-4-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "size_bytes": 9059258592,
+            "size": "8.4 GB"
+          },
+          {
+            "name": "phi-4-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 10499739872,
+            "size": "9.8 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 7.6 GB〜9.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Xylolabs/phi-4-GGUF」が更新されています。確認時点の指標は downloads=1,146、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは microsoft/phi-4。用途タグは text-generation。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は IQ4_XS, Q4_K_M, Q5_K_M。GGUFファイルは 4 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 7.6 GB〜9.8 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-27-5ad79b47fe43",
+      "date": "2026-11-27",
+      "title": "Hugging Face: Xylolabs/gemma-4-31B-it-GGUF",
+      "source": "Hugging Face Models",
+      "source_url": "https://huggingface.co/Xylolabs/gemma-4-31B-it-GGUF",
+      "category": "モデル",
+      "priority": "高",
+      "summary": "主要ローカルLLM候補として注目度の高いモデル更新が公開されました。モデル規模、ライセンス、量子化方式、対応ランタイムを確認する価値があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "model_id=Xylolabs/gemma-4-31B-it-GGUF license=apache-2.0 base_model=google/gemma-4-31B-it architecture=不明 context_length=不明 downloads=2,739 likes=0 quantizations=Q8_0, F16, Q2_K, IQ3_M, Q3_K_M, IQ4_XS, Q5_K_M, Q6_K recommended_quantization=IQ4_XS memory_estimate={\"basis_quantization\": \"IQ4_XS\", \"model_file_size_gib\": 15.59, \"system_ram_min_gib\": 20.0, \"system_ram_recommended_gib\": 25.5, \"full_gpu_vram_rough_gib\": 19.0, \"note\": \"概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。\"} model_card=--- license: apache-2.0 license_link: LICENSE base_model: - google/gemma-4-31B-it base_model_relation: quantized library_name: gguf pipeline_tag: image-text-to-text language: - en - ko tags: - gguf - llama-cpp - quantized - gemma4 --- <div align=\"center\"> <img class=\"block dark:hidden mx-auto\" src=\"https://raw.githubusercontent.com/XylolabsInc/tensix-bfp-gptq/main/assets/xyl…",
+      "tags": [
+        "GGUF",
+        "Hugging Face",
+        "gguf",
+        "llama-cpp",
+        "quantized",
+        "gemma4",
+        "image-text-to-text",
+        "en",
+        "ko",
+        "license:apache-2.0"
+      ],
+      "model_meta": {
+        "model_id": "Xylolabs/gemma-4-31B-it-GGUF",
+        "author": "Xylolabs",
+        "license": "apache-2.0",
+        "base_model": "google/gemma-4-31B-it",
+        "architectures": [],
+        "model_type": "",
+        "context_length": null,
+        "pipeline_tag": "image-text-to-text",
+        "library_name": "gguf",
+        "downloads": 2739,
+        "likes": 0,
+        "last_modified": "2026-11-27T04:41:40.000Z",
+        "quantizations": [
+          "Q8_0",
+          "F16",
+          "Q2_K",
+          "IQ3_M",
+          "Q3_K_M",
+          "IQ4_XS",
+          "Q5_K_M",
+          "Q6_K"
+        ],
+        "quantization_options": [
+          {
+            "quantization": "F16",
+            "size_bytes": 1198957024,
+            "files": [
+              "mmproj-gemma-4-31B-it-F16.gguf"
+            ],
+            "size": "1.1 GB"
+          },
+          {
+            "quantization": "Q2_K",
+            "size_bytes": 11916315168,
+            "files": [
+              "gemma-4-31B-it-Q2_K.gguf"
+            ],
+            "size": "11.1 GB"
+          },
+          {
+            "quantization": "IQ3_M",
+            "size_bytes": 14424498720,
+            "files": [
+              "gemma-4-31B-it-IQ3_M.gguf"
+            ],
+            "size": "13.4 GB"
+          },
+          {
+            "quantization": "Q3_K_M",
+            "size_bytes": 15287110176,
+            "files": [
+              "gemma-4-31B-it-Q3_K_M.gguf"
+            ],
+            "size": "14.2 GB"
+          },
+          {
+            "quantization": "IQ4_XS",
+            "size_bytes": 16735791648,
+            "files": [
+              "gemma-4-31B-it-IQ4_XS-imat.gguf"
+            ],
+            "size": "15.6 GB"
+          },
+          {
+            "quantization": "Q5_K_M",
+            "size_bytes": 21845572128,
+            "files": [
+              "gemma-4-31B-it-Q5_K_M.gguf"
+            ],
+            "size": "20.3 GB"
+          },
+          {
+            "quantization": "Q6_K",
+            "size_bytes": 25201486368,
+            "files": [
+              "gemma-4-31B-it-Q6_K.gguf"
+            ],
+            "size": "23.5 GB"
+          },
+          {
+            "quantization": "Q8_0",
+            "size_bytes": 33445219072,
+            "files": [
+              "mmproj-gemma-4-31B-it-Q8_0.gguf",
+              "gemma-4-31B-it-Q8_0.gguf"
+            ],
+            "size": "31.1 GB"
+          }
+        ],
+        "quantization_recommendation": {
+          "method": "ファイル名と容量に基づく一般的なGGUFの選択目安。品質や速度はモデルごとに異なります。",
+          "balanced": {
+            "quantization": "IQ4_XS",
+            "size_bytes": 16735791648,
+            "files": [
+              "gemma-4-31B-it-IQ4_XS-imat.gguf"
+            ],
+            "size": "15.6 GB",
+            "label": "バランス重視",
+            "reason": "容量と品質のバランスを取りやすい候補として選んでいます。実際の品質はモデルごとに異なります。"
+          },
+          "quality": {
+            "quantization": "Q5_K_M",
+            "size_bytes": 21845572128,
+            "files": [
+              "gemma-4-31B-it-Q5_K_M.gguf"
+            ],
+            "size": "20.3 GB",
+            "label": "品質重視",
+            "reason": "比較的多くの情報を保持する候補。必要メモリは増えます。"
+          },
+          "low_memory": {
+            "quantization": "IQ3_M",
+            "size_bytes": 14424498720,
+            "files": [
+              "gemma-4-31B-it-IQ3_M.gguf"
+            ],
+            "size": "13.4 GB",
+            "label": "省メモリ重視",
+            "reason": "比較的容量の小さい実用候補。品質低下とのトレードオフがあります。"
+          }
+        },
+        "memory_estimate": {
+          "basis_quantization": "IQ4_XS",
+          "model_file_size_gib": 15.59,
+          "system_ram_min_gib": 20.0,
+          "system_ram_recommended_gib": 25.5,
+          "full_gpu_vram_rough_gib": 19.0,
+          "note": "概算です。コンテキスト長、KVキャッシュ、GPUオフロード率、ランタイムの実装によって必要量は変わります。特に長いコンテキストでは追加メモリが必要です。"
+        },
+        "runtime_support": [
+          {
+            "name": "llama.cpp",
+            "status": "明示あり",
+            "basis": "モデルカードまたはタグにllama.cppに関する記載があります。"
+          },
+          {
+            "name": "LM Studio",
+            "status": "互換候補",
+            "basis": "GGUFを扱えますが、新しいアーキテクチャではLM Studio側の対応確認が必要です。"
+          },
+          {
+            "name": "Ollama",
+            "status": "インポート候補",
+            "basis": "GGUFを取り込める場合がありますが、モデルアーキテクチャとテンプレートが対応しているか確認する必要があります。"
+          },
+          {
+            "name": "KoboldCpp",
+            "status": "互換候補",
+            "basis": "GGUF系ランタイムですが、アーキテクチャへの対応状況を確認する必要があります。"
+          }
+        ],
+        "use_case_evaluation": [
+          {
+            "label": "チャット",
+            "rating": "高",
+            "basis": "モデル名・タグ・モデルカードにチャット/Instruction系の手掛かりがあります。"
+          },
+          {
+            "label": "コーディング",
+            "rating": "情報不足",
+            "basis": "コード特化を示す明確な記載を取得できませんでした。"
+          },
+          {
+            "label": "推論・数学",
+            "rating": "高",
+            "basis": "Reasoning/Thinking/Math系の記載があります。"
+          },
+          {
+            "label": "日本語",
+            "rating": "情報不足",
+            "basis": "日本語対応を直接裏付ける情報を取得できませんでした。"
+          },
+          {
+            "label": "ツール利用・エージェント",
+            "rating": "情報不足",
+            "basis": "ツール利用を裏付ける明確な情報を取得できませんでした。"
+          },
+          {
+            "label": "画像理解・マルチモーダル",
+            "rating": "高",
+            "basis": "Vision/Multimodal系の記載があります。"
+          }
+        ],
+        "gguf_file_count": 9,
+        "gguf_files": [
+          {
+            "name": "mmproj-gemma-4-31B-it-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 809541856,
+            "size": "772.0 MB"
+          },
+          {
+            "name": "mmproj-gemma-4-31B-it-F16.gguf",
+            "quantization": "F16",
+            "size_bytes": 1198957024,
+            "size": "1.1 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-Q2_K.gguf",
+            "quantization": "Q2_K",
+            "size_bytes": 11916315168,
+            "size": "11.1 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-IQ3_M.gguf",
+            "quantization": "IQ3_M",
+            "size_bytes": 14424498720,
+            "size": "13.4 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-Q3_K_M.gguf",
+            "quantization": "Q3_K_M",
+            "size_bytes": 15287110176,
+            "size": "14.2 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-IQ4_XS-imat.gguf",
+            "quantization": "IQ4_XS",
+            "size_bytes": 16735791648,
+            "size": "15.6 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-Q5_K_M.gguf",
+            "quantization": "Q5_K_M",
+            "size_bytes": 21845572128,
+            "size": "20.3 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-Q6_K.gguf",
+            "quantization": "Q6_K",
+            "size_bytes": 25201486368,
+            "size": "23.5 GB"
+          },
+          {
+            "name": "gemma-4-31B-it-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "size_bytes": 32635677216,
+            "size": "30.4 GB"
+          }
+        ],
+        "hardware_hint": "確認できたGGUFのファイル容量は 772.0 MB〜30.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。",
+        "runtime_hint": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+      },
+      "enrichment_version": 101,
+      "article_sections": [
+        {
+          "title": "何が公開された？",
+          "text": "Hugging Face上の「Xylolabs/gemma-4-31B-it-GGUF」が更新されています。確認時点の指標は downloads=2,739、likes=0 です。"
+        },
+        {
+          "title": "モデルの特徴",
+          "text": "元モデルは google/gemma-4-31B-it。用途タグは image-text-to-text。"
+        },
+        {
+          "title": "量子化・ファイル構成",
+          "text": "ファイル名から確認できた量子化方式は Q8_0, F16, Q2_K, IQ3_M, Q3_K_M, IQ4_XS, Q5_K_M, Q6_K。GGUFファイルは 9 件確認できました。"
+        },
+        {
+          "title": "どんなPCなら使えそう？",
+          "text": "確認できたGGUFのファイル容量は 772.0 MB〜30.4 GB。実際の推論ではKVキャッシュ等も必要なため、VRAM/RAMには追加の余裕が必要です。"
+        },
+        {
+          "title": "LM Studio / llama.cppで使える？",
+          "text": "GGUF形式はllama.cpp系ランタイムで利用されます。ただし新しいアーキテクチャではランタイム側の対応が必要なため、LM Studio / llama.cppの対応状況を確認してください。"
+        },
+        {
+          "title": "注意点",
+          "text": "コンテキスト長をconfig/APIから確定できませんでした。"
+        }
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "主要モデル",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-27-c3c27f439dbd",
+      "date": "2026-11-27",
+      "title": "Ollama: v0.40.19",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.19-rc0",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "ollama/ollamaでローカルLLM利用者への影響が大きいアップデートが公開されました。モデル互換性や推論機能、実行環境に関係する変更を含む可能性があります。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## What's Changed * inkling2: faster short histories, draft proposals and conv snapshots by @dhiltgen in https://github.com/ollama/ollama/pull/19881 * mlxrunner: compact Engram history buffers by @pdevine in https://github.com/ollama/ollama/pull/19913 * bump llama-server by @pdevine in https://github.com/ollama/ollama/pull/19917 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.18...v0.40.19-rc0",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-27-8c6b22f86d36",
+      "date": "2026-11-27",
+      "title": "Hugging Face Blog: llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem ggml-org • 14 days ago • 238",
+      "source": "Hugging Face Blog",
+      "source_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "category": "モデル・技術",
+      "priority": "中",
+      "summary": "Hugging Face BlogでローカルLLM利用者に影響する重要な更新が公開されました。実用面で確認する価値がある内容として選定しています。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "公式ページ上で新しい更新候補を検出しました。詳細は出典を確認してください。",
+      "tags": [
+        "Hugging Face Blog"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "その他",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
+    {
+      "id": "2026-11-27-b6b8f944670a",
+      "date": "2026-11-26",
+      "title": "llama.cpp: v1.1.0",
+      "source": "GitHub Releases / ggml-org/llama.cpp",
+      "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0",
+      "category": "推論ランタイム",
+      "priority": "中",
+      "summary": "ggml-org/llama.cppで量子化やモデル圧縮に関する重要な更新が公開されました。モデル容量、VRAM/RAM使用量、推論品質とのバランスに関係します。",
+      "impact": "ローカル環境で同じモデルやランタイムを利用している場合、更新前に公式情報で互換性、必要VRAM/RAM、対応バックエンドを確認することを推奨します。",
+      "details": "## Overview llama.cpp v1.1.0 adds the Inkling 2 family (base, Mini and DSpark), Domyn Edge 4B, Zaya1 8B, RAON-1-mini and Hy4 flash, splits DFlash speculative decoding into separate draft methods, and deprecates the old `llama_batch` API in favour of `llama_batch_ext`. It brings a large set of TTS and audio models (Kokoro, Zonos3-Mini, tiny-voca, VoxCPM2, MiniMax-Music3, YuE2, Fish S2, Higgs v3/VibeVoice-ASR and Kyutai Hibiki), token-aware chat parsing, named tool choice, automatic per-tensor quantization targeting a bpw or size budget, a slot-scheduling refactor in `llama-server`, a redesigned Llama Chat web UI with voice messages and agent traces, and updates `ggml` to v1.1.1. ### API changes - llama.h: deprecate the old `llama_batch` API in favour of `llama_batch_ext` and `llama_process` ([#32306](https://github.com/ggml-org/llama.cpp/pull/32306), [#32356](https://github.com/ggml-org/…",
+      "tags": [
+        "llama.cpp",
+        "GitHub Release",
+        "GGUF",
+        "量子化",
+        "Tool Calling"
+      ],
+      "curated": true,
+      "quality_status": "needs_review",
+      "editorial_bucket": "量子化",
+      "summary_method": "ルールベース候補整理（公開保留）"
+    },
     {
       "id": "2026-11-26-2531119f99f8",
       "date": "2026-11-24",
