@@ -2,7 +2,7 @@
   "site": {
     "title": "Local LLM Wiki",
     "description": "ローカルLLMを選び、動かし、更新するための日本語ガイド。一次情報を基に必要メモリ、量子化、対応ランタイムとAI業界の重要動向を整理します。",
-    "last_updated": "2026-11-27"
+    "last_updated": "2026-11-28"
   },
   "seen_urls": [
     "https://github.com/Niko1221/Strata",
@@ -605,9 +605,30 @@
     "https://huggingface.co/Xylolabs/gemma-4-31B-it-GGUF",
     "https://github.com/ollama/ollama/releases/tag/v0.40.19-rc0",
     "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
-    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0"
+    "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.19"
   ],
   "entries": [
+    {
+      "id": "2026-11-28-27d290073f8a",
+      "date": "2026-11-27",
+      "title": "Ollama v0.40.19がリリース、llama-serverの更新やmlxrunnerの改善を実施",
+      "source": "GitHub Releases / ollama/ollama",
+      "source_url": "https://github.com/ollama/ollama/releases/tag/v0.40.19",
+      "category": "フロントエンド・ランタイム",
+      "priority": "高",
+      "summary": "Ollamaの最新バージョンv0.40.19が公開されました。本リリースではllama-serverのバージョン更新が行われたほか、inkling2における短縮履歴の処理速度向上や会話スナップショット機能の改善、mlxrunnerでの履歴バッファのコンパクト化などが含まれています。",
+      "impact": "ローカル環境での推論ランタイムとして広く使われるOllamaの更新であり、Apple Silicon（MLX）環境やバックエンドのllama.cpp連携部分におけるパフォーマンスと安定性の改善が期待されます。",
+      "details": "本バージョンでは、バックエンドのllama-serverが最新版にアップデートされており、全体的な互換性や推論処理の安定性が向上しています。また、inkling2コンポーネントにおける短い履歴の高速処理やドラフト提案、会話スナップショット機能が改良されました。さらに、mlxrunnerにおけるEngram履歴バッファのコンパクト化により、Apple Silicon環境でのメモリ効率の改善が図られています。ローカルLLMを日常的に運用するユーザーにとって有用なメンテナンスアップデートとなっています。",
+      "tags": [
+        "Ollama",
+        "GitHub Release"
+      ],
+      "curated": true,
+      "quality_status": "source_summarized",
+      "editorial_bucket": "LM Studio / Ollama",
+      "summary_method": "Gemini / gemini-3.5-flash-lite"
+    },
     {
       "id": "2026-11-27-af3521287a7b",
       "date": "2026-11-26",
